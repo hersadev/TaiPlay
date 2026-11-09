@@ -88,3 +88,20 @@
     font-family: 'Inter', system-ui, sans-serif;
   }
 }
+
+/* Aviso de logro desbloqueado (LogroToast) */
+@keyframes toast {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  [class*='animate-'] {
+    animation: none !important;
+  }
+}

@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { createShell } from '../src/engine/terminal/shell.js';
 import { ALL_LESSONS } from '../src/lessons/index.js';
+import initSqlJs from 'sql.js';
+import { createSqlDb } from '../src/engine/sql/db.js';
 
 // Solución de referencia de cada lección de terminal: si alguna deja de
 // completar sus objetivos (o alguno se cumple sin hacer nada), algo se ha
@@ -49,6 +51,68 @@ for (const lesson of ALL_LESSONS.filter((l) => l.type === 'terminal')) {
     }
     const failing = lesson.objectives.filter((_, i) => !done[i]).map((o) => o.label);
     assert.deepEqual(failing, [], sh.screen.map((s) => s.text).join('\n'));
+  });
+}
+
+const SQL_SOLUTIONS = {
+  'sql-select': ['SELECT * FROM ALUMNO;', 'SELECT nombre, email FROM ALUMNO;', 'SELECT nombre FROM ALUMNO WHERE email IS NULL;'],
+  'sql-filtros': [
+    "SELECT * FROM MATRICULA WHERE estado = 'ACTIVA';",
+    "SELECT nombre FROM ALUMNO WHERE fecha_nacimiento LIKE '2008%';",
+    "SELECT * FROM CENTRO_EDUCATIVO WHERE provincia IN ('Madrid', 'Valencia');",
+    'SELECT nombre, fecha_nacimiento FROM ALUMNO ORDER BY fecha_nacimiento DESC;',
+  ],
+  'sql-modificar': [
+    "INSERT INTO CuerpoBecado (Codigo, Denominacion) VALUES ('TAI', 'Técnico Auxiliar de Informática');",
+    'UPDATE SolicitudBeca SET IdEstado = 3 WHERE IdSolicitudBeca = 3;',
+    "DELETE FROM FicheroAdjunto WHERE Denominacion = 'foto.png';",
+    "DELETE FROM Interesado WHERE DocumentoIdentidad = '00000000T';",
+  ],
+  'sql-crear': [
+    'CREATE TABLE Subsanacion (IdSubsanacion BIGINT PRIMARY KEY, IdSolicitudBeca BIGINT REFERENCES SolicitudBeca(IdSolicitudBeca), TextoFundamento VARCHAR(2000));',
+    "INSERT INTO Subsanacion VALUES (1, 3, 'Falta el empadronamiento');",
+    'CREATE UNIQUE INDEX idx_email ON Interesado (Email);',
+  ],
+  'sql-join': [
+    'SELECT ALUMNO.nombre FROM ALUMNO INNER JOIN MATRICULA ON ALUMNO.id_alumno = MATRICULA.id_alumno;',
+    'SELECT a.nombre, p.nombre FROM ALUMNO a JOIN MATRICULA m ON a.id_alumno = m.id_alumno JOIN PROGRAMA_FORMATIVO p ON p.id_programa = m.id_programa;',
+    'SELECT a.nombre FROM ALUMNO a LEFT JOIN MATRICULA m ON a.id_alumno = m.id_alumno WHERE m.id_matricula IS NULL;',
+  ],
+  'sql-agrupar': [
+    'SELECT COUNT(*) FROM ALUMNO;',
+    'SELECT id_programa, COUNT(*) FROM MATRICULA GROUP BY id_programa;',
+    "SELECT id_programa, COUNT(*) FROM MATRICULA WHERE estado = 'ACTIVA' GROUP BY id_programa HAVING COUNT(*) > 1;",
+    'SELECT AVG(valor) FROM INDICADOR;',
+  ],
+  'sql-subconsultas': [
+    "SELECT * FROM FicheroAdjunto WHERE Denominacion NOT LIKE '%.pdf' AND IdSolicitudBeca = (SELECT IdSolicitudBeca FROM SolicitudBeca WHERE AñoConvocatoria = 2024 AND IdInteresado = (SELECT IdInteresado FROM Interesado WHERE DocumentoIdentidad = '00000000T'));",
+    'SELECT Nombre FROM Interesado WHERE IdInteresado IN (SELECT IdInteresado FROM SolicitudBeca WHERE IdEstado = 3);',
+    'SELECT Nombre FROM Interesado WHERE IdInteresado NOT IN (SELECT IdInteresado FROM SolicitudBeca);',
+  ],
+  'sql-transacciones': [
+    'BEGIN;',
+    'DELETE FROM FicheroAdjunto;',
+    'ROLLBACK;',
+    "CREATE TRIGGER validar_cambio BEFORE UPDATE ON SolicitudBeca FOR EACH ROW WHEN NEW.AñoConvocatoria < 2020 BEGIN SELECT RAISE(ABORT, 'Año de convocatoria no válido'); END;",
+    'UPDATE SolicitudBeca SET AñoConvocatoria = 2010 WHERE IdSolicitudBeca = 1;',
+  ],
+};
+
+const SQL = await initSqlJs();
+
+for (const lesson of ALL_LESSONS.filter((l) => l.type === 'sql')) {
+  test(`lección ${lesson.id} se puede completar`, () => {
+    const db = createSqlDb(SQL, lesson.seed);
+    assert.ok(lesson.objectives.every((o) => !o.check(db)), 'ningún objetivo debería cumplirse antes de empezar');
+    const sol = SQL_SOLUTIONS[lesson.id];
+    assert.ok(sol, 'falta la solución de referencia en el test');
+    const done = lesson.objectives.map(() => false);
+    for (const stmt of sol) {
+      db.run(stmt);
+      lesson.objectives.forEach((o, i) => (done[i] ||= o.check(db)));
+    }
+    const failing = lesson.objectives.filter((_, i) => !done[i]).map((o) => o.label);
+    assert.deepEqual(failing, [], db.log.filter((e) => !e.ok).map((e) => `${e.sql} → ${e.error}`).join('\n'));
   });
 }
 

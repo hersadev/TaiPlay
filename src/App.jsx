@@ -8,6 +8,9 @@ import BankPage from './pages/BankPage';
 import { SupuestosList, SupuestoPage } from './pages/SupuestosPage';
 import SimulacroPage from './pages/SimulacroPage';
 import { TemarioPage, TemaPage } from './pages/TemarioPage';
+import LogrosPage from './pages/LogrosPage';
+import LogroToast from './components/logros/LogroToast';
+import { useAchievements, useLevel } from './hooks/useAchievements';
 
 const NAV = [
   ['aprende', 'Aprende'],
@@ -34,6 +37,8 @@ function Page({ segments, params }) {
       return b && c ? <SupuestoPage key={b + c + params.get('modo')} examId={b} partId={c} params={params} /> : <SupuestosList />;
     case 'simulacro':
       return <SimulacroPage />;
+    case 'logros':
+      return <LogrosPage />;
     default:
       return <NotFound />;
   }
@@ -42,6 +47,8 @@ function Page({ segments, params }) {
 export default function App() {
   const { segments, params } = useRoute();
   const section = segments[0];
+  const { current: logro, dismiss } = useAchievements();
+  const level = useLevel();
   return (
     <div className="flex min-h-full flex-col">
       <header className="sticky top-0 z-20 border-b border-gray-800 bg-gray-950/95 backdrop-blur">
@@ -65,8 +72,16 @@ export default function App() {
               </a>
             ))}
           </nav>
+          <a
+            href={href('logros')}
+            title={`Nivel ${level.n}: ${level.name} · ${level.xp} puntos`}
+            className={`shrink-0 rounded-lg px-2 py-1.5 text-sm ${section === 'logros' ? 'bg-gray-800 text-yellow-300' : 'text-gray-300 hover:bg-gray-900'}`}
+          >
+            🏆 <span className="font-mono">Nv {level.n}</span>
+          </a>
         </div>
       </header>
+      <LogroToast logro={logro} onClose={dismiss} />
       <main className="flex-1">
         <Page segments={segments} params={params} />
       </main>

@@ -201,7 +201,7 @@ Un TAD define **qué operaciones** ofrece un tipo con independencia de **cómo**
     id: 'B2T05',
     short: 'Sistemas gestores de bases de datos',
     title: 'Sistemas de gestión de bases de datos relacionales, orientados a objetos y NoSQL: características y componentes.',
-    lessons: [],
+    lessons: ['bd-modelo', 'sql-transacciones'],
     body: `## SGBD
 - Niveles de abstracción (arquitectura **ANSI/SPARC**): **externo** (las vistas de los usuarios), **conceptual** (el esquema lógico) e **interno** (el almacenamiento físico). Esta separación da independencia lógica y física de los datos.
 - Lenguajes: **DDL** (definición: CREATE, ALTER, DROP, TRUNCATE), **DML** (manipulación: SELECT, INSERT, UPDATE, DELETE), **DCL** (control: GRANT, REVOKE, DENY) y **TCL** (transacciones: COMMIT, ROLLBACK, SAVEPOINT).

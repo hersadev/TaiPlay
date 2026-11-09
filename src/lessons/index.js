@@ -6,6 +6,7 @@
 import { fundamentos } from './fundamentos.js';
 import { linux } from './linux.js';
 import { docker } from './docker.js';
+import { bbdd } from './bbdd.js';
 
 export const TRACKS = [
   {
@@ -48,8 +49,8 @@ export const TRACKS = [
     id: 'bbdd',
     title: 'Bases de datos y SQL',
     icon: '▤',
-    description: 'Modelo entidad-relación, normalización y SQL ejecutando consultas de verdad sobre las tablas de los supuestos.',
-    lessons: [],
+    description: 'SQL de verdad en el navegador sobre las tablas de los supuestos del examen: consultas, JOIN, GROUP BY, subconsultas, restricciones y disparadores.',
+    lessons: bbdd,
     topics: ['bbdd'],
     temas: ['B2T05', 'B3T01', 'B3T03', 'B4T02'],
   },

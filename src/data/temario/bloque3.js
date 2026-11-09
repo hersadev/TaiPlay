@@ -6,7 +6,7 @@ export const bloque3 = [
     short: 'Modelado de datos y normalización',
     title:
       'Modelado de datos, metodologías y reglas. Entidades, atributos y relaciones. Diseño de bases de datos. Diseño lógico y físico. El modelo lógico relacional. Normalización.',
-    lessons: [],
+    lessons: ['bd-modelo', 'sql-crear'],
     body: `## Fases del diseño
 1. **Conceptual**: el modelo **Entidad/Relación** (Chen), independiente del SGBD.
 2. **Lógico**: el paso al modelo **relacional** (tablas, claves), ya normalizado.
@@ -106,7 +106,7 @@ export const bloque3 = [
     id: 'B3T03',
     short: 'SQL, procedimientos y disparadores',
     title: 'Lenguajes de interrogación de bases de datos. Estándar ANSI SQL. Procedimientos almacenados. Eventos y disparadores.',
-    lessons: [],
+    lessons: ['sql-select', 'sql-filtros', 'sql-modificar', 'sql-crear', 'sql-join', 'sql-agrupar', 'sql-subconsultas', 'sql-transacciones'],
     body: `## Sentencias básicas
 \`\`\`
 CREATE TABLE Alumno (id INT PRIMARY KEY, dni VARCHAR(9) UNIQUE, nombre VARCHAR(100));

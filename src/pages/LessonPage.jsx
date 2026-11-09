@@ -8,6 +8,9 @@ import RichText from '../components/ui/RichText';
 import Terminal from '../components/terminal/Terminal';
 import QuestionCard from '../components/quiz/QuestionCard';
 import ConceptQuiz from '../components/quiz/ConceptQuiz';
+import SqlConsole, { SchemaPanel } from '../components/sql/SqlConsole';
+import { loadSql } from '../engine/sql/loader.js';
+import { createSqlDb } from '../engine/sql/db.js';
 import { NotFound } from './LearnPage';
 
 export default function LessonPage({ trackId, lessonId }) {
@@ -17,11 +20,8 @@ export default function LessonPage({ trackId, lessonId }) {
   const i = track.lessons.findIndex((l) => l.id === lesson.id);
   const next = track.lessons[i + 1] ?? null;
   const prev = track.lessons[i - 1] ?? null;
-  return lesson.type === 'terminal' ? (
-    <TerminalLesson key={lesson.id} lesson={lesson} track={track} next={next} prev={prev} />
-  ) : (
-    <ConceptLesson key={lesson.id} lesson={lesson} track={track} next={next} prev={prev} />
-  );
+  const Component = { terminal: TerminalLesson, sql: SqlLesson }[lesson.type] ?? ConceptLesson;
+  return <Component key={lesson.id} lesson={lesson} track={track} next={next} prev={prev} />;
 }
 
 function Breadcrumb({ track, lesson }) {
@@ -75,83 +75,174 @@ export function ExamLinks({ ids }) {
   );
 }
 
-function TerminalLesson({ lesson, track, next, prev }) {
+// Objetivos acumulativos: una vez conseguidos se quedan conseguidos, aunque
+// después cambie el estado (p. ej. borrar el contenedor que paraste). Se
+// evalúan tras cada orden o consulta con evaluate(target), donde target es
+// la shell o la base de datos que reciben los check().
+function useObjectives(lesson) {
   const saved = useProgress((s) => s.lessons[lesson.id]);
   const { saveObjectives, completeLesson } = useProgress();
-  const [shell, setShell] = useState(() => createShell(lesson.setup));
-  // Objetivos acumulativos: una vez conseguidos se quedan conseguidos,
-  // aunque después cambie el estado (p. ej. borrar el contenedor que paraste).
   const [done, setDone] = useState(() => lesson.objectives.map((_, i) => Boolean(saved?.objectives?.[i])));
-  const [hintsShown, setHintsShown] = useState(0);
   const allDone = done.every(Boolean);
 
   useEffect(() => {
     if (allDone && !saved?.done) completeLesson(lesson.id);
   }, [allDone, saved?.done, completeLesson, lesson.id]);
 
-  const onCommand = (sh) => {
-    const nextDone = lesson.objectives.map((o, i) => done[i] || Boolean(o.check(sh)));
+  const evaluate = (target) => {
+    const nextDone = lesson.objectives.map((o, i) => {
+      if (done[i]) return true;
+      try {
+        return Boolean(o.check(target));
+      } catch (_) {
+        return false;
+      }
+    });
     if (nextDone.some((d, i) => d !== done[i])) {
       setDone(nextDone);
       saveObjectives(lesson.id, nextDone);
     }
   };
+  return { done, allDone, evaluate };
+}
 
-  const restart = () => {
-    setShell(createShell(lesson.setup));
-    setHintsShown(0);
+function ObjectivesBox({ lesson, done, allDone, onRestart, restartLabel }) {
+  const [hintsShown, setHintsShown] = useState(0);
+  return (
+    <section className="rounded-xl border border-gray-700 bg-gray-900 p-4">
+      <h2 className="mb-2 font-semibold text-gray-100">Objetivos</h2>
+      <ul className="space-y-2">
+        {lesson.objectives.map((o, i) => (
+          <li key={o.label} className="flex gap-2 text-sm">
+            <span className={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-xs ${done[i] ? 'bg-green-600 text-white' : 'border border-gray-600'}`}>
+              {done[i] ? '✓' : ''}
+            </span>
+            <span className={done[i] ? 'text-gray-400 line-through' : 'text-gray-200'}>{o.label}</span>
+          </li>
+        ))}
+      </ul>
+      {allDone && (
+        <p className="mt-3 rounded-lg bg-green-900/50 p-2 text-sm text-green-200">¡Lección completada! Puedes seguir trasteando o pasar a la siguiente.</p>
+      )}
+      <div className="mt-3 flex flex-wrap gap-2 text-sm">
+        {hintsShown < lesson.hints.length && (
+          <button type="button" onClick={() => setHintsShown((h) => h + 1)} className="rounded-lg border border-gray-600 px-3 py-1 text-gray-300 hover:border-gray-400">
+            💡 {hintsShown ? 'Otra pista' : 'Dame una pista'}
+          </button>
+        )}
+        <button
+          type="button"
+          onClick={() => {
+            onRestart();
+            setHintsShown(0);
+          }}
+          className="rounded-lg border border-gray-600 px-3 py-1 text-gray-300 hover:border-gray-400"
+        >
+          ↺ {restartLabel}
+        </button>
+      </div>
+      {hintsShown > 0 && (
+        <ol className="mt-3 space-y-1 text-sm text-yellow-200">
+          {lesson.hints.slice(0, hintsShown).map((h) => (
+            <li key={h} className="break-words font-mono">
+              › {h}
+            </li>
+          ))}
+        </ol>
+      )}
+    </section>
+  );
+}
+
+// Columna de texto común a las prácticas (terminal y SQL).
+function PracticeText({ lesson, track, next, prev, objectives, onRestart, restartLabel, children }) {
+  return (
+    <div className="min-h-0 space-y-5 overflow-y-auto pr-1">
+      <div>
+        <Breadcrumb track={track} lesson={lesson} />
+        <h1 className="mt-1 text-2xl font-bold text-gray-100">{lesson.title}</h1>
+      </div>
+      <RichText text={lesson.body} />
+      <ObjectivesBox lesson={lesson} {...objectives} onRestart={onRestart} restartLabel={restartLabel} />
+      {children}
+      {lesson.curiosity && <p className="rounded-lg border-l-2 border-purple-400 bg-gray-900 p-3 text-sm text-gray-300">💬 {lesson.curiosity}</p>}
+      <ExamLinks ids={lesson.exam} />
+      <NextNav track={track} next={next} prev={prev} done={objectives.allDone} />
+    </div>
+  );
+}
+
+const PRACTICE_GRID = 'mx-auto grid max-w-7xl gap-4 px-4 py-4 lg:h-[calc(100vh-3.5rem)] lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]';
+
+function TerminalLesson({ lesson, track, next, prev }) {
+  const objectives = useObjectives(lesson);
+  const [shell, setShell] = useState(() => createShell(lesson.setup));
+  return (
+    <div className={PRACTICE_GRID}>
+      <PracticeText
+        {...{ lesson, track, next, prev, objectives }}
+        onRestart={() => setShell(createShell(lesson.setup))}
+        restartLabel="Reiniciar la máquina"
+      />
+      <Terminal shell={shell} onCommand={objectives.evaluate} className="h-[60vh] lg:h-auto" />
+    </div>
+  );
+}
+
+function SqlLesson({ lesson, track, next, prev }) {
+  const objectives = useObjectives(lesson);
+  const [SQL, setSQL] = useState(null);
+  const [db, setDb] = useState(null);
+  const [tables, setTables] = useState([]);
+  const [loadError, setLoadError] = useState(null);
+
+  // sql.js (WebAssembly) se carga la primera vez que se abre una lección SQL.
+  useEffect(() => {
+    let alive = true;
+    loadSql()
+      .then((mod) => alive && setSQL(mod))
+      .catch((e) => alive && setLoadError(e.message));
+    return () => {
+      alive = false;
+    };
+  }, []);
+
+  const reset = useCallback(() => {
+    if (!SQL) return;
+    const fresh = createSqlDb(SQL, lesson.seed);
+    setDb((old) => {
+      old?.close();
+      return fresh;
+    });
+    setTables(fresh.tables());
+  }, [SQL, lesson.seed]);
+
+  useEffect(() => {
+    reset();
+  }, [reset]);
+
+  const onRun = (d) => {
+    setTables(d.tables());
+    objectives.evaluate(d);
   };
 
   return (
-    <div className="mx-auto grid max-w-7xl gap-4 px-4 py-4 lg:h-[calc(100vh-3.5rem)] lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
-      <div className="min-h-0 space-y-5 overflow-y-auto pr-1">
-        <div>
-          <Breadcrumb track={track} lesson={lesson} />
-          <h1 className="mt-1 text-2xl font-bold text-gray-100">{lesson.title}</h1>
+    <div className={PRACTICE_GRID}>
+      <PracticeText {...{ lesson, track, next, prev, objectives }} onRestart={reset} restartLabel="Reiniciar la base de datos">
+        {tables.length > 0 && (
+          <section>
+            <h2 className="mb-2 text-sm font-semibold text-gray-300">Esquema de la base de datos</h2>
+            <SchemaPanel tables={tables} />
+          </section>
+        )}
+      </PracticeText>
+      {db ? (
+        <SqlConsole key={lesson.id} db={db} onRun={onRun} className="min-h-[60vh] lg:min-h-0" />
+      ) : (
+        <div className="grid min-h-[40vh] place-items-center rounded-lg border border-gray-700 text-sm text-gray-400">
+          {loadError ? `No se pudo cargar el motor SQL: ${loadError}` : 'Cargando el motor SQL…'}
         </div>
-        <RichText text={lesson.body} />
-
-        <section className="rounded-xl border border-gray-700 bg-gray-900 p-4">
-          <h2 className="mb-2 font-semibold text-gray-100">Objetivos</h2>
-          <ul className="space-y-2">
-            {lesson.objectives.map((o, i) => (
-              <li key={o.label} className="flex gap-2 text-sm">
-                <span className={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-xs ${done[i] ? 'bg-green-600 text-white' : 'border border-gray-600'}`}>
-                  {done[i] ? '✓' : ''}
-                </span>
-                <span className={done[i] ? 'text-gray-400 line-through' : 'text-gray-200'}>{o.label}</span>
-              </li>
-            ))}
-          </ul>
-          {allDone && (
-            <p className="mt-3 rounded-lg bg-green-900/50 p-2 text-sm text-green-200">¡Lección completada! Puedes seguir trasteando o pasar a la siguiente.</p>
-          )}
-          <div className="mt-3 flex flex-wrap gap-2 text-sm">
-            {hintsShown < lesson.hints.length && (
-              <button type="button" onClick={() => setHintsShown((h) => h + 1)} className="rounded-lg border border-gray-600 px-3 py-1 text-gray-300 hover:border-gray-400">
-                💡 {hintsShown ? 'Otra pista' : 'Dame una pista'}
-              </button>
-            )}
-            <button type="button" onClick={restart} className="rounded-lg border border-gray-600 px-3 py-1 text-gray-300 hover:border-gray-400">
-              ↺ Reiniciar la máquina
-            </button>
-          </div>
-          {hintsShown > 0 && (
-            <ol className="mt-3 space-y-1 text-sm text-yellow-200">
-              {lesson.hints.slice(0, hintsShown).map((h) => (
-                <li key={h} className="font-mono">
-                  › {h}
-                </li>
-              ))}
-            </ol>
-          )}
-        </section>
-
-        {lesson.curiosity && <p className="rounded-lg border-l-2 border-purple-400 bg-gray-900 p-3 text-sm text-gray-300">💬 {lesson.curiosity}</p>}
-        <ExamLinks ids={lesson.exam} />
-        <NextNav track={track} next={next} prev={prev} done={allDone} />
-      </div>
-      <Terminal shell={shell} onCommand={onCommand} className="h-[60vh] lg:h-auto" />
+      )}
     </div>
   );
 }

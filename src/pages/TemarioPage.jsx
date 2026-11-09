@@ -144,7 +144,7 @@ export function TemaPage({ temaId }) {
                 <a href={href(`aprende/${l.trackId}/${l.id}`)} className="text-yellow-400 hover:text-yellow-300">
                   → {l.title}
                 </a>
-                <span className="text-gray-500"> · {l.type === 'terminal' ? 'práctica con terminal' : 'lectura + test'}</span>
+                <span className="text-gray-500"> · {{ terminal: 'práctica con terminal', sql: 'práctica con SQL' }[l.type] ?? 'lectura + test'}</span>
               </li>
             ))}
           </ul>
