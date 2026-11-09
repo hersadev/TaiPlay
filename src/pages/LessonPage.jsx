@@ -157,10 +157,14 @@ function ObjectivesBox({ lesson, done, allDone, onRestart, restartLabel }) {
   );
 }
 
-// Columna de texto común a las prácticas (terminal y SQL).
+// Columna de texto común a las prácticas. En el móvil es «display:
+// contents»: sus bloques pasan a ser filas de la rejilla y el panel de
+// práctica (último hijo de PRACTICE_GRID, order-1) se coloca justo después
+// de los objetivos, antes de la curiosidad y las preguntas de examen
+// (order-2). En pantalla ancha vuelve a ser una columna con su scroll.
 function PracticeText({ lesson, track, next, prev, objectives, onRestart, restartLabel, children }) {
   return (
-    <div className="min-h-0 space-y-5 overflow-y-auto pr-1">
+    <div className="contents lg:block lg:min-h-0 lg:space-y-5 lg:overflow-y-auto lg:pr-1">
       <div>
         <Breadcrumb track={track} lesson={lesson} />
         <h1 className="mt-1 text-2xl font-bold text-gray-100">{lesson.title}</h1>
@@ -168,14 +172,16 @@ function PracticeText({ lesson, track, next, prev, objectives, onRestart, restar
       <RichText text={lesson.body} />
       <ObjectivesBox lesson={lesson} {...objectives} onRestart={onRestart} restartLabel={restartLabel} />
       {children}
-      {lesson.curiosity && <p className="rounded-lg border-l-2 border-purple-400 bg-gray-900 p-3 text-sm text-gray-300">💬 {lesson.curiosity}</p>}
-      <ExamLinks ids={lesson.exam} />
-      <NextNav track={track} next={next} prev={prev} done={objectives.allDone} />
+      <div className="order-2 space-y-5">
+        {lesson.curiosity && <p className="rounded-lg border-l-2 border-purple-400 bg-gray-900 p-3 text-sm text-gray-300">💬 {lesson.curiosity}</p>}
+        <ExamLinks ids={lesson.exam} />
+        <NextNav track={track} next={next} prev={prev} done={objectives.allDone} />
+      </div>
     </div>
   );
 }
 
-const PRACTICE_GRID = 'mx-auto grid max-w-7xl gap-4 px-4 py-4 lg:h-[calc(100vh-3.5rem)] lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]';
+const PRACTICE_GRID = 'mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)] gap-4 [&>*:last-child]:order-1 px-4 py-4 lg:h-[calc(100vh-3.5rem)] lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]';
 
 function TerminalLesson({ lesson, track, next, prev }) {
   const objectives = useObjectives(lesson);

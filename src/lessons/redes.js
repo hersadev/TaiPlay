@@ -36,7 +36,7 @@ Con **h** bits de host hay **2ʰ direcciones** y **2ʰ − 2 hosts** (se pierden
 Los valores posibles de un octeto de máscara son solo nueve: 0, 128, 192, 224, 240, 248, 252, 254 y 255. Apréndelos.
 
 ## Cómo funcionan los ejercicios
-En el panel de ejercicios (a la derecha; en el móvil, al final de la página) tienes cuatro tipos. Cada ejercicio es distinto y, si fallas, verás la solución explicada paso a paso; no resta. El prefijo puedes escribirlo como \`/26\`, \`26\` o \`255.255.255.192\`.`,
+En el panel de ejercicios tienes cuatro tipos. Cada ejercicio es distinto y, si fallas, verás la solución explicada paso a paso; no resta. El prefijo puedes escribirlo como \`/26\`, \`26\` o \`255.255.255.192\`.`,
     objectives: [
       drillGoal('mascara', 3, 'Acierta 3 conversiones entre prefijo y máscara'),
       drillGoal('hosts', 3, 'Acierta 3 cálculos de hosts utilizables'),

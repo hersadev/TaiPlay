@@ -300,7 +300,7 @@ Agrúpalas así para recordarlas:
 - **Gestionar**: LUCIA (incidentes), INES (estado del ENS), PILAR (riesgos).
 - **Vigilar la red**: EMMA (quién se conecta) y CARMEN (amenazas en el tráfico).
 - **Proteger el puesto**: CLAUDIA y microCLAUDIA.
-- **Analizar**: GLORIA (logs), MARTA (ficheros sospechosos), REYES (compartir amenazas).
+- **Analizar**: GLORIA (logs), MARTA (ficheros sospechosos; hoy integrada en **ADA**, la plataforma de análisis de malware), REYES (compartir amenazas).
 - **Auditar**: ANA, CLARA y ROCÍO.
 - **Otras**: ATENEA (retos para formarse) y OLVIDO (borrado seguro).
 
@@ -316,11 +316,11 @@ Además, el CCN-CERT tiene los **SAT** (sistemas de alerta temprana): **SAT-INET
       { left: 'PILAR', right: 'Análisis y gestión de riesgos (metodología MAGERIT)' },
       { left: 'INES', right: 'Informe del estado de seguridad de los organismos según el ENS' },
       { left: 'GLORIA', right: 'Gestión y correlación de logs y eventos (SIEM)' },
-      { left: 'MARTA', right: 'Análisis avanzado de ficheros sospechosos en entornos aislados' },
+      { left: 'MARTA', right: 'Análisis automático de ficheros sospechosos en varios entornos aislados (multi-sandbox)' },
       { left: 'REYES', right: 'Intercambio de información sobre ciberamenazas' },
       { left: 'ANA', right: 'Automatización y normalización de auditorías' },
-      { left: 'CLARA', right: 'Auditoría del cumplimiento del ENS en sistemas Windows' },
-      { left: 'ROCÍO', right: 'Auditoría de la configuración de equipos de comunicaciones' },
+      { left: 'CLARA', right: 'Auditoría del cumplimiento técnico del ENS en los equipos (Windows y Linux)' },
+      { left: 'ROCÍO', right: 'Auditoría de la configuración de routers y switches' },
       { left: 'ATENEA', right: 'Plataforma de retos de ciberseguridad para formarse' },
       { left: 'OLVIDO', right: 'Borrado seguro de ficheros y de sus metadatos' },
     ],
