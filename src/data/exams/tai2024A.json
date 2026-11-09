@@ -21,6 +21,7 @@
      ],
      "answer": "b",
      "topic": "constitucion",
+     "tema": "B1T01",
      "explanation": "Los derechos fundamentales son los de los arts. 15 a 29 (Sección 1ª). La propiedad privada está en el art. 33, en la Sección 2ª («de los derechos y deberes de los ciudadanos»), así que no es fundamental."
     },
     {
@@ -37,6 +38,7 @@
      ],
      "answer": "c",
      "topic": "constitucion",
+     "tema": "B1T01",
      "explanation": "Art. 54 CE: «Una ley orgánica regulará la institución del Defensor del Pueblo». Las demás alteran el texto: los derechos vinculan a todos los poderes públicos, su ejercicio se regula por ley (no necesariamente orgánica) y los principios del Cap. III informan la legislación positiva y la práctica judicial."
     },
     {
@@ -53,6 +55,7 @@
      ],
      "answer": "a",
      "topic": "constitucion",
+     "tema": "B1T01",
      "explanation": "El art. 62 solo dice que el Rey convoca referéndum «en los casos previstos en la Constitución». La autorización previa la da el Congreso (art. 92), no las Cortes Generales: por eso la a) es la incorrecta."
     },
     {
@@ -69,6 +72,7 @@
      ],
      "answer": "d",
      "topic": "constitucion",
+     "tema": "B1T02",
      "explanation": "LO 3/1981, art. 3: puede ser Defensor del Pueblo cualquier español mayor de edad en pleno disfrute de sus derechos civiles y políticos."
     },
     {
@@ -85,6 +89,7 @@
      ],
      "answer": "c",
      "topic": "constitucion",
+     "tema": "B1T02",
      "explanation": "Art. 71.3 CE: en las causas contra Diputados y Senadores es competente la Sala de lo Penal del Tribunal Supremo."
     },
     {
@@ -101,6 +106,7 @@
      ],
      "answer": "a",
      "topic": "constitucion",
+     "tema": "B1T02",
      "explanation": "Art. 77 CE: las Cámaras reciben peticiones individuales y colectivas, siempre por escrito, y se prohíbe la presentación directa por manifestaciones ciudadanas."
     },
     {
@@ -117,6 +123,7 @@
      ],
      "answer": "a",
      "topic": "constitucion",
+     "tema": "B1T02",
      "explanation": "Art. 159 CE: los 12 magistrados del TC se designan por 9 años y se renuevan por terceras partes cada 3."
     },
     {
@@ -133,6 +140,7 @@
      ],
      "answer": "a",
      "topic": "constitucion",
+     "tema": "B1T03",
      "explanation": "La norma que regula el Gobierno es la Ley 50/1997, de 27 de noviembre, del Gobierno."
     },
     {
@@ -149,6 +157,7 @@
      ],
      "answer": "d",
      "topic": "constitucion",
+     "tema": "B1T03",
      "explanation": "Art. 113 CE: el Congreso exige la responsabilidad POLÍTICA del Gobierno con la moción de censura, que necesita mayoría ABSOLUTA."
     },
     {
@@ -165,6 +174,7 @@
      ],
      "answer": "a",
      "topic": "legislacion",
+     "tema": "B1T08",
      "explanation": "Art. 11.2 Ley 39/2015: la firma solo es obligatoria para formular solicitudes, presentar declaraciones responsables o comunicaciones, interponer recursos, desistir de acciones y renunciar a derechos. Consultar el estado de un trámite basta con identificarse."
     },
     {
@@ -181,6 +191,7 @@
      ],
      "answer": "d",
      "topic": "admin-electronica",
+     "tema": "B1T09",
      "explanation": "Cl@ve ofrece dos modalidades de clave concertada (PIN y Permanente) y dos niveles de registro (básico y avanzado), y además da acceso a firma con certificados centralizados en la nube (Cl@ve Firma)."
     },
     {
@@ -197,6 +208,7 @@
      ],
      "answer": "c",
      "topic": "legislacion",
+     "tema": "B1T04",
      "explanation": "Art. 17 Ley 19/2013: la solicitud se dirige al titular del órgano o entidad que posee la información. No hace falta motivarla, puede presentarse en cualquier lengua cooficial y la dirección de contacto es «preferentemente» electrónica."
     },
     {
@@ -213,6 +225,7 @@
      ],
      "answer": "c",
      "topic": "admin-electronica",
+     "tema": "B1T06",
      "explanation": "La vigencia de los certificados reconocidos (hoy «cualificados») incorporados al DNIe no puede superar los cinco años."
     },
     {
@@ -229,6 +242,7 @@
      ],
      "answer": "b",
      "topic": "admin-electronica",
+     "tema": "B1T06",
      "explanation": "Art. 1 Ley 56/2007: los formatos estructurados de factura electrónica deben permitir visualizarla y emitirla en las lenguas oficiales existentes. No menciona el inglés."
     },
     {
@@ -245,6 +259,7 @@
      ],
      "answer": "c",
      "topic": "proteccion-datos",
+     "tema": "B1T07",
      "explanation": "Art. 5.1.c RGPD, minimización de datos: los datos serán adecuados, pertinentes y limitados a lo necesario para los fines del tratamiento."
     },
     {
@@ -261,6 +276,7 @@
      ],
      "answer": "b",
      "topic": "legislacion",
+     "tema": "B1T08",
      "explanation": "Art. 44 Ley 39/2015: si el interesado es desconocido o no se puede notificar, se hace por anuncio en el BOE. El plazo para cursar notificaciones es de 10 días, se practican preferentemente por medios electrónicos y en el domicilio puede recogerlas cualquier persona mayor de 14 años."
     },
     {
@@ -277,6 +293,7 @@
      ],
      "answer": "c",
      "topic": "admin-electronica",
+     "tema": "B1T09",
      "explanation": "La normativa reguladora del Registro accesible desde la sede forma parte del contenido mínimo de la sede electrónica según el RD 203/2021. (Pregunta de memoria pura: conviene repasar el artículo 11.)"
     },
     {
@@ -293,6 +310,7 @@
      ],
      "answer": "d",
      "topic": "admin-electronica",
+     "tema": "B1T09",
      "explanation": "El nodo eIDAS español intercambia los mensajes con el estándar SAML 2.0. Las AAPP se integran con él a través de Cl@ve, no de @Firma."
     },
     {
@@ -309,6 +327,7 @@
      ],
      "answer": "b",
      "topic": "hardware",
+     "tema": "B2T01",
      "explanation": "La taxonomía de Flynn clasifica las arquitecturas según los flujos de instrucciones y de datos: SISD, SIMD, MISD y MIMD."
     },
     {
@@ -325,6 +344,7 @@
      ],
      "answer": "c",
      "topic": "hardware",
+     "tema": "B2T01",
      "explanation": "En hexadecimal solo valen 0-9 y A-F. ACCEDA solo usa letras de la A a la F; en las demás aparecen O, S o G.",
      "learn": "f-numeracion"
     },
@@ -342,6 +362,7 @@
      ],
      "answer": "d",
      "topic": "hardware",
+     "tema": "B2T02",
      "explanation": "M.2 es un formato (factor de forma e interfaz) para SSD muy usado en portátiles y placas modernas.",
      "learn": "f-ordenador"
     },
@@ -359,6 +380,7 @@
      ],
      "answer": null,
      "topic": "hardware",
+     "tema": "B2T02",
      "explanation": "Pregunta ANULADA por el tribunal: no cuenta para la nota.",
      "annulled": true
     },
@@ -376,6 +398,7 @@
      ],
      "answer": "c",
      "topic": "datos",
+     "tema": "B2T03",
      "explanation": "En un árbol 2-3-4 cada nodo tiene 2, 3 o 4 hijos y todas las hojas están al mismo nivel. Es un árbol de búsqueda, pero no binario."
     },
     {
@@ -392,6 +415,7 @@
      ],
      "answer": "d",
      "topic": "datos",
+     "tema": "B2T03",
      "explanation": "Una cola es FIFO (el primero que entra es el primero que sale) y puede implementarse con estructuras estáticas (array) o dinámicas (lista enlazada)."
     },
     {
@@ -408,6 +432,7 @@
      ],
      "answer": "d",
      "topic": "datos",
+     "tema": "B2T03",
      "explanation": "Está al revés: en Java el TAD se describe con una interface y la clase (la estructura de datos) implementa todas sus operaciones."
     },
     {
@@ -424,6 +449,7 @@
      ],
      "answer": "b",
      "topic": "so",
+     "tema": "B2T04",
      "explanation": "El kernel (núcleo) gestiona los procesos, la memoria y los dispositivos. La interfaz gráfica y los servicios de red son programas que corren encima de él.",
      "learn": "f-so"
     },
@@ -441,6 +467,7 @@
      ],
      "answer": "d",
      "topic": "programacion",
+     "tema": "B2T04",
      "explanation": "Android NDK sí permite reutilizar código y bibliotecas de C/C++, incluidas las de otros desarrolladores. Esa es una de sus razones de ser."
     },
     {
@@ -457,6 +484,7 @@
      ],
      "answer": "b",
      "topic": "bbdd",
+     "tema": "B2T05",
      "explanation": "Una clave foránea es un atributo que hace referencia a la clave primaria de otra tabla. Es lo que relaciona las tablas."
     },
     {
@@ -473,6 +501,7 @@
      ],
      "answer": "c",
      "topic": "bbdd",
+     "tema": "B2T05",
      "explanation": "Matisse es un SGBD orientado a objetos real. Los demás nombres son pintores sin relación con las bases de datos."
     },
     {
@@ -489,6 +518,7 @@
      ],
      "answer": "c",
      "topic": "bbdd",
+     "tema": "B2T05",
      "explanation": "OQL (Object Query Language) es el lenguaje de consulta estándar de las bases de datos orientadas a objetos (ODMG)."
     },
     {
@@ -505,6 +535,7 @@
      ],
      "answer": "b",
      "topic": "ing-software",
+     "tema": "B3T01",
      "explanation": "En Métrica v3, la cardinalidad indica la participación de cada entidad en una relación (mínimo y máximo de ocurrencias)."
     },
     {
@@ -521,6 +552,7 @@
      ],
      "answer": "c",
      "topic": "bbdd",
+     "tema": "B3T01",
      "explanation": "2FN = estar en 1FN y que todo atributo no clave dependa de la clave COMPLETA, no solo de una parte de ella."
     },
     {
@@ -537,6 +569,7 @@
      ],
      "answer": "a",
      "topic": "ing-software",
+     "tema": "B3T01",
      "explanation": "En el modelo E/R extendido de Métrica v3, la asociación relaciona dos tipos de entidad de dominios normalmente independientes que coyunturalmente se asocian."
     },
     {
@@ -553,6 +586,7 @@
      ],
      "answer": "c",
      "topic": "programacion",
+     "tema": "B3T02",
      "explanation": "Sustituye: Not(1==3) es true y (3>2) es true, así que true AND true = true. En las demás alguno de los dos lados del AND sale false.",
      "learn": "f-programar"
     },
@@ -570,6 +604,7 @@
      ],
      "answer": "c",
      "topic": "programacion",
+     "tema": "B3T02",
      "explanation": "El paso por referencia permite que el subprograma modifique la variable original, así que sirve como parámetro de entrada/salida. El que envía una copia es el paso por valor."
     },
     {
@@ -586,6 +621,7 @@
      ],
      "answer": "d",
      "topic": "programacion",
+     "tema": "B3T02",
      "explanation": "x sube a 1, imprime 1 y vuelve a 0 en cada vuelta: x nunca llega a 100. Es un bucle infinito que imprime 1 sin parar.",
      "learn": "f-programar"
     },
@@ -603,6 +639,7 @@
      ],
      "answer": "d",
      "topic": "bbdd",
+     "tema": "B3T03",
      "explanation": "SELECT, INSERT, UPDATE y DELETE son DML (Data Manipulation Language). TRUNCATE y CREATE son DDL."
     },
     {
@@ -619,6 +656,7 @@
      ],
      "answer": "c",
      "topic": "bbdd",
+     "tema": "B3T03",
      "explanation": "DROP (DDL) borra la estructura de la tabla junto con todos sus datos. No admite WHERE."
     },
     {
@@ -635,6 +673,7 @@
      ],
      "answer": "d",
      "topic": "bbdd",
+     "tema": "B3T03",
      "explanation": "Si un trigger falla, se cancela automáticamente la operación que lo disparó. Por eso la d) es incorrecta."
     },
     {
@@ -651,6 +690,7 @@
      ],
      "answer": "a",
      "topic": "programacion",
+     "tema": "B3T04",
      "explanation": "La generalización (herencia) hace que la subclase herede propiedades, comportamiento y relaciones de la superclase, y que pueda añadir lo suyo."
     },
     {
@@ -667,6 +707,7 @@
      ],
      "answer": "d",
      "topic": "ing-software",
+     "tema": "B3T04",
      "explanation": "UML modela tanto la parte estática (clases, componentes) como la dinámica (secuencia, actividad, estados)."
     },
     {
@@ -683,6 +724,7 @@
      ],
      "answer": "d",
      "topic": "programacion",
+     "tema": "B3T04",
      "explanation": "Añadir responsabilidades a objetos de forma dinámica es el patrón Decorator, no Composite."
     },
     {
@@ -699,6 +741,7 @@
      ],
      "answer": "a",
      "topic": "programacion",
+     "tema": "B3T05",
      "explanation": ".NET MAUI es el framework multiplataforma de Microsoft para apps móviles y de escritorio nativas con C# y XAML (sucesor de Xamarin.Forms)."
     },
     {
@@ -715,6 +758,7 @@
      ],
      "answer": "a",
      "topic": "programacion",
+     "tema": "B3T05",
      "explanation": "Razor es la sintaxis de plantillas de ASP.NET Core para generar HTML dinámico en el servidor. El símbolo @ sirve para pasar de HTML a C#, no al revés."
     },
     {
@@ -731,6 +775,7 @@
      ],
      "answer": "c",
      "topic": "programacion",
+     "tema": "B3T05",
      "explanation": "En JPA, una entidad suele mapear una tabla y cada instancia una fila. Necesita un proveedor (Hibernate, EclipseLink), su lenguaje de consulta es JPQL y sí admite relaciones uno a muchos."
     },
     {
@@ -747,6 +792,7 @@
      ],
      "answer": "c",
      "topic": "redes",
+     "tema": "B3T06",
      "explanation": "La escalabilidad es una de las características clave de los sistemas distribuidos: se añaden máquinas para ganar capacidad."
     },
     {
@@ -763,6 +809,7 @@
      ],
      "answer": "a",
      "topic": "desarrollo-web",
+     "tema": "B3T06",
      "explanation": "REST es sin estado (stateless): cada petición lleva todo lo necesario y el servidor no guarda el estado del cliente entre peticiones."
     },
     {
@@ -779,6 +826,7 @@
      ],
      "answer": "d",
      "topic": "desarrollo-web",
+     "tema": "B3T07",
      "explanation": "XHTML es HTML con las reglas estrictas de XML: <head> obligatorio, etiquetas en minúscula, todo cerrado y atributos entre comillas."
     },
     {
@@ -795,6 +843,7 @@
      ],
      "answer": "b",
      "topic": "desarrollo-web",
+     "tema": "B3T07",
      "explanation": "onmouseover se dispara al pasar el puntero por encima de un elemento. onmouseout salta al salir de él."
     },
     {
@@ -811,6 +860,7 @@
      ],
      "answer": "b",
      "topic": "accesibilidad",
+     "tema": "B3T08",
      "explanation": "RD 1112/2018: las solicitudes de información accesible y las quejas se responden en un plazo de veinte días hábiles."
     },
     {
@@ -827,6 +877,7 @@
      ],
      "answer": null,
      "topic": "accesibilidad",
+     "tema": "B3T08",
      "explanation": "Pregunta ANULADA por el tribunal. Los 7 principios del Diseño Universal son: uso equitativo, flexible, simple e intuitivo, información perceptible, tolerancia al error, poco esfuerzo físico, y tamaño y espacio adecuados.",
      "annulled": true
     },
@@ -844,6 +895,7 @@
      ],
      "answer": "d",
      "topic": "accesibilidad",
+     "tema": "B3T08",
      "explanation": "ATAG (Authoring Tool Accessibility Guidelines) son las pautas para las herramientas de autor: que sean accesibles y que generen contenido accesible. WCAG cubre el contenido y UAAG los agentes de usuario."
     },
     {
@@ -860,6 +912,7 @@
      ],
      "answer": "b",
      "topic": "ing-software",
+     "tema": "B3T09",
      "explanation": "GitLab, GitHub y Subversion son de control de versiones. Selenium y Cucumber son de pruebas."
     },
     {
@@ -876,6 +929,7 @@
      ],
      "answer": "b",
      "topic": "ing-software",
+     "tema": "B3T09",
      "explanation": "Las pruebas de integración verifican que los componentes interactúan bien a través de sus interfaces."
     },
     {
@@ -892,6 +946,7 @@
      ],
      "answer": "d",
      "topic": "so",
+     "tema": "B2T04",
      "explanation": "Los hilos (threads) permiten que un proceso ejecute varias tareas concurrentemente compartiendo su memoria.",
      "learn": "f-so"
     },
@@ -909,6 +964,7 @@
      ],
      "answer": "a",
      "topic": "so",
+     "tema": "B4T01",
      "explanation": "sfc /scannow (Windows) revisa los archivos protegidos del sistema y repara los dañados con una copia en caché."
     },
     {
@@ -925,6 +981,7 @@
      ],
      "answer": "c",
      "topic": "redes",
+     "tema": "B4T10",
      "explanation": "Una trama jumbo admite unos 9.000 bytes de carga útil, frente a los 1.500 de una trama Ethernet estándar.",
      "learn": "f-redes"
     },
@@ -942,6 +999,7 @@
      ],
      "answer": "c",
      "topic": "redes",
+     "tema": "B4T07",
      "explanation": "ARP obtiene la dirección física (MAC) a partir de la lógica (IP). RARP hace lo contrario.",
      "learn": "f-redes"
     },
@@ -959,6 +1017,7 @@
      ],
      "answer": "a",
      "topic": "redes",
+     "tema": "B4T10",
      "explanation": "Topología en estrella: todos los nodos se conectan a un nodo central (switch).",
      "learn": "f-redes"
     },
@@ -976,6 +1035,7 @@
      ],
      "answer": "a",
      "topic": "seguridad",
+     "tema": "B4T02",
      "explanation": "Regla 3-2-1: 3 copias de los datos, en 2 medios distintos y 1 de ellas fuera de la organización."
     },
     {
@@ -992,6 +1052,7 @@
      ],
      "answer": "c",
      "topic": "so",
+     "tema": "B4T02",
      "explanation": "NAS (Network Attached Storage) comparte almacenamiento a nivel de archivos por la red. SAN (Storage Area Network) trabaja a nivel de bloques y es más cara y compleja."
     },
     {
@@ -1008,6 +1069,7 @@
      ],
      "answer": "c",
      "topic": "seguridad",
+     "tema": "B4T02",
      "explanation": "Un backup es una copia independiente que puede guardarse en otro medio y en otro lugar. La foto instantánea del estado de un sistema es el snapshot."
     },
     {
@@ -1024,6 +1086,7 @@
      ],
      "answer": "a",
      "topic": "redes",
+     "tema": "B4T03",
      "explanation": "IMAP mantiene el correo en el servidor y permite verlo sin descargarlo, sincronizado entre dispositivos. POP3 lo descarga."
     },
     {
@@ -1040,6 +1103,7 @@
      ],
      "answer": "a",
      "topic": "virtualizacion",
+     "tema": "B4T03",
      "explanation": "Docker, containerd y Podman son tecnologías de contenedores. nginx es un servidor web, y Ubuntu y Debian son distribuciones Linux.",
      "learn": "dk-conceptos"
     },
@@ -1057,6 +1121,7 @@
      ],
      "answer": "d",
      "topic": "redes",
+     "tema": "B4T10",
      "explanation": "El estándar PoE más reciente es el IEEE 802.3bt (PoE++). El 802.3at es el anterior (PoE+)."
     },
     {
@@ -1073,6 +1138,7 @@
      ],
      "answer": "a",
      "topic": "redes",
+     "tema": "B4T10",
      "explanation": "IEEE 802.11 es la familia de estándares de redes inalámbricas (Wi-Fi)."
     },
     {
@@ -1089,6 +1155,7 @@
      ],
      "answer": "c",
      "topic": "seguridad",
+     "tema": "B4T05",
      "explanation": "LUCIA es la herramienta del CCN-CERT para gestionar incidentes de seguridad (ticketing) en el ámbito del ENS."
     },
     {
@@ -1105,6 +1172,7 @@
      ],
      "answer": "a",
      "topic": "admin-electronica",
+     "tema": "B1T06",
      "explanation": "CAdES (firma CMS) es apropiado para ficheros grandes, sobre todo si la firma incluye el documento original. XAdES produce XML y PAdES es el formato para PDF."
     },
     {
@@ -1121,6 +1189,7 @@
      ],
      "answer": "d",
      "topic": "seguridad",
+     "tema": "B4T05",
      "explanation": "El escaneo de puertos busca qué servicios ofrece un sistema. Ojo a las trampas: sniffing es capturar tráfico, spoofing es falsear el origen y un DDoS ataca desde muchos puntos a la vez."
     },
     {
@@ -1137,6 +1206,7 @@
      ],
      "answer": null,
      "topic": "redes",
+     "tema": "B4T06",
      "explanation": "Pregunta ANULADA por el tribunal. (Cat 6A alcanza 10 Gbps a 100 m; Cat 8 llega a 25/40 Gbps.)",
      "annulled": true
     },
@@ -1154,6 +1224,7 @@
      ],
      "answer": "b",
      "topic": "redes",
+     "tema": "B4T06",
      "explanation": "Bluetooth LE es de corto alcance. LoRaWAN, Sigfox y NB-IoT son LPWAN (redes de largo alcance y bajo consumo)."
     },
     {
@@ -1170,6 +1241,7 @@
      ],
      "answer": "b",
      "topic": "redes",
+     "tema": "B4T07",
      "explanation": "La norma vigente del modelo OSI es la ISO/IEC 7498-1:1994. El modelo tiene 7 capas (a la a) le falta la de enlace).",
      "learn": "f-redes"
     },
@@ -1187,6 +1259,7 @@
      ],
      "answer": "d",
      "topic": "redes",
+     "tema": "B4T07",
      "explanation": "ICMP (el que usa ping) es de la capa de Internet en TCP/IP. TCP y UDP son de transporte, y TCP/IP no tiene capa de sesión.",
      "learn": "f-redes"
     },
@@ -1204,6 +1277,7 @@
      ],
      "answer": "b",
      "topic": "redes",
+     "tema": "B4T07",
      "explanation": "Con máscara /26 (255.255.255.192) los bloques son de 64: .71 cae en .64-.127 y .133 en .128-.191. Son redes distintas.",
      "learn": "f-redes"
     },
@@ -1221,6 +1295,7 @@
      ],
      "answer": "b",
      "topic": "desarrollo-web",
+     "tema": "B4T08",
      "explanation": "403 Forbidden: el servidor sabe quién eres, pero no tienes permiso. 401 significa que falta autenticarse."
     },
     {
@@ -1237,6 +1312,7 @@
      ],
      "answer": "a",
      "topic": "redes",
+     "tema": "B4T08",
      "explanation": "El IETF es el organismo que elabora los estándares de Internet (los RFC). DNS e IP los gestiona IANA/ICANN, y el Foro de Gobernanza es el IGF."
     },
     {
@@ -1253,6 +1329,7 @@
      ],
      "answer": "a",
      "topic": "redes",
+     "tema": "B4T08",
      "explanation": "El modo ASCII de FTP es para texto plano. Para imágenes, ejecutables, etc. se usa el modo binario."
     },
     {
@@ -1269,6 +1346,7 @@
      ],
      "answer": "c",
      "topic": "seguridad",
+     "tema": "B4T05",
      "explanation": "Vishing (voice phishing) es engañar por teléfono. Smishing es por SMS, whaling apunta a directivos y pharming manipula el DNS."
     },
     {
@@ -1285,6 +1363,7 @@
      ],
      "answer": "d",
      "topic": "seguridad",
+     "tema": "B4T09",
      "explanation": "Un honeypot (tarro de miel) es un señuelo para atraer a los atacantes y estudiar sus técnicas."
     },
     {
@@ -1301,6 +1380,7 @@
      ],
      "answer": "b",
      "topic": "seguridad",
+     "tema": "B4T09",
      "explanation": "EMMA es la herramienta del CCN para la visibilidad y el control de la red."
     },
     {
@@ -1317,6 +1397,7 @@
      ],
      "answer": "c",
      "topic": "hardware",
+     "tema": "B2T02",
      "explanation": "WQHD = 2560×1440. La 8K UHD es 7680×4320 y 1920×1080 es Full HD, no HD."
     },
     {
@@ -1333,6 +1414,7 @@
      ],
      "answer": "a",
      "topic": "hardware",
+     "tema": "B2T02",
      "explanation": "IPS (In-Plane Switching) es un tipo de panel LCD, junto a TN y VA."
     },
     {
@@ -1349,6 +1431,7 @@
      ],
      "answer": "a",
      "topic": "redes",
+     "tema": "B4T10",
      "explanation": "IEEE 802.1w es RSTP (Rapid Spanning Tree). 802.1D es el STP clásico y 802.1Q, las VLAN."
     },
     {
@@ -1365,6 +1448,7 @@
      ],
      "answer": "a",
      "topic": "desarrollo-web",
+     "tema": "B3T07",
      "explanation": "Q (cuarto de milímetro) es una unidad absoluta de CSS. vw, ex y ch son relativas."
     },
     {
@@ -1381,6 +1465,7 @@
      ],
      "answer": "c",
      "topic": "programacion",
+     "tema": "B3T07",
      "explanation": "SwiftUI permite crear interfaces para todas las plataformas de Apple."
     }
    ]
@@ -1403,6 +1488,7 @@
      ],
      "answer": "c",
      "topic": "desarrollo-web",
+     "tema": "B3T07",
      "explanation": "maxlength limita el número de caracteres que se pueden escribir. size solo cambia el ancho visible y max es para números o fechas."
     },
     {
@@ -1419,6 +1505,7 @@
      ],
      "answer": "c",
      "topic": "programacion",
+     "tema": "B3T05",
      "explanation": "El ORM típico de .NET es Entity Framework y el de Java, Hibernate (que implementa JPA)."
     },
     {
@@ -1435,6 +1522,7 @@
      ],
      "answer": "d",
      "topic": "bbdd",
+     "tema": "B3T03",
      "explanation": "INSERT INTO tabla (columnas) VALUES ('texto', 'texto'); con los textos entre comillas simples. A la a) le falta cerrar una comilla."
     },
     {
@@ -1451,6 +1539,7 @@
      ],
      "answer": "a",
      "topic": "bbdd",
+     "tema": "B3T01",
      "explanation": "Relación 1:N: una solicitud puede tener muchos (0..N) ficheros adjuntos y cada fichero pertenece a una sola solicitud."
     },
     {
@@ -1467,6 +1556,7 @@
      ],
      "answer": "a",
      "topic": "accesibilidad",
+     "tema": "B3T08",
      "explanation": "QualWeb es un validador automático de accesibilidad web. Otros conocidos: TAW, WAVE o Lighthouse."
     },
     {
@@ -1483,6 +1573,7 @@
      ],
      "answer": "d",
      "topic": "desarrollo-web",
+     "tema": "B3T07",
      "explanation": "Server Side Rendering: el servidor genera el HTML completo antes de enviarlo al navegador."
     },
     {
@@ -1499,6 +1590,7 @@
      ],
      "answer": "c",
      "topic": "ing-software",
+     "tema": "B3T04",
      "explanation": "El diagrama de secuencia muestra el orden de los mensajes entre participantes en un flujo."
     },
     {
@@ -1515,6 +1607,7 @@
      ],
      "answer": "d",
      "topic": "programacion",
+     "tema": "B3T06",
      "explanation": "Apache CXF es un framework Java para crear y consumir servicios web SOAP y REST, y genera clientes a partir del WSDL."
     },
     {
@@ -1531,6 +1624,7 @@
      ],
      "answer": "a",
      "topic": "programacion",
+     "tema": "B3T05",
      "explanation": "JAXB (Java Architecture for XML Binding) mapea elementos XML a clases Java y viceversa."
     },
     {
@@ -1547,6 +1641,7 @@
      ],
      "answer": "d",
      "topic": "ing-software",
+     "tema": "B3T09",
      "explanation": "Mercurial es un control de versiones, no una herramienta de calidad de código como SonarQube, PMD o un linter."
     },
     {
@@ -1563,6 +1658,7 @@
      ],
      "answer": "a",
      "topic": "programacion",
+     "tema": "B3T02",
      "explanation": "java.time.LocalDateTime representa fecha y hora a la vez. LocalDate solo guarda la fecha y LocalTime solo la hora."
     },
     {
@@ -1579,6 +1675,7 @@
      ],
      "answer": "b",
      "topic": "desarrollo-web",
+     "tema": "B3T06",
      "explanation": "REST es un estilo de arquitectura, no un lenguaje para documentar. RAML, WSDL y OpenAPI/Swagger sí lo son."
     },
     {
@@ -1595,6 +1692,7 @@
      ],
      "answer": "a",
      "topic": "bbdd",
+     "tema": "B3T03",
      "explanation": "La sintaxis es CREATE TABLE nombre (columna tipo, …);"
     },
     {
@@ -1611,6 +1709,7 @@
      ],
      "answer": "d",
      "topic": "bbdd",
+     "tema": "B2T05",
      "explanation": "REPEATABLE READ evita lecturas sucias y no repetibles, pero permite lecturas fantasma. SERIALIZABLE evita también las fantasma."
     },
     {
@@ -1627,6 +1726,7 @@
      ],
      "answer": "a",
      "topic": "seguridad",
+     "tema": "B3T06",
      "explanation": "WS-Security es el estándar para firmar y cifrar mensajes SOAP."
     },
     {
@@ -1643,6 +1743,7 @@
      ],
      "answer": "a",
      "topic": "programacion",
+     "tema": "B3T05",
      "explanation": "Los paquetes NuGet se añaden a un proyecto con «dotnet add package Nombre»."
     },
     {
@@ -1659,6 +1760,7 @@
      ],
      "answer": "c",
      "topic": "ing-software",
+     "tema": "B3T01",
      "explanation": "Para reducir accesos en el diseño físico, Métrica v3 contempla introducir redundancia controlada (desnormalizar)."
     },
     {
@@ -1675,6 +1777,7 @@
      ],
      "answer": "b",
      "topic": "ing-software",
+     "tema": "B3T09",
      "explanation": "La Sprint Retrospective sirve para revisar cómo se ha trabajado y mejorar en los siguientes sprints."
     },
     {
@@ -1691,6 +1794,7 @@
      ],
      "answer": "d",
      "topic": "ing-software",
+     "tema": "B3T06",
      "explanation": "Los componentes de SOA son el servicio, el proveedor, el consumidor y el registro de servicios (donde se publican y se descubren)."
     },
     {
@@ -1707,6 +1811,7 @@
      ],
      "answer": "a",
      "topic": "programacion",
+     "tema": "B3T02",
      "explanation": "En C#, «int?» es un tipo anulable (Nullable<int>): puede valer null."
     },
     {
@@ -1723,6 +1828,7 @@
      ],
      "answer": "b",
      "topic": "desarrollo-web",
+     "tema": "B3T07",
      "explanation": "Especificidad: input (elemento) = 0-0-1 y :required (pseudoclase) = 0-1-0. En total, 0-1-1."
     },
     {
@@ -1739,6 +1845,7 @@
      ],
      "answer": "a",
      "topic": "accesibilidad",
+     "tema": "B3T08",
      "explanation": "aria-live marca una región que se actualiza dinámicamente, para que el lector de pantalla anuncie los cambios."
     },
     {
@@ -1755,6 +1862,7 @@
      ],
      "answer": "c",
      "topic": "bbdd",
+     "tema": "B3T03",
      "explanation": "Necesita NOT LIKE '%.pdf' y la subconsulta completa por DNI (FROM Interesado WHERE DocumentoIdentidad = …). A la a) le falta el FROM y a la d) el comodín %."
     },
     {
@@ -1771,6 +1879,7 @@
      ],
      "answer": "d",
      "topic": "seguridad",
+     "tema": "B3T07",
      "explanation": "CORS controla qué orígenes pueden hacer peticiones HTTP de origen cruzado al backend desde scripts."
     },
     {
@@ -1787,6 +1896,7 @@
      ],
      "answer": "b",
      "topic": "ing-software",
+     "tema": "B3T09",
      "explanation": "README.md explica el propósito del proyecto y cómo arrancarlo."
     }
    ],
@@ -1946,6 +2056,7 @@
      ],
      "answer": "a",
      "topic": "redes",
+     "tema": "B4T07",
      "explanation": "Dividir un /16 en 16 subredes deja /20: quedan 12 bits para hosts, 2^12 − 2 = 4094 direcciones utilizables.",
      "learn": "f-redes"
     },
@@ -1963,6 +2074,7 @@
      ],
      "answer": "b",
      "topic": "so",
+     "tema": "B4T01",
      "explanation": "«fsck -y» revisa y repara el sistema de ficheros respondiendo «sí» a todas las correcciones.",
      "learn": "lx-sistema"
     },
@@ -1980,6 +2092,7 @@
      ],
      "answer": "d",
      "topic": "seguridad",
+     "tema": "B4T09",
      "explanation": "El CCN recomienda dejar el puerto 80 abierto solo para redirigir automáticamente a HTTPS."
     },
     {
@@ -1996,6 +2109,7 @@
      ],
      "answer": "a",
      "topic": "seguridad",
+     "tema": "B4T05",
      "explanation": "Tailgating o piggybacking es colarse detrás de una persona autorizada."
     },
     {
@@ -2012,6 +2126,7 @@
      ],
      "answer": "b",
      "topic": "redes",
+     "tema": "B4T06",
      "explanation": "Una pasarela (gateway) conecta redes con tecnologías o protocolos distintos, como coaxial y Ethernet."
     },
     {
@@ -2028,6 +2143,7 @@
      ],
      "answer": "d",
      "topic": "redes",
+     "tema": "B4T08",
      "explanation": "FTP es un protocolo de usuario (lo usa directamente la persona) y DNS es de soporte (lo usan otros protocolos por debajo)."
     },
     {
@@ -2044,6 +2160,7 @@
      ],
      "answer": "a",
      "topic": "redes",
+     "tema": "B4T04",
      "explanation": "«switchport access vlan 1», dentro de la configuración de una interfaz, asigna ese puerto a la VLAN 1."
     },
     {
@@ -2060,6 +2177,7 @@
      ],
      "answer": "a",
      "topic": "seguridad",
+     "tema": "B4T05",
      "explanation": "Base de datos inaccesible = disponibilidad; fichero corrupto = integridad. La trazabilidad no se ve afectada porque se sabe quién y cómo."
     },
     {
@@ -2076,6 +2194,7 @@
      ],
      "answer": "b",
      "topic": "redes",
+     "tema": "B4T10",
      "explanation": "En muchas tarjetas, el LED naranja o ámbar indica enlace a menor velocidad (10/100) que la máxima (verde = 1 Gbps)."
     },
     {
@@ -2092,6 +2211,7 @@
      ],
      "answer": "b",
      "topic": "so",
+     "tema": "B4T01",
      "explanation": "«uname -r» muestra la versión (release) del kernel. «uname -o» muestra el sistema operativo.",
      "learn": "lx-sistema"
     },
@@ -2109,6 +2229,7 @@
      ],
      "answer": "b",
      "topic": "redes",
+     "tema": "B4T09",
      "explanation": "Es falso que FTPS solo use usuario y contraseña: también admite certificados. Y SFTP también puede usar contraseña."
     },
     {
@@ -2125,6 +2246,7 @@
      ],
      "answer": "c",
      "topic": "seguridad",
+     "tema": "B4T05",
      "explanation": "Según el CCN, una APT es un ataque selectivo de ciberespionaje o cibersabotaje patrocinado por un Estado u organización, con fines que van más allá de lo económico."
     },
     {
@@ -2141,6 +2263,7 @@
      ],
      "answer": "a",
      "topic": "virtualizacion",
+     "tema": "B4T03",
      "explanation": "Los Services de Kubernetes admiten TCP (por defecto), UDP y SCTP.",
      "learn": "dk-k8s"
     },
@@ -2158,6 +2281,7 @@
      ],
      "answer": "a",
      "topic": "seguridad",
+     "tema": "B4T04",
      "explanation": "Enrolar un móvil es darlo de alta en el MDM de la organización y asociarlo a su usuario para gestionarlo."
     },
     {
@@ -2174,6 +2298,7 @@
      ],
      "answer": null,
      "topic": "hardware",
+     "tema": "B4T05",
      "explanation": "Pregunta ANULADA por el tribunal.",
      "annulled": true
     },
@@ -2191,6 +2316,7 @@
      ],
      "answer": "b",
      "topic": "seguridad",
+     "tema": "B4T05",
      "explanation": "El hash sirve para comprobar la integridad: si el que calculas tú no coincide con el publicado, el fichero se ha alterado."
     },
     {
@@ -2207,6 +2333,7 @@
      ],
      "answer": "b",
      "topic": "redes",
+     "tema": "B4T06",
      "explanation": "SIP lleva IPs dentro de los mensajes y el NAT las rompe: de ahí los cortes con usuarios externos."
     },
     {
@@ -2223,6 +2350,7 @@
      ],
      "answer": "d",
      "topic": "redes",
+     "tema": "B4T03",
      "explanation": "POP3 descarga el correo a un dispositivo: las carpetas que crees ahí no se replican en los demás. Eso lo hace IMAP."
     },
     {
@@ -2239,6 +2367,7 @@
      ],
      "answer": "c",
      "topic": "bbdd",
+     "tema": "B4T02",
      "explanation": "La tabla mysql.user guarda los usuarios con su columna host (desde dónde pueden conectarse)."
     },
     {
@@ -2255,6 +2384,7 @@
      ],
      "answer": "a",
      "topic": "so",
+     "tema": "B4T04",
      "explanation": "Buena práctica en AD: crear primero una Unidad Organizativa y vincularle las GPO."
     },
     {
@@ -2271,6 +2401,7 @@
      ],
      "answer": "d",
      "topic": "redes",
+     "tema": "B4T03",
      "explanation": "En Postfix, el nombre que se presenta en el saludo HELO/EHLO se configura en main.cf (smtp_helo_name, que por defecto toma $myhostname)."
     },
     {
@@ -2287,6 +2418,7 @@
      ],
      "answer": "c",
      "topic": "seguridad",
+     "tema": "B4T09",
      "explanation": "WPA3-Enterprise usa 802.1X: un servidor RADIUS con métodos EAP, como EAP-TLS."
     },
     {
@@ -2303,6 +2435,7 @@
      ],
      "answer": "a",
      "topic": "bbdd",
+     "tema": "B3T03",
      "explanation": "CREATE TABLE con su clave primaria autoincremental y las columnas con tipo, como en la a)."
     },
     {
@@ -2319,6 +2452,7 @@
      ],
      "answer": "a",
      "topic": "so",
+     "tema": "B4T04",
      "explanation": "«nagios -v fichero.cfg» verifica la configuración de Nagios antes de reiniciarlo."
     },
     {
@@ -2335,6 +2469,7 @@
      ],
      "answer": "c",
      "topic": "seguridad",
+     "tema": "B4T08",
      "explanation": "El CCN fija TLS 1.2 como versión mínima aceptable y recomienda TLS 1.3."
     }
    ],

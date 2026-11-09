@@ -7,9 +7,11 @@ import LessonPage from './pages/LessonPage';
 import BankPage from './pages/BankPage';
 import { SupuestosList, SupuestoPage } from './pages/SupuestosPage';
 import SimulacroPage from './pages/SimulacroPage';
+import { TemarioPage, TemaPage } from './pages/TemarioPage';
 
 const NAV = [
   ['aprende', 'Aprende'],
+  ['temario', 'Temario'],
   ['preguntas', 'Preguntas'],
   ['supuestos', 'Supuestos'],
   ['simulacro', 'Simulacro'],
@@ -24,6 +26,8 @@ function Page({ segments, params }) {
       if (c) return <LessonPage trackId={b} lessonId={c} />;
       if (b) return <TrackPage trackId={b} />;
       return <TracksPage />;
+    case 'temario':
+      return b ? <TemaPage key={b} temaId={b} /> : <TemarioPage />;
     case 'preguntas':
       return <BankPage params={params} />;
     case 'supuestos':

@@ -21,10 +21,13 @@ Todo corre en tu navegador y el progreso se guarda solo ahí: no hay cuentas ni 
     abreviados…) más la teoría de imágenes, hipervisores y Kubernetes.
   - Redes, Bases de datos, Programación, Seguridad y Legislación están anunciadas;
     mientras llegan, enlazan a sus preguntas en el banco.
+- **Temario**: los 33 temas del programa oficial (4 bloques), cada uno con una ficha de
+  repaso propia (lo esencial y lo que más cae), un test corto, las lecciones relacionadas
+  y sus preguntas reales. Se ve cuánto ha pesado cada tema en los exámenes.
 - **Banco de preguntas**: las 270 preguntas de los exámenes de 2024 y 2025 (modelo A),
   con la respuesta de la **plantilla oficial definitiva** del INAP (incluidas las
-  anuladas), clasificadas por tema y con una explicación. Puedes filtrar por tema,
-  examen, parte o «falladas», y cada pregunta enlaza con la lección que la explica.
+  anuladas), clasificadas por tema del programa y por materia, con una explicación. Puedes filtrar
+  por tema, materia, examen, parte o «falladas», y cada pregunta enlaza con la lección que la explica.
 - **Supuestos prácticos**: los cuatro supuestos reales, con su enunciado y su modelo de
   datos, en modo estudio (corrección al momento) o en modo examen (cronometrado).
 - **Simulacro**: la primera parte y un supuesto contra el reloj, corregidos con
@@ -60,6 +63,7 @@ Es React 18 con Vite, Tailwind y Zustand, sin backend, igual que JSPlay.
   navegador.
 - [src/lessons/](src/lessons/): una ruta por fichero. Los validadores reutilizables
   están en [src/lessons/_helpers.js](src/lessons/_helpers.js).
+- [src/data/temario/](src/data/temario/): las fichas de los 33 temas, un fichero por bloque.
 - [src/data/exams/](src/data/exams/): un JSON por examen con el enunciado, las
   opciones, la respuesta oficial, el tema y la explicación. Es la fuente de verdad: si
   encuentras una errata, corrígela ahí.
@@ -75,5 +79,6 @@ objetivo se cumple sin hacer nada. Si añades una lección, añade su solución 
 
 Los enunciados proceden de los cuestionarios oficiales publicados por el INAP, y las
 respuestas, de las plantillas definitivas del tribunal. El modelo B de cada año tiene
-las mismas preguntas en otro orden, por eso solo se incluye el A. Las explicaciones son
-propias: si alguna no te cuadra, la plantilla oficial manda.
+las mismas preguntas en otro orden, por eso solo se incluye el A. Las explicaciones y las
+fichas del temario son de elaboración propia: si algo no te cuadra, la plantilla oficial
+y la norma mandan.

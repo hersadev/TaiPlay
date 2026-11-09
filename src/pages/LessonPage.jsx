@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { findLesson, findTrack } from '../lessons';
 import { findQuestion } from '../data/exams';
 import { createShell } from '../engine/terminal/shell.js';
@@ -7,6 +7,7 @@ import { href } from '../hooks/useRoute';
 import RichText from '../components/ui/RichText';
 import Terminal from '../components/terminal/Terminal';
 import QuestionCard from '../components/quiz/QuestionCard';
+import ConceptQuiz from '../components/quiz/ConceptQuiz';
 import { NotFound } from './LearnPage';
 
 export default function LessonPage({ trackId, lessonId }) {
@@ -61,7 +62,7 @@ function NextNav({ track, next, prev, done }) {
 
 // Preguntas reales de examen relacionadas con la lección, para practicar
 // justo después de aprenderlo.
-function ExamLinks({ ids }) {
+export function ExamLinks({ ids }) {
   const qs = (ids ?? []).map(findQuestion).filter(Boolean);
   if (!qs.length) return null;
   return (
@@ -158,12 +159,7 @@ function TerminalLesson({ lesson, track, next, prev }) {
 function ConceptLesson({ lesson, track, next, prev }) {
   const saved = useProgress((s) => s.lessons[lesson.id]);
   const completeLesson = useProgress((s) => s.completeLesson);
-  const [picks, setPicks] = useState({});
-  const allRight = useMemo(() => lesson.quiz.every((q, i) => picks[i] === q.answer), [lesson.quiz, picks]);
-
-  useEffect(() => {
-    if (allRight && !saved?.done) completeLesson(lesson.id);
-  }, [allRight, saved?.done, completeLesson, lesson.id]);
+  const onComplete = useCallback(() => completeLesson(lesson.id), [completeLesson, lesson.id]);
 
   return (
     <div className="mx-auto max-w-3xl space-y-6 px-4 py-6">
@@ -172,50 +168,9 @@ function ConceptLesson({ lesson, track, next, prev }) {
         <h1 className="mt-1 text-2xl font-bold text-gray-100">{lesson.title}</h1>
       </div>
       <RichText text={lesson.body} />
-
-      <section className="rounded-xl border border-gray-700 bg-gray-900 p-4 sm:p-5">
-        <h2 className="font-semibold text-gray-100">Comprueba que lo has entendido</h2>
-        <p className="mb-4 text-sm text-gray-400">Acierta todas para completar la lección. Si fallas, lee la explicación y vuelve a intentarlo.</p>
-        <ol className="space-y-5">
-          {lesson.quiz.map((q, i) => {
-            const pick = picks[i];
-            return (
-              <li key={q.q}>
-                <p className="mb-2 font-medium text-gray-100">
-                  {i + 1}. {q.q}
-                </p>
-                <div className="grid gap-2 sm:grid-cols-2">
-                  {q.options.map((o, j) => {
-                    const chosen = pick === j;
-                    const tone = chosen ? (j === q.answer ? 'border-green-500 bg-green-900/40' : 'border-red-400 bg-red-800/30') : 'border-gray-700 hover:border-gray-500';
-                    return (
-                      <button
-                        key={o}
-                        type="button"
-                        onClick={() => setPicks((p) => ({ ...p, [i]: j }))}
-                        disabled={pick === q.answer}
-                        className={`rounded-lg border px-3 py-2 text-left text-sm text-gray-200 ${tone}`}
-                      >
-                        {o}
-                      </button>
-                    );
-                  })}
-                </div>
-                {pick !== undefined && (
-                  <p className={`mt-2 text-sm ${pick === q.answer ? 'text-green-300' : 'text-red-300'}`}>
-                    {pick === q.answer ? '✓ ' : '✗ Prueba otra vez. '}
-                    {pick === q.answer ? q.why : ''}
-                  </p>
-                )}
-              </li>
-            );
-          })}
-        </ol>
-        {(allRight || saved?.done) && <p className="mt-4 rounded-lg bg-green-900/50 p-2 text-sm text-green-200">¡Lección completada!</p>}
-      </section>
-
+      <ConceptQuiz quiz={lesson.quiz} done={Boolean(saved?.done)} onComplete={onComplete} />
       <ExamLinks ids={lesson.exam} />
-      <NextNav track={track} next={next} prev={prev} done={allRight || saved?.done} />
+      <NextNav track={track} next={next} prev={prev} done={Boolean(saved?.done)} />
     </div>
   );
 }

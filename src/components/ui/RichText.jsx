@@ -1,6 +1,8 @@
-// Texto enriquecido mínimo para lecciones y enunciados:
+// Texto enriquecido mínimo para lecciones, fichas y enunciados:
 //   párrafos separados por línea en blanco, «## » subtítulo, «- » lista,
-//   ``` bloque de código ```, y en línea `código`, **negrita** y *cursiva*.
+//   «1. » lista numerada, tablas «| a | b |» (la segunda fila |---| separa
+//   la cabecera), ``` bloque de código ```, y en línea `código`, **negrita**
+//   y *cursiva*.
 
 function inline(text, keyBase) {
   const parts = text.split(/(`[^`]+`|\*\*[^*]+\*\*|\*[^*\s][^*]*\*)/g);
@@ -28,7 +30,7 @@ function blocks(text) {
     para = [];
   };
   const flushList = () => {
-    if (list) out.push({ type: 'ul', items: list });
+    if (list) out.push({ type: list.ordered ? 'ol' : 'ul', items: list });
     list = null;
   };
   for (let i = 0; i < lines.length; i++) {
@@ -41,9 +43,26 @@ function blocks(text) {
       out.push({ type: 'code', text: code.join('\n') });
       continue;
     }
+    if (line.trim().startsWith('|')) {
+      flushPara();
+      flushList();
+      const rows = [];
+      for (; i < lines.length && lines[i].trim().startsWith('|'); i++) {
+        if (/^\|[\s|:-]+\|$/.test(lines[i].trim())) continue; // separador de cabecera
+        rows.push(lines[i].trim().replace(/^\||\|$/g, '').split('|').map((c) => c.trim()));
+      }
+      i--;
+      out.push({ type: 'table', head: rows[0], rows: rows.slice(1) });
+      continue;
+    }
     if (!line.trim()) {
       flushPara();
       flushList();
+    } else if (/^\d+\. /.test(line)) {
+      flushPara();
+      if (list && !list.ordered) flushList();
+      list ??= Object.assign([], { ordered: true });
+      list.push({ text: line.replace(/^\d+\. /, ''), nested: false });
     } else if (line.startsWith('## ')) {
       flushPara();
       flushList();
@@ -51,6 +70,7 @@ function blocks(text) {
     } else if (/^\s*- /.test(line)) {
       flushPara();
       const nested = /^\s{2,}- /.test(line);
+      if (list?.ordered && !nested) flushList();
       list ??= [];
       list.push({ text: line.replace(/^\s*- /, ''), nested });
     } else if (list) {
@@ -74,6 +94,41 @@ export default function RichText({ text, className = '' }) {
             <pre key={i} className="overflow-x-auto rounded-md bg-gray-950 p-3 font-mono text-sm leading-snug text-green-300">
               {b.text}
             </pre>
+          );
+        if (b.type === 'table')
+          return (
+            <div key={i} className="overflow-x-auto">
+              <table className="w-full border-collapse text-sm">
+                <thead>
+                  <tr>
+                    {b.head.map((c, j) => (
+                      <th key={j} className="border-b border-gray-600 px-2 py-1.5 text-left font-semibold text-gray-100">
+                        {inline(c, `${i}-h${j}`)}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {b.rows.map((r, j) => (
+                    <tr key={j} className="border-b border-gray-800">
+                      {r.map((c, k) => (
+                        <td key={k} className="px-2 py-1.5 align-top">
+                          {inline(c, `${i}-${j}-${k}`)}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          );
+        if (b.type === 'ol')
+          return (
+            <ol key={i} className="list-decimal space-y-1.5 pl-6 marker:text-yellow-400">
+              {b.items.map((it, j) => (
+                <li key={j}>{inline(it.text, `${i}-${j}`)}</li>
+              ))}
+            </ol>
           );
         if (b.type === 'ul')
           return (

@@ -3,6 +3,7 @@ import { useProgress } from '../store/progress';
 import { href } from '../hooks/useRoute';
 import { ALL_QUESTIONS } from '../data/exams';
 import { topicLabel } from '../data/topics';
+import { findTema } from '../data/temario';
 
 export function TracksPage() {
   const lessons = useProgress((s) => s.lessons);
@@ -65,6 +66,8 @@ export function TrackPage({ trackId }) {
       <h1 className="mt-2 text-2xl font-bold text-gray-100">{track.title}</h1>
       <p className="mt-1 text-gray-400">{track.description}</p>
 
+      <TemasDeLaRuta ids={track.temas} />
+
       {track.lessons.length > 0 ? (
         <ol className="mt-6 space-y-2">
           {track.lessons.map((l, i) => {
@@ -96,7 +99,7 @@ export function TrackPage({ trackId }) {
         </ol>
       ) : (
         <div className="mt-6 rounded-xl border border-dashed border-gray-700 p-6 text-gray-300">
-          <p>Las lecciones de esta ruta llegarán en una próxima entrega. Mientras tanto, practica sus preguntas reales de examen:</p>
+          <p>Las lecciones prácticas de esta ruta llegarán en una próxima entrega. Mientras tanto, repasa sus fichas del temario (arriba) y practica sus preguntas reales de examen:</p>
           <div className="mt-4 flex flex-wrap gap-2">
             {track.topics.map((t) => (
               <a key={t} href={href('preguntas', { tema: t })} className="rounded-full bg-gray-800 px-3 py-1 text-sm text-yellow-300 hover:bg-gray-700">
@@ -106,6 +109,25 @@ export function TrackPage({ trackId }) {
           </div>
         </div>
       )}
+    </div>
+  );
+}
+
+function TemasDeLaRuta({ ids = [] }) {
+  const lessons = useProgress((s) => s.lessons);
+  const temas = ids.map(findTema).filter(Boolean);
+  if (!temas.length) return null;
+  return (
+    <div className="mt-4 rounded-xl border border-gray-800 p-3">
+      <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-gray-500">Fichas del temario oficial</p>
+      <div className="flex flex-wrap gap-2">
+        {temas.map((t) => (
+          <a key={t.id} href={href(`temario/${t.id}`)} className="rounded-full bg-gray-800 px-3 py-1 text-sm text-gray-200 hover:bg-gray-700">
+            <span className="font-mono text-yellow-400">{t.roman}.{t.n}</span> {t.short}
+            {lessons[t.id]?.done && <span className="ml-1 text-green-400">✓</span>}
+          </a>
+        ))}
+      </div>
     </div>
   );
 }

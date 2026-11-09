@@ -11,6 +11,12 @@ const SECTIONS = [
     icon: '◎',
   },
   {
+    path: 'temario',
+    title: 'Temario',
+    text: 'Los 33 temas del programa oficial con fichas de repaso, test y las preguntas que han caído de cada uno.',
+    icon: '§',
+  },
+  {
     path: 'preguntas',
     title: 'Banco de preguntas',
     text: 'Las preguntas reales de los exámenes, por temas, con la respuesta oficial explicada.',
@@ -77,7 +83,7 @@ export default function HomePage() {
         </a>
       )}
 
-      <section className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {SECTIONS.map((s) => (
           <a key={s.path} href={href(s.path)} className="group rounded-xl border border-gray-700 bg-gray-900 p-5 hover:border-yellow-400">
             <span className="grid h-10 w-10 place-items-center rounded-lg bg-gray-800 font-mono text-lg text-yellow-400">{s.icon}</span>

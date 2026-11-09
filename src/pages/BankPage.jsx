@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { ALL_QUESTIONS, EXAMS } from '../data/exams';
 import { TOPICS, topicLabel } from '../data/topics';
+import { BLOQUES, temaLabel, findTema } from '../data/temario';
 import { useProgress } from '../store/progress';
 import { navigate } from '../hooks/useRoute';
 import QuestionCard from '../components/quiz/QuestionCard';
@@ -22,6 +23,7 @@ function shuffle(arr, seed) {
 export default function BankPage({ params }) {
   const answers = useProgress((s) => s.answers);
   const tema = params.get('tema') ?? '';
+  const programa = params.get('programa') ?? '';
   const examen = params.get('examen') ?? '';
   const parte = params.get('parte') ?? '';
   const estado = params.get('estado') ?? '';
@@ -31,7 +33,7 @@ export default function BankPage({ params }) {
 
   const set = (patch) => {
     setIdx(0);
-    const next = { tema, examen, parte, estado, orden, ...patch };
+    const next = { tema, programa, examen, parte, estado, orden, ...patch };
     navigate('preguntas', next);
   };
 
@@ -41,6 +43,7 @@ export default function BankPage({ params }) {
     const filtered = ALL_QUESTIONS.filter(
       (q) =>
         (!tema || q.topic === tema) &&
+        (!programa || q.tema === programa) &&
         (!examen || q.examId === examen) &&
         (!parte || (parte === 'primera' ? q.partId === 'primera' : q.partId !== 'primera')) &&
         (!estado ||
@@ -49,7 +52,7 @@ export default function BankPage({ params }) {
     );
     return orden === 'aleatorio' ? shuffle(filtered, seed) : filtered;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tema, examen, parte, estado, orden, seed]);
+  }, [tema, programa, examen, parte, estado, orden, seed]);
 
   const q = list[Math.min(idx, list.length - 1)];
 
@@ -73,8 +76,20 @@ export default function BankPage({ params }) {
 
       <div className="mt-6 grid gap-6 lg:grid-cols-[18rem_minmax(0,1fr)]">
         <aside className="space-y-4">
-          <Filter label="Tema" value={tema} onChange={(v) => set({ tema: v })}>
-            <option value="">Todos los temas</option>
+          <Filter label="Tema del programa" value={programa} onChange={(v) => set({ programa: v })}>
+            <option value="">Todos</option>
+            {BLOQUES.map((b) => (
+              <optgroup key={b.n} label={`Bloque ${b.roman} · ${b.title}`}>
+                {b.temas.map((t) => (
+                  <option key={t.id} value={t.id}>
+                    {`${t.id.slice(3).replace(/^0/, '')}. ${t.short}`}
+                  </option>
+                ))}
+              </optgroup>
+            ))}
+          </Filter>
+          <Filter label="Materia" value={tema} onChange={(v) => set({ tema: v })}>
+            <option value="">Todas las materias</option>
             {TOPICS.map((t) => (
               <option key={t.id} value={t.id}>
                 {t.label}
@@ -105,7 +120,7 @@ export default function BankPage({ params }) {
           </Filter>
 
           <div className="rounded-xl border border-gray-800 p-3">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-gray-500">Tu dominio por tema</p>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-gray-500">Tu dominio por materia</p>
             <ul className="space-y-1.5">
               {stats.map((t) => (
                 <li key={t.id}>
@@ -138,6 +153,7 @@ export default function BankPage({ params }) {
                 <span>
                   {Math.min(idx, list.length - 1) + 1} de {list.length}
                   {tema && ` · ${topicLabel(tema)}`}
+                  {programa && ` · ${temaLabel(programa)}: ${findTema(programa)?.short ?? ''}`}
                 </span>
                 {orden === 'aleatorio' && (
                   <button

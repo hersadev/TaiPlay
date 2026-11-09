@@ -2,6 +2,7 @@ import { useState } from 'react';
 import RichText from '../ui/RichText';
 import { useProgress } from '../../store/progress';
 import { topicLabel } from '../../data/topics';
+import { temaLabel } from '../../data/temario';
 import { findExam } from '../../data/exams';
 import { findLesson } from '../../lessons';
 import { href } from '../../hooks/useRoute';
@@ -43,6 +44,11 @@ export default function QuestionCard({ question: q, mode = 'practice', selected,
             {q.n}
           </span>
           <span className="rounded bg-blue-900/60 px-2 py-0.5 text-blue-300">{topicLabel(q.topic)}</span>
+          {q.tema && (
+            <a href={href(`temario/${q.tema}`)} className="rounded bg-gray-800 px-2 py-0.5 text-yellow-300 hover:bg-gray-700" title="Ver la ficha del tema">
+              {temaLabel(q.tema)}
+            </a>
+          )}
           {q.annulled && <span className="rounded bg-red-800/60 px-2 py-0.5 text-red-200">Anulada por el tribunal</span>}
         </div>
       )}
