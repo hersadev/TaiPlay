@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { today } from '../utils/dates';
+import { review } from '../engine/repaso/srs.js';
 
 // Todo el progreso vive en el navegador (localStorage), sin backend:
 //   lessons:  { [lessonId | temaId]: { done, objectives: [bool…], at } }
@@ -10,6 +11,7 @@ import { today } from '../utils/dates';
 //   badges:   { [logroId]: fecha en que se ganó }
 //   streak:   aciertos seguidos en el banco { current, best }
 //   days:     días (AAAA-MM-DD, hora local) en los que se ha estudiado
+//   cards:    repaso espaciado de las tarjetas { [id]: { box, due, ok, ko } }
 export const DEFAULT_SETTINGS = { penalty: 1 / 3, simulacroMin: 100, supuestoMin: 30 };
 
 // localStorage puede no existir o lanzar (modo privado, almacenamiento
@@ -37,6 +39,7 @@ const EMPTY = {
   badges: {},
   streak: { current: 0, best: 0 },
   days: [],
+  cards: {},
 };
 
 export const useProgress = create(
@@ -67,6 +70,9 @@ export const useProgress = create(
           };
         }),
 
+      reviewCard: (id, ok) =>
+        set((s) => ({ cards: { ...s.cards, [id]: review(s.cards[id], ok, today()) }, days: withToday(s.days) })),
+
       addAttempt: (attempt) => set((s) => ({ attempts: [attempt, ...s.attempts].slice(0, 100), days: withToday(s.days) })),
 
       grantBadges: (ids) =>
@@ -78,9 +84,10 @@ export const useProgress = create(
     }),
     {
       name: 'taiplay:progress',
-      version: 2,
+      version: 3,
       storage: safeStorage,
       // v1 → v2: llegan los logros, la racha y los días de estudio.
+      // v2 → v3: llega el repaso espaciado (cards).
       migrate: (state) => ({ ...EMPTY, ...state }),
     },
   ),

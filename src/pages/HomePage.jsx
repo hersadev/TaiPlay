@@ -2,6 +2,9 @@ import { ALL_LESSONS, TRACKS } from '../lessons';
 import { ALL_QUESTIONS } from '../data/exams';
 import { useProgress } from '../store/progress';
 import { href } from '../hooks/useRoute';
+import { TARJETAS } from '../data/legislacion/tarjetas.js';
+import { deckStats } from '../engine/repaso/srs.js';
+import { today } from '../utils/dates';
 
 const SECTIONS = [
   {
@@ -29,6 +32,12 @@ const SECTIONS = [
     icon: '▤',
   },
   {
+    path: 'editor',
+    title: 'Editor',
+    text: 'Escribe y ejecuta JavaScript en el navegador para practicar lo que quieras, con una API de alumnos simulada.',
+    icon: '{}',
+  },
+  {
     path: 'simulacro',
     title: 'Simulacro',
     text: 'El ejercicio completo, cronometrado y corregido con penalización, para medir cómo vas.',
@@ -37,7 +46,8 @@ const SECTIONS = [
 ];
 
 export default function HomePage() {
-  const { lessons, answers, attempts } = useProgress();
+  const { lessons, answers, attempts, cards } = useProgress();
+  const repaso = deckStats(TARJETAS, cards, today());
   const doneLessons = ALL_LESSONS.filter((l) => lessons[l.id]?.done).length;
   const seen = Object.values(answers);
   const ok = seen.filter((a) => a.last === 'ok').length;
@@ -82,8 +92,13 @@ export default function HomePage() {
           Tienes {failed} preguntas falladas pendientes de repasar →
         </a>
       )}
+      {repaso.pendientes > 0 && (
+        <a href={href('aprende/legislacion/lg-repaso')} className="mt-3 block text-sm text-yellow-300 hover:text-yellow-200">
+          Te toca repasar {repaso.pendientes} tarjeta{repaso.pendientes === 1 ? '' : 's'} de legislación hoy →
+        </a>
+      )}
 
-      <section className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      <section className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {SECTIONS.map((s) => (
           <a key={s.path} href={href(s.path)} className="group rounded-xl border border-gray-700 bg-gray-900 p-5 hover:border-yellow-400">
             <span className="grid h-10 w-10 place-items-center rounded-lg bg-gray-800 font-mono text-lg text-yellow-400">{s.icon}</span>

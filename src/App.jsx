@@ -9,6 +9,7 @@ import { SupuestosList, SupuestoPage } from './pages/SupuestosPage';
 import SimulacroPage from './pages/SimulacroPage';
 import { TemarioPage, TemaPage } from './pages/TemarioPage';
 import LogrosPage from './pages/LogrosPage';
+import EditorPage from './pages/EditorPage';
 import LogroToast from './components/logros/LogroToast';
 import { useAchievements, useLevel } from './hooks/useAchievements';
 
@@ -18,6 +19,7 @@ const NAV = [
   ['preguntas', 'Preguntas'],
   ['supuestos', 'Supuestos'],
   ['simulacro', 'Simulacro'],
+  ['editor', 'Editor'],
 ];
 
 function Page({ segments, params }) {
@@ -39,6 +41,8 @@ function Page({ segments, params }) {
       return <SimulacroPage />;
     case 'logros':
       return <LogrosPage />;
+    case 'editor':
+      return <EditorPage />;
     default:
       return <NotFound />;
   }

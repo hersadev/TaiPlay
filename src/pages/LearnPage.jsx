@@ -90,7 +90,7 @@ export function TrackPage({ trackId }) {
                     <p className="text-sm text-gray-400">{l.summary}</p>
                   </div>
                   <span className="ml-auto shrink-0 rounded bg-gray-800 px-2 py-0.5 text-xs text-gray-400">
-                    {{ terminal: 'práctica', sql: 'práctica SQL', ios: 'práctica Cisco IOS', drill: 'ejercicios', match: 'emparejar' }[l.type] ?? 'lectura + test'}
+                    {{ terminal: 'práctica', sql: 'práctica SQL', ios: 'práctica Cisco IOS', drill: 'ejercicios', match: 'emparejar', code: 'leer código', flashcards: 'repaso espaciado', test: 'test' }[l.type] ?? 'lectura + test'}
                   </span>
                 </a>
               </li>

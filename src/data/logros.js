@@ -68,6 +68,10 @@ export const LOGROS = [
   { id: 'cisco', cat: 'aprende', icon: '🔌', name: 'Consola Cisco', desc: 'Configura la SVI, el DHCP relay y el troncal del switch de distribución.', check: (c) => done(c, 'rd-ios-svi') },
   { id: 'ruta-redes', cat: 'aprende', icon: '🌐', name: 'Señor de las redes', desc: 'Completa la ruta de Redes y comunicaciones.', ...fromProgress(trackProgress('redes')) },
   { id: 'ruta-seguridad', cat: 'aprende', icon: '🛡️', name: 'Guardián del ENS', desc: 'Completa la ruta de Seguridad.', ...fromProgress(trackProgress('seguridad')) },
+  { id: 'js-ejecutado', cat: 'aprende', icon: '🟨', name: 'Lo he visto con mis ojos', desc: 'Resuelve todos los ejercicios de JavaScript.', check: (c) => ['pg-js-tipos', 'pg-js-control', 'pg-js-funciones', 'pg-js-async'].every((id) => done(c, id)) },
+  { id: 'ruta-programacion', cat: 'aprende', icon: '💻', name: 'Lector de código', desc: 'Completa la ruta de Programación.', ...fromProgress(trackProgress('programacion')) },
+  { id: 'ruta-legislacion', cat: 'aprende', icon: '⚖️', name: 'Jurista de guardia', desc: 'Completa la ruta de Legislación y Administración.', ...fromProgress(trackProgress('legislacion')) },
+  { id: 'memoria-30', cat: 'aprende', icon: '🐘', name: 'Memoria de elefante', desc: 'Domina 30 tarjetas del repaso espaciado (caja 4 o más).', ...counter((c) => Object.values(c.cards ?? {}).filter((x) => x.box >= 4).length, 30) },
 
   { id: 'ficha-1', cat: 'temario', icon: '📘', name: 'Primera ficha', desc: 'Supera el test de una ficha del temario.', ...counter((c) => temasDone(c), 1) },
   { id: 'fichas-10', cat: 'temario', icon: '📚', name: 'Diez temas', desc: 'Supera 10 fichas del temario.', ...counter((c) => temasDone(c), 10) },

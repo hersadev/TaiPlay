@@ -9,6 +9,8 @@ import { docker } from './docker.js';
 import { bbdd } from './bbdd.js';
 import { redes } from './redes.js';
 import { seguridad } from './seguridad.js';
+import { programacion } from './programacion.js';
+import { legislacion } from './legislacion.js';
 
 export const TRACKS = [
   {
@@ -60,8 +62,8 @@ export const TRACKS = [
     id: 'programacion',
     title: 'Programación',
     icon: '{}',
-    description: 'Java, C#/.NET, JavaScript y Python al nivel del examen: leer código, predecir resultados y detectar errores.',
-    lessons: [],
+    description: 'Leer código como en el examen: predice qué imprime JavaScript y compruébalo ejecutándolo, y encuentra los errores en Java y C#.',
+    lessons: programacion,
     topics: ['programacion', 'datos', 'desarrollo-web', 'ing-software'],
     temas: ['B2T03', 'B3T02', 'B3T04', 'B3T05', 'B3T06', 'B3T07', 'B3T09'],
   },
@@ -78,8 +80,8 @@ export const TRACKS = [
     id: 'legislacion',
     title: 'Legislación y Administración',
     icon: '§',
-    description: 'Constitución, Ley 39/2015, transparencia, protección de datos y administración electrónica.',
-    lessons: [],
+    description: 'Tests por bloque de temas y repaso espaciado de los datos que hay que memorizar: plazos, mayorías, normas y artículos.',
+    lessons: legislacion,
     topics: ['constitucion', 'legislacion', 'admin-electronica', 'proteccion-datos', 'accesibilidad'],
     temas: ['B1T01', 'B1T02', 'B1T03', 'B1T04', 'B1T05', 'B1T06', 'B1T07', 'B1T08', 'B1T09', 'B3T08'],
   },

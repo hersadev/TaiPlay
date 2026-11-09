@@ -5,10 +5,10 @@ import { LOGROS, newlyEarned, xpOf, levelOf } from '../data/logros';
 
 // Contexto con el que se evalúan los logros, a partir del progreso guardado.
 export function useLogrosContext() {
-  const { lessons, answers, attempts, streak, days, badges } = useProgress();
+  const { lessons, answers, attempts, streak, days, badges, cards } = useProgress();
   return useMemo(
-    () => ({ ctx: { lessons, answers, attempts, streak, days, questions: ALL_QUESTIONS }, badges }),
-    [lessons, answers, attempts, streak, days, badges],
+    () => ({ ctx: { lessons, answers, attempts, streak, days, cards, questions: ALL_QUESTIONS }, badges }),
+    [lessons, answers, attempts, streak, days, cards, badges],
   );
 }
 

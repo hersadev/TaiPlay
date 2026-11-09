@@ -32,8 +32,15 @@ Todo corre en tu navegador y el progreso se guarda solo ahí: no hay cuentas ni 
     rwx y umask, y bastionado con `find -perm`, `chmod` y `chown`); hashes con
     `sha256sum -c`; el cortafuegos de RHEL con `firewall-cmd`, `nc -vz` y `sysctl`; y un
     juego para emparejar las herramientas del CCN-CERT (LUCIA, EMMA, CLAUDIA…).
-  - Programación y Legislación están anunciadas; mientras llegan, enlazan a sus fichas
-    del temario y a sus preguntas en el banco.
+  - *Programación*: ejercicios de «¿qué imprime?» en JavaScript que, tras responder, se
+    ejecutan de verdad en el navegador (en un Web Worker aislado, con el bucle infinito
+    del examen cortado a tiempo) y se pueden modificar; y lectura de código Java y C#
+    para señalar la línea del error y decir si es de compilación o de ejecución. Cada
+    lección acaba con retos de programar: en JavaScript escribes una función y se
+    corrige con pruebas automáticas; en Java y C#, completas el código que falta.
+  - *Legislación*: repaso espaciado (cajas de Leitner) de 96 tarjetas con los plazos,
+    mayorías, normas y artículos del Bloque I, y tests por bloque de temas que mezclan
+    preguntas reales, las de las fichas y otras generadas a partir de las tarjetas.
 - **Temario**: los 33 temas del programa oficial (4 bloques), cada uno con una ficha de
   repaso propia (lo esencial y lo que más cae), un test corto, las lecciones relacionadas
   y sus preguntas reales. Se ve cuánto ha pesado cada tema en los exámenes.
@@ -43,8 +50,10 @@ Todo corre en tu navegador y el progreso se guarda solo ahí: no hay cuentas ni 
   por tema, materia, examen, parte o «falladas», y cada pregunta enlaza con la lección que la explica.
 - **Supuestos prácticos**: los cuatro supuestos reales, con su enunciado y su modelo de
   datos, en modo estudio (corrección al momento) o en modo examen (cronometrado).
-- **Logros**: 35 logros en seis categorías, niveles por puntos, racha de días de estudio
+- **Logros**: 39 logros en seis categorías, niveles por puntos, racha de días de estudio
   y de aciertos seguidos, con aviso al desbloquear cada uno.
+- **Editor**: un editor libre de JavaScript con consola, ejemplos y una API de alumnos
+  simulada, para practicar lo que quieras. El código se guarda en el navegador.
 - **Simulacro**: la primera parte y un supuesto contra el reloj, corregidos con
   penalización por error (configurable) y con la regla de las preguntas de reserva que
   sustituyen a las anuladas.
@@ -80,6 +89,11 @@ Es React 18 con Vite, Tailwind y Zustand, sin backend, igual que JSPlay.
   VLAN, SVI, troncales, port-security). Misma interfaz que la shell, sin navegador.
 - [src/engine/drills/](src/engine/drills/): los generadores de ejercicios al azar
   (subnetting y permisos) con su corrección y explicación.
+- [src/engine/js/](src/engine/js/): ejecución de JavaScript en un Web Worker, con
+  consola capturada, fetch simulado y límites de tiempo y de salida.
+- [src/engine/repaso/](src/engine/repaso/): la repetición espaciada y el generador de
+  los tests de legislación. Las tarjetas están en
+  [src/data/legislacion/](src/data/legislacion/).
 - [src/engine/sql/](src/engine/sql/): la base de datos de práctica sobre sql.js, con
   las tablas de los supuestos (`seeds.js`) y los errores de SQLite traducidos.
 - [src/lessons/](src/lessons/): una ruta por fichero. Los validadores reutilizables

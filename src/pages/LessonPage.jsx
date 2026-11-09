@@ -14,6 +14,11 @@ import { createSqlDb } from '../engine/sql/db.js';
 import { createSwitch } from '../engine/ios/ios.js';
 import Drill from '../components/drill/Drill';
 import MatchGame from '../components/quiz/MatchGame';
+import CodeExercises from '../components/code/CodeExercises';
+import Challenges from '../components/code/Challenges';
+import Flashcards from '../components/repaso/Flashcards';
+import TemaTest from '../components/repaso/TemaTest';
+import { TARJETAS } from '../data/legislacion/tarjetas.js';
 import { NotFound } from './LearnPage';
 
 export default function LessonPage({ trackId, lessonId }) {
@@ -23,7 +28,7 @@ export default function LessonPage({ trackId, lessonId }) {
   const i = track.lessons.findIndex((l) => l.id === lesson.id);
   const next = track.lessons[i + 1] ?? null;
   const prev = track.lessons[i - 1] ?? null;
-  const Component = { terminal: TerminalLesson, sql: SqlLesson, ios: IosLesson, drill: DrillLesson, match: MatchLesson }[lesson.type] ?? ConceptLesson;
+  const Component = { terminal: TerminalLesson, sql: SqlLesson, ios: IosLesson, drill: DrillLesson, match: MatchLesson, code: CodeLesson, flashcards: FlashcardsLesson, test: TestLesson }[lesson.type] ?? ConceptLesson;
   return <Component key={lesson.id} lesson={lesson} track={track} next={next} prev={prev} />;
 }
 
@@ -230,6 +235,71 @@ function DrillLesson({ lesson, track, next, prev }) {
       <PracticeText {...{ lesson, track, next, prev, objectives }} onRestart={() => setNonce((n) => n + 1)} restartLabel="Otro ejercicio" />
       <Drill tabs={tabs} counts={counts} onSolved={onSolved} nonce={nonce} className="lg:h-auto" />
     </div>
+  );
+}
+
+// Página de lectura con una actividad debajo (emparejar, código, tarjetas…).
+function ReadingLayout({ lesson, track, next, prev, done, wide = false, children }) {
+  return (
+    <div className={`mx-auto ${wide ? 'max-w-4xl' : 'max-w-3xl'} space-y-6 px-4 py-6`}>
+      <div>
+        <Breadcrumb track={track} lesson={lesson} />
+        <h1 className="mt-1 text-2xl font-bold text-gray-100">{lesson.title}</h1>
+      </div>
+      <RichText text={lesson.body} />
+      {children}
+      <ExamLinks ids={lesson.exam} />
+      <NextNav track={track} next={next} prev={prev} done={done} />
+    </div>
+  );
+}
+
+// Ejercicios de código y, al final, retos de programar. En objectives se
+// guarda cuáles están resueltos: primero los ejercicios y después los retos.
+// La lección se completa cuando están todos.
+function CodeLesson({ lesson, track, next, prev }) {
+  const saved = useProgress((s) => s.lessons[lesson.id]);
+  const { saveObjectives, completeLesson } = useProgress();
+  const nEx = lesson.exercises.length;
+  const solved = [...lesson.exercises, ...lesson.challenges].map((_, i) => Boolean(saved?.objectives?.[i]));
+  const onSolve = (i) => {
+    const nextSolved = solved.map((v, k) => v || k === i);
+    saveObjectives(lesson.id, nextSolved);
+    if (nextSolved.every(Boolean) && !saved?.done) completeLesson(lesson.id);
+  };
+  return (
+    <ReadingLayout {...{ lesson, track, next, prev }} done={Boolean(saved?.done)}>
+      <CodeExercises exercises={lesson.exercises} solved={solved.slice(0, nEx)} onSolve={onSolve} />
+      <Challenges lessonId={lesson.id} challenges={lesson.challenges} solved={solved.slice(nEx)} onSolve={(i) => onSolve(nEx + i)} />
+    </ReadingLayout>
+  );
+}
+
+// Repaso espaciado: se completa al haber visto todas las tarjetas.
+function FlashcardsLesson({ lesson, track, next, prev }) {
+  const saved = useProgress((s) => s.lessons[lesson.id]);
+  const cards = useProgress((s) => s.cards);
+  const completeLesson = useProgress((s) => s.completeLesson);
+  const allSeen = TARJETAS.filter((c) => lesson.temas.includes(c.tema)).every((c) => cards[c.id]);
+  useEffect(() => {
+    if (allSeen && !saved?.done) completeLesson(lesson.id);
+  }, [allSeen, saved?.done, completeLesson, lesson.id]);
+  return (
+    <ReadingLayout {...{ lesson, track, next, prev }} done={Boolean(saved?.done)}>
+      <Flashcards temas={lesson.temas} />
+    </ReadingLayout>
+  );
+}
+
+function TestLesson({ lesson, track, next, prev }) {
+  const saved = useProgress((s) => s.lessons[lesson.id]);
+  const completeLesson = useProgress((s) => s.completeLesson);
+  const onPass = useCallback(() => completeLesson(lesson.id), [completeLesson, lesson.id]);
+  return (
+    <ReadingLayout {...{ lesson, track, next, prev }} done={Boolean(saved?.done)}>
+      {saved?.done && <p className="rounded-lg bg-green-900/40 p-2 text-sm text-green-200">✓ Ya lo superaste. Puedes seguir haciendo rondas para repasar.</p>}
+      <TemaTest temas={lesson.temas} done={Boolean(saved?.done)} onPass={onPass} />
+    </ReadingLayout>
   );
 }
 
