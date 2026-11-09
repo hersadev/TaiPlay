@@ -20,6 +20,7 @@ import {
   dir,
   file,
 } from './vfs.js';
+import { makeSecurityCommands, SECURITY_MANUAL } from './security.js';
 
 const ok = (out = '') => ({ out, err: '', code: 0 });
 const fail = (err, code = 1, out = '') => ({ out, err, code });
@@ -133,7 +134,7 @@ const MANUAL = {
   tail: 'tail [-n N] [-f] fichero — muestra las últimas N líneas (10 por defecto). -f (follow) sigue mostrando las líneas nuevas según se escriben: ideal para logs.',
   grep: 'grep [-i] [-n] [-v] [-c] [-r] patrón [fichero…] — busca líneas que contienen el patrón. -i ignora mayúsculas, -n numera, -v invierte, -c cuenta, -r recursivo.',
   wc: 'wc [-l] [-w] [-c] fichero — cuenta líneas, palabras y bytes.',
-  find: 'find [ruta] [-name patrón] [-type f|d] — busca ficheros recorriendo directorios.',
+  find: 'find [ruta] [-name patrón] [-type f|d] [-perm modo] — busca ficheros recorriendo directorios. -perm 777 busca ese modo exacto; -perm -o+w (o -002), los que tienen al menos esos bits: aquí, escribibles por cualquiera.',
   chmod: 'chmod modo fichero — cambia permisos. Octal (755, 644…) o simbólico (+x, u+w, go-r…). r=4, w=2, x=1; tres cifras: dueño, grupo, otros.',
   sudo: 'sudo orden — ejecuta la orden como administrador (root).',
   whoami: 'whoami — muestra el usuario con el que estás trabajando.',
@@ -210,7 +211,7 @@ export const commands = {
     const errs = [];
     const fmt = (name, node) =>
       flags.l
-        ? `${modeString(node)} 1 ${node.owner.padEnd(6)} ${node.owner.padEnd(6)} ${String(
+        ? `${modeString(node)} 1 ${node.owner.padEnd(6)} ${(node.group ?? node.owner).padEnd(6)} ${String(
             node.type === 'dir' ? 4096 : node.content.length,
           ).padStart(5)} nov  9 10:00 ${name}${node.type === 'dir' ? '/' : ''}`
         : name + (node.type === 'dir' ? '/' : '');
@@ -419,10 +420,15 @@ export const commands = {
     const start = rest[0] && !rest[0].startsWith('-') ? rest.shift() : '.';
     let name = null;
     let type = null;
+    let perm = null;
     for (let i = 0; i < rest.length; i++) {
       if (rest[i] === '-name' || rest[i] === '-iname') {
         name = new RegExp(globRe(rest[++i] ?? '').source, rest[i - 1] === '-iname' ? 'i' : '');
       } else if (rest[i] === '-type') type = rest[++i];
+      else if (rest[i] === '-perm') {
+        perm = permTest(rest[++i] ?? '');
+        if (!perm) return fail(`find: modo no válido «${rest[i] ?? ''}»`);
+      }
       else return fail(`find: predicado desconocido «${rest[i]}»`);
     }
     const root = getNode(ctx.fs, abs(ctx, start));
@@ -432,6 +438,7 @@ export const commands = {
       if (type === 'f' && n.type !== 'file') return;
       if (type === 'd' && n.type !== 'dir') return;
       if (name && !name.test(p.split('/').pop())) return;
+      if (perm && !perm(n.mode)) return;
       found.push(p);
     });
     return ok(joinLines(found));
@@ -666,6 +673,22 @@ function headTail(ctx, argv, stdin, cmd) {
 }
 
 // chmod: octal ("640") o simbólico ("+x", "u+rw", "go-w", "a=r").
+// -perm de find: «644» modo exacto; «-002» o «-o+w», al menos esos bits;
+// «/022» o «/go+w», alguno de ellos.
+function permTest(spec) {
+  const kind = spec[0] === '-' || spec[0] === '/' ? spec[0] : '=';
+  const body = kind === '=' ? spec : spec.slice(1);
+  const want = applyMode('000', body);
+  if (!want) return null;
+  const w = parseInt(want, 8);
+  return (mode) => {
+    const m = parseInt(mode, 8);
+    if (kind === '=') return m === w;
+    if (kind === '-') return (m & w) === w;
+    return (m & w) !== 0;
+  };
+}
+
 export function applyMode(current, mode) {
   if (/^[0-7]{3,4}$/.test(mode)) return mode.slice(-3);
   const digits = [...current.padStart(3, '0')].map(Number);
@@ -699,3 +722,6 @@ function routeFor(net, ip) {
   if (!/^\d+\.\d+\.\d+\.\d+$/.test(ip)) return null;
   return net.routes.find((r) => r.dest !== 'default' && inSubnet(ip, r.dest)) ?? net.routes.find((r) => r.dest === 'default');
 }
+
+Object.assign(MANUAL, SECURITY_MANUAL);
+Object.assign(commands, makeSecurityCommands({ ok, fail, abs, isRoot, readFile, joinLines, lines, walk }));

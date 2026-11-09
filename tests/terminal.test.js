@@ -122,3 +122,45 @@ test('docker: run descarga si falta, -it entra y exit sale', () => {
   run(sh, 'docker run -d -p 8080:80 nginx');
   assert.match(run(sh, 'docker run -d -p 8080:80 nginx').err, /port is already allocated/);
 });
+
+test('seguridad: sha256sum, md5sum y -c', async () => {
+  const { createHash } = await import('node:crypto');
+  const sh = createShell({ files: { '/home/alumno/a.txt': 'hola\n' } });
+  const sum = createHash('sha256').update('hola\n').digest('hex');
+  assert.equal(run(sh, 'sha256sum a.txt').out, `${sum}  a.txt\n`);
+  assert.equal(run(sh, 'md5sum a.txt').out, `${createHash('md5').update('hola\n').digest('hex')}  a.txt\n`);
+  assert.equal(run(sh, 'echo hola | sha256sum').out, `${sum}  -\n`);
+  run(sh, 'sha256sum a.txt > SUMS');
+  assert.equal(run(sh, 'sha256sum -c SUMS').code, 0);
+  run(sh, 'echo adios > a.txt');
+  const r = run(sh, 'sha256sum -c SUMS');
+  assert.equal(r.code, 1);
+  assert.match(r.out, /a.txt: FALLÓ/);
+});
+
+test('seguridad: find -perm, chown, firewall-cmd, nc y sysctl', () => {
+  const sh = createShell({ files: { '/srv/x': { content: '', mode: '666' }, '/srv/y': { content: '', mode: '644' } } });
+  assert.equal(run(sh, 'find /srv -perm -o+w').out, '/srv/x\n');
+  assert.equal(run(sh, 'find /srv -perm 644').out, '/srv/y\n');
+  assert.notEqual(run(sh, 'chown nginx /srv/y').code, 0);
+  run(sh, 'sudo chown nginx:nginx /srv/y');
+  assert.equal(hostNode(sh, '/srv/y').owner, 'nginx');
+  assert.match(run(sh, 'ls -l /srv').out, /nginx {2}nginx/);
+
+  assert.notEqual(run(sh, 'firewall-cmd --add-service=https').code, 0);
+  run(sh, 'sudo firewall-cmd --permanent --add-service=https');
+  assert.ok(!sh.firewall.runtime.services.includes('https'), '--permanent no toca lo que está en marcha');
+  run(sh, 'sudo firewall-cmd --reload');
+  assert.ok(sh.firewall.runtime.services.includes('https'));
+  assert.match(run(sh, 'firewall-cmd --list-all').out, /services: .*https/);
+  assert.equal(run(sh, 'sudo firewall-cmd --add-service=noexiste').code, 101);
+
+  assert.equal(run(sh, 'nc -vz 10.30.20.30 3306').code, 0);
+  assert.equal(run(sh, 'nc -vz 10.30.20.30 5432').code, 1);
+  assert.equal(run(sh, 'nc -vz 8.8.8.8 53').code, 1);
+
+  assert.equal(run(sh, 'sysctl net.ipv4.conf.all.rp_filter').out, 'net.ipv4.conf.all.rp_filter = 0\n');
+  assert.notEqual(run(sh, 'sysctl -w net.ipv4.conf.all.rp_filter=1').code, 0);
+  run(sh, 'sudo sysctl -w net.ipv4.conf.all.rp_filter=1');
+  assert.equal(sh.sysctl['net.ipv4.conf.all.rp_filter'], '1');
+});

@@ -9,6 +9,7 @@ import { parse } from './parse.js';
 import { commands, writeFile, expandGlobs } from './commands.js';
 import { dockerCommand } from './docker.js';
 import { dir, file, getNode, setNode, resolve, parentOf } from './vfs.js';
+import { defaultFirewall, defaultSysctl, defaultRemote } from './security.js';
 
 const USER = 'alumno';
 const HOME = `/home/${USER}`;
@@ -49,6 +50,7 @@ const DEFAULT_SERVICES = () => ({
 });
 
 const DEFAULT_NET = () => ({
+  remote: defaultRemote(),
   ifaces: [{ name: 'eth0', addr: '172.19.50.10/27' }],
   routes: [
     { dest: 'default', via: '172.19.50.1', dev: 'eth0' },
@@ -90,6 +92,8 @@ export function createShell(setup = {}) {
     system: { host: 'web01', kernel: '4.18.0-477.10.1.el8_8.x86_64' },
     services: { ...DEFAULT_SERVICES(), ...(setup.services ?? {}) },
     net: DEFAULT_NET(),
+    firewall: defaultFirewall(),
+    sysctl: defaultSysctl(),
     docker: { images: [], containers: [] },
     history: [],
     log: [], // { line, code, out, err, cmds: [argv…] } por cada línea ejecutada

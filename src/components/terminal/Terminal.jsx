@@ -95,7 +95,7 @@ export default function Terminal({ shell, onCommand, className = '' }) {
       }
     } else if (e.key === 'Tab') {
       e.preventDefault();
-      const r = complete(shell, input);
+      const r = shell.complete ? shell.complete(input) : complete(shell, input);
       if (r?.line !== undefined) {
         setInput(r.line);
         setSuggestions(null);
@@ -123,11 +123,15 @@ export default function Terminal({ shell, onCommand, className = '' }) {
         <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
         <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/70" />
         <span className="h-2.5 w-2.5 rounded-full bg-green-400/70" />
-        <span className="ml-2 truncate">{shell.ctx.container ? `contenedor ${shell.ctx.host}` : 'alumno@web01 — simulador'}</span>
+        <span className="ml-2 truncate">{shell.title ?? (shell.ctx.container ? `contenedor ${shell.ctx.host}` : 'alumno@web01 — simulador')}</span>
       </div>
       <div ref={scrollRef} className="min-h-0 flex-1 overflow-y-auto px-3 py-2" role="log" aria-live="polite">
         {shell.screen.length === 0 && (
-          <div className="text-gray-500">Escribe una orden y pulsa Intro. «help» muestra las órdenes disponibles; Tab autocompleta.</div>
+          <div className="text-gray-500">
+            {shell.kind === 'ios'
+              ? 'Escribe una orden y pulsa Intro. «?» muestra lo que puedes escribir en cada momento; Tab autocompleta.'
+              : 'Escribe una orden y pulsa Intro. «help» muestra las órdenes disponibles; Tab autocompleta.'}
+          </div>
         )}
         {shell.screen.map((l, i) =>
           l.kind === 'cmd' ? (
@@ -154,7 +158,7 @@ export default function Terminal({ shell, onCommand, className = '' }) {
             autoCapitalize="off"
             autoComplete="off"
             autoCorrect="off"
-            aria-label="Orden de la terminal"
+            aria-label={shell.kind === 'ios' ? 'Orden de la consola del switch' : 'Orden de la terminal'}
           />
         </div>
       </div>

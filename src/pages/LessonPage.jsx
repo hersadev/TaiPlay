@@ -11,6 +11,9 @@ import ConceptQuiz from '../components/quiz/ConceptQuiz';
 import SqlConsole, { SchemaPanel } from '../components/sql/SqlConsole';
 import { loadSql } from '../engine/sql/loader.js';
 import { createSqlDb } from '../engine/sql/db.js';
+import { createSwitch } from '../engine/ios/ios.js';
+import Drill from '../components/drill/Drill';
+import MatchGame from '../components/quiz/MatchGame';
 import { NotFound } from './LearnPage';
 
 export default function LessonPage({ trackId, lessonId }) {
@@ -20,7 +23,7 @@ export default function LessonPage({ trackId, lessonId }) {
   const i = track.lessons.findIndex((l) => l.id === lesson.id);
   const next = track.lessons[i + 1] ?? null;
   const prev = track.lessons[i - 1] ?? null;
-  const Component = { terminal: TerminalLesson, sql: SqlLesson }[lesson.type] ?? ConceptLesson;
+  const Component = { terminal: TerminalLesson, sql: SqlLesson, ios: IosLesson, drill: DrillLesson, match: MatchLesson }[lesson.type] ?? ConceptLesson;
   return <Component key={lesson.id} lesson={lesson} track={track} next={next} prev={prev} />;
 }
 
@@ -185,6 +188,59 @@ function TerminalLesson({ lesson, track, next, prev }) {
         restartLabel="Reiniciar la máquina"
       />
       <Terminal shell={shell} onCommand={objectives.evaluate} className="h-[60vh] lg:h-auto" />
+    </div>
+  );
+}
+
+function IosLesson({ lesson, track, next, prev }) {
+  const objectives = useObjectives(lesson);
+  const [sw, setSw] = useState(() => createSwitch(lesson.setup));
+  return (
+    <div className={PRACTICE_GRID}>
+      <PracticeText
+        {...{ lesson, track, next, prev, objectives }}
+        onRestart={() => setSw(createSwitch(lesson.setup))}
+        restartLabel="Reiniciar el switch"
+      />
+      <Terminal shell={sw} onCommand={objectives.evaluate} className="h-[60vh] lg:h-auto" />
+    </div>
+  );
+}
+
+// Ejercicios generados al azar: cada objetivo pide acertar `need`
+// ejercicios de un tipo (`drill`, ver engine/drills).
+function DrillLesson({ lesson, track, next, prev }) {
+  const objectives = useObjectives(lesson);
+  const [counts, setCounts] = useState({});
+  const [nonce, setNonce] = useState(0);
+  const tabs = lesson.objectives.map((o) => ({ kind: o.drill, need: o.need }));
+  const onSolved = (kind) => {
+    const nextCounts = { ...counts, [kind]: (counts[kind] ?? 0) + 1 };
+    setCounts(nextCounts);
+    objectives.evaluate(nextCounts);
+  };
+  return (
+    <div className={PRACTICE_GRID}>
+      <PracticeText {...{ lesson, track, next, prev, objectives }} onRestart={() => setNonce((n) => n + 1)} restartLabel="Otro ejercicio" />
+      <Drill tabs={tabs} counts={counts} onSolved={onSolved} nonce={nonce} className="lg:h-auto" />
+    </div>
+  );
+}
+
+function MatchLesson({ lesson, track, next, prev }) {
+  const saved = useProgress((s) => s.lessons[lesson.id]);
+  const completeLesson = useProgress((s) => s.completeLesson);
+  const onComplete = useCallback(() => completeLesson(lesson.id), [completeLesson, lesson.id]);
+  return (
+    <div className="mx-auto max-w-4xl space-y-6 px-4 py-6">
+      <div>
+        <Breadcrumb track={track} lesson={lesson} />
+        <h1 className="mt-1 text-2xl font-bold text-gray-100">{lesson.title}</h1>
+      </div>
+      <RichText text={lesson.body} />
+      <MatchGame pairs={lesson.pairs} leftTitle={lesson.leftTitle} rightTitle={lesson.rightTitle} done={Boolean(saved?.done)} onComplete={onComplete} />
+      <ExamLinks ids={lesson.exam} />
+      <NextNav track={track} next={next} prev={prev} done={Boolean(saved?.done)} />
     </div>
   );
 }

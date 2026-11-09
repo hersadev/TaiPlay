@@ -23,8 +23,17 @@ Todo corre en tu navegador y el progreso se guarda solo ahí: no hay cuentas ni 
     WebAssembly) sobre las tablas de los supuestos del examen: consultas, filtros,
     INSERT/UPDATE/DELETE, CREATE TABLE con claves, JOIN, GROUP BY/HAVING,
     subconsultas, transacciones y disparadores.
-  - Redes, Programación, Seguridad y Legislación están anunciadas; mientras llegan,
-    enlazan a sus fichas del temario y a sus preguntas en el banco.
+  - *Redes y comunicaciones*: ejercicios de subnetting generados al azar (máscaras,
+    hosts, red y broadcast, misma red, dividir en subredes, máscara para N subredes o N
+    hosts) con la solución explicada, y un switch Cisco IOS simulado: modos de la CLI,
+    abreviaturas, `?` y Tab, VLAN, `switchport access vlan`, troncales 802.1Q, SVI con
+    `ip helper-address`, port-security con MAC sticky y `copy running-config startup-config`.
+  - *Seguridad*: dimensiones del ENS y tipos de ataque; permisos (ejercicios de octal,
+    rwx y umask, y bastionado con `find -perm`, `chmod` y `chown`); hashes con
+    `sha256sum -c`; el cortafuegos de RHEL con `firewall-cmd`, `nc -vz` y `sysctl`; y un
+    juego para emparejar las herramientas del CCN-CERT (LUCIA, EMMA, CLAUDIA…).
+  - Programación y Legislación están anunciadas; mientras llegan, enlazan a sus fichas
+    del temario y a sus preguntas en el banco.
 - **Temario**: los 33 temas del programa oficial (4 bloques), cada uno con una ficha de
   repaso propia (lo esencial y lo que más cae), un test corto, las lecciones relacionadas
   y sus preguntas reales. Se ve cuánto ha pesado cada tema en los exámenes.
@@ -34,7 +43,7 @@ Todo corre en tu navegador y el progreso se guarda solo ahí: no hay cuentas ni 
   por tema, materia, examen, parte o «falladas», y cada pregunta enlaza con la lección que la explica.
 - **Supuestos prácticos**: los cuatro supuestos reales, con su enunciado y su modelo de
   datos, en modo estudio (corrección al momento) o en modo examen (cronometrado).
-- **Logros**: 31 logros en seis categorías, niveles por puntos, racha de días de estudio
+- **Logros**: 35 logros en seis categorías, niveles por puntos, racha de días de estudio
   y de aciertos seguidos, con aviso al desbloquear cada uno.
 - **Simulacro**: la primera parte y un supuesto contra el reloj, corregidos con
   penalización por error (configurable) y con la regla de las preguntas de reserva que
@@ -67,6 +76,10 @@ Es React 18 con Vite, Tailwind y Zustand, sin backend, igual que JSPlay.
   ficheros en memoria), `parse.js` (comillas, `|`, `>`, `>>`, `&&`), `commands.js`
   (las órdenes de Linux), `docker.js` y `shell.js`, que lo une todo. No depende del
   navegador.
+- [src/engine/ios/](src/engine/ios/): el switch Cisco IOS simulado (modos, abreviaturas,
+  VLAN, SVI, troncales, port-security). Misma interfaz que la shell, sin navegador.
+- [src/engine/drills/](src/engine/drills/): los generadores de ejercicios al azar
+  (subnetting y permisos) con su corrección y explicación.
 - [src/engine/sql/](src/engine/sql/): la base de datos de práctica sobre sql.js, con
   las tablas de los supuestos (`seeds.js`) y los errores de SQLite traducidos.
 - [src/lessons/](src/lessons/): una ruta por fichero. Los validadores reutilizables

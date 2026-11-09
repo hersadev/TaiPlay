@@ -64,6 +64,10 @@ export const LOGROS = [
   { id: 'ruta-docker', cat: 'aprende', icon: '🐳', name: 'Capitán de contenedores', desc: 'Completa la ruta de Docker.', ...fromProgress(trackProgress('docker')) },
   { id: 'sql-join', cat: 'aprende', icon: '🔗', name: 'Maestro del JOIN', desc: 'Supera la práctica de JOIN.', check: (c) => done(c, 'sql-join') },
   { id: 'ruta-bbdd', cat: 'aprende', icon: '🗄️', name: 'Arquitecto de datos', desc: 'Completa la ruta de Bases de datos y SQL.', ...fromProgress(trackProgress('bbdd')) },
+  { id: 'subnetting', cat: 'aprende', icon: '🧮', name: 'Calculadora humana', desc: 'Supera los dos bloques de ejercicios de subnetting.', check: (c) => done(c, 'rd-subnet-basico') && done(c, 'rd-subnet-dividir') },
+  { id: 'cisco', cat: 'aprende', icon: '🔌', name: 'Consola Cisco', desc: 'Configura la SVI, el DHCP relay y el troncal del switch de distribución.', check: (c) => done(c, 'rd-ios-svi') },
+  { id: 'ruta-redes', cat: 'aprende', icon: '🌐', name: 'Señor de las redes', desc: 'Completa la ruta de Redes y comunicaciones.', ...fromProgress(trackProgress('redes')) },
+  { id: 'ruta-seguridad', cat: 'aprende', icon: '🛡️', name: 'Guardián del ENS', desc: 'Completa la ruta de Seguridad.', ...fromProgress(trackProgress('seguridad')) },
 
   { id: 'ficha-1', cat: 'temario', icon: '📘', name: 'Primera ficha', desc: 'Supera el test de una ficha del temario.', ...counter((c) => temasDone(c), 1) },
   { id: 'fichas-10', cat: 'temario', icon: '📚', name: 'Diez temas', desc: 'Supera 10 fichas del temario.', ...counter((c) => temasDone(c), 10) },

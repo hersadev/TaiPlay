@@ -7,6 +7,8 @@ import { fundamentos } from './fundamentos.js';
 import { linux } from './linux.js';
 import { docker } from './docker.js';
 import { bbdd } from './bbdd.js';
+import { redes } from './redes.js';
+import { seguridad } from './seguridad.js';
 
 export const TRACKS = [
   {
@@ -40,8 +42,8 @@ export const TRACKS = [
     id: 'redes',
     title: 'Redes y comunicaciones',
     icon: '⇄',
-    description: 'Subnetting paso a paso, OSI/TCP-IP, protocolos y puertos, VLAN y Cisco IOS.',
-    lessons: [],
+    description: 'Subnetting con ejercicios generados al azar, OSI/TCP-IP, protocolos y puertos, VLAN y un switch Cisco IOS simulado: VLAN, troncales, ip helper-address y port-security.',
+    lessons: redes,
     topics: ['redes'],
     temas: ['B4T04', 'B4T06', 'B4T07', 'B4T08', 'B4T10'],
   },
@@ -67,8 +69,8 @@ export const TRACKS = [
     id: 'seguridad',
     title: 'Seguridad',
     icon: '⛨',
-    description: 'ENS, herramientas del CCN-CERT, tipos de ataque, copias de seguridad y criptografía básica.',
-    lessons: [],
+    description: 'Dimensiones del ENS y tipos de ataque, permisos, hashes y cortafuegos en la terminal, y las herramientas del CCN-CERT.',
+    lessons: seguridad,
     topics: ['seguridad'],
     temas: ['B4T05', 'B4T09', 'B1T08'],
   },

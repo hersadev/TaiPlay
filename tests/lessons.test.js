@@ -5,6 +5,9 @@ import { createShell } from '../src/engine/terminal/shell.js';
 import { ALL_LESSONS } from '../src/lessons/index.js';
 import initSqlJs from 'sql.js';
 import { createSqlDb } from '../src/engine/sql/db.js';
+import { createSwitch } from '../src/engine/ios/ios.js';
+import { makeExercise } from '../src/engine/drills/index.js';
+import { seeded } from '../src/engine/drills/random.js';
 
 // Solución de referencia de cada lección de terminal: si alguna deja de
 // completar sus objetivos (o alguno se cumple sin hacer nada), algo se ha
@@ -25,6 +28,23 @@ const SOLUTIONS = {
     const id = sh.docker.containers.find((c) => c.name !== 'web').id.slice(0, 4);
     return [`docker kill ${id}`, 'docker stop web', `docker rm web ${id}`, 'docker rmi nginx'];
   },
+  'sg-bastionado': [
+    'find /srv -perm -o+w',
+    'sudo chmod o-w config/db.conf public/subir.php',
+    'sudo chmod 600 config/db.conf',
+    'chmod 600 ~/.ssh/id_rsa',
+    'sudo chown -R nginx:nginx /srv/app/public',
+  ],
+  'sg-hashes': ['sha256sum microclaudia.zip', 'sha256sum -c SHA256SUMS', 'rm pilar.zip', 'echo hola | sha256sum', 'echo Hola | sha256sum', 'md5sum microclaudia.zip'],
+  'sg-firewall': [
+    'firewall-cmd --list-all',
+    'sudo firewall-cmd --permanent --remove-service=telnet',
+    'sudo firewall-cmd --permanent --add-service=https',
+    'sudo firewall-cmd --permanent --add-service=http',
+    'sudo firewall-cmd --reload',
+    'nc -vz 10.30.20.30 3306',
+    'sudo sysctl -w net.ipv4.conf.all.rp_filter=1',
+  ],
   'dk-exec': [
     'docker exec web ls /usr/share/nginx/html',
     'docker exec -it web bash',
@@ -97,6 +117,70 @@ const SQL_SOLUTIONS = {
     'UPDATE SolicitudBeca SET AñoConvocatoria = 2010 WHERE IdSolicitudBeca = 1;',
   ],
 };
+
+const IOS_SOLUTIONS = {
+  'rd-ios-vlan': ['en', 'conf t', 'vlan 10', 'name ALUMNOS', 'vlan 20', 'name PROFESORES', 'int gi1/0/5', 'sw mo acc', 'sw acc vl 10', 'int range gi1/0/11 - 12', 'switchport mode access', 'switchport access vlan 20', 'do sh vlan br'],
+  'rd-ios-svi': [
+    'enable',
+    'configure terminal',
+    'ip routing',
+    'interface vlan 10',
+    'ip address 10.30.16.1 255.255.255.128',
+    'ip helper-address 10.30.20.5',
+    'no shutdown',
+    'interface gi1/0/24',
+    'switchport mode trunk',
+    'switchport trunk allowed vlan 10,20',
+    'interface gi1/0/1',
+    'switchport port-security',
+    'switchport port-security mac-address sticky',
+    'end',
+    'copy running-config startup-config',
+  ],
+};
+
+for (const lesson of ALL_LESSONS.filter((l) => l.type === 'ios')) {
+  test(`lección ${lesson.id} se puede completar`, () => {
+    const sw = createSwitch(lesson.setup);
+    assert.ok(lesson.objectives.every((o) => !o.check(sw)), 'ningún objetivo debería cumplirse antes de empezar');
+    const sol = IOS_SOLUTIONS[lesson.id];
+    assert.ok(sol, 'falta la solución de referencia en el test');
+    const done = lesson.objectives.map(() => false);
+    for (const line of sol) {
+      const r = sw.run(line);
+      assert.ok(r.ok, `${line}\n${sw.screen.map((x) => x.text).join('\n')}`);
+      lesson.objectives.forEach((o, i) => (done[i] ||= o.check(sw)));
+    }
+    const failing = lesson.objectives.filter((_, i) => !done[i]).map((o) => o.label);
+    assert.deepEqual(failing, []);
+  });
+}
+
+// Las lecciones de ejercicios se completan acertando los que piden, y sus
+// tipos existen y generan ejercicios con solución.
+for (const lesson of ALL_LESSONS.filter((l) => l.type === 'drill')) {
+  test(`lección ${lesson.id} se puede completar`, () => {
+    const counts = {};
+    assert.ok(lesson.objectives.every((o) => !o.check(counts)));
+    const rng = seeded(3);
+    for (const o of lesson.objectives) {
+      for (let i = 0; i < o.need; i++) {
+        const ex = makeExercise(o.drill, rng);
+        assert.ok(ex.fields.every((f) => f.answer !== undefined && f.answer !== null), o.drill);
+        counts[o.drill] = (counts[o.drill] ?? 0) + 1;
+      }
+    }
+    assert.ok(lesson.objectives.every((o) => o.check(counts)));
+  });
+}
+
+test('lecciones de emparejar: parejas completas y sin repetir', () => {
+  for (const l of ALL_LESSONS.filter((x) => x.type === 'match')) {
+    assert.ok(l.pairs.length >= 4, l.id);
+    assert.equal(new Set(l.pairs.map((p) => p.left)).size, l.pairs.length, l.id);
+    assert.equal(new Set(l.pairs.map((p) => p.right)).size, l.pairs.length, l.id);
+  }
+});
 
 const SQL = await initSqlJs();
 
