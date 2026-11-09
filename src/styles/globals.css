@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Tema. Cada variable es un triplete "R G B" (sin rgb()) para que
+   Tailwind pueda aplicar opacidad: rgb(var(--c-x) / alpha).
+   tailwind.config.js mapea las escalas de color a estas variables.
+   Paleta Gruvbox (cálida / terminal), la misma familia visual que GitPlay.
+   ============================================================ */
+:root {
+  --c-white: 251 241 199;
+
+  --c-gray-100: 235 219 178;
+  --c-gray-200: 213 196 161;
+  --c-gray-300: 189 174 147;
+  --c-gray-400: 168 153 132;
+  --c-gray-500: 146 131 116;
+  --c-gray-600: 124 111 100;
+  --c-gray-700: 80 73 69;
+  --c-gray-750: 69 63 59;
+  --c-gray-800: 60 56 54;
+  --c-gray-850: 50 48 47;
+  --c-gray-900: 40 40 40;
+  --c-gray-950: 29 32 33;
+
+  --c-green-100: 238 241 192;
+  --c-green-200: 221 224 143;
+  --c-green-300: 202 203 87;
+  --c-green-400: 184 187 38;
+  --c-green-500: 166 167 31;
+  --c-green-600: 152 151 26;
+  --c-green-700: 114 112 16;
+  --c-green-800: 90 88 12;
+  --c-green-900: 69 68 8;
+
+  --c-yellow-200: 251 229 160;
+  --c-yellow-300: 252 213 97;
+  --c-yellow-400: 250 189 47;
+  --c-yellow-700: 181 118 20;
+  --c-yellow-900: 122 82 16;
+
+  --c-red-100: 251 215 208;
+  --c-red-200: 246 176 164;
+  --c-red-400: 251 73 52;
+  --c-red-600: 204 36 29;
+  --c-red-700: 157 0 6;
+  --c-red-800: 121 4 11;
+
+  --c-purple-100: 243 221 230;
+  --c-purple-200: 232 188 203;
+  --c-purple-300: 222 161 179;
+  --c-purple-400: 211 134 155;
+  --c-purple-600: 177 98 134;
+  --c-purple-700: 143 79 109;
+  --c-purple-900: 87 50 74;
+
+  --c-blue-300: 166 192 180;
+  --c-blue-400: 131 165 152;
+  --c-blue-700: 53 110 111;
+  --c-blue-900: 33 58 60;
+
+  --c-orange-100: 253 225 198;
+  --c-orange-300: 253 184 119;
+  --c-orange-500: 254 128 25;
+  --c-orange-700: 214 93 14;
+  --c-orange-900: 138 61 11;
+
+  --c-sky-50: 240 249 255;
+  --c-sky-300: 125 211 252;
+  --c-sky-800: 7 89 133;
+  --c-sky-900: 12 74 110;
+
+  --c-emerald-400: 142 192 124;
+  --c-cyan-400: 142 192 124;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+  }
+  body {
+    @apply bg-gray-950 text-white;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}

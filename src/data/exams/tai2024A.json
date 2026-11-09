@@ -1,0 +1,2356 @@
+{
+ "id": "tai2024A",
+ "title": "Examen 2024 · Modelo A",
+ "year": 2024,
+ "parts": [
+  {
+   "id": "primera",
+   "title": "Primera parte",
+   "questions": [
+    {
+     "id": "tai2024A-P1",
+     "key": "P1",
+     "n": 1,
+     "reserve": false,
+     "text": "¿Cuál de los siguientes derechos recogidos en el Capítulo Segundo del Título I de la Constitución Española NO forma parte de los Derechos Fundamentales y Libertades Públicas (Artículos 15 a 29)?",
+     "options": [
+      "Derecho a sindicarse libremente.",
+      "Derecho a la propiedad privada.",
+      "Derecho a la producción y creación literaria, artística, científica y técnica.",
+      "Derecho a elegir libremente su residencia."
+     ],
+     "answer": "b",
+     "topic": "constitucion",
+     "explanation": "Los derechos fundamentales son los de los arts. 15 a 29 (Sección 1ª). La propiedad privada está en el art. 33, en la Sección 2ª («de los derechos y deberes de los ciudadanos»), así que no es fundamental."
+    },
+    {
+     "id": "tai2024A-P2",
+     "key": "P2",
+     "n": 2,
+     "reserve": false,
+     "text": "Según el Título I, Capítulo Cuarto, “ De las garantías de las libertades y derechos fundamentales ” de la Constitución Española de 1978, señale la opción correcta:",
+     "options": [
+      "Los derechos y libertades reconocidos no vinculan a todas las Administraciones Públicas.",
+      "Sólo por ley orgánica podrá regularse el ejercicio de tales derechos y libertades.",
+      "Una ley orgánica regulará la institución del Defensor del Pueblo.",
+      "El reconocimiento, el respeto y la protección de los principios reconocidos en el Capítulo tercero, informará la judicializac ión positiva, la práctica legislativa y la actuación de los poderes públicos."
+     ],
+     "answer": "c",
+     "topic": "constitucion",
+     "explanation": "Art. 54 CE: «Una ley orgánica regulará la institución del Defensor del Pueblo». Las demás alteran el texto: los derechos vinculan a todos los poderes públicos, su ejercicio se regula por ley (no necesariamente orgánica) y los principios del Cap. III informan la legislación positiva y la práctica judicial."
+    },
+    {
+     "id": "tai2024A-P3",
+     "key": "P3",
+     "n": 3,
+     "reserve": false,
+     "text": "Señale la respuesta INCORRECTA de acuerdo con el Título II, artículo 62 de la Constitución Española de 1978. Corresponde al Rey:",
+     "options": [
+      "Convocar a referéndum en los casos previstos en la Constitución, previa autorización de las Cortes Generales.",
+      "Convocar y disolver las Cortes Generales y convocar elecciones en los términos previstos en la Constitución.",
+      "Proponer el candidato a Presidente de Gobierno y, en su caso, nombrarlo, así como poner fin a sus funciones en los términos previstos en la Constitución.",
+      "Nombrar y separar a los miembros del Gobierno, a propuesta de su Presidente."
+     ],
+     "answer": "a",
+     "topic": "constitucion",
+     "explanation": "El art. 62 solo dice que el Rey convoca referéndum «en los casos previstos en la Constitución». La autorización previa la da el Congreso (art. 92), no las Cortes Generales: por eso la a) es la incorrecta."
+    },
+    {
+     "id": "tai2024A-P4",
+     "key": "P4",
+     "n": 4,
+     "reserve": false,
+     "text": "¿Quién puede ser elegido Defensor del Pueblo, según la Ley Orgánica 3/1981, de 6 de abril?",
+     "options": [
+      "Cualquier Magistrado elegido por las Cortes Generales.",
+      "Cualquier Senador elegido por las Cortes Generales.",
+      "Cualquier persona que se encuentre en el pleno disfrute de sus derechos civiles.",
+      "Cualquier español mayor de edad que se encuentre en el pleno disfrute de sus derechos civiles y políticos."
+     ],
+     "answer": "d",
+     "topic": "constitucion",
+     "explanation": "LO 3/1981, art. 3: puede ser Defensor del Pueblo cualquier español mayor de edad en pleno disfrute de sus derechos civiles y políticos."
+    },
+    {
+     "id": "tai2024A-P5",
+     "key": "P5",
+     "n": 5,
+     "reserve": false,
+     "text": "Según el artículo 71 de la Constitución Española de 1978, ¿quién es el competente en las causas contra Diputados y Senadores?",
+     "options": [
+      "Sala de lo Penal del Tribunal Constitucional.",
+      "Sala de lo Contencioso Administrativo del Tribunal Supremo.",
+      "Sala de lo Penal del Tribunal Supremo.",
+      "Sala de lo Civil del Tribunal Supremo."
+     ],
+     "answer": "c",
+     "topic": "constitucion",
+     "explanation": "Art. 71.3 CE: en las causas contra Diputados y Senadores es competente la Sala de lo Penal del Tribunal Supremo."
+    },
+    {
+     "id": "tai2024A-P6",
+     "key": "P6",
+     "n": 6,
+     "reserve": false,
+     "text": "Según el Título III \"De las Cortes Generales\" de la Constitución Española de 1978, las Cámaras podrán:",
+     "options": [
+      "Recibir peticiones individuales y colectivas, siempre por escrito, quedando prohibida la presentación directa por manifestaciones ciudadanas.",
+      "Delegar en las Comisiones Legislativas Permanentes la aprobación de proyectos o proposiciones de ley relativas a los Presupuestos Generales del Estado.",
+      "Reunirse en sesión extraordinaria a petición de la mayoría simple de los miembros de cualquiera de las Cámaras.",
+      "Nombrar conjuntamente Comisiones de Investigación sobre asuntos de interés público. Sus conclusiones serán vinculantes para los Tribunales."
+     ],
+     "answer": "a",
+     "topic": "constitucion",
+     "explanation": "Art. 77 CE: las Cámaras reciben peticiones individuales y colectivas, siempre por escrito, y se prohíbe la presentación directa por manifestaciones ciudadanas."
+    },
+    {
+     "id": "tai2024A-P7",
+     "key": "P7",
+     "n": 7,
+     "reserve": false,
+     "text": "Según lo establecido en el artículo 159 de la Constitución Española de 1978, los miembros del Tribunal Constitucional serán designados por períodos de:",
+     "options": [
+      "9 años y se renovarán por terceras partes cada 3.",
+      "9 años y se renovarán por terceras partes cada 2.",
+      "6 años y se renovarán por terceras partes cada 3.",
+      "6 años y se renovarán por terceras partes cada 2."
+     ],
+     "answer": "a",
+     "topic": "constitucion",
+     "explanation": "Art. 159 CE: los 12 magistrados del TC se designan por 9 años y se renuevan por terceras partes cada 3."
+    },
+    {
+     "id": "tai2024A-P8",
+     "key": "P8",
+     "n": 8,
+     "reserve": false,
+     "text": "El Gobierno se rige, en su organización y funcionamiento, entre otras, por la Ley:",
+     "options": [
+      "Ley 50/1997, de 27 de noviembre.",
+      "Ley 50/1999, de 26 de noviembre.",
+      "Ley 50/1996, de 28 de noviembre.",
+      "Ley 50/1998, de 29 de noviembre."
+     ],
+     "answer": "a",
+     "topic": "constitucion",
+     "explanation": "La norma que regula el Gobierno es la Ley 50/1997, de 27 de noviembre, del Gobierno."
+    },
+    {
+     "id": "tai2024A-P9",
+     "key": "P9",
+     "n": 9,
+     "reserve": false,
+     "text": "La Constitución Española de 1978 en su artículo 113 establece que:",
+     "options": [
+      "El Congreso de los Diputados puede exigir la responsabilidad jurídica del Gobierno mediante la adopción por mayoría absoluta de la moción de censura.",
+      "El Congreso de los Diputados puede exigir la responsabilidad política del Gobierno mediante la adopción por mayoría simple de la moción de censura.",
+      "El Congreso de los Diputados puede exigir la responsabilidad civil del Gobierno mediante la adopción por mayoría absoluta de la moción de censura.",
+      "El Congreso de los Diputados puede exigir la responsabilidad política del Gobierno mediante la adopción por mayoría absoluta de la moción de censura."
+     ],
+     "answer": "d",
+     "topic": "constitucion",
+     "explanation": "Art. 113 CE: el Congreso exige la responsabilidad POLÍTICA del Gobierno con la moción de censura, que necesita mayoría ABSOLUTA."
+    },
+    {
+     "id": "tai2024A-P10",
+     "key": "P10",
+     "n": 10,
+     "reserve": false,
+     "text": "Señale la respuesta INCORRECTA sobre el uso obligatorio de firma requerida a los interesados por parte de las Administraciones Públicas que recoge el artículo 11 de Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas:",
+     "options": [
+      "Conocer el estado de la tramitación.",
+      "Desistir de acciones.",
+      "Presentar declaraciones responsables o comunicaciones.",
+      "Formular solicitudes."
+     ],
+     "answer": "a",
+     "topic": "legislacion",
+     "explanation": "Art. 11.2 Ley 39/2015: la firma solo es obligatoria para formular solicitudes, presentar declaraciones responsables o comunicaciones, interponer recursos, desistir de acciones y renunciar a derechos. Consultar el estado de un trámite basta con identificarse."
+    },
+    {
+     "id": "tai2024A-P11",
+     "key": "P11",
+     "n": 11,
+     "reserve": false,
+     "text": "Tal y como se recoge en la Resolución de 14 de diciembre de 2015, de la Dirección de Tecnologías de la Información y las Comunicaciones, por la que se establecen las prescripciones técnicas necesarias para el desarrollo y aplicación del sistema Cl@ve, señale la respuesta correcta:",
+     "options": [
+      "Es un sistema que está dirigido a los ciudadanos que cumplan con los requisitos indicados en las Prescripciones Técnicas.",
+      "Ofrece tres niveles de garantía de registro asociados a la forma y a las garantías que ofrezca la comunicación de la información de registro por parte del ciudadano.",
+      "Proporcionará a los usuarios tres modalidades de identificación electrónica basadas en el uso de claves concertadas.",
+      "Permitirá también el acceso a servicios de firma electrónica, en particular, a servicios de firma de documentos electrónicos mediante certificados electrónicos centralizados."
+     ],
+     "answer": "d",
+     "topic": "admin-electronica",
+     "explanation": "Cl@ve ofrece dos modalidades de clave concertada (PIN y Permanente) y dos niveles de registro (básico y avanzado), y además da acceso a firma con certificados centralizados en la nube (Cl@ve Firma)."
+    },
+    {
+     "id": "tai2024A-P12",
+     "key": "P12",
+     "n": 12,
+     "reserve": false,
+     "text": "Señale la respuesta correcta sobre la solicitud de acceso a la información pública que recoge el artículo 17 de la Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno:",
+     "options": [
+      "Sólo se podrá presentar en castellano.",
+      "Es obligatorio indicar una dirección de contacto electrónica, a efectos de comunicaciones.",
+      "Deberá dirigirse al titular del órgano administrativo o entidad que posea la información.",
+      "Deberá motivarse."
+     ],
+     "answer": "c",
+     "topic": "legislacion",
+     "explanation": "Art. 17 Ley 19/2013: la solicitud se dirige al titular del órgano o entidad que posee la información. No hace falta motivarla, puede presentarse en cualquier lengua cooficial y la dirección de contacto es «preferentemente» electrónica."
+    },
+    {
+     "id": "tai2024A-P13",
+     "key": "P13",
+     "n": 13,
+     "reserve": false,
+     "text": "Indique la respuesta correcta sobre la vigencia que tienen los certificados electrónicos reconocidos incorporados al documento nacional de identidad, según la legislación vigente:",
+     "options": [
+      "No podrá ser superior a tres años.",
+      "No podrá ser superior a cuatro años.",
+      "No podrá ser superior a cinco años.",
+      "No podrá ser superior a seis años."
+     ],
+     "answer": "c",
+     "topic": "admin-electronica",
+     "explanation": "La vigencia de los certificados reconocidos (hoy «cualificados») incorporados al DNIe no puede superar los cinco años."
+    },
+    {
+     "id": "tai2024A-P14",
+     "key": "P14",
+     "n": 14,
+     "reserve": false,
+     "text": "La Ley 56/2007, de 28 de diciembre, de Medidas de Impulso de la Sociedad de la Información, ¿qué establece sobre la factura electrónica en el artículo 1?",
+     "options": [
+      "Los formatos estructurados de las facturas electrónicas permitirán su visualización y emisión en las distintas lenguas oficiales existentes y en inglés, con la finalidad de garantizar los derechos de los usuarios nacionales y extranjeros.",
+      "Los formatos estructurados de las facturas electrónicas permitirán su visualización y emisión en las distintas lenguas oficiales existentes, con la finalidad de garantizar los derechos de los usuarios.",
+      "No trata en ningún artículo sobre la factura electrónica.",
+      "La factura electrónica solo se utilizará en contratación, estando excluida de la justificación de ayudas y subvenciones."
+     ],
+     "answer": "b",
+     "topic": "admin-electronica",
+     "explanation": "Art. 1 Ley 56/2007: los formatos estructurados de factura electrónica deben permitir visualizarla y emitirla en las lenguas oficiales existentes. No menciona el inglés."
+    },
+    {
+     "id": "tai2024A-P15",
+     "key": "P15",
+     "n": 15,
+     "reserve": false,
+     "text": "¿Qué principio relativo al tratamiento de datos personales definido en el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos y por el que se deroga la Directiva 95/46/CE (Reglamento general de protección de datos) se refiere a que los datos serán adecuados, pertinentes y limitados a lo necesario en relación con los fines para los que son tratados?",
+     "options": [
+      "Limitación de la finalidad.",
+      "Exactitud.",
+      "Minimización de datos.",
+      "Adecuación de datos."
+     ],
+     "answer": "c",
+     "topic": "proteccion-datos",
+     "explanation": "Art. 5.1.c RGPD, minimización de datos: los datos serán adecuados, pertinentes y limitados a lo necesario para los fines del tratamiento."
+    },
+    {
+     "id": "tai2024A-P16",
+     "key": "P16",
+     "n": 16,
+     "reserve": false,
+     "text": "Señale la respuesta correcta respecto a las notificaciones según la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas:",
+     "options": [
+      "Toda notificación deberá ser cursada dentro del plazo de quince días a partir de la fecha en que el acto haya sido dictado.",
+      "Cuando los interesados en un procedimiento sean desconocidos, se ignore el lugar de la notificación o bien, intentada ésta, no se hubiese podido practicar, la notificación se hará por medio de un anuncio publicado en el BOE.",
+      "Las notificaciones se practicarán preferentemente en papel y, en todo caso, cuando el interesado resulte obligado a recibirlas por esta vía.",
+      "Cuando la notificación se practique en el domicilio del interesado, de no hallarse presente éste en el momento de entregarse la notificación, podrá hacerse cargo de ella cualquier persona mayor de dieciséis años que se encuentre en el domicilio y haga constar su identidad."
+     ],
+     "answer": "b",
+     "topic": "legislacion",
+     "explanation": "Art. 44 Ley 39/2015: si el interesado es desconocido o no se puede notificar, se hace por anuncio en el BOE. El plazo para cursar notificaciones es de 10 días, se practican preferentemente por medios electrónicos y en el domicilio puede recogerlas cualquier persona mayor de 14 años."
+    },
+    {
+     "id": "tai2024A-P17",
+     "key": "P17",
+     "n": 17,
+     "reserve": false,
+     "text": "De acuerdo con el Real Decreto 203/2021, de 30 de marzo, por el que se aprueba el Reglamento de actuación y funcionamiento del sector público por medios electrónicos, ¿cuál de las siguientes opciones forma parte del contenido mínimo que debe contener una sede electrónica?",
+     "options": [
+      "Relación de los canales de acceso electrónico a dicha sede como instrumento de comunicación para los ciudadanos.",
+      "Relación de los Puntos de Acceso General electrónicos que la referencian directa o indirectamente.",
+      "Normativa reguladora del Registro al que se acceda a través de la sede electrónica.",
+      "Enlace directo al Boletín Oficial correspondiente."
+     ],
+     "answer": "c",
+     "topic": "admin-electronica",
+     "explanation": "La normativa reguladora del Registro accesible desde la sede forma parte del contenido mínimo de la sede electrónica según el RD 203/2021. (Pregunta de memoria pura: conviene repasar el artículo 11.)"
+    },
+    {
+     "id": "tai2024A-P18",
+     "key": "P18",
+     "n": 18,
+     "reserve": false,
+     "text": "Marque la respuesta correcta relacionada con el nodo eIDAS español:",
+     "options": [
+      "Para las Administraciones Públicas, la integración con el nodo eIDAS español se realiza a través de @Firma.",
+      "Permite el reconocimiento de identidades en soportes físicos emitidas por otros países.",
+      "Facilita la aceptación del DNI electrónico en servicios de Administración Electrónica de otras administraciones integrantes de la OCDE.",
+      "Utiliza un sistema de intercambio de mensajes conforme al estándar SAML 2.0."
+     ],
+     "answer": "d",
+     "topic": "admin-electronica",
+     "explanation": "El nodo eIDAS español intercambia los mensajes con el estándar SAML 2.0. Las AAPP se integran con él a través de Cl@ve, no de @Firma."
+    },
+    {
+     "id": "tai2024A-P19",
+     "key": "P19",
+     "n": 19,
+     "reserve": false,
+     "text": "¿Qué es la taxonomía de Flynn?",
+     "options": [
+      "Una clasificación de patrones de diseño para objetos de software, centrados en su creación, relación e interacción.",
+      "Una clasificación para las computadoras con arquitectura paralela atendiendo al flujo de datos e instrucciones en un sistema.",
+      "Una clasificación que pretende clarificar los diferentes tipos de tecnologías, técnicas y mecanismos que abarca el concepto abstracto de “Inteligencia Artificial”.",
+      "Una clasificación de los tipos de controladores (drivers) JDBC."
+     ],
+     "answer": "b",
+     "topic": "hardware",
+     "explanation": "La taxonomía de Flynn clasifica las arquitecturas según los flujos de instrucciones y de datos: SISD, SIMD, MISD y MIMD."
+    },
+    {
+     "id": "tai2024A-P20",
+     "key": "P20",
+     "n": 20,
+     "reserve": false,
+     "text": "Indique, de las siguientes palabras, cuál indica además un número hexadecimal válido:",
+     "options": [
+      "EBOCA",
+      "BECADAS",
+      "ACCEDA",
+      "CEGADA"
+     ],
+     "answer": "c",
+     "topic": "hardware",
+     "explanation": "En hexadecimal solo valen 0-9 y A-F. ACCEDA solo usa letras de la A a la F; en las demás aparecen O, S o G.",
+     "learn": "f-numeracion"
+    },
+    {
+     "id": "tai2024A-P21",
+     "key": "P21",
+     "n": 21,
+     "reserve": false,
+     "text": "Señale cuál de las siguientes es un formato de interfaz SSD:",
+     "options": [
+      "HHP",
+      "MMVe",
+      "MMD",
+      "M.2"
+     ],
+     "answer": "d",
+     "topic": "hardware",
+     "explanation": "M.2 es un formato (factor de forma e interfaz) para SSD muy usado en portátiles y placas modernas.",
+     "learn": "f-ordenador"
+    },
+    {
+     "id": "tai2024A-P22",
+     "key": "P22",
+     "n": 22,
+     "reserve": false,
+     "text": "Un controlador de dispositivo periférico:",
+     "options": [
+      "Es el componente electrónico de la unidad de entrada y salida.",
+      "Es el componente mecánico de la unidad de entrada y salida.",
+      "Es la interfaz entre el adaptador y la unidad de entrada y salida.",
+      "Es la interfaz entre la tarjeta controladora y el cable de conexión."
+     ],
+     "answer": null,
+     "topic": "hardware",
+     "explanation": "Pregunta ANULADA por el tribunal: no cuenta para la nota.",
+     "annulled": true
+    },
+    {
+     "id": "tai2024A-P23",
+     "key": "P23",
+     "n": 23,
+     "reserve": false,
+     "text": "Con respecto a los árboles 2-3-4, señale la respuesta correcta:",
+     "options": [
+      "Cumple las propiedades del árbol binario de búsqueda.",
+      "Las hojas pueden estar a distinto nivel.",
+      "Los nodos pueden tener 2, 3 o 4 hijos (2-nodo, 3-nodo o 4-nodo).",
+      "Las reestructuraciones se realizan desde las hojas hacia la raíz."
+     ],
+     "answer": "c",
+     "topic": "datos",
+     "explanation": "En un árbol 2-3-4 cada nodo tiene 2, 3 o 4 hijos y todas las hojas están al mismo nivel. Es un árbol de búsqueda, pero no binario."
+    },
+    {
+     "id": "tai2024A-P24",
+     "key": "P24",
+     "n": 24,
+     "reserve": false,
+     "text": "Señale la respuesta correcta referente al tipo abstracto de datos (TAD) Cola:",
+     "options": [
+      "Basada en el principio LIFO (last-in, first-out).",
+      "Es un tipo especial de lista en la que se pueden insertar y eliminar por cualquier extremo.",
+      "Cada nodo tiene dos enlaces, uno al nodo siguiente, y otro al anterior.",
+      "Se pude implementar usando una estructura dinámica."
+     ],
+     "answer": "d",
+     "topic": "datos",
+     "explanation": "Una cola es FIFO (el primero que entra es el primero que sale) y puede implementarse con estructuras estáticas (array) o dinámicas (lista enlazada)."
+    },
+    {
+     "id": "tai2024A-P25",
+     "key": "P25",
+     "n": 25,
+     "reserve": false,
+     "text": "Señale la respuesta INCORRECTA acerca de los tipos abstractos de datos (TAD):",
+     "options": [
+      "Es una colección de propiedades y operaciones que se definen mediante una especificación que es independiente de cualquier representación.",
+      "Nos permiten diseñar nuestros propios tipos para encapsular lógica algorítmica y proveer abstracción a las capas de software de más alto nivel.",
+      "Se pueden escribir usando lenguaje natural, usando pseudo-código o incluso algún lenguaje de programación.",
+      "En JAVA, una estructura de datos (interface) debe implementar todas las operaciones definidas en su TAD (class)."
+     ],
+     "answer": "d",
+     "topic": "datos",
+     "explanation": "Está al revés: en Java el TAD se describe con una interface y la clase (la estructura de datos) implementa todas sus operaciones."
+    },
+    {
+     "id": "tai2024A-P26",
+     "key": "P26",
+     "n": 26,
+     "reserve": false,
+     "text": "¿Cuál es la función del kernel en un sistema operativo Unix/Linux?",
+     "options": [
+      "Gestionar la interfaz gráfica.",
+      "Controlar los procesos, la memoria y la administración de dispositivos.",
+      "Proveer servicios de red como TCP/IP .",
+      "Facilitar la comunicación entre usuarios a través de terminales."
+     ],
+     "answer": "b",
+     "topic": "so",
+     "explanation": "El kernel (núcleo) gestiona los procesos, la memoria y los dispositivos. La interfaz gráfica y los servicios de red son programas que corren encima de él.",
+     "learn": "f-so"
+    },
+    {
+     "id": "tai2024A-P27",
+     "key": "P27",
+     "n": 27,
+     "reserve": false,
+     "text": "Señale la respuesta INCORRECTA. Android NDK:",
+     "options": [
+      "Es un conjunto de herramientas que permiten implementar partes de las aplicaciones de Android mediante C y C++.",
+      "Genera librerías binarias para cada arquitectura de procesador que se pueden invocar desde Java por medio de JNI (Java Native Interface).",
+      "Se recomienda su uso con aplicaciones intensivas a nivel computacional, como juegos o simulaciones físicas.",
+      "No permite la reutilización de código, no pudiendo usar bibliotecas de otros desarrolladores."
+     ],
+     "answer": "d",
+     "topic": "programacion",
+     "explanation": "Android NDK sí permite reutilizar código y bibliotecas de C/C++, incluidas las de otros desarrolladores. Esa es una de sus razones de ser."
+    },
+    {
+     "id": "tai2024A-P28",
+     "key": "P28",
+     "n": 28,
+     "reserve": false,
+     "text": "¿Cuál es la característica diferenciadora de las claves foráneas en una base de datos relacional?",
+     "options": [
+      "Un atributo que no tiene relación con otras tablas.",
+      "Un atributo que referencia la clave primaria de otra tabla.",
+      "Un atributo que puede tener valores duplicados. de datos.",
+      "Un atributo que se utiliza solo para consultas."
+     ],
+     "answer": "b",
+     "topic": "bbdd",
+     "explanation": "Una clave foránea es un atributo que hace referencia a la clave primaria de otra tabla. Es lo que relaciona las tablas."
+    },
+    {
+     "id": "tai2024A-P29",
+     "key": "P29",
+     "n": 29,
+     "reserve": false,
+     "text": "¿Cuál de los siguientes es un Sistema de Gestión de Bases de Datos Orientadas a Objetos (SGDBOO)?",
+     "options": [
+      "Cézanne.",
+      "Picasso.",
+      "Matisse.",
+      "Rembrandt."
+     ],
+     "answer": "c",
+     "topic": "bbdd",
+     "explanation": "Matisse es un SGBD orientado a objetos real. Los demás nombres son pintores sin relación con las bases de datos."
+    },
+    {
+     "id": "tai2024A-P30",
+     "key": "P30",
+     "n": 30,
+     "reserve": false,
+     "text": "¿Qué es el lenguaje OQL en el contexto de las bases de datos orientadas a objetos?",
+     "options": [
+      "OQL no es un lenguaje en el contexto de las bases de datos orientadas a objetos.",
+      "Un lenguaje de definición de datos.",
+      "Un lenguaje de consulta de datos.",
+      "Un lenguaje de manipulación de datos."
+     ],
+     "answer": "c",
+     "topic": "bbdd",
+     "explanation": "OQL (Object Query Language) es el lenguaje de consulta estándar de las bases de datos orientadas a objetos (ODMG)."
+    },
+    {
+     "id": "tai2024A-P31",
+     "key": "P31",
+     "n": 31,
+     "reserve": false,
+     "text": "De acuerdo con Métrica v3, en el Modelo Entidad/Relación Extendido, ¿cuál es el término que representa la participación en la relación de cada una de las entidades afectadas?",
+     "options": [
+      "Atributo.",
+      "Cardinalidad.",
+      "Tipo de Correspondencia.",
+      "Dominio."
+     ],
+     "answer": "b",
+     "topic": "ing-software",
+     "explanation": "En Métrica v3, la cardinalidad indica la participación de cada entidad en una relación (mínimo y máximo de ocurrencias)."
+    },
+    {
+     "id": "tai2024A-P32",
+     "key": "P32",
+     "n": 32,
+     "reserve": false,
+     "text": "Señale la respuesta correcta sobre la normalización de bases de datos en Métrica v3:",
+     "options": [
+      "Un atributo tiene dependencia funcional completa de otro si, y sólo si, depende de él a través de otro atributo.",
+      "Una entidad está en 1FN si tiene grupos repetitivos, es decir, un atributo puede tomar varios valores de un dominio simple.",
+      "Una entidad está en 2FN si está en 1FN y todos los atributos que no forman parte de las claves candidatas tienen dependencia funcional completa respecto de éstas.",
+      "Una relación en 3FN estará también en 2FN, pero no en 1FN."
+     ],
+     "answer": "c",
+     "topic": "bbdd",
+     "explanation": "2FN = estar en 1FN y que todo atributo no clave dependa de la clave COMPLETA, no solo de una parte de ella."
+    },
+    {
+     "id": "tai2024A-P33",
+     "key": "P33",
+     "n": 33,
+     "reserve": false,
+     "text": "Señale, de entre las siguientes opciones, el mecanismo en el Modelo Entidad/Relación Extendido que recoge Métrica v3 consistente en relacionar dos tipos de entidades que normalmente son de dominios independientes, pero coyunturalmente se asocian:",
+     "options": [
+      "Asociación.",
+      "Generalización.",
+      "PERT.",
+      "Regresión."
+     ],
+     "answer": "a",
+     "topic": "ing-software",
+     "explanation": "En el modelo E/R extendido de Métrica v3, la asociación relaciona dos tipos de entidad de dominios normalmente independientes que coyunturalmente se asocian."
+    },
+    {
+     "id": "tai2024A-P34",
+     "key": "P34",
+     "n": 34,
+     "reserve": false,
+     "text": "Para las variables a=1, b=2, c=3, d=1 ¿cuál es la operación lógica que da un resultado true?",
+     "options": [
+      "((a>b) or (a<c)) and ((a==c) or (a>=b))",
+      "((a>=b) or (a<d)) and ((a>=d) or (c>d))",
+      "Not (a==c) and (c>b)",
+      "Not (a>=d) and not (c>=b)"
+     ],
+     "answer": "c",
+     "topic": "programacion",
+     "explanation": "Sustituye: Not(1==3) es true y (3>2) es true, así que true AND true = true. En las demás alguno de los dos lados del AND sale false.",
+     "learn": "f-programar"
+    },
+    {
+     "id": "tai2024A-P35",
+     "key": "P35",
+     "n": 35,
+     "reserve": false,
+     "text": "Señale la respuesta correcta en relación con las funciones y los procedimientos:",
+     "options": [
+      "Una llamada a un procedimiento puede aparecer como operando de una expresión.",
+      "El paso de parámetros por referencia envía una copia del valor que tenga el parámetro real, por lo que no se podrá alterar el contenido de la variable.",
+      "Los parámetros por referencia se pueden emplear como parámetros de entrada/salida.",
+      "Todo procedimiento debe ejecutar una sentencia de return."
+     ],
+     "answer": "c",
+     "topic": "programacion",
+     "explanation": "El paso por referencia permite que el subprograma modifique la variable original, así que sirve como parámetro de entrada/salida. El que envía una copia es el paso por valor."
+    },
+    {
+     "id": "tai2024A-P36",
+     "key": "P36",
+     "n": 36,
+     "reserve": false,
+     "text": "Suponga el siguiente programa escrito en un lenguaje de programación estándar: integer x=0; while x<100 do (x=x+1; print x; x=x-1;)",
+     "options": [
+      "Este programa imprime los números enteros del 1 al 100.",
+      "Este programa imprime los números impares del 1 al 100.",
+      "Este programa imprime los números pares del 1 al 100.",
+      "Este programa es un bucle infinito."
+     ],
+     "answer": "d",
+     "topic": "programacion",
+     "explanation": "x sube a 1, imprime 1 y vuelve a 0 en cada vuelta: x nunca llega a 100. Es un bucle infinito que imprime 1 sin parar.",
+     "learn": "f-programar"
+    },
+    {
+     "id": "tai2024A-P37",
+     "key": "P37",
+     "n": 37,
+     "reserve": false,
+     "text": "Referente a los comandos DML del lenguaje SQL, señale la respuesta correcta:",
+     "options": [
+      "DML es acrónimo de Data Manager Language.",
+      "Permiten crear nuevas bases de datos, añadiendo y eliminando elementos.",
+      "El comando TRUNCATE es un comando DML.",
+      "El comando SELECT es un comando DML."
+     ],
+     "answer": "d",
+     "topic": "bbdd",
+     "explanation": "SELECT, INSERT, UPDATE y DELETE son DML (Data Manipulation Language). TRUNCATE y CREATE son DDL."
+    },
+    {
+     "id": "tai2024A-P38",
+     "key": "P38",
+     "n": 38,
+     "reserve": false,
+     "text": "Referente al comando DROP de SQL, es correcto decir:",
+     "options": [
+      "Es un comando DCL.",
+      "Puede ser ejecutado por disparadores (triggers).",
+      "Se utiliza para eliminar la estructura de una tabla junto con cualquier dato almacenado en ella.",
+      "Utiliza WHERE para condiciones de filtrado."
+     ],
+     "answer": "c",
+     "topic": "bbdd",
+     "explanation": "DROP (DDL) borra la estructura de la tabla junto con todos sus datos. No admite WHERE."
+    },
+    {
+     "id": "tai2024A-P39",
+     "key": "P39",
+     "n": 39,
+     "reserve": false,
+     "text": "Señale la respuesta INCORRECTA referente a los disparadores o triggers de una base de datos:",
+     "options": [
+      "Son procedimientos que se ejecutan o activan cada vez que ocurre un evento determinado sobre una tabla determinada.",
+      "Los eventos que se pueden asociar a la ejecución de un trigger son: INSERT, UPDATE, DELETE.",
+      "Puede decidirse que se activen antes o después de un evento determinado.",
+      "Un error durante la ejecución de cualquier trigger no cancela automáticamente la operación que lo disparó, la cancelación hay que programarla."
+     ],
+     "answer": "d",
+     "topic": "bbdd",
+     "explanation": "Si un trigger falla, se cancela automáticamente la operación que lo disparó. Por eso la d) es incorrecta."
+    },
+    {
+     "id": "tai2024A-P40",
+     "key": "P40",
+     "n": 40,
+     "reserve": false,
+     "text": "En diseño y programación orientada a objetos, una relación de generalización entre clases:",
+     "options": [
+      "Implica que la subclase hereda las propiedades, el comportamiento y las relaciones de la superclase, a la vez que puede añadir sus propias propiedades, relaciones y comportamiento.",
+      "Describe un conjunto de enlaces, que definen las interconexiones semánticas entre las instancias de las clases que participan en la relación.",
+      "Asume una subordinación conceptual del tipo “todo/parte”, o bien “tiene un”.",
+      "Se representa mediante una línea discontinua que une la superclase y subclase con un rectángulo al lado de la superclase."
+     ],
+     "answer": "a",
+     "topic": "programacion",
+     "explanation": "La generalización (herencia) hace que la subclase herede propiedades, comportamiento y relaciones de la superclase, y que pueda añadir lo suyo."
+    },
+    {
+     "id": "tai2024A-P41",
+     "key": "P41",
+     "n": 41,
+     "reserve": false,
+     "text": "Señale la respuesta INCORRECTA respecto al Lenguaje de Modelado Unificado (UML):",
+     "options": [
+      "Es un lenguaje basado en diagramas para la especificación, visualización, construcción y documentación de cualquier sistema software.",
+      "Es independiente de las metodologías de análisis y diseño y de los lenguajes de programación que se utilicen en la construcción del software.",
+      "Se basa en el paradigma de la orientación a objetos.",
+      "Muestra únicamente el modelado estático de un sistema software, que puede utilizarse en las diferentes fases de su ciclo de desarrollo."
+     ],
+     "answer": "d",
+     "topic": "ing-software",
+     "explanation": "UML modela tanto la parte estática (clases, componentes) como la dinámica (secuencia, actividad, estados)."
+    },
+    {
+     "id": "tai2024A-P42",
+     "key": "P42",
+     "n": 42,
+     "reserve": false,
+     "text": "Señale la respuesta INCORRECTA. El patrón de diseño “Composite”:",
+     "options": [
+      "Es un patrón de diseño estructural que permite componer objetos en estructuras de árbol.",
+      "Sirve para construir objetos complejos a partir de otros más simples y similares entre sí.",
+      "Simplifica el tratamiento de los objetos creados que, al poseer de una interfaz común, se tratan todos de la misma manera.",
+      "Se recomienda su uso cuando se quiere añadir responsabilidades a objetos concretos de manera dinámica y transparente y sin afectar a otros objetos."
+     ],
+     "answer": "d",
+     "topic": "programacion",
+     "explanation": "Añadir responsabilidades a objetos de forma dinámica es el patrón Decorator, no Composite."
+    },
+    {
+     "id": "tai2024A-P43",
+     "key": "P43",
+     "n": 43,
+     "reserve": false,
+     "text": "¿Qué es .NET MAUI?",
+     "options": [
+      ".NET MAUI es un marco multiplataforma para crear aplicaciones móviles y de escritorio nativas con C# y XAML.",
+      "Es una plataforma para desarrollar aplicaciones en Java.",
+      "Es una herramienta de pruebas automatizadas.",
+      "Es una plataforma para desarrollar aplicaciones móviles que se puede ejecutar en sistema Android solamente."
+     ],
+     "answer": "a",
+     "topic": "programacion",
+     "explanation": ".NET MAUI es el framework multiplataforma de Microsoft para apps móviles y de escritorio nativas con C# y XAML (sucesor de Xamarin.Forms)."
+    },
+    {
+     "id": "tai2024A-P44",
+     "key": "P44",
+     "n": 44,
+     "reserve": false,
+     "text": "En el ámbito de ASP .NET Core, señale la respuesta correcta respecto a Razor:",
+     "options": [
+      "Razor es la sintaxis de plantillas utilizada en ASP .NET Core para crear vistas dinámicas en aplicaciones web.",
+      "Es uno de los lenguajes de programación que se utilizan con ASP .NET Core.",
+      "Razor se ejecuta directamente en el navegador del cliente.",
+      "Razor utiliza el @símbolo para realizar la transición de C# a HTML."
+     ],
+     "answer": "a",
+     "topic": "programacion",
+     "explanation": "Razor es la sintaxis de plantillas de ASP.NET Core para generar HTML dinámico en el servidor. El símbolo @ sirve para pasar de HTML a C#, no al revés."
+    },
+    {
+     "id": "tai2024A-P45",
+     "key": "P45",
+     "n": 45,
+     "reserve": false,
+     "text": "La persistencia en Jakarta EE se gestiona principalmente a través de la especificación Jakarta Persistence API (JPA). Indique la respuesta correcta:",
+     "options": [
+      "Una de sus ventajas es que no necesita utilizar un proveedor de JPA.",
+      "El lenguaje de consulta similar a SQL pero orientado a objetos de JPA es JPSQL.",
+      "Normalmente, una entidad representa una tabla en una base de datos relacional y cada instancia de la entidad corresponde a una fila de esa tabla.",
+      "JPA no permite definir relaciones entre entidades del tipo uno a muchos."
+     ],
+     "answer": "c",
+     "topic": "programacion",
+     "explanation": "En JPA, una entidad suele mapear una tabla y cada instancia una fila. Necesita un proveedor (Hibernate, EclipseLink), su lenguaje de consulta es JPQL y sí admite relaciones uno a muchos."
+    },
+    {
+     "id": "tai2024A-P46",
+     "key": "P46",
+     "n": 46,
+     "reserve": false,
+     "text": "¿Cuál es una característica de los sistemas distribuidos?",
+     "options": [
+      "Falta de transparencia: un nodo no puede acceder a otros nodos del sistema y comunicarse con ellos.",
+      "Procesamiento independiente: varias máquinas no pueden procesar la misma función a la vez.",
+      "Escalabilidad: la capacidad computacional y de procesamiento puede escalarse hacia arriba según sea necesario cuando se añaden máquinas adicionales.",
+      "Comunicación diferencial: usan nodos distintos para comunicarse y sincronizarse a través de redes independientes entre sí."
+     ],
+     "answer": "c",
+     "topic": "redes",
+     "explanation": "La escalabilidad es una de las características clave de los sistemas distribuidos: se añaden máquinas para ganar capacidad."
+    },
+    {
+     "id": "tai2024A-P47",
+     "key": "P47",
+     "n": 47,
+     "reserve": false,
+     "text": "Señale la opción correcta sobre la arquitectura de servicios web REST:",
+     "options": [
+      "En la arquitectura REST, el servicio no almacena información sobre el estado del cliente entre peticiones.",
+      "El uso de identificadores está basado en SOA.",
+      "En la arquitectura REST, la interfaz para acceder a los recursos expuestos puede ser HTTP o FTP .",
+      "Es una arquitectura no orientada a recursos."
+     ],
+     "answer": "a",
+     "topic": "desarrollo-web",
+     "explanation": "REST es sin estado (stateless): cada petición lleva todo lo necesario y el servidor no guarda el estado del cliente entre peticiones."
+    },
+    {
+     "id": "tai2024A-P48",
+     "key": "P48",
+     "n": 48,
+     "reserve": false,
+     "text": "¿Cuál de las siguientes es una diferencia entre HTML y XHTML?",
+     "options": [
+      "HTML exige que las etiquetas se escriban en minúscula, mientras que XHTML no.",
+      "XHTML permite que haya elementos no vacíos sin cerrar, mientras que HTML no.",
+      "En HTML es obligatorio que los valores de los atributos vayan entre comillas, mientras que en XHTML no.",
+      "En XHTML es obligatoria la presencia del elemento <head>."
+     ],
+     "answer": "d",
+     "topic": "desarrollo-web",
+     "explanation": "XHTML es HTML con las reglas estrictas de XML: <head> obligatorio, etiquetas en minúscula, todo cerrado y atributos entre comillas."
+    },
+    {
+     "id": "tai2024A-P49",
+     "key": "P49",
+     "n": 49,
+     "reserve": false,
+     "text": "¿Qué evento de HTML utilizaría para producir un efecto al situar el puntero del ratón sobre un elemento?",
+     "options": [
+      "onclick.",
+      "onmouseover.",
+      "onmousedown.",
+      "onmouseout."
+     ],
+     "answer": "b",
+     "topic": "desarrollo-web",
+     "explanation": "onmouseover se dispara al pasar el puntero por encima de un elemento. onmouseout salta al salir de él."
+    },
+    {
+     "id": "tai2024A-P50",
+     "key": "P50",
+     "n": 50,
+     "reserve": false,
+     "text": "Con respecto a las solicitudes de información accesible y quejas, el Real Decreto 1112/2018, de 7 de septiembre, sobre accesibilidad de los sitios web y aplicaciones para dispositivos móviles del sector público establece que:",
+     "options": [
+      "Recibidas las solicitudes de información accesible y quejas, la entidad obligada deberá responder a la persona interesada en el plazo de veinte días naturales.",
+      "Recibidas las solicitudes de información accesible y quejas, la entidad obligada deberá responder a la persona interesada en el plazo de veinte días hábiles.",
+      "Recibidas las solicitudes de información accesible y quejas, la entidad obligada deberá responder a la persona interesada en el plazo de diez días naturales.",
+      "Recibidas las solicitudes de información accesible y quejas, la entidad obligada deberá responder a la persona interesada en el plazo de diez días hábiles."
+     ],
+     "answer": "b",
+     "topic": "accesibilidad",
+     "explanation": "RD 1112/2018: las solicitudes de información accesible y las quejas se responden en un plazo de veinte días hábiles."
+    },
+    {
+     "id": "tai2024A-P51",
+     "key": "P51",
+     "n": 51,
+     "reserve": false,
+     "text": "En relación a los principios del Diseño Universal, señale cuál es uno de ellos:",
+     "options": [
+      "Seguridad.",
+      "Información operable.",
+      "Robustez.",
+      "Alto esfuerzo físico."
+     ],
+     "answer": null,
+     "topic": "accesibilidad",
+     "explanation": "Pregunta ANULADA por el tribunal. Los 7 principios del Diseño Universal son: uso equitativo, flexible, simple e intuitivo, información perceptible, tolerancia al error, poco esfuerzo físico, y tamaño y espacio adecuados.",
+     "annulled": true
+    },
+    {
+     "id": "tai2024A-P52",
+     "key": "P52",
+     "n": 52,
+     "reserve": false,
+     "text": "Señale la respuesta correcta referente al término ATAG:",
+     "options": [
+      "Son Pautas de Accesibilidad que explican cómo hacer que el contenido web sea más accesible para las personas con discapacidades.",
+      "Es una Suite que define una forma de hacer que el contenido web y las aplicaciones web sean más accesibles para las personas con discapacidades.",
+      "Son Pautas de Accesibilidad que explican cómo hacer que los agentes de usuario sean accesibles para las personas con discapacidades.",
+      "Son un conjunto de normas que deben cumpl ir las herramientas de autor para ser accesibles y generar contenidos también accesibles."
+     ],
+     "answer": "d",
+     "topic": "accesibilidad",
+     "explanation": "ATAG (Authoring Tool Accessibility Guidelines) son las pautas para las herramientas de autor: que sean accesibles y que generen contenido accesible. WCAG cubre el contenido y UAAG los agentes de usuario."
+    },
+    {
+     "id": "tai2024A-P53",
+     "key": "P53",
+     "n": 53,
+     "reserve": false,
+     "text": "¿Cuál de las siguientes opciones se utilizan para el control de versiones?",
+     "options": [
+      "Mercurial, CVS y Selenium.",
+      "GitLab, GitHub y Apache Subversion.",
+      "SVN, Git y Cucumber.",
+      "Selenium, Cucumber y GitLab."
+     ],
+     "answer": "b",
+     "topic": "ing-software",
+     "explanation": "GitLab, GitHub y Subversion son de control de versiones. Selenium y Cucumber son de pruebas."
+    },
+    {
+     "id": "tai2024A-P54",
+     "key": "P54",
+     "n": 54,
+     "reserve": false,
+     "text": "Según establece Métrica V3, en la construcción de un sistema de información, las pruebas que permiten verificar que los componentes o subsistemas interactúan correctamente a través de sus interfaces, tanto internas como externas, cubren la funcionalidad establecida y se ajustan a los requisitos especificados en las verificaciones correspondientes son:",
+     "options": [
+      "Pruebas unitarias.",
+      "Pruebas de integración.",
+      "Pruebas del sistema.",
+      "Pruebas de migración."
+     ],
+     "answer": "b",
+     "topic": "ing-software",
+     "explanation": "Las pruebas de integración verifican que los componentes interactúan bien a través de sus interfaces."
+    },
+    {
+     "id": "tai2024A-P55",
+     "key": "P55",
+     "n": 55,
+     "reserve": false,
+     "text": "¿Cuál de los siguientes conceptos permite que un proceso ejecute múltiples tareas de manera simultánea o concurrente en un sistema operativo?",
+     "options": [
+      "Segmentación.",
+      "Paginación.",
+      "Prepaging.",
+      "Hilos."
+     ],
+     "answer": "d",
+     "topic": "so",
+     "explanation": "Los hilos (threads) permiten que un proceso ejecute varias tareas concurrentemente compartiendo su memoria.",
+     "learn": "f-so"
+    },
+    {
+     "id": "tai2024A-P56",
+     "key": "P56",
+     "n": 56,
+     "reserve": false,
+     "text": "El comando sfc /scannow:",
+     "options": [
+      "Examina todos los archivos de sistema protegidos y reemplaza los archivos dañados con una copia en caché.",
+      "Rrepara el entorno de arranque ubicado en la partición del sistema.",
+      "Muestra o establece la directiva de red de área de almacenamiento (sanSAN) para el sistema operativo.",
+      "Analizar uno o varios servidores con una directiva generada por SCW."
+     ],
+     "answer": "a",
+     "topic": "so",
+     "explanation": "sfc /scannow (Windows) revisa los archivos protegidos del sistema y repara los dañados con una copia en caché."
+    },
+    {
+     "id": "tai2024A-P57",
+     "key": "P57",
+     "n": 57,
+     "reserve": false,
+     "text": "¿Cuánta carga útil puede almacenar un jumboframe?",
+     "options": [
+      "7.000 bytes.",
+      "1.500 bytes.",
+      "9.000 bytes.",
+      "10.000 bytes."
+     ],
+     "answer": "c",
+     "topic": "redes",
+     "explanation": "Una trama jumbo admite unos 9.000 bytes de carga útil, frente a los 1.500 de una trama Ethernet estándar.",
+     "learn": "f-redes"
+    },
+    {
+     "id": "tai2024A-P58",
+     "key": "P58",
+     "n": 58,
+     "reserve": false,
+     "text": "¿Qué protocolo hay que utilizar para obtener una dirección física a partir de una dirección lógica?",
+     "options": [
+      "RARP.",
+      "NAT.",
+      "ARP.",
+      "PAT."
+     ],
+     "answer": "c",
+     "topic": "redes",
+     "explanation": "ARP obtiene la dirección física (MAC) a partir de la lógica (IP). RARP hace lo contrario.",
+     "learn": "f-redes"
+    },
+    {
+     "id": "tai2024A-P59",
+     "key": "P59",
+     "n": 59,
+     "reserve": false,
+     "text": "¿Qué topología de red consiste en conectar todos los nodos directamente a un nodo central?",
+     "options": [
+      "Estrella.",
+      "Anillo.",
+      "Bus.",
+      "Árbol."
+     ],
+     "answer": "a",
+     "topic": "redes",
+     "explanation": "Topología en estrella: todos los nodos se conectan a un nodo central (switch).",
+     "learn": "f-redes"
+    },
+    {
+     "id": "tai2024A-P60",
+     "key": "P60",
+     "n": 60,
+     "reserve": false,
+     "text": "La regla 3-2-1 de las copias de seguridad consiste en:",
+     "options": [
+      "Conservar 3 copias de los datos, en 2 medios diferentes con 1 copia almacenada en un lugar externo a la organización.",
+      "Conservar 3 copias de los datos, en 2 medios iguales con 1 copia almacenada en un lugar externo a la organización.",
+      "Conservar 3 copias de los datos, en 2 medios iguales con 1 copia almacenada en un lugar interno a la organización.",
+      "Conservar 3 copias de los datos, en 2 medios diferentes con 1 copia almacenada en un lugar interno a la organización."
+     ],
+     "answer": "a",
+     "topic": "seguridad",
+     "explanation": "Regla 3-2-1: 3 copias de los datos, en 2 medios distintos y 1 de ellas fuera de la organización."
+    },
+    {
+     "id": "tai2024A-P61",
+     "key": "P61",
+     "n": 61,
+     "reserve": false,
+     "text": "Señale la respuesta correcta referente a los sistemas de almacenamiento SAN y NAS:",
+     "options": [
+      "SAN es más económico y fácil de configurar.",
+      "SAN es el acrónimo de Storage Attached Network.",
+      "NAS es un dispositivo de almacenamiento compartido basado en archivos.",
+      "NAS es el acrónimo de Network Area Storage."
+     ],
+     "answer": "c",
+     "topic": "so",
+     "explanation": "NAS (Network Attached Storage) comparte almacenamiento a nivel de archivos por la red. SAN (Storage Area Network) trabaja a nivel de bloques y es más cara y compleja."
+    },
+    {
+     "id": "tai2024A-P62",
+     "key": "P62",
+     "n": 62,
+     "reserve": false,
+     "text": "Señale la respuesta correcta:",
+     "options": [
+      "Los backups utilizan poca capacidad de almacenamiento.",
+      "Los backups son manuales, los snapshots son programables.",
+      "Los backups pueden almacenarse en localizaciones y medios distintos.",
+      "Los backups son una representación instantánea del estado de un sistema en un momento específico."
+     ],
+     "answer": "c",
+     "topic": "seguridad",
+     "explanation": "Un backup es una copia independiente que puede guardarse en otro medio y en otro lugar. La foto instantánea del estado de un sistema es el snapshot."
+    },
+    {
+     "id": "tai2024A-P63",
+     "key": "P63",
+     "n": 63,
+     "reserve": false,
+     "text": "¿Cuál es una ventaja del uso del protocolo IMAP en lugar de POP3?",
+     "options": [
+      "Permite visualizar los correos directamente en el servidor sin descargarlos.",
+      "Es más sencillo que POP3.",
+      "No requiere autenticación.",
+      "Descarga los correos automáticamente del servidor."
+     ],
+     "answer": "a",
+     "topic": "redes",
+     "explanation": "IMAP mantiene el correo en el servidor y permite verlo sin descargarlo, sincronizado entre dispositivos. POP3 lo descarga."
+    },
+    {
+     "id": "tai2024A-P64",
+     "key": "P64",
+     "n": 64,
+     "reserve": false,
+     "text": "Señale cuáles de las siguientes son tecnologías relacionadas con la contenerización y la gestión de contenedores:",
+     "options": [
+      "Docker, Containerd y Podman.",
+      "Docker, CRI-O y nginx.",
+      "Podman, Kubernetes y Ubuntu.",
+      "Docker, Kubernetes y Debian."
+     ],
+     "answer": "a",
+     "topic": "virtualizacion",
+     "explanation": "Docker, containerd y Podman son tecnologías de contenedores. nginx es un servidor web, y Ubuntu y Debian son distribuciones Linux.",
+     "learn": "dk-conceptos"
+    },
+    {
+     "id": "tai2024A-P65",
+     "key": "P65",
+     "n": 65,
+     "reserve": false,
+     "text": "Indique la respuesta INCORRECTA respecto a PoE (Power over Ethernet):",
+     "options": [
+      "Power over Ethernet (PoE) es una tecnología que permite que los conmutadores de red transmitan energía y datos a través de un cable Ethernet simultáneamente.",
+      "Existen dos tipos: PoE activo y PoE pasivo.",
+      "PoE pasivo no se adhiere a ningún estándar IEEE.",
+      "El último estándar de PoE activo es el IEEE 802.3at."
+     ],
+     "answer": "d",
+     "topic": "redes",
+     "explanation": "El estándar PoE más reciente es el IEEE 802.3bt (PoE++). El 802.3at es el anterior (PoE+)."
+    },
+    {
+     "id": "tai2024A-P66",
+     "key": "P66",
+     "n": 66,
+     "reserve": false,
+     "text": "La norma IEEE 802.11 se refiere a:",
+     "options": [
+      "Redes inalámbricas.",
+      "Redes de área metropolitana.",
+      "Redes integradas para voz y datos.",
+      "Seguridad de red."
+     ],
+     "answer": "a",
+     "topic": "redes",
+     "explanation": "IEEE 802.11 es la familia de estándares de redes inalámbricas (Wi-Fi)."
+    },
+    {
+     "id": "tai2024A-P67",
+     "key": "P67",
+     "n": 67,
+     "reserve": false,
+     "text": "¿Cuál de las siguientes es una herramienta de ticketing para la gestión de incidentes de seguridad en las entidades del ámbito de aplicación del Esquema Nacional de Seguridad?",
+     "options": [
+      "ATENEA.",
+      "MONICA.",
+      "LUCIA.",
+      "INES."
+     ],
+     "answer": "c",
+     "topic": "seguridad",
+     "explanation": "LUCIA es la herramienta del CCN-CERT para gestionar incidentes de seguridad (ticketing) en el ámbito del ENS."
+    },
+    {
+     "id": "tai2024A-P68",
+     "key": "P68",
+     "n": 68,
+     "reserve": false,
+     "text": "Indique la respuesta correcta sobre el formato de firma digital CAdES:",
+     "options": [
+      "Es apropiado para firmar ficheros grandes, especialmente si la firma contiene el documento original.",
+      "Es el formato de firma que utiliza Microsoft Office.",
+      "El resultado es un fichero de texto XML. No es adecuado cuando el fichero original es muy grande.",
+      "Es el formato más adecuado cuando el documento original es un PDF."
+     ],
+     "answer": "a",
+     "topic": "admin-electronica",
+     "explanation": "CAdES (firma CMS) es apropiado para ficheros grandes, sobre todo si la firma incluye el documento original. XAdES produce XML y PAdES es el formato para PDF."
+    },
+    {
+     "id": "tai2024A-P69",
+     "key": "P69",
+     "n": 69,
+     "reserve": false,
+     "text": "Indique la respuesta correcta sobre tipos de ataque a un sistema de información:",
+     "options": [
+      "El sniffing es la generación de tráfico utilizando un origen falseado.",
+      "El spoofing es la captura del tráfico que circula por una red.",
+      "Denegacion de servicio distribuida (DDoS) es un ataque a varios objetivos desde un solo punto, con la finalidad de degradar total o parcialmente los servicios prestados por esos recursos a sus usuarios legítimos.",
+      "El barrido (“escaneo”) de puertos es un ataque que trata de obtener información básica acerca de qué servicios se ofrecen en un determinado sistema, así como otros detalles técnicos del mismo."
+     ],
+     "answer": "d",
+     "topic": "seguridad",
+     "explanation": "El escaneo de puertos busca qué servicios ofrece un sistema. Ojo a las trampas: sniffing es capturar tráfico, spoofing es falsear el origen y un DDoS ataca desde muchos puntos a la vez."
+    },
+    {
+     "id": "tai2024A-P70",
+     "key": "P70",
+     "n": 70,
+     "reserve": false,
+     "text": "¿Cuál de las siguientes categorías de cable Ethernet tiene 10.000 Mbps como tope de velocidad de transferencia?",
+     "options": [
+      "Categoría 6A.",
+      "Categoría 8.",
+      "Categoría 6.",
+      "Categoría 5E."
+     ],
+     "answer": null,
+     "topic": "redes",
+     "explanation": "Pregunta ANULADA por el tribunal. (Cat 6A alcanza 10 Gbps a 100 m; Cat 8 llega a 25/40 Gbps.)",
+     "annulled": true
+    },
+    {
+     "id": "tai2024A-P71",
+     "key": "P71",
+     "n": 71,
+     "reserve": false,
+     "text": "Señale cuál de las siguientes tecnologías NO es una tecnología LPWAN:",
+     "options": [
+      "LoRaWAN.",
+      "Bluetooth LE.",
+      "SigFox.",
+      "NB-IoT."
+     ],
+     "answer": "b",
+     "topic": "redes",
+     "explanation": "Bluetooth LE es de corto alcance. LoRaWAN, Sigfox y NB-IoT son LPWAN (redes de largo alcance y bajo consumo)."
+    },
+    {
+     "id": "tai2024A-P72",
+     "key": "P72",
+     "n": 72,
+     "reserve": false,
+     "text": "¿Cuál de las siguientes respuestas es correcta respecto al modelo OSI de ISO?",
+     "options": [
+      "Las capas o niveles del modelo OSI son: Física, de red, de transporte, de sesión, de presentación y de aplicación.",
+      "La versión actual del estándar OSI es la ISO/IEC 7498-1:1994.",
+      "La capa de transporte se ocupa, entre otros, de aspectos como el enrutamiento, el reenvío y el direccionamiento a través de una red.",
+      "La capa de sesión a menudo se divide en dos subcapas: la capa de control de acceso a los medios (MAC) y la capa de control de enlace lógico (LLC)."
+     ],
+     "answer": "b",
+     "topic": "redes",
+     "explanation": "La norma vigente del modelo OSI es la ISO/IEC 7498-1:1994. El modelo tiene 7 capas (a la a) le falta la de enlace).",
+     "learn": "f-redes"
+    },
+    {
+     "id": "tai2024A-P73",
+     "key": "P73",
+     "n": 73,
+     "reserve": false,
+     "text": "¿Cuál es la respuesta correcta con respecto modelo TCP/IP?",
+     "options": [
+      "La arquitectura TCP/IP tiene cinco capas o niveles: Acceso a red, Internet, Transporte, Sesión y Aplicación.",
+      "TCP y UDP son protocolos de la capa de Internet.",
+      "Telnet es un protocolo de la capa de sesión.",
+      "ICMP es un protocolo de la capa de Internet."
+     ],
+     "answer": "d",
+     "topic": "redes",
+     "explanation": "ICMP (el que usa ping) es de la capa de Internet en TCP/IP. TCP y UDP son de transporte, y TCP/IP no tiene capa de sesión.",
+     "learn": "f-redes"
+    },
+    {
+     "id": "tai2024A-P74",
+     "key": "P74",
+     "n": 74,
+     "reserve": false,
+     "text": "Relativa al direccionamiento IPv4, indique la respuesta INCORRECTA:",
+     "options": [
+      "La dirección 172.16.52.63 es una dirección de clase B.",
+      "Las direcciones 192.168.123.71 y 192.168.123.133 con máscara de subred 255.255.255.192 se encuentran en la misma red.",
+      "Las redes de clase A usan una máscara de subred predeterminada de 255.0.0.0.",
+      "En las redes clase C se permite direccionar 254 equipos como máximo."
+     ],
+     "answer": "b",
+     "topic": "redes",
+     "explanation": "Con máscara /26 (255.255.255.192) los bloques son de 64: .71 cae en .64-.127 y .133 en .128-.191. Son redes distintas.",
+     "learn": "f-redes"
+    },
+    {
+     "id": "tai2024A-P75",
+     "key": "P75",
+     "n": 75,
+     "reserve": false,
+     "text": "¿Qué código de respuesta HTTP se devuelve si el usuario que hace la petición NO tiene autorización para obtener la información?",
+     "options": [
+      "401",
+      "403",
+      "405",
+      "407"
+     ],
+     "answer": "b",
+     "topic": "desarrollo-web",
+     "explanation": "403 Forbidden: el servidor sabe quién eres, pero no tienes permiso. 401 significa que falta autenticarse."
+    },
+    {
+     "id": "tai2024A-P76",
+     "key": "P76",
+     "n": 76,
+     "reserve": false,
+     "text": "Indique la respuesta correcta sobre el IETF (Internet Engineering Task Force):",
+     "options": [
+      "Es un organismo creador de estándares en Internet.",
+      "Es responsable de las funciones administrativas relacionadas con la raíz del sistema de nombres de dominio (DNS), el direccionamiento del protocolo de Internet y otros recursos del protocolo de Internet.",
+      "Es responsable de administrar y supervisar la coordinación del sistema de nombres de dominio (DNS) de Internet y sus identificadores únicos, como las direcciones de protocolo de Internet (IP).",
+      "Es el Foro de Gobernanza de Internet."
+     ],
+     "answer": "a",
+     "topic": "redes",
+     "explanation": "El IETF es el organismo que elabora los estándares de Internet (los RFC). DNS e IP los gestiona IANA/ICANN, y el Foro de Gobernanza es el IGF."
+    },
+    {
+     "id": "tai2024A-P77",
+     "key": "P77",
+     "n": 77,
+     "reserve": false,
+     "text": "Sobre tipos de transferencia de archivos en el servicio FTP (File Transfer Protocol), es CORRECTO decir que:",
+     "options": [
+      "El tipo ASCII es adecuado para transferir archivos de texto plano.",
+      "El tipo Multimedia es adecuado para transferir imágenes y archivos de audio.",
+      "El tipo Binario solo es adecuado para transferir ficheros ejecutables para PC.",
+      "El tipo ASCII es adecuado para transferir páginas HTML y las imágenes que puedan contener."
+     ],
+     "answer": "a",
+     "topic": "redes",
+     "explanation": "El modo ASCII de FTP es para texto plano. Para imágenes, ejecutables, etc. se usa el modo binario."
+    },
+    {
+     "id": "tai2024A-P78",
+     "key": "P78",
+     "n": 78,
+     "reserve": false,
+     "text": "¿Cuál de los siguientes ataques consiste en suplantar a una entidad legítima por medio de llamadas telefónicas?",
+     "options": [
+      "Pharming.",
+      "Smishing.",
+      "Vishing.",
+      "Whaling."
+     ],
+     "answer": "c",
+     "topic": "seguridad",
+     "explanation": "Vishing (voice phishing) es engañar por teléfono. Smishing es por SMS, whaling apunta a directivos y pharming manipula el DNS."
+    },
+    {
+     "id": "tai2024A-P79",
+     "key": "P79",
+     "n": 79,
+     "reserve": false,
+     "text": "La creación de un señuelo atractivo para potenciales atacantes con el objetivo de aprender sus ataques y poder prevenirlos o defenderlos en el futuro se hace mediante un:",
+     "options": [
+      "IPS.",
+      "SIEM.",
+      "IDS.",
+      "Honeypot."
+     ],
+     "answer": "d",
+     "topic": "seguridad",
+     "explanation": "Un honeypot (tarro de miel) es un señuelo para atraer a los atacantes y estudiar sus técnicas."
+    },
+    {
+     "id": "tai2024A-P80",
+     "key": "P80",
+     "n": 80,
+     "reserve": false,
+     "text": "La herramienta del CCN que proporciona visibilidad y control sobre la red es:",
+     "options": [
+      "CARMEN.",
+      "EMMA.",
+      "MONICA.",
+      "OLVIDO."
+     ],
+     "answer": "b",
+     "topic": "seguridad",
+     "explanation": "EMMA es la herramienta del CCN para la visibilidad y el control de la red."
+    },
+    {
+     "id": "tai2024A-PR1",
+     "key": "PR1",
+     "n": 1,
+     "reserve": true,
+     "text": "Señale cuál es una resolución válida para una pantalla:",
+     "options": [
+      "8K UHD - 7680 x 3840 píxeles.",
+      "Ultra HD - 4320 x 1280 píxeles.",
+      "WQHD - 2560 x 1440 píxeles.",
+      "HD - 1920 × 1080 píxeles."
+     ],
+     "answer": "c",
+     "topic": "hardware",
+     "explanation": "WQHD = 2560×1440. La 8K UHD es 7680×4320 y 1920×1080 es Full HD, no HD."
+    },
+    {
+     "id": "tai2024A-PR2",
+     "key": "PR2",
+     "n": 2,
+     "reserve": true,
+     "text": "¿Cuál es un tipo de panel de una pantalla LCD?",
+     "options": [
+      "IPS (In-Plane Switching).",
+      "VN (Vertical Nematic).",
+      "TA (Twisted Alignment).",
+      "PSI (Plane Switching Input)."
+     ],
+     "answer": "a",
+     "topic": "hardware",
+     "explanation": "IPS (In-Plane Switching) es un tipo de panel LCD, junto a TN y VA."
+    },
+    {
+     "id": "tai2024A-PR3",
+     "key": "PR3",
+     "n": 3,
+     "reserve": true,
+     "text": "El protocolo de IEEE para Rapid Spanning Tree Protocol es:",
+     "options": [
+      "802.1w.",
+      "802.1Q.",
+      "802.1D.",
+      "802.1aq."
+     ],
+     "answer": "a",
+     "topic": "redes",
+     "explanation": "IEEE 802.1w es RSTP (Rapid Spanning Tree). 802.1D es el STP clásico y 802.1Q, las VLAN."
+    },
+    {
+     "id": "tai2024A-PR4",
+     "key": "PR4",
+     "n": 4,
+     "reserve": true,
+     "text": "En CSS3, ¿cuál de las siguientes unidades de medida NO es relativa?",
+     "options": [
+      "Q",
+      "vw",
+      "ex",
+      "ch"
+     ],
+     "answer": "a",
+     "topic": "desarrollo-web",
+     "explanation": "Q (cuarto de milímetro) es una unidad absoluta de CSS. vw, ex y ch son relativas."
+    },
+    {
+     "id": "tai2024A-PR5",
+     "key": "PR5",
+     "n": 5,
+     "reserve": true,
+     "text": "Señale la respuesta correcta:",
+     "options": [
+      "Xcode es un IDE que contiene herramientas destinadas exclusivamente al desarrollo software para iOS.",
+      "Xcode Cloud no existe.",
+      "SwiftUI es un framework que facilita la creación de aplicaciones para cualquier dispositivo Apple.",
+      "iOS SDK permite el desarrollo de aplicaciones para macOS, iOS, watchOS y tvOS."
+     ],
+     "answer": "c",
+     "topic": "programacion",
+     "explanation": "SwiftUI permite crear interfaces para todas las plataformas de Apple."
+    }
+   ]
+  },
+  {
+   "id": "supuesto1",
+   "title": "Supuesto I",
+   "questions": [
+    {
+     "id": "tai2024A-S1-1",
+     "key": "S1-1",
+     "n": 1,
+     "reserve": false,
+     "text": "¿Qué elemento HTML utilizaría para impedir que el e-mail exceda los 100 caracteres cuando el interesado lo cumplimente?",
+     "options": [
+      "<input type=\"email\" id=\"email\" name=\"email\" size=\"100\">",
+      "<input type=\"email\" id=\"email\" name=\"email\" max=\"100\">",
+      "<input type=\"email\" id=\"email\" name=\"email\" maxlength=\"100\">",
+      "<input type=\"email\" id=\"email\" name=\"email\" length=\"100\">"
+     ],
+     "answer": "c",
+     "topic": "desarrollo-web",
+     "explanation": "maxlength limita el número de caracteres que se pueden escribir. size solo cambia el ancho visible y max es para números o fechas."
+    },
+    {
+     "id": "tai2024A-S1-2",
+     "key": "S1-2",
+     "n": 2,
+     "reserve": false,
+     "text": "¿Qué ORM podría utilizar, en función de la solución de backend escogida?",
+     "options": [
+      "JPA en .NET e Hibernate en Java.",
+      "Hibernate en .NET y Entity Framework en Java.",
+      "Entity Framework en .NET e Hibernate en Java.",
+      "Spring Data en .NET e Hibernate en Java."
+     ],
+     "answer": "c",
+     "topic": "programacion",
+     "explanation": "El ORM típico de .NET es Entity Framework y el de Java, Hibernate (que implementa JPA)."
+    },
+    {
+     "id": "tai2024A-S1-3",
+     "key": "S1-3",
+     "n": 3,
+     "reserve": false,
+     "text": "¿Qué sentencia habría que ejecutar si se quiere añadir un nuevo registro a la tabla “CuerpoBecado”?",
+     "options": [
+      "INSERT INTO CuerpoBecado (Codigo, Denominacion) VALUES ('TAI, 'Técnico Auxiliar de Informática');",
+      "INSERT INTO CuerpoBecado (Codigo, Denominacion) VALUES (TAI, Técnico Auxiliar de Informática);",
+      "INSERT TO CuerpoBecado (Codigo, Denominacion) VALUES ('TAI', 'Técnico Auxiliar de Informática');",
+      "INSERT INTO CuerpoBecado (Codigo, Denominacion) VALUES ('TAI', 'Técnico Auxiliar de Informática');"
+     ],
+     "answer": "d",
+     "topic": "bbdd",
+     "explanation": "INSERT INTO tabla (columnas) VALUES ('texto', 'texto'); con los textos entre comillas simples. A la a) le falta cerrar una comilla."
+    },
+    {
+     "id": "tai2024A-S1-4",
+     "key": "S1-4",
+     "n": 4,
+     "reserve": false,
+     "text": "¿Qué tipo de correspondencia hay entre las tablas “SolicitudBeca” y “FicheroAdjunto”?",
+     "options": [
+      "Un registro de SolicitudBeca puede tener N registros de FicheroAdjunto.",
+      "Un registro de SolicitudBeca puede tener como máximo un registro de FicheroAdjunto.",
+      "N registros de SolicitudBeca pueden tener M registros de FicheroAdjunto.",
+      "Un registro de SolicitudBeca puede tener cero o como máximo un registro de FicheroAdjunto."
+     ],
+     "answer": "a",
+     "topic": "bbdd",
+     "explanation": "Relación 1:N: una solicitud puede tener muchos (0..N) ficheros adjuntos y cada fichero pertenece a una sola solicitud."
+    },
+    {
+     "id": "tai2024A-S1-5",
+     "key": "S1-5",
+     "n": 5,
+     "reserve": false,
+     "text": "A este sistema le es de aplicación la normativa vigente de accesibilidad de sitios web. ¿Qué herramienta automatizada utilizaría para probar que la aplicación cumple con los estándares de accesibilidad?",
+     "options": [
+      "QualWeb.",
+      "Equal Automatic Checker.",
+      "AccSite.",
+      "Shovel."
+     ],
+     "answer": "a",
+     "topic": "accesibilidad",
+     "explanation": "QualWeb es un validador automático de accesibilidad web. Otros conocidos: TAW, WAVE o Lighthouse."
+    },
+    {
+     "id": "tai2024A-S1-6",
+     "key": "S1-6",
+     "n": 6,
+     "reserve": false,
+     "text": "El formulario de solicitud será extenso y tendrá muchas consultas de datos. ¿Qué utilizaría para renderizar la página en el servidor?",
+     "options": [
+      "Server Sent Events.",
+      "Ajax.",
+      "WebSocket.",
+      "Server Side Rendering."
+     ],
+     "answer": "d",
+     "topic": "desarrollo-web",
+     "explanation": "Server Side Rendering: el servidor genera el HTML completo antes de enviarlo al navegador."
+    },
+    {
+     "id": "tai2024A-S1-7",
+     "key": "S1-7",
+     "n": 7,
+     "reserve": false,
+     "text": "El proceso de presentación de solicitud implica la autenticación del usuario, la firma de la solicitud, el guardado en base de datos, la generación de un asiento registral y la generación de un justificante de presentación. ¿Qué diagrama UML utilizaría para representar las acciones implicadas en este flujo?",
+     "options": [
+      "Diagrama de paquetes.",
+      "Diagrama de objetos.",
+      "Diagrama de secuencia.",
+      "Diagrama de Entidad/Relación."
+     ],
+     "answer": "c",
+     "topic": "ing-software",
+     "explanation": "El diagrama de secuencia muestra el orden de los mensajes entre participantes en un flujo."
+    },
+    {
+     "id": "tai2024A-S1-8",
+     "key": "S1-8",
+     "n": 8,
+     "reserve": false,
+     "text": "En caso de utilizar Java para el backend, ¿qué tecnología puede utilizar para generar un cliente de servicios web?",
+     "options": [
+      "Apache Flink.",
+      "Apache Xalan.",
+      "Apache Xerces.",
+      "Apache CXF."
+     ],
+     "answer": "d",
+     "topic": "programacion",
+     "explanation": "Apache CXF es un framework Java para crear y consumir servicios web SOAP y REST, y genera clientes a partir del WSDL."
+    },
+    {
+     "id": "tai2024A-S1-9",
+     "key": "S1-9",
+     "n": 9,
+     "reserve": false,
+     "text": "En un entorno de desarrollo Java, ¿qué utilizaría para mapear elementos XML a clases?",
+     "options": [
+      "JAXB.",
+      "JPA.",
+      "JAXR.",
+      "JAX-RS."
+     ],
+     "answer": "a",
+     "topic": "programacion",
+     "explanation": "JAXB (Java Architecture for XML Binding) mapea elementos XML a clases Java y viceversa."
+    },
+    {
+     "id": "tai2024A-S1-10",
+     "key": "S1-10",
+     "n": 10,
+     "reserve": false,
+     "text": "Está escogiendo herramientas que le permitan analizar y mejorar la calidad del código. ¿Cuál de las siguientes NO le será de ayuda?",
+     "options": [
+      "SonarQube.",
+      "Un linter de JavaScript.",
+      "PMD.",
+      "Mercurial."
+     ],
+     "answer": "d",
+     "topic": "ing-software",
+     "explanation": "Mercurial es un control de versiones, no una herramienta de calidad de código como SonarQube, PMD o un linter."
+    },
+    {
+     "id": "tai2024A-S1-11",
+     "key": "S1-11",
+     "n": 11,
+     "reserve": false,
+     "text": "Necesita controlar el plazo de presentación de solicitudes. Suponiendo que utiliza Java en el backend, ¿qué clase nativa de Java puede utilizar para trabajar con una fecha y hora simultáneamente?",
+     "options": [
+      "LocalDateTime.",
+      "LocalDate.",
+      "LocalTime.",
+      "OffsetTime."
+     ],
+     "answer": "a",
+     "topic": "programacion",
+     "explanation": "java.time.LocalDateTime representa fecha y hora a la vez. LocalDate solo guarda la fecha y LocalTime solo la hora."
+    },
+    {
+     "id": "tai2024A-S1-12",
+     "key": "S1-12",
+     "n": 12,
+     "reserve": false,
+     "text": "Para que la aplicación de gestión pueda interactuar con esta aplicación, se va a exponer una capa de servicios web. ¿Cuál de las siguientes opciones NO es válida para documentar dichos servicios?",
+     "options": [
+      "RAML.",
+      "REST.",
+      "WSDL.",
+      "OpenAPI/Swagger."
+     ],
+     "answer": "b",
+     "topic": "desarrollo-web",
+     "explanation": "REST es un estilo de arquitectura, no un lenguaje para documentar. RAML, WSDL y OpenAPI/Swagger sí lo son."
+    },
+    {
+     "id": "tai2024A-S1-13",
+     "key": "S1-13",
+     "n": 13,
+     "reserve": false,
+     "text": "Se desea añadir una tabla “Subsanacion” con las columnas numéricas IdSubsanacion e IdSolicitudBeca y la columna alfanumérica de 2000 caracteres TextoFundamento. ¿Cuál de las siguientes sentencias sería la correcta?",
+     "options": [
+      "CREATE TABLE Subsanacion (IdSubsanacion bigint, IdSolicitudBeca bigint, TextoFundamento varchar(2000));",
+      "CREATE Subsanacion (IdSubsanacion bigint, IdSolicitudBeca bigint, TextoFundamento varchar(2000));",
+      "CREATE NEW TABLE Subsanacion (IdSubsanacion bigint, IdSolicitudBeca bigint, TextoFundamento varchar(2000));",
+      "CREATE TABLE Subsanacion AS (IdSubsanacion bigint, IdSolicitudBeca bigint, TextoFundamento varchar(2000));"
+     ],
+     "answer": "a",
+     "topic": "bbdd",
+     "explanation": "La sintaxis es CREATE TABLE nombre (columna tipo, …);"
+    },
+    {
+     "id": "tai2024A-S1-14",
+     "key": "S1-14",
+     "n": 14,
+     "reserve": false,
+     "text": "Se espera un alto volumen de concurrencia en el sistema. ¿Qué nivel de aislamiento de base de datos debería configurar para que no se produzcan lecturas sucias ni lecturas no repetibles, pero sí lecturas fantasmas?",
+     "options": [
+      "Serializable.",
+      "Read committed.",
+      "Read uncommited.",
+      "Repeatable read."
+     ],
+     "answer": "d",
+     "topic": "bbdd",
+     "explanation": "REPEATABLE READ evita lecturas sucias y no repetibles, pero permite lecturas fantasma. SERIALIZABLE evita también las fantasma."
+    },
+    {
+     "id": "tai2024A-S1-15",
+     "key": "S1-15",
+     "n": 15,
+     "reserve": false,
+     "text": "Se ha determinado que es necesaria la integración de la aplicación con GEISER, cuyos servicios web son de naturaleza SOAP . ¿Con qué firmará las peticiones generadas por la aplicación?",
+     "options": [
+      "WS-Security.",
+      "SAML.",
+      "JW T.",
+      "XML-Encryption."
+     ],
+     "answer": "a",
+     "topic": "seguridad",
+     "explanation": "WS-Security es el estándar para firmar y cifrar mensajes SOAP."
+    },
+    {
+     "id": "tai2024A-S1-16",
+     "key": "S1-16",
+     "n": 16,
+     "reserve": false,
+     "text": "Se quiere utilizar la librería iText de .NET para generar un documento PDF que sirva como justificante de presentación al interesado. ¿Con qué comando instalaría el paquete NuGet?",
+     "options": [
+      "dotnet add package iText.",
+      "dotnet install package iText.",
+      "dotnet add iText.",
+      "dotnet install iText."
+     ],
+     "answer": "a",
+     "topic": "programacion",
+     "explanation": "Los paquetes NuGet se añaden a un proyecto con «dotnet add package Nombre»."
+    },
+    {
+     "id": "tai2024A-S1-17",
+     "key": "S1-17",
+     "n": 17,
+     "reserve": false,
+     "text": "Según “Técnicas y Practicas” de Métrica v3, si se quisiera optimizar el modelo físico de datos para reducir o simplificar el número de accesos a la base de datos, ¿cuál de las siguientes acciones se aplicaría?",
+     "options": [
+      "Combinar entidades si los accesos son frecuentes en transacciones distintas.",
+      "Eliminar entidades.",
+      "Introducir elementos redundantes.",
+      "Normalizar las tablas en Forma Normal de Boyce-Codd (FNBC)."
+     ],
+     "answer": "c",
+     "topic": "ing-software",
+     "explanation": "Para reducir accesos en el diseño físico, Métrica v3 contempla introducir redundancia controlada (desnormalizar)."
+    },
+    {
+     "id": "tai2024A-S1-18",
+     "key": "S1-18",
+     "n": 18,
+     "reserve": false,
+     "text": "Suponiendo que se utilizara la metodología ágil SCRUM, si durante un sprint, se da cuenta de que se está aplicando una mala práctica que puede enlentecer el proyecto, ¿en qué reunión coment ará esa mala práctica, para buscar la mejora continua y evitar aplicarla en los siguientes sprints?",
+     "options": [
+      "En la Daily Scrum.",
+      "En la Sprint Retrospective.",
+      "En la Sprint Planning.",
+      "En la Sprint Review."
+     ],
+     "answer": "b",
+     "topic": "ing-software",
+     "explanation": "La Sprint Retrospective sirve para revisar cómo se ha trabajado y mejorar en los siguientes sprints."
+    },
+    {
+     "id": "tai2024A-S1-19",
+     "key": "S1-19",
+     "n": 19,
+     "reserve": false,
+     "text": "También el sistema se integrará con la PID (Plataforma de Intermediación de Datos), cuya plataforma actual se define como una arquitectura orientada a servicios (SOA). ¿Cuáles son los componentes principales de esta arquitectura?",
+     "options": [
+      "Servicio, Proveedor de servicios, Consumidor de servicios y Orquestador de servicios.",
+      "Servicio, Proveedor de servicios, Consumidor de servicios y Depurador de servicios.",
+      "Servicio, Proveedor de servicios, Consumidor de servicios y Comparador de servicios.",
+      "Servicio, Proveedor de servicios, Consumidor de servicios y Registro de servicios."
+     ],
+     "answer": "d",
+     "topic": "ing-software",
+     "explanation": "Los componentes de SOA son el servicio, el proveedor, el consumidor y el registro de servicios (donde se publican y se descubren)."
+    },
+    {
+     "id": "tai2024A-S1-20",
+     "key": "S1-20",
+     "n": 20,
+     "reserve": false,
+     "text": "Tras estudiar varias opciones se ha decidido utilizar .NET con C# para desarrollar el backend, ¿cómo puede indicar la opcionalidad de un tipo de dato?",
+     "options": [
+      "int? Telefono",
+      "int|null Telefono",
+      "int:null Telefono",
+      "int ?? Telefono"
+     ],
+     "answer": "a",
+     "topic": "programacion",
+     "explanation": "En C#, «int?» es un tipo anulable (Nullable<int>): puede valer null."
+    },
+    {
+     "id": "tai2024A-S1R1",
+     "key": "S1R1",
+     "n": 1,
+     "reserve": true,
+     "text": "Para diseñar el estilo de los campos de entrada obligatorios del formulario de solicitud se va a hacer uso del siguiente selector CSS: “input:required”. ¿Cuál es su especificidad?",
+     "options": [
+      "1-1-0.",
+      "0-1-1.",
+      "1-0-1.",
+      "1-0-0."
+     ],
+     "answer": "b",
+     "topic": "desarrollo-web",
+     "explanation": "Especificidad: input (elemento) = 0-0-1 y :required (pseudoclase) = 0-1-0. En total, 0-1-1."
+    },
+    {
+     "id": "tai2024A-S1R2",
+     "key": "S1R2",
+     "n": 2,
+     "reserve": true,
+     "text": "Se quiere facilitar el uso de herramientas de asistencia en la página. ¿Qué atributo utilizaría para indicar que un elemento se actualizará?",
+     "options": [
+      "aria-live.",
+      "aria-cheked.",
+      "aria-flowto.",
+      "aria-valuenow."
+     ],
+     "answer": "a",
+     "topic": "accesibilidad",
+     "explanation": "aria-live marca una región que se actualiza dinámicamente, para que el lector de pantalla anuncie los cambios."
+    },
+    {
+     "id": "tai2024A-S1R3",
+     "key": "S1R3",
+     "n": 3,
+     "reserve": true,
+     "text": "Para resolver una incidencia, necesita saber qué ficheros adjuntos de la solicitud del interesado con DNI 00000000T para el año 2024 no son PDF. ¿Cómo los obtendría?",
+     "options": [
+      "SELECT * FROM FicheroAdjunto WHERE Denominacion LIKE '%.pdf' AND IdSolicitudBeca = (SELECT IdSolicitudBeca FROM SolicitudBeca WHERE AñoConvocatoria = 2024 AND IdInteresado = (SELECT IdInteresado WHERE DocumentoIdentidad = '00000000T'));",
+      "SELECT * FROM FicheroAdjunto WHERE Denominacion NOT LIKE '%.pdf' AND IdSolicitudBeca = (SELECT IdSolicitudBeca FROM SolicitudBeca WHERE AñoConvocatoria = 2024 AND IdInteresado = (SELECT IdInteresado FROM Interesado));",
+      "SELECT * FROM FicheroAdjunto WHERE Denominacion NOT LIKE '%.pdf' AND IdSolicitudBeca = (SELECT IdSolicitudBeca FROM SolicitudBeca WHERE AñoConvocatoria = 2024 AND IdInteresado = (SELECT IdInteresado FROM Interesado WHERE DocumentoIdentidad = '00000000T'))",
+      "SELECT * FROM FicheroAdjunto WHERE Denominacion NOT LIKE 'pdf' AND IdSolicitudBeca = (SELECT IdSolicitudBeca FROM SolicitudBeca WHERE AñoConvocatoria = 2024 AND IdInteresado = (SELECT IdInteresado FROM Interesado WHERE DocumentoIdentidad = '00000000T'));"
+     ],
+     "answer": "c",
+     "topic": "bbdd",
+     "explanation": "Necesita NOT LIKE '%.pdf' y la subconsulta completa por DNI (FROM Interesado WHERE DocumentoIdentidad = …). A la a) le falta el FROM y a la d) el comodín %."
+    },
+    {
+     "id": "tai2024A-S1R4",
+     "key": "S1R4",
+     "n": 4,
+     "reserve": true,
+     "text": "¿Qué tendrá que configurar en el backend si quiere restringir que las únicas peticiones HTTP de origen cruzado iniciadas desde scripts que se acepten procedan del frontend?",
+     "options": [
+      "HSTS.",
+      "CS P.",
+      "TLS.",
+      "CORS."
+     ],
+     "answer": "d",
+     "topic": "seguridad",
+     "explanation": "CORS controla qué orígenes pueden hacer peticiones HTTP de origen cruzado al backend desde scripts."
+    },
+    {
+     "id": "tai2024A-S1R5",
+     "key": "S1R5",
+     "n": 5,
+     "reserve": true,
+     "text": "Quiere facilitar la incorporación de otros desarrolladores al proyecto y para ello, en el repositorio de código, va a crear un fichero en el que incluirá, entre otra información, el propósito del proyecto y cómo arrancarlo localmente. Esa información se incluirá en el fichero:",
+     "options": [
+      "CODEOWNERS.",
+      "README.MD.",
+      "LICENSE.",
+      "CITATION."
+     ],
+     "answer": "b",
+     "topic": "ing-software",
+     "explanation": "README.md explica el propósito del proyecto y cómo arrancarlo."
+    }
+   ],
+   "context": [
+    "El organismo en el que usted presta servicios es el órgano competente para la concesión de unas becas para personas opositoras y, por tanto, ha surgido la necesidad de desarrollar un sistema de información que cubra todas las fases que se producen en la concesión de las becas.",
+    "A continuación, se expone parte del modelo de datos del sistema, donde los atributos señalados en negrita son claves primarias y los señalados en cursiva, claves foráneas:",
+    "El sistema, en su parte frontend, permitirá la firma y presentación de solicitudes, subsanaciones y alegaciones por parte de los interesados una vez se autentiquen. También permitirá la descarga de los distintos listados que se publiquen por parte de los empleados públicos del organismo que tramita estas becas.",
+    "Por otra parte, el backend dará el servicio necesario al frontend y, además, permitirá a los empleados públicos del organismo, desde una aplicación de gestión, visualizar la información y documentación de las solicitudes, subsanaciones y alegaciones presentadas, así como la publicación de los listados mencionados anteriormente.",
+    "Para el desarrollo del frontend se utilizará un framework de desarrollo web con JavaScript, HTML5 y CSS3, mientras que el backend podrá desarrollarse con .NET o Java, dependiendo de la experiencia y conocimientos de los desarrolladores del organismo.",
+    "También se ha decidido usar GitHub (plataforma de desarrollo colaborativo para alojar proyectos utilizando el sistema de control de versiones Git) para poder compartir el trabajo entre los desarrolladores en la cual se puede almacenar, compartir y trabajar de forma conjunta en el código. De esta forma se permite seguir y administrar los cambios en el código a lo largo del tiempo.",
+    "Adicionalmente, se utilizará un gestor documental para la gestión de la documentación aportada en cada uno de los trámites por los interesados, así como los respectivos servicios del Catálogo de Servicios de Administración Digital que puedan reutilizarse."
+   ],
+   "schema": {
+    "tables": [
+     {
+      "name": "Interesado",
+      "columns": [
+       [
+        "IdInteresado",
+        "bigint",
+        "pk"
+       ],
+       [
+        "DocumentoIdentidad",
+        "varchar(9)"
+       ],
+       [
+        "Nombre",
+        "varchar(100)"
+       ],
+       [
+        "Apellido1",
+        "varchar(100)"
+       ],
+       [
+        "Apellido2",
+        "varchar(100)"
+       ],
+       [
+        "Email",
+        "varchar(100)"
+       ]
+      ]
+     },
+     {
+      "name": "SolicitudBeca",
+      "columns": [
+       [
+        "IdSolicitudBeca",
+        "bigint",
+        "pk"
+       ],
+       [
+        "IdInteresado",
+        "bigint",
+        "fk"
+       ],
+       [
+        "IdCuerpoBecado",
+        "bigint",
+        "fk"
+       ],
+       [
+        "FechaPresentacion",
+        "datetime"
+       ],
+       [
+        "IdEstado",
+        "bigint",
+        "fk"
+       ],
+       [
+        "AñoConvocatoria",
+        "int"
+       ]
+      ]
+     },
+     {
+      "name": "FicheroAdjunto",
+      "columns": [
+       [
+        "IdFicheroAdjunto",
+        "bigint",
+        "pk"
+       ],
+       [
+        "IdSolicitudBeca",
+        "bigint",
+        "fk"
+       ],
+       [
+        "Denominacion",
+        "varchar(100)"
+       ]
+      ]
+     },
+     {
+      "name": "CuerpoBecado",
+      "columns": [
+       [
+        "IdCuerpoBecado",
+        "bigint",
+        "pk"
+       ],
+       [
+        "Codigo",
+        "varchar(10)"
+       ],
+       [
+        "Denominacion",
+        "varchar(100)"
+       ]
+      ]
+     },
+     {
+      "name": "Estado",
+      "columns": [
+       [
+        "IdEstado",
+        "bigint",
+        "pk"
+       ],
+       [
+        "Codigo",
+        "varchar(10)"
+       ],
+       [
+        "Denominacion",
+        "varchar(100)"
+       ]
+      ]
+     }
+    ],
+    "relations": [
+     "Interesado 1 ── 0..N SolicitudBeca",
+     "SolicitudBeca 1 ── 0..N FicheroAdjunto",
+     "CuerpoBecado 1 ── 0..N SolicitudBeca",
+     "Estado 1 ── 0..N SolicitudBeca"
+    ]
+   }
+  },
+  {
+   "id": "supuesto2",
+   "title": "Supuesto II",
+   "questions": [
+    {
+     "id": "tai2024A-S2-1",
+     "key": "S2-1",
+     "n": 1,
+     "reserve": false,
+     "text": "¿Cuántas direcciones hay disponibles para hosts en la subred del organismo?",
+     "options": [
+      "4094",
+      "65534",
+      "4096",
+      "65536"
+     ],
+     "answer": "a",
+     "topic": "redes",
+     "explanation": "Dividir un /16 en 16 subredes deja /20: quedan 12 bits para hosts, 2^12 − 2 = 4094 direcciones utilizables.",
+     "learn": "f-redes"
+    },
+    {
+     "id": "tai2024A-S2-2",
+     "key": "S2-2",
+     "n": 2,
+     "reserve": false,
+     "text": "Al arrancar el servidor donde se aloja la web de profesores, aparecen errores en la partición sda8. ¿Qué comando hay que usar para reparar de forma automática los errores en el sistema de ficheros correspondiente, que no ha podido montarse?",
+     "options": [
+      "mount –T /dev/sda8",
+      "fsck -y /dev/sda8",
+      "fsck -m /dev/sda8",
+      "checkdisk /dev/sda8"
+     ],
+     "answer": "b",
+     "topic": "so",
+     "explanation": "«fsck -y» revisa y repara el sistema de ficheros respondiendo «sí» a todas las correcciones.",
+     "learn": "lx-sistema"
+    },
+    {
+     "id": "tai2024A-S2-3",
+     "key": "S2-3",
+     "n": 3,
+     "reserve": false,
+     "text": "Analizando la seguridad del sistema, surge la duda de si abrir o no el puerto 80 en un servidor web expuesto mediante HTTPS. El Centro Criptológico Nacional recomienda:",
+     "options": [
+      "Exhibir una web estática en el puerto 80 indicando que esa no es la web actual.",
+      "Cambiar el puerto HTTPS al 8892.",
+      "Utilizar un analizador de peticiones en las cabeceras HTTP en el puerto 80.",
+      "Disponer del puerto TCP/80, configurando el servidor web para que lleve a cabo una redirección automática de HTTP a HTTPS."
+     ],
+     "answer": "d",
+     "topic": "seguridad",
+     "explanation": "El CCN recomienda dejar el puerto 80 abierto solo para redirigir automáticamente a HTTPS."
+    },
+    {
+     "id": "tai2024A-S2-4",
+     "key": "S2-4",
+     "n": 4,
+     "reserve": false,
+     "text": "El CPD donde está alojado el sistema tiene una puerta cuyo control de acceso es con tarjeta inteligente y PI N, que sólo conocen los operadores. Hace dos días, se supo que alguien no autorizado había entrado esperando agazapado a que alguien autorizado entrase, pasando detrás de él sin que éste advirtiera que tenía a un intruso detrás. Este incidente de ingeniería social en seguridad física se conoce con el nombre de:",
+     "options": [
+      "Tailgating o piggybacking.",
+      "Quid pro quo.",
+      "Pretexto.",
+      "Disrupción."
+     ],
+     "answer": "a",
+     "topic": "seguridad",
+     "explanation": "Tailgating o piggybacking es colarse detrás de una persona autorizada."
+    },
+    {
+     "id": "tai2024A-S2-5",
+     "key": "S2-5",
+     "n": 5,
+     "reserve": false,
+     "text": "El organismo tiene, para controlar la seguridad física del CPD, un circuito cerrado de televisión con cámaras que usa una red coaxial y se necesita interconectar esta red a la red local Ethernet para poder monitorizarlas. ¿Con qué dispositivo de red puede hacerlo?",
+     "options": [
+      "Un cortafuegos (firewall).",
+      "Una pasarela (gateway).",
+      "Un conmutador (switch).",
+      "Un repetidor (repeater)."
+     ],
+     "answer": "b",
+     "topic": "redes",
+     "explanation": "Una pasarela (gateway) conecta redes con tecnologías o protocolos distintos, como coaxial y Ethernet."
+    },
+    {
+     "id": "tai2024A-S2-6",
+     "key": "S2-6",
+     "n": 6,
+     "reserve": false,
+     "text": "En el sistema se utilizan los protocolos DNS y FTP seguro. De acuerdo con el modelo TCP/IP , estos protocolos se diferencian en que:",
+     "options": [
+      "DNS es un protocolo de usuario y FTP es un protocolo de soporte.",
+      "DNS es siempre un protocolo orientado a la conexión mientras que FTP no.",
+      "No existe diferencia entre ambos protocolos, ambos son protocolos de soporte.",
+      "FTP es un protocolo de usuario y DNS es un protocolo de soporte."
+     ],
+     "answer": "d",
+     "topic": "redes",
+     "explanation": "FTP es un protocolo de usuario (lo usa directamente la persona) y DNS es de soporte (lo usan otros protocolos por debajo)."
+    },
+    {
+     "id": "tai2024A-S2-7",
+     "key": "S2-7",
+     "n": 7,
+     "reserve": false,
+     "text": "En un switch Cisco que hay en la organización, se ejecuta el comando “switchport access vlan 1”. Esto permitirá:",
+     "options": [
+      "Asignar un puerto a la VLAN 1.",
+      "Asignar el puerto 1 del switch a la VLAN donde estamos situados en la consola del switch.",
+      "Visualizar todos los hosts asignados a la VLAN 1.",
+      "Asignar todos los hosts conectados a cualquier puerto del switch a la VLAN 1."
+     ],
+     "answer": "a",
+     "topic": "redes",
+     "explanation": "«switchport access vlan 1», dentro de la configuración de una interfaz, asigna ese puerto a la VLAN 1."
+    },
+    {
+     "id": "tai2024A-S2-8",
+     "key": "S2-8",
+     "n": 8,
+     "reserve": false,
+     "text": "La base de datos se ha corrompido y además, los usuarios no pueden acceder a la información. Se tiene toda la información de cómo se produjo el incidente y cuál es la persona que lo ha causado y por qué, pero, este incidente, ¿a qué dimensión o dimensiones de la seguridad afecta?",
+     "options": [
+      "A la disponibilidad porque no está accesible la base de datos y la integridad porque el fichero de la base de datos está corrupto.",
+      "A la confidencialidad porque los datos, una vez dañados, pueden ser accesibles por cualquiera.",
+      "Sólo a la disponibilidad porque la base de datos está temporalmente fuera de servicio hasta que se repare si es posible el fichero donde se aloja.",
+      "A la trazabilidad, porque no podremos averiguar lo que ha pasado por mucho que nos esforcemos, la seguridad es así."
+     ],
+     "answer": "a",
+     "topic": "seguridad",
+     "explanation": "Base de datos inaccesible = disponibilidad; fichero corrupto = integridad. La trazabilidad no se ve afectada porque se sabe quién y cómo."
+    },
+    {
+     "id": "tai2024A-S2-9",
+     "key": "S2-9",
+     "n": 9,
+     "reserve": false,
+     "text": "La red de área local está implementada con Gigabit Ethernet y, al conectar un nuevo dispositivo a la red, en su tarjeta, parpadea una luz de color naranja. ¿A qué puede deberse?",
+     "options": [
+      "A que está mal configurada la VLAN donde está ubicado el dispositivo.",
+      "A que la tarjeta de red del dispositivo transmite a menor velocidad de la que permite la red.",
+      "A que la tarjeta de red está estropeada y no hay conexión entre el dispositivo y la red.",
+      "A que el cable del dispositivo es coaxial y no Ethernet."
+     ],
+     "answer": "b",
+     "topic": "redes",
+     "explanation": "En muchas tarjetas, el LED naranja o ámbar indica enlace a menor velocidad (10/100) que la máxima (verde = 1 Gbps)."
+    },
+    {
+     "id": "tai2024A-S2-10",
+     "key": "S2-10",
+     "n": 10,
+     "reserve": false,
+     "text": "Nos anuncian que hay una vulnerabilidad que afecta a una determinada versión del kernel de Linux Ubuntu. ¿Con qué comando podemos saber qué versión del kernel tiene nuestro sistema operativo Ubuntu?",
+     "options": [
+      "sudo dpkg -i linux*.deb",
+      "uname -r",
+      "uname -o",
+      "kexec -l"
+     ],
+     "answer": "b",
+     "topic": "so",
+     "explanation": "«uname -r» muestra la versión (release) del kernel. «uname -o» muestra el sistema operativo.",
+     "learn": "lx-sistema"
+    },
+    {
+     "id": "tai2024A-S2-11",
+     "key": "S2-11",
+     "n": 11,
+     "reserve": false,
+     "text": "Para descargar algunos ficheros del servidor BIBLIOTECA, los administradores están sopesando entre el uso de SFTP y FTPS. Indique, de las siguientes afirmaciones, la INCORRECTA:",
+     "options": [
+      "SFTP usa típicamente el puerto 22 de SSH mientras que FTPS usa el puerto en el que tengamos definido el protocolo SSL/TLS.",
+      "SFTP usa autenticación con certificado (clave pública) mientras que FTPS usa autenticación con usuario y contraseña.",
+      "FTPS usa dos puertos, uno para los comandos y otro para descargarse los datos mientras que SFTP usa el mismo puerto para ambas tareas.",
+      "FTPS no contiene comandos estandarizados para manipular directorios o listar atributos, mientras que SFTP sí."
+     ],
+     "answer": "b",
+     "topic": "redes",
+     "explanation": "Es falso que FTPS solo use usuario y contraseña: también admite certificados. Y SFTP también puede usar contraseña."
+    },
+    {
+     "id": "tai2024A-S2-12",
+     "key": "S2-12",
+     "n": 12,
+     "reserve": false,
+     "text": "Para la detección de malware complejo y movimiento lateral relacionado con APTs (Advanced Persistent Threats), se ha instalado en los PC de los profesores, la solución del CCN, CLAUDIA. ¿Cómo define el Centro Criptológico Nacional una APT?",
+     "options": [
+      "Es un tipo de ransomware como, por ejemplo, WannaCry, que te cifra los archivos del PC y se requiere la clave de descifrado a cambio del pago de un rescate.",
+      "Es un ataque de suplantación de identidad de un usuario corriente en un organismo para después mediante escalada de privilegios obtener las credenciales de un alto cargo de la empresa u organización.",
+      "Es un ataque selectivo de ciberespionaje o cibersabotaje llevado a cabo bajo el auspicio o la dirección de un país u organización adversaria, por razones que van más allá de las meramente financieras/delictivas o de protesta política.",
+      "Es un ataque masivo a una organización ocurrido por un fallo que no se había advertido hasta ese momento y, por tanto, no se cuenta con la salvaguarda o parche para prevenirlo."
+     ],
+     "answer": "c",
+     "topic": "seguridad",
+     "explanation": "Según el CCN, una APT es un ataque selectivo de ciberespionaje o cibersabotaje patrocinado por un Estado u organización, con fines que van más allá de lo económico."
+    },
+    {
+     "id": "tai2024A-S2-13",
+     "key": "S2-13",
+     "n": 13,
+     "reserve": false,
+     "text": "Para mejorar la escalabilidad del sistema, está estudiando implantar una arquitectura de microservicios con Kubernetes. ¿Qué protocolos para servicios pueden utilizarse con Kubernetes?",
+     "options": [
+      "SCTP , TCP (por defecto) y UDP .",
+      "HTTP (por defecto), HTTPS y FTP.",
+      "SSH, SFTP (por defecto) y UDP .",
+      "UDP (por defecto) y TCP ."
+     ],
+     "answer": "a",
+     "topic": "virtualizacion",
+     "explanation": "Los Services de Kubernetes admiten TCP (por defecto), UDP y SCTP.",
+     "learn": "dk-k8s"
+    },
+    {
+     "id": "tai2024A-S2-14",
+     "key": "S2-14",
+     "n": 14,
+     "reserve": false,
+     "text": "Para poder atender las llamadas de las guardias de sistemas, se han comprado veinte móviles. Su responsable le pide realizar el enrolamiento de estos móviles, pero, ¿en qué consiste esta tarea?",
+     "options": [
+      "Emparejar, en el sistema MDM (Mobile Device Management) de la organización, a cada usuario con su móvil.",
+      "Dar de alta en una base de datos de administración todos los dispositivos móviles.",
+      "Insertar la tarjeta SIM correspondiente a cada móvil.",
+      "Formatear a fábrica todos los dispositivos móviles."
+     ],
+     "answer": "a",
+     "topic": "seguridad",
+     "explanation": "Enrolar un móvil es darlo de alta en el MDM de la organización y asociarlo a su usuario para gestionarlo."
+    },
+    {
+     "id": "tai2024A-S2-15",
+     "key": "S2-15",
+     "n": 15,
+     "reserve": false,
+     "text": "Se está instalando la nueva climatización del CPD y se plantea utilizar una toma derivada de la climatización del resto del edificio. ¿Cuál es la razón principal por la que NO se aconseja hacer eso?",
+     "options": [
+      "Porque la humedad recomendada para un CPD es mucho menor que la recomendada para las personas.",
+      "Porque la temperatura recomendada para un CPD es mucho mayor que la recomendada para las personas.",
+      "Porque el filtro de impurezas y polvo para las personas es mucho más sensible que lo que se recomienda para un CPD.",
+      "Porque el aire acondicionado para un CPD siempre debe provenir del techo y para las personas puede provenir lateralmente."
+     ],
+     "answer": null,
+     "topic": "hardware",
+     "explanation": "Pregunta ANULADA por el tribunal.",
+     "annulled": true
+    },
+    {
+     "id": "tai2024A-S2-16",
+     "key": "S2-16",
+     "n": 16,
+     "reserve": false,
+     "text": "Se ha descargado del sitio web del CCN-CERT una herramienta de antimalware y justo debajo aparece un hash de comprobación. ¿Qué tipo de medida de seguridad es este hash en este contexto?",
+     "options": [
+      "Una medida antimalware, pues el hash aplicado al fichero descargado nos sanitiza el fichero y ya se puede usar sin problemas, pues está limpio de malware, lo cual en una herramienta antimalware es altamente necesario.",
+      "Una medida para asegurar la integridad del fichero de descarga, pues si al calcular nosotros el hash del fichero descargado no coincide con el que nos aparece en la página del CCN, el fichero descargado no sería válido para su uso.",
+      "El hash es la firma del CCN como autoridad de certificación de productos que garantiza que el software descargado es apto para ser usado en sistemas categorizados como de nivel ALTO o incluso en sistemas clasificados como reservado nacional.",
+      "El hash es la firma del CCN de la página web donde se presenta la herramienta que estamos intentando descargar y es una medida para evitar que los hackers puedan manipular la página y subir otro fichero en vez del que se pretende descargar."
+     ],
+     "answer": "b",
+     "topic": "seguridad",
+     "explanation": "El hash sirve para comprobar la integridad: si el que calculas tú no coincide con el publicado, el fichero se ha alterado."
+    },
+    {
+     "id": "tai2024A-S2-17",
+     "key": "S2-17",
+     "n": 17,
+     "reserve": false,
+     "text": "Se ha implantado una solución VoIP que usa el protocolo SIP pero, al establecer sesiones con usuarios de fuera del organismo, la llamada se corta o congela y después, se restablece. Este problema no sucede en sesiones entre usuarios internos del organismo, ¿por qué puede ser?",
+     "options": [
+      "Se están usando incorrectamente los códecs.",
+      "La salida a Internet está empleando NAT.",
+      "El tráfico entre origen y destino está interceptado en el cortafuegos de Internet.",
+      "La CPU del ordenador es insuficiente y provoca estos problemas."
+     ],
+     "answer": "b",
+     "topic": "redes",
+     "explanation": "SIP lleva IPs dentro de los mensajes y el NAT las rompe: de ahí los cortes con usuarios externos."
+    },
+    {
+     "id": "tai2024A-S2-18",
+     "key": "S2-18",
+     "n": 18,
+     "reserve": false,
+     "text": "Se ha instalado un servidor de correo con Postfix y se está decidiendo si utilizar POP3 o IMAP en los clientes de correo. ¿Cuál de las siguientes opciones es INCORRECTA?",
+     "options": [
+      "Con IMAP , los mensajes se almacenan en un servidor remoto y los usuarios pueden iniciar sesión en varios clientes de correo electrónico y leer los mismos mensajes.",
+      "POP3 solo admite la sincronización de correo unidireccional, lo que solo permite a los usuarios descargar correos electrónicos desde un servidor a un cliente.",
+      "Con IMAP , el correo enviado y recibido se almacena en el servidor hasta que el usuario lo elimina permanentemente.",
+      "Con POP3, si los usuarios organizan sus correos electrónicos en un dispositivo mediante carpetas, ya no tendrán que hacerlo en el resto de dispositivos porque se replica la organización en carpetas."
+     ],
+     "answer": "d",
+     "topic": "redes",
+     "explanation": "POP3 descarga el correo a un dispositivo: las carpetas que crees ahí no se replican en los demás. Eso lo hace IMAP."
+    },
+    {
+     "id": "tai2024A-S2-19",
+     "key": "S2-19",
+     "n": 19,
+     "reserve": false,
+     "text": "Se necesita saber los usuarios que acceden a la base de datos de la biblioteca y desde qué host o IP . Para averiguarlo, en la consola de administración de la base de datos, ejecutará el comando:",
+     "options": [
+      "SELECT * FROM all_users",
+      "mysql> SELECT user FROM mysql.user",
+      "mysql> SELECT user,host FROM mysql.user",
+      "sudo mysql -u root -p"
+     ],
+     "answer": "c",
+     "topic": "bbdd",
+     "explanation": "La tabla mysql.user guarda los usuarios con su columna host (desde dónde pueden conectarse)."
+    },
+    {
+     "id": "tai2024A-S2-20",
+     "key": "S2-20",
+     "n": 20,
+     "reserve": false,
+     "text": "Se quiere aplicar políticas de seguridad al grupo de usuarios Profesores utilizando Directorio Activo y GPOs. Una buena práctica es definir primero:",
+     "options": [
+      "Una Unidad Organizativa (OU) para el grupo de usuarios Profesores.",
+      "Las ACLs (Access Control Lists) que tendrán las GPO del grupo de usuarios Profesores.",
+      "Un nuevo bosque de Directorio Activo.",
+      "Relaciones de confianza entre el Directorio Activo actual y el dominio de seguridad del grupo de usuarios Profesores."
+     ],
+     "answer": "a",
+     "topic": "so",
+     "explanation": "Buena práctica en AD: crear primero una Unidad Organizativa y vincularle las GPO."
+    },
+    {
+     "id": "tai2024A-S2R1",
+     "key": "S2R1",
+     "n": 1,
+     "reserve": true,
+     "text": "Como administrador de correo, quiere cambiar el mensaje HELO que aparece cuando se establecen conexiones al servidor SMTP . Actualmente aparece el nombre del servidor, pero quiere que muestre \"CORREOBIBLIOTECA\" y además, que el cambio se aplique en todos los servidores SMTP que existan, no solo en aquel en el que está trabajando. ¿Cómo lo haría?",
+     "options": [
+      "Editando el parámetro $client en el fichero /etc/postfix/main.cf y reiniciando posteriormente el servidor Postfix.",
+      "Accediendo al servidor SMTP y ejecutando EHLO -name CORREOBIBLIOTECA en la consola.",
+      "Editando el parámetro smtp_helo en el fichero /etc/postfix/master.cf y reiniciando posteriormente el servidor Postfix.",
+      "Editando el parámetro $helo_name en /etc/postfix/main.cf y reiniciando posteriormente el servidor Postfix."
+     ],
+     "answer": "d",
+     "topic": "redes",
+     "explanation": "En Postfix, el nombre que se presenta en el saludo HELO/EHLO se configura en main.cf (smtp_helo_name, que por defecto toma $myhostname)."
+    },
+    {
+     "id": "tai2024A-S2R2",
+     "key": "S2R2",
+     "n": 2,
+     "reserve": true,
+     "text": "Como no hay suficientes tomas Ethernet en la zona física donde están los profesores, se va a instalar una red WiFi con protocolo WPA3-Enterprise. En este caso, para acceder a la red WiFi habrá que utilizar:",
+     "options": [
+      "Una contraseña de 64 bits.",
+      "Una contraseña de 128 bits.",
+      "Un servidor RADIUS o cualquier solución que permita EAP-TLS.",
+      "Una contraseña de 192 bits usando el algoritmo GMCP-256."
+     ],
+     "answer": "c",
+     "topic": "seguridad",
+     "explanation": "WPA3-Enterprise usa 802.1X: un servidor RADIUS con métodos EAP, como EAP-TLS."
+    },
+    {
+     "id": "tai2024A-S2R3",
+     "key": "S2R3",
+     "n": 3,
+     "reserve": true,
+     "text": "En la base de datos MySQL de Profesores, nos piden que añadamos una tabla de los profesores para el curso de INGLES BASICO, que se llamará \"ProfesoresIngles\" con sus nombres y apellidos. Para ello, y tras acceder como root a MYSQL, ingresaremos el comando:",
+     "options": [
+      "CREATE TABLE ProfesoresIngles (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, nombre VARCHAR(30), apellido1 VARCHAR(30), apellido2 VARCHAR(30));",
+      "CREATE TABLE ProfesoresIngles KEY id, nombre, apellidos;",
+      "CREAR TABLA ProfesoresIngles KEY apellidos, nombre;",
+      "CREATE TABLE ProfesoresIngles (nombre, apellido);"
+     ],
+     "answer": "a",
+     "topic": "bbdd",
+     "explanation": "CREATE TABLE con su clave primaria autoincremental y las columnas con tipo, como en la a)."
+    },
+    {
+     "id": "tai2024A-S2R4",
+     "key": "S2R4",
+     "n": 4,
+     "reserve": true,
+     "text": "Ha instalado el servicio Nagios para monitorizar los servidores y servicios en su sistema y quiere monitorizar, además, la URL de profesores (https://profesores.es), pero antes quiere comprobar que este servicio está configurado correctamente. Para ello, utilizará el comando:",
+     "options": [
+      "nagios –v /usr/local/nagios/etc/nagios.cfg",
+      "/mnt/nagios –check",
+      "systemctl status nagios",
+      "https://profesores.es nagios"
+     ],
+     "answer": "a",
+     "topic": "so",
+     "explanation": "«nagios -v fichero.cfg» verifica la configuración de Nagios antes de reiniciarlo."
+    },
+    {
+     "id": "tai2024A-S2R5",
+     "key": "S2R5",
+     "n": 5,
+     "reserve": true,
+     "text": "Se ha instalado un servidor web con HTTPS y certificado SSL de servidor para proteger la conexión entre los clientes y el servidor, para lo cual la conexión usará TLS. Según las recomendaciones del Centro Criptológico Nacional, ¿cuál es la versión mínima y la recomendada a usar en TLS?",
+     "options": [
+      "La versión mínima aceptable es la 1.1 y se recomienda usar esa misma versión 1.1",
+      "La versión mínima aceptable es la 1.0 y se recomienda usar 1.1",
+      "La versión mínima aceptable es la 1.2 y se recomienda usar la 1.3",
+      "La versión mínima aceptable es la 1.1 y se recomienda usar la 1.3"
+     ],
+     "answer": "c",
+     "topic": "seguridad",
+     "explanation": "El CCN fija TLS 1.2 como versión mínima aceptable y recomienda TLS 1.3."
+    }
+   ],
+   "context": [
+    "El Ministerio de Educación, Formación Profesional y Deportes tiene una red asignada en el Plan de Direccionamiento de la AGE 10.9.0.0/16 y ha creado un organismo para la enseñanza online de formadores, OEOF (en adelante nos referiremos en este supuesto sólo como “organismo”), al que le ha correspondido la última de las subredes de las 16 en las que se ha dividido la red ministerial.",
+    "El sistema de enseñanza online de formadores se fundamenta en un servidor de formación accesible también desde Internet en la URL https://www.profesores.es. Los servidores de este sistema (web, http, DNS, DHCP , LDAP), se van a instalar con sistema operativo Linux Ubuntu. El portal web está montado usando Apache Tomcat.",
+    "El certificado del portal (SSL) estará asociado al dominio profesores.es. Para poder gestionar el correo de los profesores, se ha instalado un servidor de correo con tecnología Postfix.",
+    "Los DNS se han instalado usando el software BIND así como la asignación dinámica de direcciones IP mediante DHCP .",
+    "Hay un servidor llamado BIBLIOTECA que contiene un compendio de documentos e información de utilidad para los profesores. El acceso está permitido por RDP . En los elementos de configuración está permitido el acceso remoto para todos los usuarios que en el Directorio Activo estén en el Grupo de Profesores. El resto no podrán conectarse. No hay elementos de red que impidan la conexión libre por el puerto RDP 389 a dicho servidor, desde su misma VLAN.",
+    "La base de datos de la biblioteca es MySQL.",
+    "Además, sobre servidores Ubuntu, se han instalado herramientas de detección de vulnerabilidades (Tenable Nessus y Nmap) y de monitorización de sistemas y de aplicaciones web (Nagios).",
+    "Los usuarios de la red (profesores) usan escritorios virtuales.",
+    "Los switches para configurar las VLANs son CISCO (usan sistema operativo Cisco IOS).",
+    "El CPD principal del organismo tiene un respaldo en un CPD secundario, pero no está configurado como activo-activo y los cambios de los servicios tienen que pasarse manualmente. Tiene redundancia de componentes y de suministro eléctrico y de red. El CPD es TIER III.",
+    "Salvo que se indique lo contrario en el enunciado, se supone que usted posee permisos de administrador."
+   ]
+  }
+ ]
+}
