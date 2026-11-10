@@ -34,8 +34,14 @@ export const SECTIONS = [
   {
     path: 'simulacro',
     title: 'Simulacro',
-    text: 'El ejercicio completo, cronometrado y corregido con penalización, para medir cómo vas.',
+    text: 'El ejercicio completo, cronometrado y corregido con penalización: un examen pasado o uno mezclado con preguntas de todos los años.',
     icon: '⏱',
+  },
+  {
+    path: 'progreso',
+    title: 'Progreso',
+    text: 'Cómo evoluciona tu nota en los simulacros, tus temas más flojos y cuánto te queda por ver del programa.',
+    icon: '↗',
   },
 ];
 

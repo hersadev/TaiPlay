@@ -24,6 +24,7 @@ const TemarioPage = named(temario, 'TemarioPage');
 const TemaPage = named(temario, 'TemaPage');
 const LogrosPage = lazy(() => import('./pages/LogrosPage'));
 const EditorPage = lazy(() => import('./pages/EditorPage'));
+const ProgresoPage = lazy(() => import('./pages/ProgresoPage'));
 
 const NAV = [
   ['aprende', 'Aprende'],
@@ -32,6 +33,7 @@ const NAV = [
   ['supuestos', 'Supuestos'],
   ['simulacro', 'Simulacro'],
   ['editor', 'Editor'],
+  ['progreso', 'Progreso'],
 ];
 
 function Page({ segments, params }) {
@@ -55,6 +57,8 @@ function Page({ segments, params }) {
       return <LogrosPage />;
     case 'editor':
       return <EditorPage />;
+    case 'progreso':
+      return <ProgresoPage />;
     default:
       return <NotFound />;
   }
@@ -83,12 +87,12 @@ export default function App() {
               Tai<span className="text-yellow-400">Play</span>
             </span>
           </a>
-          <nav className="ml-auto hidden gap-1 text-sm md:flex">
+          <nav className="ml-auto hidden gap-1 text-sm lg:flex">
             {NAV.map(([path, label]) => (
               <a
                 key={path}
                 href={href(path)}
-                className={`whitespace-nowrap rounded-lg px-2.5 py-1.5 lg:px-3 ${
+                className={`whitespace-nowrap rounded-lg px-2.5 py-1.5 xl:px-3 ${
                   section === path ? 'bg-gray-800 text-yellow-300' : 'text-gray-300 hover:bg-gray-900 hover:text-gray-100'
                 }`}
               >
@@ -102,7 +106,7 @@ export default function App() {
             aria-expanded={menuOpen}
             aria-controls="menu-movil"
             aria-label={menuOpen ? 'Cerrar el menú' : 'Abrir el menú'}
-            className="ml-auto flex h-8 shrink-0 items-center gap-1.5 rounded-lg border border-gray-700 px-2.5 text-sm text-gray-300 hover:border-gray-500 hover:text-gray-100 md:hidden"
+            className="ml-auto flex h-8 shrink-0 items-center gap-1.5 rounded-lg border border-gray-700 px-2.5 text-sm text-gray-300 hover:border-gray-500 hover:text-gray-100 lg:hidden"
           >
             <span aria-hidden="true">{menuOpen ? '✕' : '☰'}</span>
             {NAV.find(([path]) => path === section)?.[1] ?? 'Menú'}
@@ -125,7 +129,7 @@ export default function App() {
           </a>
         </div>
         {menuOpen && (
-          <nav id="menu-movil" className="grid grid-cols-2 gap-1 border-t border-gray-800 px-4 py-3 text-sm md:hidden">
+          <nav id="menu-movil" className="grid grid-cols-2 gap-1 border-t border-gray-800 px-4 py-3 text-sm lg:hidden">
             {NAV.map(([path, label]) => (
               <a
                 key={path}
