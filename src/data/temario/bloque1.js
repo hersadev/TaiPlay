@@ -13,6 +13,7 @@ export const bloque1 = [
 - Aprobada en referéndum el **6 de diciembre de 1978**, sancionada el 27 y publicada en el BOE el **29 de diciembre**.
 - **169 artículos**, un preámbulo, 10 títulos (más el preliminar), 4 disposiciones adicionales, 9 transitorias, 1 derogatoria y 1 final.
 - España se constituye en un Estado **social y democrático de Derecho**; su forma política es la **Monarquía parlamentaria** (art. 1).
+- **Reformas**: cuatro, todas por el procedimiento ordinario del art. 167: art. 13.2 (1992, sufragio pasivo de los ciudadanos de la UE en las municipales), art. 135 (2011, estabilidad presupuestaria), art. 49 (2024, personas con discapacidad) y art. 69.3 (BOE de 20 de mayo de 2026, Formentera elige su propio senador).
 
 ## El Título I y sus niveles de protección
 - **Art. 14**: igualdad ante la ley.
@@ -20,7 +21,7 @@ export const bloque1 = [
 - **Arts. 30 a 38** (Sección 2ª): derechos y deberes de los ciudadanos (servicio militar/objeción, tributos, matrimonio, **propiedad privada (33)**, trabajo, libertad de empresa).
 - **Arts. 39 a 52** (Capítulo III): principios rectores de la política social y económica. Informan la legislación positiva, la práctica judicial y la actuación de los poderes públicos, pero solo se pueden alegar ante los jueces según las leyes que los desarrollen.
 
-**Garantías (art. 53)**: todos vinculan a los poderes públicos. Los del 14 al 29 y la objeción de conciencia (30.2) tienen además **procedimiento preferente y sumario** ante los tribunales y **recurso de amparo** ante el Tribunal Constitucional. Su desarrollo se hace por **ley orgánica** (art. 81).
+**Garantías (art. 53)**: todos vinculan a los poderes públicos. Los del 14 al 29 y la objeción de conciencia (30.2) tienen además **procedimiento preferente y sumario** ante los tribunales y **recurso de amparo** ante el Tribunal Constitucional. Los de la Sección 1ª (arts. 15-29) se desarrollan por **ley orgánica** (art. 81); el resto del Capítulo II, por ley que respete su contenido esencial (art. 53.1).
 
 ## Suspensión (art. 55)
 - **General**: en los estados de **excepción** y **sitio** se pueden suspender ciertos derechos (detención, inviolabilidad del domicilio, libre circulación, expresión, reunión, huelga…). En el estado de **alarma** no se suspenden derechos, solo se limitan.
@@ -30,7 +31,7 @@ export const bloque1 = [
 ## La Corona (Título II, arts. 56-65)
 - El Rey es el **Jefe del Estado**, símbolo de su unidad y permanencia. Su persona es **inviolable** y no está sujeta a responsabilidad: sus actos han de ir **refrendados** (por el Presidente del Gobierno o los ministros).
 - **Sucesión (art. 57)**: la línea anterior se prefiere a las posteriores; en la misma línea, el grado más próximo al más remoto; en el mismo grado, el varón a la mujer; y en el mismo sexo, la persona de más edad.
-- **Funciones (art. 62)**: sancionar y promulgar las leyes; convocar y disolver las Cortes y convocar elecciones; **convocar referéndum** en los casos previstos (la autorización la da el **Congreso**, art. 92); proponer al candidato a Presidente del Gobierno, nombrarlo y cesarlo; nombrar y separar a los ministros a propuesta del Presidente; el mando supremo de las Fuerzas Armadas; el derecho de gracia (sin indultos generales); el Alto Patronazgo de las Reales Academias.`,
+- **Funciones (art. 62)**: sancionar y promulgar las leyes; convocar y disolver las Cortes y convocar elecciones; **convocar referéndum** en los casos previstos (la autorización la da el **Congreso**, art. 92); proponer al candidato a Presidente del Gobierno, nombrarlo y cesarlo; nombrar y separar a los ministros a propuesta del Presidente; **expedir los decretos acordados en el Consejo de Ministros**; el mando supremo de las Fuerzas Armadas; el derecho de gracia (sin indultos generales); el Alto Patronazgo de las Reales Academias.`,
     quiz: [
       {
         q: '¿Qué derecho NO es fundamental (arts. 15-29)?',
@@ -61,10 +62,10 @@ export const bloque1 = [
 - Representan al pueblo español y están formadas por el **Congreso** y el **Senado** (bicameralismo imperfecto: el Congreso tiene más peso).
 - **Funciones (art. 66)**: ejercen la potestad legislativa del Estado, aprueban los Presupuestos y controlan la acción del Gobierno.
 - **Congreso**: entre 300 y 400 diputados (la ley fija 350), elegidos por 4 años en circunscripción provincial con sistema proporcional (D'Hondt).
-- **Senado**: cámara de representación territorial; 4 senadores por provincia, más los designados por las Comunidades Autónomas.
+- **Senado**: cámara de representación territorial; 4 senadores por provincia, más los designados por las Comunidades Autónomas. En las islas, cada isla o agrupación con Cabildo o Consejo Insular es una circunscripción: 3 senadores para Gran Canaria, Mallorca y Tenerife y 1 para cada una de las demás. Desde la reforma del art. 69.3 de 2026, **Formentera elige su propio senador** (antes iba agrupada con Ibiza).
 - **Inviolabilidad** por las opiniones y **inmunidad** (solo pueden ser detenidos en caso de flagrante delito y procesados con la autorización de su Cámara). En las causas contra diputados y senadores es competente la **Sala de lo Penal del Tribunal Supremo** (art. 71).
 - **Periodos de sesiones**: dos ordinarios (septiembre-diciembre y febrero-junio). Las sesiones extraordinarias se celebran a petición del Gobierno, de la Diputación Permanente o de la **mayoría absoluta** de una Cámara.
-- **Diputación Permanente (art. 78)**: un mínimo de **21 miembros**, en proporción a los grupos, y la preside el Presidente de cada Cámara. Actúa entre periodos de sesiones y cuando las Cámaras están disueltas.
+- **Diputación Permanente (art. 78)**: un mínimo de **21 miembros**, en proporción a los grupos, y la preside el Presidente de cada Cámara. Actúa entre periodos de sesiones y cuando las Cámaras están disueltas, en este caso **hasta la constitución de las nuevas Cortes** (art. 78.3).
 - **Comisiones de investigación**: sus conclusiones **no vinculan** a los tribunales.
 - Las Cámaras reciben **peticiones** individuales y colectivas, siempre por escrito; se prohíbe la presentación directa por manifestaciones ciudadanas (art. 77).
 - No se puede delegar en las comisiones legislativas la aprobación de reformas constitucionales, asuntos internacionales, leyes orgánicas y de bases, ni Presupuestos (art. 75.3).
@@ -106,7 +107,7 @@ export const bloque1 = [
       'El Gobierno: composición, nombramiento y cese. Las funciones del Gobierno. Relaciones entre el Gobierno y las Cortes Generales.',
     body: `## Composición y regulación
 - Título IV de la CE (arts. 97-107) y **Ley 50/1997, de 27 de noviembre, del Gobierno**.
-- Lo forman el **Presidente**, los **Vicepresidentes** (si los hay) y los **Ministros**. Actúa colegiadamente como **Consejo de Ministros** y también a través de las **Comisiones Delegadas**.
+- Lo forman el **Presidente**, los **Vicepresidentes** (si los hay) y los **Ministros**. Actúa colegiadamente como **Consejo de Ministros** y también a través de las **Comisiones Delegadas**. El **Secretario del Consejo de Ministros es el Ministro de la Presidencia**.
 - **Funciones (art. 97)**: dirige la política interior y exterior, la Administración civil y militar y la defensa del Estado; ejerce la función ejecutiva y la potestad reglamentaria.
 
 ## Nombramiento: la investidura (art. 99)
@@ -155,16 +156,16 @@ export const bloque1 = [
 - **Acceso**: igualdad, mérito, capacidad y publicidad. Los sistemas son oposición, concurso-oposición y, excepcionalmente, concurso.
 - **Provisión de puestos (art. 78)**: con los principios de **igualdad, mérito, capacidad y publicidad**. Los procedimientos son el **concurso** (el sistema normal, que valora méritos) y la **libre designación** (con convocatoria pública, para puestos de especial responsabilidad).
 - **Carrera**: horizontal (progresar sin cambiar de puesto), vertical (ascender de puesto), **promoción interna vertical** (pasar a un cuerpo de un subgrupo superior) y horizontal (a otro cuerpo del mismo subgrupo).
-- **Situaciones administrativas**: servicio activo, servicios especiales, servicio en otras Administraciones, **excedencia** (voluntaria por interés particular, por agrupación familiar, por cuidado de familiares, por violencia de género y por violencia terrorista) y **suspensión de funciones**.
+- **Situaciones administrativas**: servicio activo, servicios especiales, servicio en otras Administraciones, **excedencia** (voluntaria por interés particular, por agrupación familiar, por cuidado de familiares, por razón de violencia de género o de violencia sexual y por razón de violencia terrorista) y **suspensión de funciones**.
 - **Deberes**: código de conducta con principios éticos y de conducta (arts. 52-54).
 - **Régimen disciplinario**: faltas muy graves, graves y leves. Prescripción de las **faltas**: 3 años, 2 años y 6 meses. Prescripción de las **sanciones**: 3 años, 2 años y 1 año. La separación del servicio solo procede por falta muy grave.
-- **Incompatibilidades**: Ley 53/1984. Como regla general no se pueden ocupar dos puestos públicos, y las actividades privadas necesitan reconocimiento de compatibilidad.
+- **Incompatibilidades**: Ley 53/1984. Como regla general no se pueden ocupar dos puestos públicos, y las actividades privadas necesitan reconocimiento de compatibilidad. Todas las resoluciones de compatibilidad se inscriben en los **Registros de Personal** correspondientes (art. 18).
 
 ## Ley 19/2013 de transparencia
 - Tres ejes: **publicidad activa** (lo que se publica de oficio en el Portal de Transparencia), **derecho de acceso** a la información pública y **buen gobierno**.
-- **Solicitud de acceso**: se dirige al titular del órgano que tiene la información. **No hace falta motivarla** y puede presentarse en cualquier lengua cooficial.
+- **Solicitud de acceso**: se dirige al titular del órgano que tiene la información, por cualquier medio que deje constancia de la identidad del solicitante, la información pedida, una **dirección de contacto (preferentemente electrónica)** y, en su caso, la modalidad de acceso preferida (art. 17.2). **No hace falta motivarla** y puede presentarse en cualquier lengua cooficial.
 - **Plazo para resolver**: 1 mes, ampliable 1 mes más. El **silencio es desestimatorio**.
-- Contra la resolución cabe **reclamación** potestativa ante el **Consejo de Transparencia y Buen Gobierno** (CTBG). En su **Comisión** se sientan, entre otros, un diputado, un senador y representantes del Tribunal de Cuentas, el **Defensor del Pueblo**, la AEPD, la AIReF y la Secretaría de Estado de Función Pública.
+- Contra la resolución cabe **reclamación** potestativa ante el **Consejo de Transparencia y Buen Gobierno** (CTBG), en **1 mes**. El CTBG tiene **3 meses** para resolverla; si no lo hace, se entiende **desestimada** (art. 24). En su **Comisión** se sientan, además del Presidente, un diputado, un senador y representantes del Tribunal de Cuentas, el **Defensor del Pueblo**, la AEPD, la **Secretaría de Estado de Administraciones Públicas** y la AIReF (art. 36.2).
 
 ## Agenda 2030
 - Aprobada por la ONU en **septiembre de 2015**: **17 ODS** y **169 metas**.
@@ -197,6 +198,7 @@ export const bloque1 = [
       'Políticas de igualdad y contra la violencia de género. Políticas de igualdad de trato y no discriminación de las personas LGTBI. Discapacidad y dependencia: régimen jurídico.',
     body: `## Normas clave
 - **LO 3/2007**, para la igualdad efectiva de mujeres y hombres: discriminación directa e indirecta, acoso sexual y por razón de sexo, acciones positivas, **planes de igualdad** (obligatorios en empresas de 50 o más trabajadores) y **composición equilibrada** (cada sexo, ni más del 60 % ni menos del 40 %).
+- LO 3/2007, artículos que caen: el trato desfavorable por **embarazo o maternidad** es discriminación **directa** (art. 8); las represalias por reclamar la igualdad son también **discriminación por razón de sexo** (art. 9, indemnidad); y para los planes de igualdad **voluntarios** el Gobierno establece **medidas de fomento** dirigidas sobre todo a las **pequeñas y medianas empresas** (art. 49).
 - **LO 1/2004**, de Medidas de Protección Integral contra la Violencia de Género. En educación (art. 4), cada etapa tiene su objetivo: Infantil, la resolución pacífica de conflictos; Primaria, comprender y respetar la igualdad entre sexos; ESO, relacionarse de forma pacífica y conocer la igualdad de oportunidades; Bachillerato y FP, valorar críticamente las desigualdades; y las **Universidades** incluyen la igualdad de género **de forma transversal** en la docencia y la investigación.
 - **Ley 15/2022**, integral para la igualdad de trato y la no discriminación.
 - **Ley 4/2023**, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos LGTBI. Su régimen sancionador distingue infracciones leves, graves y muy graves (en el examen de 2025 se consideró grave la obstrucción o negativa absoluta a la actuación inspectora).
@@ -209,7 +211,8 @@ export const bloque1 = [
 
 ## Dependencia
 - **Ley 39/2006**, de Promoción de la Autonomía Personal y Atención a las personas en situación de dependencia, que crea el SAAD.
-- Tres grados: **I moderada**, **II severa** y **III gran dependencia**.`,
+- Tres grados: **I moderada**, **II severa** y **III gran dependencia** (art. 26).
+- El grado es **revisable** a instancia del interesado, de sus representantes o de oficio por las Administraciones competentes (art. 30).`,
     quiz: [
       {
         q: '¿Desde qué grado de discapacidad reconocido se tiene esa consideración?',
@@ -254,13 +257,15 @@ export const bloque1 = [
 - **PAdES**: firma incrustada en un **PDF**.
 - Además: firma attached (implícita, con el documento dentro) o detached (separada del documento).
 
-## DNI electrónico (RD 1553/2005)
-- Lleva dos certificados: **autenticación** y **firma** (no repudio). Su vigencia es de **5 años** como máximo.
-- En la **zona de seguridad**, que el ciudadano puede leer en los Puntos de Actualización, están los datos de filiación, la **imagen de la fotografía** y la de la firma manuscrita.
+## DNI (RD 255/2025)
+- Desde el **2 de abril de 2025** el DNI lo regula el **RD 255/2025**, que deroga el RD 1553/2005 y regula también el **DNI digital** (la app MiDNI), con la misma eficacia para identificarse; solo se genera si el DNI físico está vigente.
+- **Validez del DNI** (art. 7): 2 años antes de los 5 de edad; 5 años de los 5 a los 30; 10 años de los 30 a los 70; y desde los 70, **más de diez años, con una fecha** concreta (con el RD 1553/2005 era «permanente»).
+- El chip lleva **certificados cualificados** para identificarse (autenticación) y para firmar. Su validez es de **2 años** (art. 11.3); con la norma anterior, hasta 5. Ojo con los exámenes antiguos, que preguntan por el régimen derogado.
+- En la **zona de seguridad** del chip, que el ciudadano puede leer en los Puntos de Actualización, están los datos de filiación, la **imagen de la fotografía** y la de la firma manuscrita.
 - El DNIe 3.0 y 4.0 incorporan **NFC** para usarlo con el móvil.
 
 ## Agenda digital
-- **España Digital 2026**, la versión actualizada de España Digital 2025, organizada en ejes de infraestructuras, economía y personas. Planes conectados: Estrategia de IA (con el proyecto ALIA), Estrategia de Tecnologías Cuánticas y el Plan de Impulso de los Espacios de Datos.`,
+- **España Digital 2025** se articulaba en **10 ejes**. **España Digital 2026** es su versión actualizada, organizada en ejes de infraestructuras, economía y personas. Planes conectados: Estrategia de IA (con el proyecto ALIA), Estrategia de Tecnologías Cuánticas y el Plan de Impulso de los Espacios de Datos.`,
     quiz: [
       {
         q: '¿Qué formato de firma es el propio de los documentos PDF?',
@@ -308,8 +313,9 @@ Acceso, rectificación, **supresión** («derecho al olvido»), limitación del 
 ## Obligaciones
 - **Registro de actividades** de tratamiento, **protección de datos desde el diseño y por defecto**, y **evaluación de impacto** si el riesgo es alto.
 - **Brecha de seguridad**: se notifica a la autoridad de control (la **AEPD**) en un plazo de **72 horas**.
-- **Delegado de Protección de Datos** (DPD): obligatorio en las AAPP.
+- **Delegado de Protección de Datos** (DPD): obligatorio en las AAPP. Su designación, nombramiento y cese se comunican a la AEPD en **10 días** (art. 34.3 LOPDGDD).
 - Multas de hasta **20 millones de euros o el 4 %** de la facturación anual mundial.
+- **Prescripción** (LOPDGDD): las infracciones muy graves a los 3 años, las graves a los 2 y las leves al año (arts. 72-74). Las sanciones de hasta 40.000 € al año, de 40.001 a 300.000 € a los 2 años y las de más de 300.000 € a los 3 (art. 78).
 
 ## Derechos digitales (Título X LOPDGDD, arts. 79-97)
 - Art. 79: los derechos y libertades constitucionales son **plenamente aplicables en Internet**, con la colaboración de los prestadores de servicios.
@@ -349,17 +355,20 @@ Acceso, rectificación, **supresión** («derecho al olvido»), limitación del 
 - **Obligados a relacionarse electrónicamente (art. 14.2)**: las personas jurídicas, las entidades sin personalidad, los profesionales colegiados en su actividad, quienes los representen y los empleados públicos en sus trámites como tales. Las personas físicas pueden elegir.
 - **Firma obligatoria (art. 11)** solo para: formular solicitudes, presentar declaraciones responsables o comunicaciones, interponer recursos, desistir de acciones y renunciar a derechos. Para lo demás basta con identificarse.
 - **Registros (art. 16)**: cada Administración tiene un registro electrónico general. Funcionan las 24 horas, todos los días; lo que se presenta en día inhábil se entiende presentado a la primera hora del siguiente hábil.
-- **Plazos**: los días son hábiles salvo que se diga otra cosa; se excluyen sábados, domingos y festivos.
+- **Plazos**: los días son hábiles salvo que se diga otra cosa; se excluyen sábados, domingos y festivos, y se cuentan **desde el día siguiente** a la notificación o publicación (art. 30).
 - **Notificaciones**: preferentemente electrónicas. Deben cursarse en **10 días** desde que se dicta el acto. La electrónica se entiende **rechazada** si pasan **10 días naturales** sin acceder. En papel puede recogerla en el domicilio cualquier persona **mayor de 14 años** que se identifique. Si el interesado es desconocido o no se puede notificar, se publica un **anuncio en el BOE**.
 
 ## Esquema Nacional de Seguridad (RD 311/2022)
 - **Categorías** de los sistemas: **BÁSICA, MEDIA y ALTA**.
 - **Dimensiones** de la seguridad: **confidencialidad, integridad, trazabilidad, autenticidad y disponibilidad** (C-I-T-A-D).
 - **Roles**: el responsable de la información y el del servicio (fijan los requisitos), el **responsable de la seguridad** (determina las decisiones de seguridad) y el **responsable del sistema** (desarrolla la forma concreta de implementar la seguridad y supervisa la operación diaria).
+- **Medidas (anexo II)**: marco organizativo (org), marco operacional (op, por ejemplo la protección frente a código dañino) y medidas de protección (mp, como la protección del correo o de los equipos portátiles).
 - Glosario: el **compromiso de la seguridad** es el incidente en el que una información o un servicio quedan expuestos, o potencialmente expuestos, a un acceso no autorizado.
 
 ## Esquema Nacional de Interoperabilidad (RD 4/2010)
 - Dimensiones de la interoperabilidad: organizativa, semántica y técnica (además de la temporal).
+- La **guía de auditoría del ENI** agrupa sus controles en marco organizativo, marco operacional y medidas técnicas.
+- NTI de **Digitalización**: resolución mínima de **200 ppp** tanto en blanco y negro como en color o escala de grises.
 - **Normas Técnicas de Interoperabilidad (NTI)**: documento electrónico, expediente electrónico, digitalización, copiado auténtico, política de firma, **reutilización de activos**, protocolos de intermediación de datos, relación de modelos de datos, política de gestión de documentos, **requisitos de conexión a la Red SARA**, modelo de datos para el intercambio de asientos registrales, **plan de direccionamiento**, catálogo de estándares, **sistema de referencia de documentos y repositorios de confianza**… No existe una NTI de «plan de seguridad».`,
     quiz: [
       {
@@ -390,7 +399,8 @@ Acceso, rectificación, **supresión** («derecho al olvido»), limitación del 
     body: `## Sede electrónica y puntos de acceso
 - La **sede electrónica** es la dirección electrónica cuya titularidad corresponde a una Administración, con la que el ciudadano realiza trámites con garantías (certificado de sede). El RD 203/2021 fija su contenido mínimo; entre otras cosas, la normativa reguladora del Registro accesible desde ella, la fecha y hora oficial y los días inhábiles.
 - **PAGe**, el Punto de Acceso General electrónico (administracion.gob.es): la entrada a la información y los trámites de la AGE, con la **Carpeta Ciudadana**.
-- **Canales**: presencial, telefónico (060) y electrónico.
+- **Canales de asistencia (art. 4 RD 203/2021)**: presencial, portales de internet y sedes electrónicas, redes sociales, telefónico (060), correo electrónico y cualquier otro que se establezca. La cita previa no es un canal.
+- La **Carpeta Ciudadana** se accede desde la sede del PAGe. El **Registro de Funcionarios Habilitados** de la AGE debe ser interoperable con los de las comunidades autónomas y las entidades locales.
 
 ## Identificación y firma
 - **Cl@ve**: sistema común para identificarse con claves concertadas, **Cl@ve PIN** (de un solo uso) y **Cl@ve Permanente**, y con certificado o DNIe. Tiene dos niveles de registro (básico y avanzado) e incluye **Cl@ve Firma**, que firma con certificados centralizados en la nube.
@@ -400,10 +410,11 @@ Acceso, rectificación, **supresión** («derecho al olvido»), limitación del 
 ## Infraestructuras y servicios comunes (Catálogo de Servicios de Administración Digital)
 - **Red SARA**: la red privada que interconecta las Administraciones y conecta con la red europea (TESTA/sTESTA).
 - **Hora oficial**: la marca el **Real Instituto y Observatorio de la Armada (ROA)**.
-- **PID** (Plataforma de Intermediación de Datos): sustituye la aportación de certificados en papel; por ejemplo, consulta de identidad, residencia, situación de prestaciones por desempleo o títulos.
+- **PID** (Plataforma de Intermediación de Datos): sustituye la aportación de certificados en papel; por ejemplo, consulta de identidad, residencia, situación de prestaciones por desempleo o títulos. Usa el protocolo **SCSP** (Sustitución de Certificados en Soporte Papel), hoy en su versión 3.
 - **SIR, GEISER y ORVE**: el intercambio de asientos registrales entre Administraciones y la gestión de las oficinas de registro.
 - **Notific@ y DEHú** (Dirección Electrónica Habilitada única): las notificaciones.
 - **FACe**: el punto general de entrada de facturas electrónicas.
+- **NEDAES**: la nómina de los empleados públicos. **eVisor**: copias auténticas en papel de documentos con firma electrónica. **CIRCABC**: trabajo colaborativo e intercambio de documentos.
 - Otros: **Inside** (expediente y documento electrónico), **Archive** (archivo electrónico), **Port@firmas**, **Autofirm@** y **Cl@ve**.`,
     quiz: [
       {

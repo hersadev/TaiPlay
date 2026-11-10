@@ -26,6 +26,7 @@ export const TARJETAS = [
   { id: 'ce-sitio', tema: 'B1T01', kind: 'mayoria', q: '¿Con qué mayoría declara el Congreso el estado de sitio?', a: 'Mayoría absoluta del Congreso', src: 'art. 116.4 CE' },
   { id: 'ce-reforma-167', tema: 'B1T01', kind: 'mayoria', q: 'Reforma constitucional ordinaria (art. 167): mayoría necesaria en cada Cámara', a: 'Tres quintos de cada Cámara', src: 'art. 167 CE' },
   { id: 'ce-reforma-168', tema: 'B1T01', kind: 'mayoria', q: 'Revisión total o de las partes protegidas (art. 168): mayoría para aprobarla', a: 'Dos tercios de cada Cámara, disolución y referéndum obligatorio', src: 'art. 168 CE' },
+  { id: 'ce-reformas', tema: 'B1T01', kind: 'dato', q: '¿Cuántas veces se ha reformado la Constitución?', a: 'Cuatro: arts. 13.2 (1992), 135 (2011), 49 (2024) y 69.3 (2026)', wrong: ['Tres: arts. 13.2 (1992), 135 (2011) y 49 (2024)', 'Dos: arts. 13.2 (1992) y 135 (2011)', 'Ninguna'], src: 'art. 167 CE' },
   { id: 'ce-ilp', tema: 'B1T01', kind: 'numero', q: '¿Cuántas firmas exige la iniciativa legislativa popular?', a: '500.000', wrong: ['100.000', '250.000', '1.000.000'], src: 'art. 87.3 CE' },
   { id: 'ce-sancion', tema: 'B1T01', kind: 'plazo', q: 'Plazo del Rey para sancionar las leyes aprobadas por las Cortes', a: '15 días', src: 'art. 91 CE' },
 
@@ -67,6 +68,8 @@ export const TARJETAS = [
   { id: 'transp-ley', tema: 'B1T04', kind: 'norma', q: '¿Qué ley regula la transparencia, el acceso a la información pública y el buen gobierno?', a: 'Ley 19/2013', src: 'Ley 19/2013' },
   { id: 'transp-plazo', tema: 'B1T04', kind: 'plazo', q: 'Plazo para resolver una solicitud de acceso a la información (ampliable otro igual)', a: '1 mes', src: 'art. 20.1 Ley 19/2013' },
   { id: 'transp-silencio', tema: 'B1T04', kind: 'dato', q: 'Sentido del silencio en el derecho de acceso a la información pública', a: 'Desestimatorio', wrong: ['Estimatorio', 'No hay silencio: siempre se resuelve', 'Estimatorio si se motivó la solicitud'], src: 'art. 20.4 Ley 19/2013' },
+  { id: 'transp-reclamacion', tema: 'B1T04', kind: 'plazo', q: 'Plazo del Consejo de Transparencia para resolver una reclamación (si no, se entiende desestimada)', a: '3 meses', src: 'art. 24.4 Ley 19/2013' },
+  { id: 'trebep-compat-registro', tema: 'B1T04', kind: 'organo', q: '¿Dónde se inscriben las resoluciones de compatibilidad?', a: 'En los Registros de Personal correspondientes', src: 'art. 18 Ley 53/1984' },
   { id: 'ods', tema: 'B1T04', kind: 'dato', q: 'Agenda 2030: número de objetivos y de metas', a: '17 objetivos y 169 metas', wrong: ['15 objetivos y 150 metas', '17 objetivos y 196 metas', '20 objetivos y 169 metas'], src: 'ONU, 2015' },
 
   // ── B1T05 · Igualdad, discapacidad y dependencia ──────────────────────
@@ -83,7 +86,8 @@ export const TARJETAS = [
   { id: 'eidas', tema: 'B1T06', kind: 'norma', q: 'Reglamento europeo de identificación electrónica y servicios de confianza (eIDAS)', a: 'Reglamento (UE) 910/2014', src: 'eIDAS' },
   { id: 'cert-vigencia', tema: 'B1T06', kind: 'años', q: 'Vigencia máxima de un certificado cualificado (Ley 6/2020)', a: '5 años', src: 'art. 4 Ley 6/2020' },
   { id: 'firma-cualificada', tema: 'B1T06', kind: 'dato', q: '¿Qué firma equivale jurídicamente a la manuscrita?', a: 'La firma electrónica cualificada', wrong: ['La firma electrónica avanzada', 'Cualquier firma electrónica', 'El sello electrónico'], src: 'art. 25 eIDAS' },
-  { id: 'dnie-rd', tema: 'B1T06', kind: 'norma', q: 'Real Decreto que regula el DNI electrónico', a: 'RD 1553/2005', src: 'RD 1553/2005' },
+  { id: 'dnie-rd', tema: 'B1T06', kind: 'norma', q: 'Real Decreto que regula hoy el DNI, físico y digital (derogó el RD 1553/2005)', a: 'RD 255/2025', src: 'RD 255/2025' },
+  { id: 'dnie-certificados', tema: 'B1T06', kind: 'años', q: 'Validez de los certificados electrónicos del DNI (RD 255/2025)', a: '2 años', src: 'art. 11.3 RD 255/2025' },
 
   // ── B1T07 · Protección de datos ───────────────────────────────────────
   { id: 'lopdgdd', tema: 'B1T07', kind: 'norma', q: 'Ley Orgánica de Protección de Datos y garantía de los derechos digitales', a: 'LO 3/2018', src: 'LO 3/2018' },
@@ -92,6 +96,8 @@ export const TARJETAS = [
   { id: 'rgpd-derechos', tema: 'B1T07', kind: 'plazo', q: 'Plazo para responder al ejercicio de un derecho (prorrogable 2 meses más)', a: '1 mes', src: 'art. 12.3 RGPD' },
   { id: 'rgpd-menor', tema: 'B1T07', kind: 'numero', q: 'Edad desde la que un menor puede consentir el tratamiento de sus datos en España', a: '14', wrong: ['13', '16', '18'], src: 'art. 7 LOPDGDD' },
   { id: 'rgpd-multa', tema: 'B1T07', kind: 'dato', q: 'Multa máxima del RGPD', a: '20 millones de euros o el 4 % de la facturación anual mundial', wrong: ['10 millones de euros o el 2 %', '600.000 euros', '50 millones de euros o el 10 %'], src: 'art. 83 RGPD' },
+  { id: 'lopd-dpd', tema: 'B1T07', kind: 'plazo', q: 'Plazo para comunicar a la AEPD la designación o el cese de un delegado de protección de datos', a: '10 días', src: 'art. 34.3 LOPDGDD' },
+  { id: 'lopd-sancion-leve', tema: 'B1T07', kind: 'plazo', q: 'Prescripción de las sanciones de hasta 40.000 € (LOPDGDD)', a: '1 año', src: 'art. 78 LOPDGDD' },
   { id: 'lopd-digitales', tema: 'B1T07', kind: 'dato', q: '¿En qué parte de la LOPDGDD están los derechos digitales?', a: 'Título X (arts. 79 a 97)', wrong: ['Título III (arts. 12 a 18)', 'Título VIII', 'Disposiciones adicionales'], src: 'LOPDGDD' },
 
   // ── B1T08 · Procedimiento electrónico, ENS y ENI ──────────────────────
