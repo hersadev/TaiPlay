@@ -12,6 +12,7 @@ import { review } from '../engine/repaso/srs.js';
 //   streak:   aciertos seguidos en el banco { current, best }
 //   days:     días (AAAA-MM-DD, hora local) en los que se ha estudiado
 //   cards:    repaso espaciado de las tarjetas { [id]: { box, due, ok, ko } }
+//   welcomed: si ya se ha visto (y cerrado) el panel de bienvenida
 export const DEFAULT_SETTINGS = { penalty: 1 / 3, simulacroMin: 100, supuestoMin: 30 };
 
 // localStorage puede no existir o lanzar (modo privado, almacenamiento
@@ -40,6 +41,7 @@ const EMPTY = {
   streak: { current: 0, best: 0 },
   days: [],
   cards: {},
+  welcomed: false,
 };
 
 export const useProgress = create(
@@ -79,6 +81,8 @@ export const useProgress = create(
         set((s) => ({ badges: { ...s.badges, ...Object.fromEntries(ids.map((id) => [id, Date.now()])) } })),
 
       updateSettings: (patch) => set((s) => ({ settings: { ...s.settings, ...patch } })),
+
+      markWelcomed: () => set({ welcomed: true }),
 
       reset: () => set(EMPTY),
     }),

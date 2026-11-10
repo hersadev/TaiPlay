@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useRoute, href } from './hooks/useRoute';
 import { useProgress } from './store/progress';
 import HomePage from './pages/HomePage';
@@ -11,6 +11,7 @@ import { TemarioPage, TemaPage } from './pages/TemarioPage';
 import LogrosPage from './pages/LogrosPage';
 import EditorPage from './pages/EditorPage';
 import LogroToast from './components/logros/LogroToast';
+import WelcomePanel from './components/ui/WelcomePanel';
 import { useAchievements, useLevel } from './hooks/useAchievements';
 
 const NAV = [
@@ -53,6 +54,13 @@ export default function App() {
   const section = segments[0];
   const { current: logro, dismiss } = useAchievements();
   const level = useLevel();
+  const welcomed = useProgress((s) => s.welcomed);
+  const markWelcomed = useProgress((s) => s.markWelcomed);
+  const [welcomeOpen, setWelcomeOpen] = useState(false);
+  const closeWelcome = useCallback(() => {
+    setWelcomeOpen(false);
+    markWelcomed();
+  }, [markWelcomed]);
   return (
     <div className="flex min-h-full flex-col">
       <header className="sticky top-0 z-20 border-b border-gray-800 bg-gray-950/95 backdrop-blur">
@@ -76,6 +84,15 @@ export default function App() {
               </a>
             ))}
           </nav>
+          <button
+            type="button"
+            onClick={() => setWelcomeOpen(true)}
+            title="Qué es TaiPlay y qué hay en cada apartado"
+            aria-label="Abrir la bienvenida"
+            className="grid h-8 w-8 shrink-0 place-items-center rounded-lg border border-gray-700 text-sm text-gray-300 hover:border-gray-500 hover:text-gray-100"
+          >
+            ?
+          </button>
           <a
             href={href('logros')}
             title={`Nivel ${level.n}: ${level.name} · ${level.xp} puntos`}
@@ -86,6 +103,7 @@ export default function App() {
         </div>
       </header>
       <LogroToast logro={logro} onClose={dismiss} />
+      {(welcomeOpen || !welcomed) && <WelcomePanel onClose={closeWelcome} />}
       <main className="flex-1">
         <Page segments={segments} params={params} />
       </main>
