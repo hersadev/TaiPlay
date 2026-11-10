@@ -243,7 +243,8 @@ export function makeSecurityCommands({ ok, fail, abs, isRoot, readFile, joinLine
       let open;
       if (local.includes(host)) {
         open = Object.values(sh.services).some((s) => s.active && s.port === port) ||
-          sh.docker.containers.some((c) => c.status === 'running' && c.ports.some((p) => p.host === port));
+          sh.docker.containers.some((c) => c.status === 'running' && c.ports.some((p) => p.host === port)) ||
+          (sh.procs ?? []).some((p) => p.port === port);
       } else {
         const r = sh.net.remote[host];
         if (!r) return fail([...head, 'Ncat: TIMEOUT.'].join('\n'));

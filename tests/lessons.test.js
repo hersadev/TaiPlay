@@ -6,6 +6,7 @@ import { ALL_LESSONS } from '../src/lessons/index.js';
 import initSqlJs from 'sql.js';
 import { createSqlDb } from '../src/engine/sql/db.js';
 import { createSwitch } from '../src/engine/ios/ios.js';
+import { createPowerShell } from '../src/engine/powershell/ps.js';
 import { makeExercise } from '../src/engine/drills/index.js';
 import { seeded } from '../src/engine/drills/random.js';
 
@@ -44,6 +45,38 @@ const SOLUTIONS = {
     'sudo firewall-cmd --reload',
     'nc -vz 10.30.20.30 3306',
     'sudo sysctl -w net.ipv4.conf.all.rp_filter=1',
+  ],
+  'lx-procesos': [
+    'sudo systemctl start becas',
+    'journalctl -u becas',
+    'ss -ltnp',
+    'kill 2211',
+    'sudo systemctl start becas',
+    'systemctl status becas',
+    'ps aux --sort=-%cpu',
+    'kill 2245',
+  ],
+  'lx-red': ['ping -c 3 172.19.50.1', 'ping -c 3 db01', 'traceroute 10.30.16.45', 'ss -ltn', 'sudo firewall-cmd --permanent --add-port=8443/tcp', 'sudo firewall-cmd --reload'],
+  'lx-disco': ['df -h', 'du -sh /var/log/*', 'sudo truncate -s 0 /var/log/becas/debug.log', 'sudo mount /dev/sda8 /srv/profesores', 'sudo fsck -y /dev/sda8', 'sudo mount -a'],
+  'lx-lvm': ['df -h /contenido', 'sudo vgs', 'sudo lvextend -L 600G /dev/vg_datos/lv_contenido', 'df -h /contenido', 'sudo xfs_growfs /contenido', 'df -h /contenido'],
+  'lx-paquetes': ['dnf list installed rsync', 'sudo dnf install rsync', 'sudo dnf install -y rsync', 'echo "30 2 * * * /home/alumno/backup.sh" | crontab -', 'crontab -l'],
+  'dk-build': [
+    'cat Dockerfile',
+    'docker build -t becas-web:1.0 .',
+    'docker history becas-web:1.0',
+    'docker run -d --name becas -p 8080:80 becas-web:1.0',
+    'curl localhost:8080',
+    'docker build -f Dockerfile.roto -t roto .',
+  ],
+  'dk-compose': [
+    'docker compose up -d',
+    'docker compose ps -a',
+    'docker compose logs db',
+    'echo "    environment:" >> compose.yaml',
+    'echo "      MYSQL_ROOT_PASSWORD: Tai2026" >> compose.yaml',
+    'docker compose up -d',
+    'curl localhost:8080',
+    'docker compose down',
   ],
   'dk-exec': [
     'docker exec web ls /usr/share/nginx/html',
@@ -153,6 +186,57 @@ for (const lesson of ALL_LESSONS.filter((l) => l.type === 'ios')) {
     }
     const failing = lesson.objectives.filter((_, i) => !done[i]).map((o) => o.label);
     assert.deepEqual(failing, []);
+  });
+}
+
+// En PowerShell también hay líneas que deben fallar (para ver el error):
+// se marcan con «!» delante.
+const PS_SOLUTIONS = {
+  'win-basico': ['Get-Location', 'ls', 'New-Item -Path Informes -ItemType Directory', 'New-Item -Path Informes\\notas.txt -ItemType File -Value "Oposición TAI"', 'Get-Command *-Item', 'Get-Alias ls'],
+  'win-copiar': [
+    'Get-Help Copy-Item',
+    'Get-ChildItem C:\\DirectorioA -Recurse',
+    '!Copy-Item “C:\\DirectorioA\\*” “C:\\DirectorioB” -Recursive',
+    'Copy-Item -Path "C:\\DirectorioA\\*" -Destination "C:\\DirectorioB" -Recurse',
+    'gci C:\\DirectorioB -Rec',
+  ],
+  'win-firewall': [
+    'netsh advfirewall show allprofiles',
+    '!netsh advfirewall firewall add rule name="Puerto8443" dir=in action=allow protocol=TCP localport=8443',
+    'Start-Process powershell -Verb RunAs',
+    '!netsh advfirewall firewall add rule name="Puerto8443" dir=in action=permit protocol=TCP localport=8443',
+    'netsh advfirewall firewall add rule name="Puerto8443" dir=in action=allow protocol=TCP localport=8443',
+    'netsh advfirewall firewall show rule name="Puerto8443"',
+    'New-NetFirewallRule -DisplayName "Bloquear-Telnet" -Direction Outbound -Protocol TCP -RemotePort 23 -Action Block',
+    'Test-NetConnection db01 -Port 3306',
+  ],
+  'win-dc': [
+    'Get-WindowsFeature *AD*',
+    '!Add-ADDSRole AD-Domain-Services -IncludeManagementTools',
+    'Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools',
+    '!Install-ADDSForest -DomainName tai.local',
+    'Install-ADDSDomainController -DomainName tai.local -InstallDns',
+    'Get-Service NTDS, DNS',
+  ],
+  'win-replicacion': ['repadmin /replsummary', 'dcdiag /q', 'Get-Service DNS', '!repadmin /syncall /AdeP', 'Start-Service DNS', 'repadmin /syncall /AdeP', 'repadmin /replsummary'],
+  'win-sfc': ['sfc /scannow', 'DISM /Online /Cleanup-Image /RestoreHealth', 'sfc /scannow'],
+};
+
+for (const lesson of ALL_LESSONS.filter((l) => l.type === 'powershell')) {
+  test(`lección ${lesson.id} se puede completar`, () => {
+    const ps = createPowerShell(lesson.setup);
+    assert.ok(lesson.objectives.every((o) => !o.check(ps)), 'ningún objetivo debería cumplirse antes de empezar');
+    const sol = PS_SOLUTIONS[lesson.id];
+    assert.ok(sol, 'falta la solución de referencia en el test');
+    const done = lesson.objectives.map(() => false);
+    for (const raw of sol) {
+      const mustFail = raw.startsWith('!');
+      const r = ps.run(mustFail ? raw.slice(1) : raw);
+      assert.equal(r.ok && !r.code, !mustFail, `${raw}\n${ps.screen.map((x) => x.text).join('\n')}`);
+      lesson.objectives.forEach((o, i) => (done[i] ||= o.check(ps)));
+    }
+    const failing = lesson.objectives.filter((_, i) => !done[i]).map((o) => o.label);
+    assert.deepEqual(failing, [], ps.screen.map((x) => x.text).join('\n'));
   });
 }
 

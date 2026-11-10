@@ -14,11 +14,24 @@ Todo corre en tu navegador y el progreso se guarda solo ahí: no hay cuentas ni 
     subnetting, y lógica de programación. Lectura más un test corto.
   - *Linux y la terminal*: una terminal simulada en el navegador con sistema de
     ficheros, permisos, `sudo`, tuberías, redirecciones, `systemctl`, `ss`, `ip route`,
-    `tar`… Las lecciones validan lo que has hecho de verdad en la máquina, no lo que
-    has escrito.
+    `tar`… y la administración del supuesto: procesos (`ps`, `top`, `kill`) y
+    `journalctl`, diagnóstico de red (`ping`, `traceroute`, `curl`) con
+    `firewall-cmd --add-port`, disco lleno (`df`, `du`, `truncate`) y `fsck -y`, LVM
+    (`pvs`/`vgs`/`lvs`, `lvextend`, `xfs_growfs`), paquetes (`dnf`, y `apt` en los
+    contenedores Debian/Ubuntu) y `crontab`. Las lecciones validan lo que has hecho de
+    verdad en la máquina, no lo que has escrito.
+  - *Windows y PowerShell*: un PowerShell simulado con cmdlets y parámetros de verdad
+    (abreviables, y con el error real si escribes `-Recursive`), alias y `Get-Help`:
+    `Copy-Item -Recurse`, `netsh advfirewall` y `New-NetFirewallRule` con elevación,
+    `Install-WindowsFeature` y la promoción a controlador de dominio, `repadmin` y
+    `dcdiag` para arreglar la replicación, y `sfc /scannow` con `DISM`. Más la teoría
+    de Active Directory (OU, GPO, PSO, FSMO).
   - *Docker y contenedores*: un Docker simulado con el ciclo de vida completo (`pull`,
     `run -d -p --name`, `ps -a`, `logs`, `exec -it`, `stop`/`kill`, `rm`, `rmi`, IDs
-    abreviados…) más la teoría de imágenes, hipervisores y Kubernetes.
+    abreviados…), `docker build` con un Dockerfile de verdad (cada `RUN` se ejecuta
+    dentro de la imagen), `docker history` y `docker compose` (`up -d`, `ps`, `logs`,
+    `exec`, `down`) sobre un `compose.yaml`, más la teoría de imágenes, hipervisores y
+    Kubernetes.
   - *Bases de datos y SQL*: SQL de verdad en el navegador (SQLite compilado a
     WebAssembly) sobre las tablas de los supuestos del examen: consultas, filtros,
     INSERT/UPDATE/DELETE, CREATE TABLE con claves, JOIN, GROUP BY/HAVING,
@@ -83,8 +96,13 @@ Es React 18 con Vite, Tailwind y Zustand, sin backend, igual que JSPlay.
 
 - [src/engine/terminal/](src/engine/terminal/): el simulador. `vfs.js` (sistema de
   ficheros en memoria), `parse.js` (comillas, `|`, `>`, `>>`, `&&`), `commands.js`
-  (las órdenes de Linux), `docker.js` y `shell.js`, que lo une todo. No depende del
-  navegador.
+  (las órdenes de Linux), `security.js` (hashes, chown, firewalld, nc, sysctl),
+  `sysadmin.js` (discos y LVM, red, procesos, journalctl, crontab y paquetes),
+  `docker.js` (incluido `docker build`), `compose.js` con su `yaml.js`, y `shell.js`,
+  que lo une todo. No depende del navegador.
+- [src/engine/powershell/](src/engine/powershell/): PowerShell simulado (Windows 11 y
+  Windows Server 2019) con cmdlets, alias, `netsh`, `repadmin`, `dcdiag`, `sfc` y
+  `DISM`. Misma interfaz que la shell.
 - [src/engine/ios/](src/engine/ios/): el switch Cisco IOS simulado (modos, abreviaturas,
   VLAN, SVI, troncales, port-security). Misma interfaz que la shell, sin navegador.
 - [src/engine/drills/](src/engine/drills/): los generadores de ejercicios al azar

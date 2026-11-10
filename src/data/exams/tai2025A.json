@@ -1141,7 +1141,8 @@
      "answer": "a",
      "topic": "so",
      "tema": "B4T04",
-     "explanation": "Los PSO (Password Settings Objects, o «fine-grained password policies») permiten aplicar políticas de contraseña distintas a usuarios o grupos dentro de un mismo dominio."
+     "explanation": "Los PSO (Password Settings Objects, o «fine-grained password policies») permiten aplicar políticas de contraseña distintas a usuarios o grupos dentro de un mismo dominio.",
+     "learn": "win-ad"
     },
     {
      "id": "tai2025A-P67",
@@ -2364,7 +2365,8 @@
      "answer": "a",
      "topic": "so",
      "tema": "B4T04",
-     "explanation": "Usuarios y grupos de dominio se gestionan con «Usuarios y equipos de Active Directory» (dsa.msc)."
+     "explanation": "Usuarios y grupos de dominio se gestionan con «Usuarios y equipos de Active Directory» (dsa.msc).",
+     "learn": "win-ad"
     },
     {
      "id": "tai2025A-S2-19",
@@ -2381,7 +2383,8 @@
      "answer": "c",
      "topic": "so",
      "tema": "B4T01",
-     "explanation": "Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools instala el rol. Después se promociona con Install-ADDSForest o Install-ADDSDomainController."
+     "explanation": "Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools instala el rol. Después se promociona con Install-ADDSForest o Install-ADDSDomainController.",
+     "learn": "win-dc"
     },
     {
      "id": "tai2025A-S2-20",
@@ -2398,7 +2401,8 @@
      "answer": "c",
      "topic": "so",
      "tema": "B4T01",
-     "explanation": "Copy-Item -Path origen -Destination destino -Recurse copia de forma recursiva. El parámetro es -Recurse, no -Recursive."
+     "explanation": "Copy-Item -Path origen -Destination destino -Recurse copia de forma recursiva. El parámetro es -Recurse, no -Recursive.",
+     "learn": "win-copiar"
     },
     {
      "id": "tai2025A-S2R1",
@@ -2449,7 +2453,8 @@
      "answer": "d",
      "topic": "so",
      "tema": "B4T09",
-     "explanation": "netsh advfirewall firewall add rule name=… dir=in action=allow protocol=TCP localport=8443."
+     "explanation": "netsh advfirewall firewall add rule name=… dir=in action=allow protocol=TCP localport=8443.",
+     "learn": "win-firewall"
     },
     {
      "id": "tai2025A-S2R4",
@@ -2466,7 +2471,8 @@
      "answer": "c",
      "topic": "so",
      "tema": "B4T04",
-     "explanation": "«repadmin /replsummary» resume el estado de replicación entre controladores de dominio."
+     "explanation": "«repadmin /replsummary» resume el estado de replicación entre controladores de dominio.",
+     "learn": "win-replicacion"
     },
     {
      "id": "tai2025A-S2R5",
@@ -2483,7 +2489,8 @@
      "answer": "c",
      "topic": "so",
      "tema": "B4T02",
-     "explanation": "Con LVM: se extiende el volumen lógico (lvextend) y después se amplía XFS en caliente (xfs_growfs), sin desmontar. XFS no se puede reducir."
+     "explanation": "Con LVM: se extiende el volumen lógico (lvextend) y después se amplía XFS en caliente (xfs_growfs), sin desmontar. XFS no se puede reducir.",
+     "learn": "lx-lvm"
     }
    ],
    "context": [

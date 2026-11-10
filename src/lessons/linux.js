@@ -2,6 +2,8 @@
 // simulada: el alumno escribe órdenes de verdad y los objetivos se validan
 // mirando el estado de la máquina (ver _helpers.js). Termina con lo que el
 // examen pregunta en los supuestos de sistemas: systemctl, ss, ip route, tar…
+// y las prácticas de administración: procesos y journalctl, diagnóstico de
+// red con firewalld, disco lleno y fsck, LVM con xfs_growfs, dnf y crontab.
 
 import {
   ran,
@@ -16,7 +18,9 @@ import {
   serviceIs,
   outputMatches,
   all,
+  any,
 } from './_helpers.js';
+import { fsUsage } from '../engine/terminal/sysadmin.js';
 
 const H = '/home/alumno';
 
@@ -295,6 +299,215 @@ Por último, hay carpetas del sistema, como \`/etc\`, donde solo puede escribir 
     exam: ['tai2024A-S2-10', 'tai2025A-S2-5', 'tai2025A-S2-6', 'tai2025A-S2-11', 'tai2025A-S2-13', 'tai2025A-S2-15'],
   },
   {
+    id: 'lx-procesos',
+    type: 'terminal',
+    title: 'Procesos, journalctl y kill',
+    summary: 'Por qué no arranca un servicio: el diario de systemd, quién ocupa el puerto y cómo terminar un proceso.',
+    body: `La aplicación de becas de **web01** es el servicio \`becas\` y escucha en el puerto **8080**. Esta mañana no arranca, y además el servidor va lentísimo.
+
+## Cuando un servicio no arranca
+\`systemctl start\` solo te dirá «Job for becas.service failed». El **porqué** está en el **diario de systemd**:
+\`\`\`
+journalctl -u becas          # solo las entradas de ese servicio
+journalctl -xeu becas        # salta al final (-e) y añade explicaciones (-x)
+journalctl -p err            # solo errores, de todo el sistema
+journalctl -f                # en directo, como tail -f
+\`\`\`
+\`systemctl status becas\` también enseña las últimas líneas del diario.
+
+## Quién ocupa un puerto
+\`ss -ltnp\` añade la columna **Process**: el programa y su **PID** (identificador de proceso) que escucha en cada puerto. Sin sudo solo verás los procesos que son tuyos.
+
+## Procesos
+- \`ps aux\` lista **todos** los procesos con su usuario, PID, %CPU y %MEM (\`ps -ef\` es la variante de estilo System V).
+- \`ps aux --sort=-%cpu\` los ordena por consumo de CPU, de más a menos; \`top\` hace lo mismo en directo.
+- \`kill PID\` manda **SIGTERM** (15): le pide al proceso que termine ordenadamente. \`kill -9 PID\` manda **SIGKILL**: lo mata en seco, sin que pueda guardar ni limpiar nada. Úsalo solo si el primero no funciona.
+- Solo puedes matar tus procesos; los de otros usuarios necesitan \`sudo\`.`,
+    setup: {
+      services: { becas: { description: 'Aplicación de becas', active: false, enabled: true, port: 8080, cmd: '/usr/bin/java -jar /srv/becas/becas.jar' } },
+      procs: [
+        { pid: 2211, user: 'alumno', cmd: 'python3 -m http.server 8080', cpu: 0.2, mem: 0.4, port: 8080 },
+        { pid: 2245, user: 'alumno', cmd: 'python3 /home/alumno/informe.py', cpu: 97.8, mem: 3.1 },
+      ],
+      files: { [`${H}/informe.py`]: 'while True:\n    pass  # ¡un bucle infinito!\n' },
+    },
+    objectives: [
+      { label: 'Intenta arrancar el servicio becas', check: ranCmd('systemctl', (a) => /^(re)?start$/.test(a[1] ?? '') && /^becas/.test(a[2] ?? '')) },
+      { label: 'Lee en el diario de systemd por qué ha fallado', check: ranCmd('journalctl', (a) => a.join(' ').includes('becas')) },
+      { label: 'Averigua qué proceso ocupa el puerto 8080 (ss -ltnp)', check: ranCmd('ss', (a) => a.slice(1).some((x) => /^-\w*p/.test(x))) },
+      { label: 'Termina ese proceso con kill', check: (sh) => !sh.procs.some((p) => p.pid === 2211) },
+      { label: 'Arranca becas y comprueba que queda activo', check: serviceIs('becas', { active: true }) },
+      { label: 'Localiza el proceso que se come la CPU (top o ps aux --sort=-%cpu) y termínalo', check: all((sh) => !sh.procs.some((p) => p.pid === 2245), any(ranCmd('top'), ranCmd('ps', (a) => a.some((x) => x.includes('cpu'))))) },
+    ],
+    hints: [
+      'sudo systemctl start becas',
+      'journalctl -u becas (o journalctl -xeu becas): busca «Address already in use»',
+      'ss -ltnp → el PID aparece en users:(("python3",pid=…))',
+      'kill 2211 · sudo systemctl start becas · systemctl status becas',
+      'ps aux --sort=-%cpu (o top) y luego kill con el PID de informe.py',
+    ],
+    curiosity: 'El PID 1 es systemd, el primer proceso que arranca el kernel y padre de todos los demás. Si muriera, el sistema entero se detendría: por eso ni root puede matarlo con kill.',
+  },
+  {
+    id: 'lx-red',
+    type: 'terminal',
+    title: 'Diagnosticar la red y abrir el cortafuegos',
+    summary: 'ping, traceroute, ss y firewall-cmd --add-port: de «no llega» a la causa.',
+    body: `Los usuarios de la red **10.30.16.0/20** dicen que no pueden abrir la nueva aplicación de **web01** (\`https://web01:8443\`). Vamos a diagnosticarlo **de abajo arriba**, capa a capa.
+
+## 1. ¿Hay red? ping
+\`ping\` manda paquetes **ICMP** de eco y mide cuánto tardan en volver.
+\`\`\`
+ping -c 3 172.19.50.1       # la puerta de enlace
+ping -c 3 db01              # por nombre: comprueba también la resolución (/etc/hosts o DNS)
+\`\`\`
+En Linux, \`ping\` **no se para solo**: \`-c\` indica cuántos paquetes enviar (en Windows envía 4 y para; allí se usa \`-n\`). Ojo: que un equipo no responda al ping **no** demuestra que esté caído; muchos cortafuegos bloquean ICMP.
+
+## 2. ¿Por dónde va? traceroute
+\`traceroute 10.30.16.45\` lista los **routers** (saltos) que atraviesan los paquetes. Un salto con \`* * *\` no responde; si a partir de uno ya no contesta nadie, el problema está ahí. En Windows la orden se llama \`tracert\`.
+
+## 3. ¿Escucha el servicio? ss
+\`ss -ltn\` muestra los puertos TCP en escucha. Si la aplicación no aparece, el problema es del servicio, no de la red.
+
+## 4. ¿Lo deja pasar el cortafuegos? firewall-cmd
+Si escucha pero desde fuera no llega, mira \`firewall-cmd --list-all\`. Para abrir un **puerto** (en lugar de un servicio con nombre):
+\`\`\`
+sudo firewall-cmd --permanent --add-port=8443/tcp
+sudo firewall-cmd --reload
+\`\`\``,
+    setup: {
+      services: { becas: { description: 'Aplicación de becas (HTTPS)', active: true, enabled: true, port: 8443 } },
+      setup: (sh) => {
+        sh.net.remote['10.30.16.45'] = { name: 'pc-usuario', ports: [] };
+        sh.net.remote['10.30.20.99'] = { name: 'app02', ports: [], icmp: false };
+      },
+    },
+    objectives: [
+      { label: 'Comprueba con 3 pings que responde la puerta de enlace (172.19.50.1)', check: ranCmd('ping', (a) => a.includes('172.19.50.1') && a.some((x) => /^-c/.test(x))) },
+      { label: 'Haz ping a db01 por su nombre', check: ran(/^ping .*\bdb01\b/) },
+      { label: 'Averigua con traceroute por qué router se llega a la red de usuarios (10.30.16.45)', check: ranCmd('traceroute', (a) => a.includes('10.30.16.45')) },
+      { label: 'Comprueba que la aplicación escucha en el puerto 8443', check: ranCmd('ss', (a) => a.slice(1).some((x) => x.includes('l'))) },
+      { label: 'Abre 8443/tcp en firewalld, de forma permanente y en caliente', check: (sh) => ['runtime', 'permanent'].every((k) => sh.firewall[k].ports.includes('8443/tcp')) },
+    ],
+    hints: [
+      'ping -c 3 172.19.50.1',
+      'ping -c 3 db01',
+      'traceroute 10.30.16.45',
+      'ss -ltn',
+      'sudo firewall-cmd --permanent --add-port=8443/tcp y después sudo firewall-cmd --reload',
+    ],
+    curiosity: 'traceroute funciona con un truco: envía paquetes con TTL 1, 2, 3… Cada router resta 1 al TTL y, cuando llega a 0, descarta el paquete y avisa con un ICMP «Time Exceeded». Esos avisos son los que van dibujando el camino.',
+    exam: ['tai2025A-S2-5', 'tai2025A-S2-12'],
+  },
+  {
+    id: 'lx-disco',
+    type: 'terminal',
+    title: 'Disco lleno y fsck',
+    summary: 'df -h, du -sh, vaciar un log y reparar una partición con fsck -y (examen 2024).',
+    body: `Llegan dos avisos del servidor: **/var está casi lleno** y, tras un reinicio, **la partición de la web de profesores (/dev/sda8) no se ha montado** por errores.
+
+## Espacio: df y du
+- \`df -h\` (*disk free*) muestra cada sistema de ficheros montado: tamaño, usado, disponible y **% de uso**. \`-h\` = unidades legibles.
+- \`du -sh ruta\` (*disk usage*) dice **cuánto ocupa** una carpeta. Para encontrar al culpable: \`du -sh /var/log/*\`, y vas bajando.
+
+Para recuperar el espacio de un log enorme, lo más seguro es **vaciarlo** sin borrarlo:
+\`\`\`
+sudo truncate -s 0 /var/log/becas/debug.log
+\`\`\`
+Si lo borras con \`rm\` mientras el servicio lo tiene abierto, el espacio **no se libera** hasta que el servicio se reinicia.
+
+## Reparar: fsck
+\`fsck\` (*file system check*) comprueba y repara un sistema de ficheros:
+- Debe estar **desmontado**: reparar algo en uso lo destrozaría.
+- Sin opciones, **pregunta** antes de cada reparación. \`-y\` responde «sí» a todo (lo que se usa al arrancar un servidor); \`-n\` solo mira.
+- Código de salida: **0** limpio, **1** errores corregidos, **4** quedan errores.
+
+Después se monta con \`mount\`. Si está en **/etc/fstab**, basta con \`mount /srv/profesores\` o \`mount -a\`.`,
+    setup: {
+      dirs: ['/srv/profesores'],
+      files: {
+        '/var/log/becas/debug.log': { content: '2026-11-10 09:00:00 DEBUG petición recibida…\n', size: 9.8 * 1024 ** 3 },
+        '/var/log/becas/app.log': { content: '2026-11-10 09:00:00 INFO arranque\n', size: 120 * 1024 ** 2 },
+        '/var/log/messages': { content: 'Nov 10 09:00:01 web01 systemd[1]: Started Session 12 of user alumno.\n', size: 48 * 1024 ** 2 },
+        '/etc/fstab': '/dev/mapper/rhel-root   /                xfs   defaults  0 0\n/dev/mapper/rhel-var    /var             xfs   defaults  0 0\n/dev/sda8               /srv/profesores  ext4  defaults  0 2\n',
+      },
+      setup: (sh) => {
+        sh.storage.disks[0] = { name: 'sda', size: 120, parts: [{ name: 'sda1', size: 1 }, { name: 'sda2', size: 99 }, { name: 'sda8', size: 20 }] };
+        sh.storage.fss.push({ dev: '/dev/sda8', type: 'ext4', size: 20, used: 3.2, mount: null, errors: 3 });
+        sh.journal.push({ t: 'nov 10 09:00:04', unit: 'systemd', ident: 'systemd-fsck[612]', prio: 3, msg: '/dev/sda8 contiene un sistema de ficheros con errores: REPARACIÓN MANUAL necesaria (ejecute fsck manualmente).' });
+      },
+    },
+    objectives: [
+      { label: 'Mira el espacio de cada sistema de ficheros en formato legible', check: ranCmd('df', (a) => a.slice(1).some((x) => /^-\w*h/.test(x))) },
+      { label: 'Encuentra con du qué ocupa tanto dentro de /var/log', check: ranCmd('du', (a) => a.some((x) => x.startsWith('/var/log'))) },
+      { label: 'Deja /var por debajo del 80 % de uso', check: (sh) => fsUsage(sh, '/var').pct < 80 },
+      { label: 'Repara /dev/sda8 sin que fsck te pregunte nada', check: (sh) => sh.storage.fss.find((f) => f.dev === '/dev/sda8').errors === 0 },
+      { label: 'Monta /dev/sda8 en /srv/profesores', check: (sh) => sh.storage.fss.find((f) => f.dev === '/dev/sda8').mount === '/srv/profesores' },
+    ],
+    hints: [
+      'df -h',
+      'du -sh /var/log/* y después du -sh /var/log/becas/*',
+      'sudo truncate -s 0 /var/log/becas/debug.log (y df -h para comprobarlo)',
+      'sudo fsck -y /dev/sda8',
+      'sudo mount /dev/sda8 /srv/profesores (o sudo mount -a, que lee /etc/fstab)',
+    ],
+    curiosity: 'El último campo de cada línea de /etc/fstab dice en qué orden pasa fsck al arrancar: 1 para la raíz, 2 para el resto y 0 para no revisarla nunca. Los XFS llevan 0 porque su reparación es otra herramienta, xfs_repair.',
+    exam: ['tai2024A-S2-2'],
+  },
+  {
+    id: 'lx-lvm',
+    type: 'terminal',
+    title: 'Ampliar un volumen LVM en caliente',
+    summary: 'pvs, vgs, lvs, lvextend y xfs_growfs: el supuesto de db01 (examen 2025).',
+    body: `Estás en **db01** (RHEL 8.8). \`/contenido\` está casi lleno y hay que ampliarlo a **600 GiB** sin parar el servicio, sin cambiar el punto de montaje y sin añadir discos.
+
+## LVM en tres capas
+1. **PV** (*physical volume*): un disco o partición que aporta espacio. \`pvs\`
+2. **VG** (*volume group*): un «saco» que junta el espacio de uno o varios PV. \`vgs\` muestra su tamaño y lo **libre** (VFree).
+3. **LV** (*logical volume*): lo que se reparte del VG y se formatea y monta como un disco. \`lvs\`
+
+La gracia: un LV puede **crecer** mientras haya espacio libre en su VG, sin tocar particiones.
+
+## Ampliar son DOS pasos
+\`\`\`
+sudo lvextend -L 600G /dev/vg_datos/lv_contenido    # 1. el volumen
+sudo xfs_growfs /contenido                           # 2. el sistema de ficheros
+\`\`\`
+- \`-L 600G\` fija el tamaño final; \`-L +100G\` suma; \`-l +100%FREE\` usa todo lo libre.
+- Tras el paso 1, \`df\` **sigue diciendo 500G**: el sistema de ficheros no se entera hasta el paso 2. \`lvextend -r\` hace los dos a la vez.
+- **XFS** se amplía **montado** con \`xfs_growfs\` y **no se puede reducir**. Para ext4 se usa \`resize2fs\`.
+
+No hacen falta snapshots, ni fsck, ni desmontar: es una ampliación en línea.`,
+    setup: {
+      dirs: ['/contenido'],
+      setup: (sh) => {
+        sh.system.host = 'db01';
+        sh.hostCtx.host = 'db01';
+        const st = sh.storage;
+        st.disks.push({ name: 'sdb', size: 700, parts: [] });
+        st.pvs.push({ dev: '/dev/sdb', vg: 'vg_datos', size: 700 });
+        st.lvs.push({ vg: 'vg_datos', name: 'lv_contenido', size: 500 });
+        st.fss.push({ dev: '/dev/mapper/vg_datos-lv_contenido', type: 'xfs', size: 500, used: 471, mount: '/contenido' });
+      },
+    },
+    objectives: [
+      { label: 'Comprueba cuánto espacio queda en /contenido', check: ranCmd('df') },
+      { label: 'Mira los volúmenes LVM y el espacio libre de vg_datos', check: any(ranCmd('vgs'), ranCmd('lvs'), ranCmd('pvs')) },
+      { label: 'Amplía el volumen lógico lv_contenido a 600 GiB', check: (sh) => sh.storage.lvs.find((l) => l.name === 'lv_contenido').size === 600 },
+      { label: 'Amplía en línea el sistema de ficheros XFS de /contenido', check: (sh) => fsUsage(sh, '/contenido').size === 600 },
+      { label: 'Comprueba con df que /contenido ya tiene 600G', check: (sh) => fsUsage(sh, '/contenido').size === 600 && sh.log.at(-1)?.cmds.some((c) => (c[0] === 'sudo' ? c[1] : c[0]) === 'df') },
+    ],
+    hints: [
+      'df -h /contenido',
+      'sudo vgs (VFree: 200g) y sudo lvs',
+      'sudo lvextend -L 600G /dev/vg_datos/lv_contenido (y fíjate en que df aún dice 500G)',
+      'sudo xfs_growfs /contenido',
+      'df -h /contenido',
+    ],
+    curiosity: 'Con «lvextend -r» LVM llama él solo a la herramienta del sistema de ficheros que toque (xfs_growfs o resize2fs). Es la forma más segura de no olvidarse del segundo paso.',
+    exam: ['tai2025A-S2R5'],
+  },
+  {
     id: 'lx-cron',
     type: 'concept',
     title: 'Tareas programadas con cron',
@@ -343,5 +556,48 @@ La trampa típica es leer «0 5» como 00:05. El primer campo son los **minutos*
       },
     ],
     exam: ['tai2025A-P61'],
+  },
+  {
+    id: 'lx-paquetes',
+    type: 'terminal',
+    title: 'Instalar software y programar tareas',
+    summary: 'dnf (y su equivalente apt) y crontab: instala rsync y programa la copia nocturna.',
+    body: `Hay que dejar programada una copia de seguridad nocturna con \`backup.sh\`, que usa **rsync**.
+
+## Paquetes: depende de la familia
+| | RHEL, Rocky, Fedora | Debian, Ubuntu |
+|---|---|---|
+| Gestor | \`dnf\` (antes \`yum\`) | \`apt\` (o \`apt-get\`) |
+| Paquetes | \`.rpm\` | \`.deb\` |
+| Instalar | \`dnf install -y x\` | \`apt update\` y \`apt install -y x\` |
+| Quitar | \`dnf remove x\` | \`apt remove x\` |
+| ¿Está? | \`dnf list installed x\` | \`apt list --installed x\` |
+
+Instalar y quitar necesita **root**. \`-y\` contesta «sí» a la confirmación: imprescindible en scripts. En Debian/Ubuntu, \`apt update\` **no actualiza nada**: descarga la lista de paquetes disponibles (si no, \`apt install\` dice *Unable to locate package*).
+
+## Tareas: crontab
+Ya sabes leer una línea de cron (lección anterior). Para **instalarla**:
+- \`crontab -l\` muestra tu crontab; \`crontab -e\` la abre en el editor; \`crontab -r\` la borra.
+- Sin editor (como aquí o en un script), se instala desde un fichero o una tubería:
+\`\`\`
+echo "30 2 * * * /home/alumno/backup.sh" | crontab -
+\`\`\`
+Cuidado: eso **sustituye** la crontab entera.`,
+    setup: {
+      files: { [`${H}/backup.sh`]: { content: '#!/bin/bash\nrsync -a /srv/app/ /backup/app/\n', mode: '755' } },
+    },
+    objectives: [
+      { label: 'Comprueba si rsync está instalado', check: any(ranCmd('dnf', (a) => a.includes('list') || a.includes('info')), ranCmd('yum', (a) => a.includes('list') || a.includes('info')), ranCmd('rpm')) },
+      { label: 'Instálalo sin que dnf te pida confirmación', check: (sh) => sh.packages.installed.includes('rsync') },
+      { label: 'Programa backup.sh en tu crontab todos los días a las 02:30', check: (sh) => /^30 2 \* \* \* \S*backup\.sh/m.test(sh.crontabs.alumno ?? '') },
+      { label: 'Comprueba tu crontab', check: (sh) => Boolean(sh.crontabs.alumno) && sh.log.some((e) => e.code === 0 && /^crontab -l/.test(e.line)) },
+    ],
+    hints: [
+      'dnf list installed rsync',
+      'sudo dnf install -y rsync',
+      'echo "30 2 * * * /home/alumno/backup.sh" | crontab -',
+      'crontab -l',
+    ],
+    curiosity: 'dnf significa «Dandified YUM»: es la reescritura de yum que estrenó Fedora y que RHEL usa desde la versión 8. Por compatibilidad, la orden yum sigue existiendo y llama a dnf.',
   },
 ];

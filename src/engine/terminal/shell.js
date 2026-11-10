@@ -10,6 +10,7 @@ import { commands, writeFile, expandGlobs } from './commands.js';
 import { dockerCommand } from './docker.js';
 import { dir, file, getNode, setNode, resolve, parentOf } from './vfs.js';
 import { defaultFirewall, defaultSysctl, defaultRemote } from './security.js';
+import { defaultStorage, defaultJournal, defaultPackages } from './sysadmin.js';
 
 const USER = 'alumno';
 const HOME = `/home/${USER}`;
@@ -20,6 +21,8 @@ function defaultFs() {
       bin: dir(),
       etc: dir({
         hostname: file('web01\n'),
+        hosts: file('127.0.0.1   localhost localhost.localdomain\n::1         localhost localhost.localdomain\n10.30.20.30 db01\n10.30.20.5  dhcp01\n'),
+        fstab: file('/dev/mapper/rhel-root   /       xfs     defaults        0 0\nUUID=7c1f…              /boot   xfs     defaults        0 0\n/dev/mapper/rhel-var    /var    xfs     defaults        0 0\n/dev/mapper/rhel-swap   none    swap    defaults        0 0\n'),
         'os-release': file('NAME="Red Hat Enterprise Linux"\nVERSION="8.8 (Ootpa)"\nID="rhel"\n'),
         passwd: file(`root:x:0:0:root:/root:/bin/bash\n${USER}:x:1000:1000:Alumno:${HOME}:/bin/bash\n`),
         nginx: dir({ 'nginx.conf': file('user nginx;\nworker_processes auto;\nerror_log /var/log/nginx/error.log;\n') }),
@@ -44,9 +47,9 @@ function defaultFs() {
 }
 
 const DEFAULT_SERVICES = () => ({
-  sshd: { description: 'OpenSSH server daemon', active: true, enabled: true, port: 22 },
+  sshd: { description: 'OpenSSH server daemon', active: true, enabled: true, port: 22, pid: 1180, cmd: '/usr/sbin/sshd -D' },
   nginx: { description: 'The nginx HTTP and reverse proxy server', active: false, enabled: false, port: 80 },
-  crond: { description: 'Command Scheduler', active: true, enabled: true },
+  crond: { description: 'Command Scheduler', active: true, enabled: true, pid: 1190, cmd: '/usr/sbin/crond -n' },
 });
 
 const DEFAULT_NET = () => ({
@@ -63,6 +66,9 @@ const DEFAULT_NET = () => ({
 //   files: { '/ruta/absoluta': 'contenido' | { content, mode, owner } }
 //   dirs:  ['/ruta/a/crear', …]   (con dueño alumno si cuelgan de su home)
 //   cwd, services, images (nombres de imágenes ya descargadas)
+//   procs: procesos sueltos ({ pid, user, cmd, cpu, mem, port })
+//   distro: 'rhel' (por defecto) o 'debian' (apt en vez de dnf)
+//   files admite también size (bytes «de mentira» para df y du)
 //   setup(sh): función para retoques más finos
 export function createShell(setup = {}) {
   const fs = defaultFs();
@@ -82,19 +88,27 @@ export function createShell(setup = {}) {
       if (!getNode(fs, p)) setNode(fs, p, dir({}, '755', own(p)));
     }
     const s = typeof spec === 'string' ? { content: spec } : spec;
-    setNode(fs, path, file(s.content ?? '', s.mode ?? '644', s.owner ?? own(path)));
+    const f = file(s.content ?? '', s.mode ?? '644', s.owner ?? own(path));
+    if (s.size !== undefined) f.size = s.size;
+    setNode(fs, path, f);
   }
 
   const hostCtx = { fs, cwd: setup.cwd ?? HOME, home: HOME, user: USER, host: 'web01' };
   const sh = {
     hostCtx,
     ctxStack: [hostCtx],
-    system: { host: 'web01', kernel: '4.18.0-477.10.1.el8_8.x86_64' },
+    system: { host: 'web01', kernel: '4.18.0-477.10.1.el8_8.x86_64', distro: setup.distro ?? 'rhel' },
     services: { ...DEFAULT_SERVICES(), ...(setup.services ?? {}) },
     net: DEFAULT_NET(),
     firewall: defaultFirewall(),
     sysctl: defaultSysctl(),
-    docker: { images: [], containers: [] },
+    docker: { images: [], containers: [], networks: [] },
+    storage: defaultStorage(),
+    journal: defaultJournal(),
+    procs: structuredClone(setup.procs ?? []),
+    nextPid: 2300,
+    crontabs: {},
+    packages: defaultPackages(setup.distro ?? 'rhel'),
     history: [],
     log: [], // { line, code, out, err, cmds: [argv…] } por cada línea ejecutada
     screen: [],
@@ -106,6 +120,11 @@ export function createShell(setup = {}) {
     },
     run(line) {
       return runLine(this, line);
+    },
+    // Ejecuta una línea en otro entorno (lo usa el RUN de docker build) sin
+    // pintar nada en pantalla ni dejar rastro en el historial.
+    exec(ctx, line) {
+      return runIn(this, ctx, line);
     },
   };
   for (const name of setup.images ?? []) dockerCommand(sh, ['docker', 'pull', name]);
@@ -233,6 +252,8 @@ function execute(sh, ctx, argv, stdin) {
     return { out: 'exit\n', err: '', code: 0 };
   }
 
+  if (name === 'docker-compose') return execute(sh, ctx, ['docker', 'compose', ...argv.slice(1)], stdin);
+
   if (name === 'docker') {
     if (ctx.container) return { out: '', err: 'bash: docker: orden no encontrada (estás dentro de un contenedor: sal con «exit»)', code: 127 };
     const r = dockerCommand(sh, argv);
@@ -250,7 +271,21 @@ function execute(sh, ctx, argv, stdin) {
 
   const fn = commands[name];
   if (!fn) {
-    const hint = { dir: ' (en Linux se usa «ls»)', cls: ' (en Linux se usa «clear»)', ipconfig: ' (en Linux se usa «ip addr»)', type: ' (en Linux se usa «cat»)', copy: ' (en Linux se usa «cp»)', del: ' (en Linux se usa «rm»)' }[name] ?? '';
+    const hint = {
+      dir: ' (en Linux se usa «ls»)',
+      cls: ' (en Linux se usa «clear»)',
+      ipconfig: ' (en Linux se usa «ip addr»)',
+      type: ' (en Linux se usa «cat»)',
+      copy: ' (en Linux se usa «cp»)',
+      del: ' (en Linux se usa «rm»)',
+      tracert: ' (es de Windows: en Linux se usa «traceroute»)',
+      route: ' (en Linux moderno se usa «ip route show»)',
+      netstat: ' (en Linux moderno se usa «ss»)',
+      ifconfig: ' (en Linux moderno se usa «ip addr»)',
+      chkdsk: ' (es de Windows: en Linux se usa «fsck»)',
+      checkdisk: ' (no existe: en Linux se usa «fsck»)',
+      'Copy-Item': ' (es PowerShell: en Linux se usa «cp -r»)',
+    }[name] ?? '';
     return { out: '', err: `bash: ${name}: orden no encontrada${hint}`, code: 127 };
   }
   return fn(sh, ctx, argv, stdin);
@@ -269,38 +304,49 @@ function runScript(sh, ctx, name) {
   for (const l of node.content.split('\n')) {
     const t = l.trim();
     if (!t || t.startsWith('#')) continue;
-    let steps;
-    try {
-      steps = parse(t);
-    } catch (e) {
-      err += `${name}: ${e.message}\n`;
-      code = 2;
-      continue;
-    }
-    for (const step of steps) {
-      if (step.op === '&&' && code !== 0) continue;
-      let stdin = '';
-      for (let i = 0; i < step.pipeline.length; i++) {
-        const { argv, redirect } = step.pipeline[i];
-        const r = execute(sh, ctx, expandGlobs(ctx, expandVars(ctx, argv)), stdin);
-        code = r.code;
-        if (r.err) err += r.err + '\n';
-        let o = r.out ?? '';
-        if (redirect) {
-          const e = writeFile(ctx, redirect.target, o, redirect.append);
-          if (e) err += `${name}: ${e}\n`;
-          o = '';
-        }
-        if (i < step.pipeline.length - 1) stdin = o;
-        else out += o;
+    const r = runIn(sh, ctx, t, name);
+    out += r.out;
+    if (r.err) err += r.err + '\n';
+    code = r.code;
+  }
+  return { out, err: err.replace(/\n$/, ''), code };
+}
+
+// Ejecuta una línea (con tuberías, redirecciones y &&) en el entorno ctx y
+// devuelve lo que habría salido por pantalla.
+function runIn(sh, ctx, line, who = 'sh') {
+  let out = '';
+  let err = '';
+  let code = 0;
+  let steps;
+  try {
+    steps = parse(line);
+  } catch (e) {
+    return { out: '', err: `${who}: ${e.message}`, code: 2 };
+  }
+  for (const step of steps) {
+    if (step.op === '&&' && code !== 0) continue;
+    let stdin = '';
+    for (let i = 0; i < step.pipeline.length; i++) {
+      const { argv, redirect } = step.pipeline[i];
+      const r = execute(sh, ctx, expandGlobs(ctx, expandVars(ctx, argv)), stdin);
+      code = r.code;
+      if (r.err) err += r.err + '\n';
+      let o = r.out ?? '';
+      if (redirect) {
+        const e = writeFile(ctx, redirect.target, o, redirect.append);
+        if (e) err += `${who}: ${e}\n`;
+        o = '';
       }
+      if (i < step.pipeline.length - 1) stdin = o;
+      else out += o;
     }
   }
   return { out, err: err.replace(/\n$/, ''), code };
 }
 
 function containerCtx(c) {
-  return { fs: c.fs, cwd: '/', home: '/root', user: 'root', host: c.id.slice(0, 12), container: c };
+  return { fs: c.fs, cwd: c.spec?.workdir ?? '/', home: '/root', user: 'root', host: c.id.slice(0, 12), container: c };
 }
 
 function enterContainer(sh, c, removeOnExit, viaExec) {

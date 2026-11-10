@@ -21,6 +21,7 @@ import {
   file,
 } from './vfs.js';
 import { makeSecurityCommands, SECURITY_MANUAL } from './security.js';
+import { makeSysadminCommands, SYSADMIN_MANUAL, journalAdd, nodeSize } from './sysadmin.js';
 
 const ok = (out = '') => ({ out, err: '', code: 0 });
 const fail = (err, code = 1, out = '') => ({ out, err, code });
@@ -81,6 +82,7 @@ export function writeFile(ctx, name, content, append = false) {
   if (node) {
     if (!can(ctx, node, 2)) return `${name}: ${DENIED}`;
     node.content = append ? node.content + content : content;
+    if (!append) delete node.size;
     return null;
   }
   const { parent } = parentOf(target);
@@ -212,7 +214,7 @@ export const commands = {
     const fmt = (name, node) =>
       flags.l
         ? `${modeString(node)} 1 ${node.owner.padEnd(6)} ${(node.group ?? node.owner).padEnd(6)} ${String(
-            node.type === 'dir' ? 4096 : node.content.length,
+            flags.h ? humanSize(nodeSize(node)) : nodeSize(node),
           ).padStart(5)} nov  9 10:00 ${name}${node.type === 'dir' ? '/' : ''}`
         : name + (node.type === 'dir' ? '/' : '');
     for (const t of targets) {
@@ -467,16 +469,6 @@ export const commands = {
 
   history: (sh) => ok(joinLines(sh.history.map((h, i) => `${String(i + 1).padStart(5)}  ${h}`))),
 
-  ps: (sh) => {
-    const rows = ['    PID TTY          TIME CMD', '      1 ?        00:00:02 systemd'];
-    let pid = 400;
-    for (const [name, s] of Object.entries(sh.services)) {
-      if (s.active) rows.push(`${String(pid++).padStart(7)} ?        00:00:00 ${name}`);
-    }
-    rows.push('   1203 pts/0    00:00:00 bash', '   1290 pts/0    00:00:00 ps');
-    return ok(joinLines(rows));
-  },
-
   systemctl: (sh, ctx, argv) => {
     const [action, unitRaw] = argv.slice(1);
     if (!action) return fail('systemctl: falta la acción (status, start, stop, enable…)');
@@ -495,19 +487,45 @@ export const commands = {
       return fail(`Failed to ${action} ${unit}.service: Access denied\n(Pista: las acciones que cambian servicios necesitan sudo)`);
     }
     switch (action) {
-      case 'status':
-        return ok(
-          `● ${unit}.service - ${s.description}\n` +
-            `     Loaded: loaded (/usr/lib/systemd/system/${unit}.service; ${s.enabled ? 'enabled' : 'disabled'})\n` +
-            `     Active: ${s.active ? 'active (running)' : 'inactive (dead)'}\n`,
-        );
+      case 'status': {
+        const recent = (sh.journal ?? []).filter((e) => e.unit === unit).slice(-5);
+        const text =
+          `${s.active ? '●' : s.failed ? '×' : '○'} ${unit}.service - ${s.description}\n` +
+          `     Loaded: loaded (/usr/lib/systemd/system/${unit}.service; ${s.enabled ? 'enabled' : 'disabled'})\n` +
+          `     Active: ${s.active ? 'active (running)' : s.failed ? 'failed (Result: exit-code)' : 'inactive (dead)'}\n` +
+          (s.active && s.pid ? `   Main PID: ${s.pid} (${unit})\n` : '') +
+          (recent.length ? '\n' + recent.map((e) => `${e.t} web01 ${e.ident}: ${e.msg}`).join('\n') + '\n' : '');
+        return s.active ? ok(text) : fail('', 3, text);
+      }
       case 'start':
       case 'restart':
-      case 'reload':
+      case 'reload': {
+        if (s.active && action === 'start') return ok();
+        if (action === 'reload' && !s.active) return fail(`${unit}.service is not active, cannot reload.`);
+        // Otro proceso ya ocupa su puerto: el servicio no puede arrancar.
+        const busy = s.port && (sh.procs ?? []).find((p) => p.port === s.port);
+        if (busy) {
+          s.active = false;
+          s.failed = true;
+          journalAdd(sh, unit, `Starting ${s.description}...`, 6, 'systemd[1]');
+          journalAdd(sh, unit, `bind() to 0.0.0.0:${s.port} failed (98: Address already in use)`, 3, `${unit}[${sh.nextPid++}]`);
+          journalAdd(sh, unit, `${unit}.service: Main process exited, code=exited, status=1/FAILURE`, 4, 'systemd[1]');
+          journalAdd(sh, unit, `${unit}.service: Failed with result 'exit-code'.`, 4, 'systemd[1]');
+          journalAdd(sh, unit, `Failed to start ${s.description}.`, 3, 'systemd[1]');
+          return fail(`Job for ${unit}.service failed because the control process exited with error code.\nSee "systemctl status ${unit}.service" and "journalctl -xeu ${unit}.service" for details.`);
+        }
+        if (action === 'restart' && s.active) journalAdd(sh, unit, `Stopping ${s.description}...`, 6, 'systemd[1]');
         s.active = true;
+        s.failed = false;
+        if (action !== 'reload') s.pid = sh.nextPid ? sh.nextPid++ : s.pid;
+        journalAdd(sh, unit, action === 'reload' ? `Reloaded ${s.description}.` : `Started ${s.description}.`, 6, 'systemd[1]');
         return ok();
+      }
       case 'stop':
+        if (s.active) journalAdd(sh, unit, `Stopped ${s.description}.`, 6, 'systemd[1]');
         s.active = false;
+        s.failed = false;
+        s.pid = null;
         return ok();
       case 'enable':
         s.enabled = true;
@@ -518,7 +536,9 @@ export const commands = {
         s.enabled = false;
         return ok(`Removed /etc/systemd/system/multi-user.target.wants/${unit}.service.\n`);
       case 'is-active':
-        return s.active ? ok('active\n') : fail('', 3, 'inactive\n');
+        return s.active ? ok('active\n') : fail('', 3, s.failed ? 'failed\n' : 'inactive\n');
+      case 'is-failed':
+        return s.failed ? ok('failed\n') : fail('', 1, s.active ? 'active\n' : 'inactive\n');
       case 'is-enabled':
         return s.enabled ? ok('enabled\n') : fail('', 1, 'disabled\n');
       default:
@@ -558,19 +578,32 @@ export const commands = {
     return fail('Usage: ip [ OPTIONS ] OBJECT { COMMAND | help }\nwhere  OBJECT := { addr | route | … }', 255);
   },
 
-  ss: (sh, _ctx, argv) => {
+  ss: (sh, ctx, argv) => {
     const { flags } = getopts(argv.slice(1));
+    // Quién escucha en cada puerto: servicios, contenedores publicados (a
+    // través de docker-proxy) y procesos sueltos de la lección.
     const listening = [];
-    for (const s of Object.values(sh.services)) if (s.active && s.port) listening.push(s.port);
-    for (const c of sh.docker.containers) {
-      if (c.status === 'running') for (const p of c.ports) listening.push(p.host);
+    for (const [name, s] of Object.entries(sh.services)) {
+      if (s.active && s.port) listening.push({ port: s.port, name, pid: s.pid ?? 0, user: s.user ?? 'root' });
     }
-    const header = 'State   Recv-Q  Send-Q   Local Address:Port    Peer Address:Port';
+    for (const c of sh.docker.containers) {
+      if (c.status === 'running') for (const p of c.ports) listening.push({ port: p.host, name: 'docker-proxy', pid: 3000 + p.host % 1000, user: 'root' });
+    }
+    for (const p of sh.procs ?? []) if (p.port) listening.push({ port: p.port, name: p.cmd.split(' ')[0].split('/').pop(), pid: p.pid, user: p.user });
+    const header = 'State   Recv-Q  Send-Q   Local Address:Port    Peer Address:Port' + (flags.p ? '  Process' : '');
     if (!flags.l) return ok(header + '\nESTAB   0       0        10.30.20.10:22        10.30.16.45:51544\n');
-    const rows = [...new Set(listening)]
-      .sort((a, b) => a - b)
-      .map((p) => `LISTEN  0       128            0.0.0.0:${flags.n ? p : portName(p)}`.padEnd(46) + '0.0.0.0:*');
-    return ok(joinLines([header, ...rows]));
+    const seen = new Set();
+    const rows = listening
+      .filter((l) => !seen.has(l.port) && seen.add(l.port))
+      .sort((a, b) => a.port - b.port)
+      .map((l) => {
+        const base = `LISTEN  0       128            0.0.0.0:${flags.n ? l.port : portName(l.port)}`.padEnd(46) + '0.0.0.0:*';
+        if (!flags.p) return base;
+        const visible = isRoot(ctx) || l.user === ctx.user;
+        return base.padEnd(56) + (visible ? `users:(("${l.name}",pid=${l.pid},fd=3))` : '');
+      });
+    const note = flags.p && !isRoot(ctx) ? ['(Sin sudo, ss -p solo enseña el proceso de los puertos que son tuyos.)'] : [];
+    return ok(joinLines([header, ...rows, ...note]));
   },
 
   tar: (_sh, ctx, argv) => {
@@ -707,7 +740,9 @@ export function applyMode(current, mode) {
   return digits.join('');
 }
 
-const PORT_NAMES = { 22: 'ssh', 25: 'smtp', 80: 'http', 443: 'https', 3306: 'mysql', 993: 'imaps' };
+const PORT_NAMES = { 22: 'ssh', 25: 'smtp', 80: 'http', 443: 'https', 3306: 'mysql', 993: 'imaps', 8080: 'webcache', 8443: 'pcsync-https' };
+
+const humanSize = (b) => (b >= 1024 ** 3 ? `${(b / 1024 ** 3).toFixed(1)}G` : b >= 1024 ** 2 ? `${Math.round(b / 1024 ** 2)}M` : b >= 1024 ? `${Math.round(b / 1024)}K` : String(b));
 const portName = (p) => PORT_NAMES[p] ?? p;
 
 const ipToInt = (ip) => ip.split('.').reduce((acc, o) => (acc << 8) + Number(o), 0) >>> 0;
@@ -718,10 +753,12 @@ export function inSubnet(ip, cidr) {
   return (ipToInt(ip) & mask) === (ipToInt(net) & mask);
 }
 
-function routeFor(net, ip) {
+export function routeFor(net, ip) {
   if (!/^\d+\.\d+\.\d+\.\d+$/.test(ip)) return null;
   return net.routes.find((r) => r.dest !== 'default' && inSubnet(ip, r.dest)) ?? net.routes.find((r) => r.dest === 'default');
 }
 
 Object.assign(MANUAL, SECURITY_MANUAL);
 Object.assign(commands, makeSecurityCommands({ ok, fail, abs, isRoot, readFile, joinLines, lines, walk }));
+Object.assign(MANUAL, SYSADMIN_MANUAL);
+Object.assign(commands, makeSysadminCommands({ ok, fail, abs, isRoot, readFile, joinLines, lines, routeFor, getopts, writeFile }));

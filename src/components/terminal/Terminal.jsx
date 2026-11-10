@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import { commands } from '../../engine/terminal/commands.js';
 import { getNode, resolve } from '../../engine/terminal/vfs.js';
 
-const COMMAND_NAMES = [...Object.keys(commands), 'docker', 'sudo', 'exit'].sort();
-const DOCKER_SUBS = ['exec', 'images', 'inspect', 'kill', 'logs', 'ps', 'pull', 'restart', 'rm', 'rmi', 'run', 'start', 'stop', 'version'];
+const COMMAND_NAMES = [...Object.keys(commands), 'docker', 'docker-compose', 'sudo', 'exit'].sort();
+const DOCKER_SUBS = ['build', 'compose', 'exec', 'history', 'images', 'inspect', 'kill', 'logs', 'ps', 'pull', 'restart', 'rm', 'rmi', 'run', 'start', 'stop', 'tag', 'version'];
+const COMPOSE_SUBS = ['build', 'config', 'down', 'exec', 'logs', 'ps', 'restart', 'start', 'stop', 'up', 'version'];
 
 // Autocompletado con Tab: la primera palabra se completa con órdenes, la
 // segunda de «docker» con subórdenes, y el resto con ficheros y carpetas.
@@ -17,6 +18,8 @@ function complete(sh, line) {
     candidates = COMMAND_NAMES.filter((c) => c.startsWith(word));
   } else if (words.length === 1 && words[0] === 'docker') {
     candidates = DOCKER_SUBS.filter((c) => c.startsWith(word));
+  } else if ((words.length === 2 && words[0] === 'docker' && words[1] === 'compose') || (words.length === 1 && words[0] === 'docker-compose')) {
+    candidates = COMPOSE_SUBS.filter((c) => c.startsWith(word));
   } else {
     const ctx = sh.ctx;
     const slash = word.lastIndexOf('/');
@@ -112,9 +115,15 @@ export default function Terminal({ shell, onCommand, className = '' }) {
     }
   };
 
+  const isPs = shell.kind === 'powershell';
+  const help = {
+    ios: 'Escribe una orden y pulsa Intro. «?» muestra lo que puedes escribir en cada momento; Tab autocompleta.',
+    powershell: 'Escribe un cmdlet y pulsa Intro. «Get-Help» explica cómo funciona; «Get-Command *texto*» busca cmdlets; Tab autocompleta.',
+  }[shell.kind] ?? 'Escribe una orden y pulsa Intro. «help» muestra las órdenes disponibles; Tab autocompleta.';
+
   return (
     <div
-      className={`flex min-h-0 flex-col overflow-hidden rounded-lg border border-gray-700 bg-[#1d2021] font-mono text-[13px] leading-relaxed ${className}`}
+      className={`flex min-h-0 flex-col overflow-hidden rounded-lg border font-mono text-[13px] leading-relaxed ${isPs ? 'border-[#1f3f73] bg-[#012456]' : 'border-gray-700 bg-[#1d2021]'} ${className}`}
       onClick={() => {
         if (!window.getSelection()?.toString()) inputRef.current?.focus();
       }}
@@ -123,16 +132,10 @@ export default function Terminal({ shell, onCommand, className = '' }) {
         <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
         <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/70" />
         <span className="h-2.5 w-2.5 rounded-full bg-green-400/70" />
-        <span className="ml-2 truncate">{shell.title ?? (shell.ctx.container ? `contenedor ${shell.ctx.host}` : 'alumno@web01 — simulador')}</span>
+        <span className="ml-2 truncate">{shell.title ?? (shell.ctx.container ? `contenedor ${shell.ctx.host}` : `${shell.hostCtx?.user ?? 'alumno'}@${shell.hostCtx?.host ?? 'web01'} — simulador`)}</span>
       </div>
       <div ref={scrollRef} className="min-h-0 flex-1 overflow-y-auto px-3 py-2" role="log" aria-live="polite">
-        {shell.screen.length === 0 && (
-          <div className="text-gray-500">
-            {shell.kind === 'ios'
-              ? 'Escribe una orden y pulsa Intro. «?» muestra lo que puedes escribir en cada momento; Tab autocompleta.'
-              : 'Escribe una orden y pulsa Intro. «help» muestra las órdenes disponibles; Tab autocompleta.'}
-          </div>
-        )}
+        {shell.screen.length === 0 && <div className={isPs ? 'text-blue-200/60' : 'text-gray-500'}>{help}</div>}
         {shell.screen.map((l, i) =>
           l.kind === 'cmd' ? (
             <div key={i} className="whitespace-pre-wrap break-all">
@@ -140,7 +143,7 @@ export default function Terminal({ shell, onCommand, className = '' }) {
               <span className="text-gray-100"> {l.text}</span>
             </div>
           ) : (
-            <div key={i} className={`whitespace-pre-wrap break-words ${l.kind === 'err' ? 'text-red-400' : 'text-gray-300'}`}>
+            <div key={i} className={`whitespace-pre-wrap break-words ${l.kind === 'err' ? (isPs ? 'text-red-300' : 'text-red-400') : isPs ? 'text-gray-100' : 'text-gray-300'}`}>
               {l.text}
             </div>
           ),
@@ -158,7 +161,7 @@ export default function Terminal({ shell, onCommand, className = '' }) {
             autoCapitalize="off"
             autoComplete="off"
             autoCorrect="off"
-            aria-label={shell.kind === 'ios' ? 'Orden de la consola del switch' : 'Orden de la terminal'}
+            aria-label={{ ios: 'Orden de la consola del switch', powershell: 'Orden de PowerShell' }[shell.kind] ?? 'Orden de la terminal'}
           />
         </div>
       </div>
@@ -167,6 +170,7 @@ export default function Terminal({ shell, onCommand, className = '' }) {
 }
 
 function Prompt({ text }) {
+  if (text.startsWith('PS ')) return <span className="shrink-0 text-gray-100">{text}</span>;
   const m = text.match(/^(.*?)@(.*?):(.*)([$#])$/);
   if (!m) return <span className="text-green-400">{text}</span>;
   return (

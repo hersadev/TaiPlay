@@ -6,6 +6,7 @@
 import { fundamentos } from './fundamentos.js';
 import { linux } from './linux.js';
 import { docker } from './docker.js';
+import { windows } from './windows.js';
 import { bbdd } from './bbdd.js';
 import { redes } from './redes.js';
 import { seguridad } from './seguridad.js';
@@ -26,16 +27,25 @@ export const TRACKS = [
     id: 'linux',
     title: 'Linux y la terminal',
     icon: '›_',
-    description: 'De tu primera orden a administrar un servidor como en el supuesto práctico: ficheros, permisos, logs, servicios y red.',
+    description: 'De tu primera orden a administrar un servidor como en el supuesto práctico: ficheros, permisos, logs, servicios, procesos, red y cortafuegos, discos y LVM, paquetes y cron.',
     lessons: linux,
     topics: ['so'],
     temas: ['B2T04', 'B4T01'],
   },
   {
+    id: 'windows',
+    title: 'Windows y PowerShell',
+    icon: '⊞',
+    description: 'Un PowerShell simulado con los cmdlets del supuesto: Copy-Item -Recurse, netsh advfirewall, Install-WindowsFeature, promocionar un controlador de dominio, repadmin, dcdiag, sfc y DISM.',
+    lessons: windows,
+    topics: ['so'],
+    temas: ['B2T04', 'B4T01', 'B4T04', 'B4T09'],
+  },
+  {
     id: 'docker',
     title: 'Docker y contenedores',
     icon: '▣',
-    description: 'Imágenes, contenedores y su ciclo de vida completo, hasta el nivel exacto que pide el examen, más una introducción a Kubernetes.',
+    description: 'Imágenes, contenedores y su ciclo de vida completo, tus propias imágenes con un Dockerfile, varios servicios con Docker Compose y una introducción a Kubernetes.',
     lessons: docker,
     topics: ['virtualizacion'],
     temas: ['B4T02', 'B4T03'],

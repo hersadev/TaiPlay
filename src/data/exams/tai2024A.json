@@ -965,7 +965,8 @@
      "answer": "a",
      "topic": "so",
      "tema": "B4T01",
-     "explanation": "sfc /scannow (Windows) revisa los archivos protegidos del sistema y repara los dañados con una copia en caché."
+     "explanation": "sfc /scannow (Windows) revisa los archivos protegidos del sistema y repara los dañados con una copia en caché.",
+     "learn": "win-sfc"
     },
     {
      "id": "tai2024A-P57",
@@ -2076,7 +2077,7 @@
      "topic": "so",
      "tema": "B4T01",
      "explanation": "«fsck -y» revisa y repara el sistema de ficheros respondiendo «sí» a todas las correcciones.",
-     "learn": "lx-sistema"
+     "learn": "lx-disco"
     },
     {
      "id": "tai2024A-S2-3",
@@ -2385,7 +2386,8 @@
      "answer": "a",
      "topic": "so",
      "tema": "B4T04",
-     "explanation": "Buena práctica en AD: crear primero una Unidad Organizativa y vincularle las GPO."
+     "explanation": "Buena práctica en AD: crear primero una Unidad Organizativa y vincularle las GPO.",
+     "learn": "win-ad"
     },
     {
      "id": "tai2024A-S2R1",

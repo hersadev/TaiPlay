@@ -12,6 +12,7 @@ import SqlConsole, { SchemaPanel } from '../components/sql/SqlConsole';
 import { loadSql } from '../engine/sql/loader.js';
 import { createSqlDb } from '../engine/sql/db.js';
 import { createSwitch } from '../engine/ios/ios.js';
+import { createPowerShell } from '../engine/powershell/ps.js';
 import Drill from '../components/drill/Drill';
 import MatchGame from '../components/quiz/MatchGame';
 import CodeExercises from '../components/code/CodeExercises';
@@ -28,7 +29,7 @@ export default function LessonPage({ trackId, lessonId }) {
   const i = track.lessons.findIndex((l) => l.id === lesson.id);
   const next = track.lessons[i + 1] ?? null;
   const prev = track.lessons[i - 1] ?? null;
-  const Component = { terminal: TerminalLesson, sql: SqlLesson, ios: IosLesson, drill: DrillLesson, match: MatchLesson, code: CodeLesson, flashcards: FlashcardsLesson, test: TestLesson }[lesson.type] ?? ConceptLesson;
+  const Component = { terminal: TerminalLesson, sql: SqlLesson, ios: IosLesson, powershell: PowerShellLesson, drill: DrillLesson, match: MatchLesson, code: CodeLesson, flashcards: FlashcardsLesson, test: TestLesson }[lesson.type] ?? ConceptLesson;
   return <Component key={lesson.id} lesson={lesson} track={track} next={next} prev={prev} />;
 }
 
@@ -214,6 +215,21 @@ function IosLesson({ lesson, track, next, prev }) {
         restartLabel="Reiniciar el switch"
       />
       <Terminal shell={sw} onCommand={objectives.evaluate} className="h-[60vh] lg:h-auto" />
+    </div>
+  );
+}
+
+function PowerShellLesson({ lesson, track, next, prev }) {
+  const objectives = useObjectives(lesson);
+  const [ps, setPs] = useState(() => createPowerShell(lesson.setup));
+  return (
+    <div className={PRACTICE_GRID}>
+      <PracticeText
+        {...{ lesson, track, next, prev, objectives }}
+        onRestart={() => setPs(createPowerShell(lesson.setup))}
+        restartLabel="Reiniciar el equipo"
+      />
+      <Terminal shell={ps} onCommand={objectives.evaluate} className="h-[60vh] lg:h-auto" />
     </div>
   );
 }

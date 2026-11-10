@@ -1,7 +1,8 @@
 // Ruta «Docker y contenedores»: de «qué es un contenedor» al ciclo de vida
 // completo que pregunta el examen (pull, run, ps, logs, exec, stop/kill, rm,
-// rmi) y una introducción a Kubernetes. Las prácticas usan el Docker
-// simulado de engine/terminal/docker.js.
+// rmi), construir imágenes propias con un Dockerfile, levantar varios
+// servicios con Docker Compose y una introducción a Kubernetes. Las
+// prácticas usan el Docker simulado de engine/terminal/docker.js y compose.js.
 
 import {
   ranCmd,
@@ -12,8 +13,15 @@ import {
   containerFileContains,
   wasInsideContainer,
   backOnHost,
+  ran,
   all,
 } from './_helpers.js';
+
+const H = '/home/alumno';
+const BECAS_HTML = '<!DOCTYPE html>\n<html lang="es">\n<head><title>Becas</title></head>\n<body>\n  <h1>Convocatoria de becas 2026</h1>\n  <p>Plazo de solicitud: del 1 al 30 de diciembre.</p>\n</body>\n</html>\n';
+
+// Algún curl cuya respuesta contiene el texto.
+const curlShowed = (text) => (sh) => sh.log.some((e) => e.cmds.some((c) => c[0] === 'curl') && e.out.includes(text));
 
 export const docker = [
   {
@@ -239,6 +247,129 @@ Tu misión: cambiar la página de bienvenida de nginx, que está en \`/usr/share
       'echo "<h1>Hola TAI</h1>" > /usr/share/nginx/html/index.html',
       'exit y luego docker ps',
     ],
+  },
+  {
+    id: 'dk-build',
+    type: 'terminal',
+    title: 'Tu propia imagen: Dockerfile y docker build',
+    summary: 'FROM, RUN, COPY, EXPOSE y CMD; capas, etiquetas y por qué falla un apt-get install.',
+    body: `Hasta ahora has usado imágenes de otros. Para **empaquetar tu aplicación** se escribe un **Dockerfile**: la receta, paso a paso, para construir la imagen.
+
+En \`~/becas-web\` tienes la web de la convocatoria y su Dockerfile. Léelo con \`cat Dockerfile\`:
+
+| Instrucción | Qué hace |
+|---|---|
+| \`FROM nginx:latest\` | Imagen **base** de la que partes (siempre la primera). |
+| \`RUN orden\` | Ejecuta una orden **al construir** (instalar paquetes…). |
+| \`COPY origen destino\` | Copia ficheros de tu carpeta a la imagen. |
+| \`WORKDIR /ruta\` | Directorio de trabajo para lo que sigue. |
+| \`ENV CLAVE=valor\` | Variable de entorno. |
+| \`EXPOSE 80\` | Documenta en qué puerto escucha (no lo publica: eso es \`-p\`). |
+| \`CMD [...]\` | Lo que se ejecuta **al arrancar** el contenedor. |
+
+La diferencia que más cae: **RUN** se ejecuta al **construir** la imagen; **CMD**, cada vez que **arranca** un contenedor.
+
+## Construir
+\`\`\`
+docker build -t becas-web:1.0 .
+\`\`\`
+\`-t\` pone nombre y versión (*tag*) y el \`.\` final es el **contexto**: la carpeta cuyos ficheros puede usar COPY. Cada instrucción crea una **capa**; \`docker history becas-web:1.0\` las enseña.
+
+## Un clásico: apt-get sin update
+Las imágenes base vienen **sin la lista de paquetes** para ocupar menos. Por eso en un Dockerfile siempre se escribe:
+\`\`\`
+RUN apt-get update && apt-get install -y curl
+\`\`\`
+en la **misma** línea RUN. \`Dockerfile.roto\` se lo salta: constrúyelo con \`-f\` y lee el error.`,
+    setup: {
+      cwd: `${H}/becas-web`,
+      files: {
+        [`${H}/becas-web/Dockerfile`]: '# Web estática de la convocatoria de becas\nFROM nginx:latest\nLABEL mantenedor="equipo-tai"\nRUN apt-get update && apt-get install -y curl\nCOPY html/ /usr/share/nginx/html/\nEXPOSE 80\nCMD ["nginx", "-g", "daemon off;"]\n',
+        [`${H}/becas-web/Dockerfile.roto`]: 'FROM nginx:latest\nRUN apt-get install -y curl\nCOPY html/ /usr/share/nginx/html/\n',
+        [`${H}/becas-web/html/index.html`]: BECAS_HTML,
+        [`${H}/becas-web/html/estilos.css`]: 'body { font-family: sans-serif; }\n',
+      },
+    },
+    objectives: [
+      { label: 'Lee el Dockerfile', check: ranCmd('cat', (a) => a.some((x) => x.endsWith('Dockerfile'))) },
+      { label: 'Construye la imagen becas-web con la etiqueta 1.0', check: (sh) => sh.docker.images.some((i) => i.name === 'becas-web' && i.tag === '1.0') },
+      { label: 'Mira las capas de la imagen con docker history', check: ranCmd('docker', (a) => a[1] === 'history') },
+      { label: 'Arranca un contenedor becas de becas-web:1.0 en segundo plano, con el puerto 8080 → 80', check: containerExists({ name: 'becas', image: 'becas-web', port: 8080, status: 'running' }) },
+      { label: 'Comprueba con curl que sirve tu página', check: curlShowed('Convocatoria de becas') },
+      { label: 'Construye Dockerfile.roto con -f y averigua por qué falla', check: ran(/^docker build .*-f\s+\S*Dockerfile\.roto/, { ok: false }) },
+    ],
+    hints: [
+      'cat Dockerfile',
+      'docker build -t becas-web:1.0 .   (¡el punto final es el contexto!)',
+      'docker history becas-web:1.0',
+      'docker run -d --name becas -p 8080:80 becas-web:1.0',
+      'curl localhost:8080',
+      'docker build -f Dockerfile.roto -t roto .   → «Unable to locate package curl»: faltaba apt-get update',
+    ],
+    curiosity: 'Docker reutiliza las capas que no cambian (la caché de construcción). Por eso se ponen primero las instrucciones que casi nunca cambian (FROM, RUN de paquetes) y al final el COPY del código: así, al tocar el código, solo se reconstruye la última capa.',
+  },
+  {
+    id: 'dk-compose',
+    type: 'terminal',
+    title: 'Varios servicios con Docker Compose',
+    summary: 'compose.yaml, docker compose up -d, ps, logs y down: web más base de datos de una vez.',
+    body: `Una aplicación real tiene varias piezas: aquí, la **web** y una base de datos **MySQL**. En vez de lanzar cada \`docker run\` a mano, **Docker Compose** las describe en un fichero YAML y las levanta juntas.
+
+Mira \`~/becas/compose.yaml\` con \`cat\`:
+\`\`\`
+services:
+  web:
+    build: ./web            # se construye con ./web/Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - db                  # arranca después de db
+  db:
+    image: mysql:8.0
+\`\`\`
+
+## Las órdenes
+- \`docker compose up -d\`: construye o descarga lo que falte, crea una **red** para el proyecto y arranca los contenedores (\`becas-web-1\`, \`becas-db-1\`) en segundo plano.
+- \`docker compose ps -a\`: estado de los servicios, también los parados.
+- \`docker compose logs db\`: los logs de un servicio.
+- \`docker compose down\`: **para y borra** los contenedores y la red (las imágenes se quedan).
+
+Si cambias el fichero, \`up -d\` otra vez **recrea solo** lo que ha cambiado.
+
+## YAML en dos reglas
+La **sangría es con espacios** (nunca tabuladores) y define qué va dentro de qué. Las variables de entorno van en \`environment:\`, dentro de su servicio:
+\`\`\`
+    environment:
+      MYSQL_ROOT_PASSWORD: Tai2026
+\`\`\`
+Como \`db\` es lo último del fichero, puedes añadir esas dos líneas al final con \`echo "…" >> compose.yaml\` (las comillas conservan los espacios).
+
+La versión antigua era un programa aparte, \`docker-compose\` (con guion). Hoy es un subcomando: \`docker compose\`.`,
+    setup: {
+      cwd: `${H}/becas`,
+      files: {
+        [`${H}/becas/compose.yaml`]: 'services:\n  web:\n    build: ./web\n    ports:\n      - "8080:80"\n    depends_on:\n      - db\n  db:\n    image: mysql:8.0\n',
+        [`${H}/becas/web/Dockerfile`]: 'FROM nginx:latest\nCOPY html/ /usr/share/nginx/html/\n',
+        [`${H}/becas/web/html/index.html`]: BECAS_HTML,
+      },
+    },
+    objectives: [
+      { label: 'Levanta la aplicación en segundo plano', check: containerExists({ name: 'becas-web-1', status: 'running' }) },
+      { label: 'Mira el estado de todos los servicios, también los parados', check: ranCmd('docker', (a) => a[1] === 'compose' && a.includes('ps') && (a.includes('-a') || a.includes('--all'))) },
+      { label: 'Lee los logs de db para saber por qué se ha parado', check: ranCmd('docker', (a) => a[1] === 'compose' && a.includes('logs')) },
+      { label: 'Dale a db su MYSQL_ROOT_PASSWORD en compose.yaml y vuelve a levantarlo', check: containerExists({ name: 'becas-db-1', status: 'running' }) },
+      { label: 'Comprueba con curl que la web responde en el puerto 8080', check: curlShowed('Convocatoria de becas') },
+      { label: 'Para y borra todo el proyecto', check: (sh) => sh.log.some((e) => e.code === 0 && /^docker[- ]compose down/.test(e.line)) && !sh.docker.containers.some((c) => c.compose?.project === 'becas') },
+    ],
+    hints: [
+      'cat compose.yaml y docker compose up -d',
+      'docker compose ps -a   → db: Exited (1)',
+      'docker compose logs db',
+      'echo "    environment:" >> compose.yaml · echo "      MYSQL_ROOT_PASSWORD: Tai2026" >> compose.yaml · docker compose up -d',
+      'curl localhost:8080',
+      'docker compose down',
+    ],
+    curiosity: 'Dentro de la red del proyecto, cada servicio se encuentra por su nombre: la web llega a la base de datos con el host «db», sin saber su IP. Compose monta un DNS interno para eso.',
   },
   {
     id: 'dk-k8s',
