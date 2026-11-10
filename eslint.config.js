@@ -40,4 +40,9 @@ export default [
       ],
     },
   },
+  // Los ficheros de configuración se ejecutan en Node (process, etc.).
+  {
+    files: ['*.config.js'],
+    languageOptions: { globals: globals.node },
+  },
 ]
