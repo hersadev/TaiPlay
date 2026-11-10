@@ -71,8 +71,12 @@ Todo corre en tu navegador y el progreso se guarda solo ahí: no hay cuentas ni 
   7 días, y salen al acertarlas esas tres veces seguidas.
 - **Supuestos prácticos**: los diez supuestos reales, con su enunciado y su modelo de
   datos, en modo estudio (corrección al momento) o en modo examen (cronometrado).
-- **Logros**: 39 logros en seis categorías, niveles por puntos, racha de días de estudio
-  y de aciertos seguidos, con aviso al desbloquear cada uno.
+- **Road**: un camino de 20 tramos por todo el temario, bloque a bloque, con un «jefe»
+  al final de cada bloque y una recta final con preguntas de todo el programa. Cada tramo
+  son 10 preguntas seguidas: si fallas una, pierdes la tirada y vuelves al principio del
+  tramo (la siguiente tirada trae otras preguntas). Los tramos superados se pueden repetir.
+- **Logros**: 53 logros en siete categorías (incluidos los del Road), niveles por puntos,
+  racha de días de estudio y de aciertos seguidos, con aviso al desbloquear cada uno.
 - **Editor**: un editor libre de JavaScript con consola, ejemplos y una API de alumnos
   simulada, para practicar lo que quieras. El código se guarda en el navegador.
 - **Simulacro**: la primera parte y un supuesto contra el reloj, corregidos con
@@ -139,7 +143,8 @@ Es React 18 con Vite, Tailwind y Zustand, sin backend, igual que JSPlay.
   partir del progreso guardado.
 - [src/utils/scoring.js](src/utils/scoring.js): la corrección (penalización y
   reservas). El simulacro mezclado se monta en
-  [src/engine/simulacro.js](src/engine/simulacro.js).
+  [src/engine/simulacro.js](src/engine/simulacro.js) y el Road (tramos, tiradas y
+  avance) en [src/engine/road.js](src/engine/road.js).
 
 Pruebas (`npm test`): el motor de la terminal, la corrección, los logros y, sobre todo,
 que **cada lección práctica (terminal o SQL) se puede completar** con su solución de referencia y que ningún

@@ -30,7 +30,7 @@ export default function LogrosPage() {
 
       <p className="mt-3 text-xs text-gray-500">
         Puntos: 20 por lección, 15 por ficha del temario, 1 por pregunta respondida y 3 más si la aciertas, 25 por supuesto o
-        simulacro y 10 por logro.
+        simulacro, 15 por tramo del Road y 10 por logro.
       </p>
 
       {CATEGORIES.map((cat) => (

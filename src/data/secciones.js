@@ -20,6 +20,12 @@ export const SECTIONS = [
     icon: '?',
   },
   {
+    path: 'road',
+    title: 'Road',
+    text: 'Un camino por todo el temario: tramos de 10 preguntas seguidas. Si fallas una, vuelves al principio del tramo.',
+    icon: '⚑',
+  },
+  {
     path: 'supuestos',
     title: 'Supuestos prácticos',
     text: 'Los diez supuestos reales, con su enunciado y su modelo de datos, en modo estudio o contra el reloj.',

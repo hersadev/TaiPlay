@@ -1,5 +1,5 @@
 // Logros y niveles. Todo se calcula a partir del progreso guardado (ctx):
-//   { lessons, answers, attempts, streak, days, questions }
+//   { lessons, answers, attempts, streak, days, cards, road, questions }
 // donde questions son las preguntas del banco (se pasan desde fuera para que
 // este módulo no dependa de los JSON y se pueda probar con node --test).
 //
@@ -9,6 +9,7 @@
 import { TRACKS } from '../lessons/index.js';
 import { TEMAS, BLOQUES } from './temario/index.js';
 import { today } from '../utils/dates.js';
+import { buildRoad, cleanStreak, passedAfterFails, stageCleared } from '../engine/road.js';
 
 const done = (ctx, id) => Boolean(ctx.lessons[id]?.done);
 const trackLessons = (id) => TRACKS.find((t) => t.id === id)?.lessons ?? [];
@@ -41,6 +42,14 @@ const temasDominados = (ctx) =>
     return qs.length >= 3 && qs.every((q) => ctx.answers[q.id]?.last === 'ok');
   }).length;
 
+// Los tramos del Road dependen de las preguntas: se calculan una vez por lista.
+const roadCache = new WeakMap();
+const roadOf = (ctx) => {
+  if (!roadCache.has(ctx.questions)) roadCache.set(ctx.questions, buildRoad(ctx.questions));
+  return roadCache.get(ctx.questions);
+};
+const roadCleared = (ctx) => ctx.road?.cleared ?? 0;
+
 const counter = (fn, target) => ({ check: (ctx) => fn(ctx) >= target, progress: (ctx) => [Math.min(fn(ctx), target), target] });
 const fromProgress = (progress) => ({ check: (ctx) => { const [a, b] = progress(ctx); return b > 0 && a >= b; }, progress });
 
@@ -50,6 +59,7 @@ export const CATEGORIES = [
   { id: 'temario', title: 'Temario' },
   { id: 'preguntas', title: 'Preguntas de examen' },
   { id: 'examen', title: 'Supuestos y simulacros' },
+  { id: 'road', title: 'Road' },
   { id: 'constancia', title: 'Constancia' },
 ];
 
@@ -112,6 +122,25 @@ export const LOGROS = [
   { id: 'primer-simulacro', cat: 'examen', icon: '⏱️', name: 'Prueba de fuego', desc: 'Termina un simulacro completo.', ...counter((c) => examAttempts(c, 'simulacro').length, 1) },
   { id: 'simulacro-70', cat: 'examen', icon: '🏆', name: 'Listo para el examen', desc: 'Saca al menos un 70 % de aciertos netos en un simulacro.', check: (c) => bestPct(c, 'simulacro') >= 0.7 },
 
+  { id: 'road-1', cat: 'road', icon: '🚩', name: 'Primer tramo', desc: 'Supera tu primer tramo del Road: 10 preguntas seguidas sin fallar.', ...counter(roadCleared, 1) },
+  { id: 'road-5', cat: 'road', icon: '🥾', name: 'Caminante', desc: 'Supera 5 tramos del Road.', ...counter(roadCleared, 5) },
+  ...[1, 2, 3, 4].map((n) => ({
+    id: `road-jefe-${n}`,
+    cat: 'road',
+    icon: ['🏰', '🗿', '🐉', '👾'][n - 1],
+    name: `Jefe del bloque ${['I', 'II', 'III', 'IV'][n - 1]}`,
+    desc: `Vence al jefe del bloque ${['I', 'II', 'III', 'IV'][n - 1]} en el Road.`,
+    check: (c) => stageCleared(c.road, roadOf(c), `B${n}-jefe`),
+  })),
+  { id: 'road-mitad', cat: 'road', icon: '⛰️', name: 'Media montaña', desc: 'Llega a la mitad del Road.', ...fromProgress((c) => {
+      const half = Math.ceil(roadOf(c).length / 2);
+      return [Math.min(roadCleared(c), half), half];
+    }) },
+  { id: 'road-meta', cat: 'road', icon: '🏁', name: 'Fin del camino', desc: 'Completa el Road entero, meta incluida.', ...fromProgress((c) => [roadCleared(c), roadOf(c).length]) },
+  { id: 'road-limpio', cat: 'road', icon: '✨', name: 'Sin tropiezos', desc: 'Supera 3 tramos seguidos del Road a la primera.', ...counter((c) => cleanStreak(c.road, roadOf(c)), 3) },
+  { id: 'road-limpio-10', cat: 'road', icon: '💎', name: 'Pulso de cirujano', desc: 'Supera 10 tramos seguidos del Road a la primera.', ...counter((c) => cleanStreak(c.road, roadOf(c)), 10) },
+  { id: 'road-perseverante', cat: 'road', icon: '🧗', name: 'Perseverante', desc: 'Supera un tramo del Road que habías fallado 3 veces o más.', check: (c) => passedAfterFails(c.road, roadOf(c), 3) },
+
   { id: 'dias-3', cat: 'constancia', icon: '📅', name: 'Tres en raya', desc: 'Estudia 3 días seguidos.', ...counter((c) => dayStreak(c.days), 3) },
   { id: 'dias-7', cat: 'constancia', icon: '🗓️', name: 'Semana completa', desc: 'Estudia 7 días seguidos.', ...counter((c) => dayStreak(c.days), 7) },
   { id: 'dias-30', cat: 'constancia', icon: '🌳', name: 'Hábito de opositor', desc: 'Acumula 30 días de estudio.', ...counter((c) => c.days.length, 30) },
@@ -127,6 +156,7 @@ export function xpOf(ctx, badges = {}) {
     correct(ctx) * 3 +
     answered(ctx) +
     ctx.attempts.length * 25 +
+    (ctx.road?.cleared ?? 0) * 15 +
     Object.keys(badges).length * 10
   );
 }

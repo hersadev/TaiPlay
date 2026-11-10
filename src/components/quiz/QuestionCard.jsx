@@ -11,10 +11,11 @@ import SupuestoContext from '../exam/SupuestoContext';
 const LETTERS = ['a', 'b', 'c', 'd'];
 
 // Una pregunta de examen. Modos:
-//   practice: eliges, se corrige al momento y se explica (y cuenta en tus estadísticas)
+//   practice: eliges, se corrige al momento y se explica (y cuenta en tus
+//             estadísticas); onAnswer(acertada) avisa a quien la usa
 //   exam:     eliges sin ver la solución (la corrige quien la usa)
 //   review:   muestra tu respuesta y la correcta, con la explicación
-export default function QuestionCard({ question: q, mode = 'practice', selected, onSelect, showSource = true, showContext = false }) {
+export default function QuestionCard({ question: q, mode = 'practice', selected, onSelect, onAnswer, showSource = true, showContext = false }) {
   const recordAnswer = useProgress((s) => s.recordAnswer);
   const [picked, setPicked] = useState(null);
   const [contextOpen, setContextOpen] = useState(false);
@@ -27,6 +28,7 @@ export default function QuestionCard({ question: q, mode = 'practice', selected,
       if (picked !== null) return;
       setPicked(letter);
       if (!q.annulled) recordAnswer(q.id, letter === q.answer);
+      onAnswer?.(letter === q.answer);
     } else if (mode === 'exam') {
       onSelect?.(selected === letter ? null : letter);
     }

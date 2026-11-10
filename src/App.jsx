@@ -25,11 +25,13 @@ const TemaPage = named(temario, 'TemaPage');
 const LogrosPage = lazy(() => import('./pages/LogrosPage'));
 const EditorPage = lazy(() => import('./pages/EditorPage'));
 const ProgresoPage = lazy(() => import('./pages/ProgresoPage'));
+const RoadPage = lazy(() => import('./pages/RoadPage'));
 
 const NAV = [
   ['aprende', 'Aprende'],
   ['temario', 'Temario'],
   ['preguntas', 'Preguntas'],
+  ['road', 'Road'],
   ['supuestos', 'Supuestos'],
   ['simulacro', 'Simulacro'],
   ['editor', 'Editor'],
@@ -57,6 +59,8 @@ function Page({ segments, params }) {
       return <LogrosPage />;
     case 'editor':
       return <EditorPage />;
+    case 'road':
+      return <RoadPage />;
     case 'progreso':
       return <ProgresoPage />;
     default:
