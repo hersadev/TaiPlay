@@ -11,14 +11,17 @@ Todo corre en tu navegador y el progreso se guarda solo ahí: no hay cuentas ni 
 
 - **Aprende**: rutas ordenadas de menos a más.
   - *Empieza desde cero*: hardware, binario y hexadecimal, sistemas operativos, redes y
-    subnetting, y lógica de programación. Lectura más un test corto.
+    subnetting, y lógica de programación. Lectura más un test corto, y dos prácticas con
+    ejercicios generados al azar: cambios de base y operaciones con bits, y unidades
+    (KB frente a KiB, Mbps frente a MB/s) con la capacidad y los fallos que aguanta cada RAID.
   - *Linux y la terminal*: una terminal simulada en el navegador con sistema de
     ficheros, permisos, `sudo`, tuberías, redirecciones, `systemctl`, `ss`, `ip route`,
     `tar`… y la administración del supuesto: procesos (`ps`, `top`, `kill`) y
     `journalctl`, diagnóstico de red (`ping`, `traceroute`, `curl`) con
     `firewall-cmd --add-port`, disco lleno (`df`, `du`, `truncate`) y `fsck -y`, LVM
     (`pvs`/`vgs`/`lvs`, `lvextend`, `xfs_growfs`), paquetes (`dnf`, y `apt` en los
-    contenedores Debian/Ubuntu) y `crontab`. Las lecciones validan lo que has hecho de
+    contenedores Debian/Ubuntu) y `crontab`, con una práctica al azar para leer y
+    escribir líneas de crontab. Las lecciones validan lo que has hecho de
     verdad en la máquina, no lo que has escrito.
   - *Windows y PowerShell*: un PowerShell simulado con cmdlets y parámetros de verdad
     (abreviables, y con el error real si escribes `-Recursive`), alias y `Get-Help`:
@@ -41,6 +44,8 @@ Todo corre en tu navegador y el progreso se guarda solo ahí: no hay cuentas ni 
     hosts) con la solución explicada, y un switch Cisco IOS simulado: modos de la CLI,
     abreviaturas, `?` y Tab, VLAN, `switchport access vlan`, troncales 802.1Q, SVI con
     `ip helper-address`, port-security con MAC sticky y `copy running-config startup-config`.
+    Además, una práctica al azar de puertos bien conocidos y de abreviar y expandir
+    direcciones IPv6.
   - *Seguridad*: dimensiones del ENS y tipos de ataque; permisos (ejercicios de octal,
     rwx y umask, y bastionado con `find -perm`, `chmod` y `chown`); hashes con
     `sha256sum -c`; el cortafuegos de RHEL con `firewall-cmd`, `nc -vz` y `sysctl`; y un
@@ -62,6 +67,8 @@ Todo corre en tu navegador y el progreso se guarda solo ahí: no hay cuentas ni 
   con la respuesta de la **plantilla oficial definitiva** del INAP (incluidas las
   anuladas), clasificadas por tema del programa y por materia, con una explicación. Puedes filtrar
   por tema, materia, examen, parte o «falladas», y cada pregunta enlaza con la lección que la explica.
+  Las que fallas entran en un **repaso espaciado**: vuelven el mismo día, a los 3 y a los
+  7 días, y salen al acertarlas esas tres veces seguidas.
 - **Supuestos prácticos**: los diez supuestos reales, con su enunciado y su modelo de
   datos, en modo estudio (corrección al momento) o en modo examen (cronometrado).
 - **Logros**: 39 logros en seis categorías, niveles por puntos, racha de días de estudio
@@ -70,7 +77,13 @@ Todo corre en tu navegador y el progreso se guarda solo ahí: no hay cuentas ni 
   simulada, para practicar lo que quieras. El código se guarda en el navegador.
 - **Simulacro**: la primera parte y un supuesto contra el reloj, corregidos con
   penalización por error (configurable) y con la regla de las preguntas de reserva que
-  sustituyen a las anuladas.
+  sustituyen a las anuladas. Puede ser un examen pasado o uno **mezclado**: 80 preguntas
+  al azar de todos los años con el reparto por bloques de los exámenes reales, más un
+  supuesto real completo.
+- **Progreso**: la evolución de la nota en los simulacros, los temas con peor
+  porcentaje de acierto y cuánto has visto de cada bloque del programa.
+- **Sin conexión**: es una PWA. Se puede instalar en el móvil o el ordenador y, una vez
+  cargada, funciona sin red (service worker en [pwa/sw.js](pwa/sw.js)).
 
 ## Cómo ejecutarlo
 
@@ -107,11 +120,12 @@ Es React 18 con Vite, Tailwind y Zustand, sin backend, igual que JSPlay.
 - [src/engine/ios/](src/engine/ios/): el switch Cisco IOS simulado (modos, abreviaturas,
   VLAN, SVI, troncales, port-security). Misma interfaz que la shell, sin navegador.
 - [src/engine/drills/](src/engine/drills/): los generadores de ejercicios al azar
-  (subnetting y permisos) con su corrección y explicación.
+  (subnetting, permisos, cambios de base y bits, unidades y RAID, IPv6, puertos y
+  crontab) con su corrección y explicación.
 - [src/engine/js/](src/engine/js/): ejecución de JavaScript en un Web Worker, con
   consola capturada, fetch simulado y límites de tiempo y de salida.
-- [src/engine/repaso/](src/engine/repaso/): la repetición espaciada y el generador de
-  los tests de legislación. Las tarjetas están en
+- [src/engine/repaso/](src/engine/repaso/): la repetición espaciada (de las tarjetas y
+  de las preguntas falladas) y el generador de los tests de legislación. Las tarjetas están en
   [src/data/legislacion/](src/data/legislacion/).
 - [src/engine/sql/](src/engine/sql/): la base de datos de práctica sobre sql.js, con
   las tablas de los supuestos (`seeds.js`) y los errores de SQLite traducidos.
@@ -124,7 +138,8 @@ Es React 18 con Vite, Tailwind y Zustand, sin backend, igual que JSPlay.
 - [src/data/logros.js](src/data/logros.js): los logros y los niveles, calculados a
   partir del progreso guardado.
 - [src/utils/scoring.js](src/utils/scoring.js): la corrección (penalización y
-  reservas).
+  reservas). El simulacro mezclado se monta en
+  [src/engine/simulacro.js](src/engine/simulacro.js).
 
 Pruebas (`npm test`): el motor de la terminal, la corrección, los logros y, sobre todo,
 que **cada lección práctica (terminal o SQL) se puede completar** con su solución de referencia y que ningún
