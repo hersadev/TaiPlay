@@ -66,3 +66,36 @@ test('las preguntas propias (no oficiales) no cuentan para los logros de pregunt
   const got = newlyEarned(ctx, {});
   assert.ok(!got.includes('primera-respuesta') && !got.includes('remontada'));
 });
+
+test('simulacros: «Listo para el examen» y «Nivel real» no se ganan con preguntas ya vistas', () => {
+  const ctx = empty();
+  const sim = (net, seen) => ({ kind: 'simulacro', at: 1, title: 'S', net, total: 100, seen, seenTotal: 100 });
+  ctx.attempts = [sim(90, 80), { kind: 'simulacro', at: 2, title: 'Antiguo', net: 95, total: 100 }];
+  let got = newlyEarned(ctx, {});
+  assert.ok(!got.includes('simulacro-70') && !got.includes('nivel-real'), 'de memoria o sin el dato, no cuenta');
+  ctx.attempts = [sim(72, 50)];
+  got = newlyEarned(ctx, {});
+  assert.ok(got.includes('simulacro-70') && !got.includes('nivel-real'));
+  ctx.attempts = [sim(55, 0)];
+  got = newlyEarned(ctx, {});
+  assert.ok(got.includes('nivel-real') && !got.includes('simulacro-70'));
+});
+
+test('repaso: 10 falladas superadas (las propias no cuentan)', () => {
+  const ctx = empty();
+  const superada = { ok: 3, ko: 1, last: 'ok', box: 4, due: '2030-01-01' };
+  ctx.answers = Object.fromEntries(Array.from({ length: 9 }, (_, i) => [`q${i}`, superada]));
+  ctx.answers['tp-B1T03-01'] = superada;
+  ctx.answers.pendiente = { ok: 1, ko: 1, last: 'ok', box: 2, due: '2030-01-01' };
+  assert.ok(!newlyEarned(ctx, {}).includes('repaso-10'));
+  ctx.answers.q9 = superada;
+  assert.ok(newlyEarned(ctx, {}).includes('repaso-10'));
+});
+
+test('«Sin calculadora»: las cuatro prácticas de cálculo', () => {
+  const ctx = empty();
+  ctx.lessons = { 'f-bases': { done: true }, 'f-almacenamiento': { done: true }, 'lx-cron-calc': { done: true } };
+  assert.ok(!newlyEarned(ctx, {}).includes('calculos'));
+  ctx.lessons['rd-puertos-ipv6'] = { done: true };
+  assert.ok(newlyEarned(ctx, {}).includes('calculos'));
+});

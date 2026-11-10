@@ -83,7 +83,7 @@ Todo corre en tu navegador y el progreso se guarda solo ahí: no hay cuentas ni 
   Hay dos caminos con su propio avance: el **seguro**, en el que cada tramo pregunta por
   sus temas, y el **alocado**, con los mismos tramos pero con las 10 preguntas de cada
   tirada sacadas de todo el temario.
-- **Logros**: 56 logros en siete categorías (incluidos los del Road), niveles por puntos,
+- **Logros**: 59 logros en siete categorías (incluidos los del Road), niveles por puntos,
   racha de días de estudio y de aciertos seguidos, con aviso al desbloquear cada uno.
 - **Editor**: un editor libre de JavaScript con consola, ejemplos y una API de alumnos
   simulada, para practicar lo que quieras. El código se guarda en el navegador.

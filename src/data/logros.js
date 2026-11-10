@@ -10,6 +10,7 @@ import { TRACKS } from '../lessons/index.js';
 import { TEMAS, BLOQUES } from './temario/index.js';
 import { today } from '../utils/dates.js';
 import { buildRoad, cleanStreak, passedAfterFails, stageCleared } from '../engine/road.js';
+import { inRepaso } from '../engine/repaso/falladas.js';
 
 const done = (ctx, id) => Boolean(ctx.lessons[id]?.done);
 const trackLessons = (id) => TRACKS.find((t) => t.id === id)?.lessons ?? [];
@@ -21,7 +22,13 @@ const examAnswers = (ctx) => Object.entries(ctx.answers).filter(([id]) => !id.st
 const answered = (ctx) => examAnswers(ctx).length;
 const correct = (ctx) => examAnswers(ctx).filter((a) => a.last === 'ok').length;
 const examAttempts = (ctx, kind) => ctx.attempts.filter((a) => a.kind === kind);
-const bestPct = (ctx, kind) => Math.max(0, ...examAttempts(ctx, kind).map((a) => (a.total ? a.net / a.total : 0)));
+const pctOf = (a) => (a.total ? a.net / a.total : 0);
+const bestPct = (ctx, kind) => Math.max(0, ...examAttempts(ctx, kind).map(pctOf));
+// Parte de las preguntas del intento que ya se habían respondido antes
+// (null en los intentos de antes de guardarse este dato).
+const seenFrac = (a) => (a.seenTotal ? a.seen / a.seenTotal : null);
+// Falladas que salieron del repaso: se acertaron tres veces seguidas.
+const repasoSuperadas = (ctx) => examAnswers(ctx).filter((a) => a.ko > 0 && !inRepaso(a)).length;
 
 // Días seguidos de estudio, contando hasta hoy (o hasta ayer, para no
 // perder la racha por la mañana antes de haber estudiado).
@@ -82,6 +89,7 @@ export const LOGROS = [
   { id: 'sql-join', cat: 'aprende', icon: '🔗', name: 'Maestro del JOIN', desc: 'Supera la práctica de JOIN.', check: (c) => done(c, 'sql-join') },
   { id: 'ruta-bbdd', cat: 'aprende', icon: '🗄️', name: 'Arquitecto de datos', desc: 'Completa la ruta de Bases de datos y SQL.', ...fromProgress(trackProgress('bbdd')) },
   { id: 'subnetting', cat: 'aprende', icon: '🧮', name: 'Calculadora humana', desc: 'Supera los dos bloques de ejercicios de subnetting.', check: (c) => done(c, 'rd-subnet-basico') && done(c, 'rd-subnet-dividir') },
+  { id: 'calculos', cat: 'aprende', icon: '🔢', name: 'Sin calculadora', desc: 'Supera las prácticas de cálculo: numeración y bits, unidades y RAID, crontab, y puertos e IPv6.', check: (c) => ['f-bases', 'f-almacenamiento', 'lx-cron-calc', 'rd-puertos-ipv6'].every((id) => done(c, id)) },
   { id: 'cisco', cat: 'aprende', icon: '🔌', name: 'Consola Cisco', desc: 'Configura la SVI, el DHCP relay y el troncal del switch de distribución.', check: (c) => done(c, 'rd-ios-svi') },
   { id: 'ruta-redes', cat: 'aprende', icon: '🌐', name: 'Señor de las redes', desc: 'Completa la ruta de Redes y comunicaciones.', ...fromProgress(trackProgress('redes')) },
   { id: 'ruta-seguridad', cat: 'aprende', icon: '🛡️', name: 'Guardián del ENS', desc: 'Completa la ruta de Seguridad.', ...fromProgress(trackProgress('seguridad')) },
@@ -118,13 +126,29 @@ export const LOGROS = [
   { id: 'aciertos-50', cat: 'preguntas', icon: '⭐', name: 'Medio centenar', desc: 'Ten 50 preguntas acertadas (en tu último intento).', ...counter(correct, 50) },
   { id: 'racha-10', cat: 'preguntas', icon: '🔥', name: 'En racha', desc: 'Acierta 10 preguntas seguidas.', ...counter((c) => c.streak.best, 10) },
   { id: 'racha-25', cat: 'preguntas', icon: '☄️', name: 'Imparable', desc: 'Acierta 25 preguntas seguidas.', ...counter((c) => c.streak.best, 25) },
+  { id: 'repaso-10', cat: 'preguntas', icon: '🧷', name: 'Esta ya no se escapa', desc: 'Saca 10 preguntas falladas del repaso: cada una acertada tres veces seguidas, en días distintos.', ...counter(repasoSuperadas, 10) },
   { id: 'remontada', cat: 'preguntas', icon: '🔄', name: 'Aprender del error', desc: 'Acierta una pregunta que habías fallado antes.', check: (c) => examAnswers(c).some((a) => a.ko > 0 && a.last === 'ok') },
   { id: 'tema-dominado', cat: 'preguntas', icon: '🏅', name: 'Tema dominado', desc: 'Acierta todas las preguntas de examen de un tema del programa.', ...counter(temasDominados, 1) },
 
   { id: 'primer-supuesto', cat: 'examen', icon: '📝', name: 'Al toro', desc: 'Termina un supuesto práctico en modo examen.', ...counter((c) => examAttempts(c, 'supuesto').length, 1) },
   { id: 'supuesto-aprobado', cat: 'examen', icon: '✔️', name: 'Supuesto aprobado', desc: 'Consigue al menos la mitad de aciertos netos en un supuesto.', check: (c) => bestPct(c, 'supuesto') >= 0.5 },
   { id: 'primer-simulacro', cat: 'examen', icon: '⏱️', name: 'Prueba de fuego', desc: 'Termina un simulacro completo.', ...counter((c) => examAttempts(c, 'simulacro').length, 1) },
-  { id: 'simulacro-70', cat: 'examen', icon: '🏆', name: 'Listo para el examen', desc: 'Saca al menos un 70 % de aciertos netos en un simulacro.', check: (c) => bestPct(c, 'simulacro') >= 0.7 },
+  {
+    id: 'simulacro-70',
+    cat: 'examen',
+    icon: '🏆',
+    name: 'Listo para el examen',
+    desc: 'Saca al menos un 70 % de aciertos netos en un simulacro en el que no hubieras visto antes más de la mitad de las preguntas.',
+    check: (c) => examAttempts(c, 'simulacro').some((a) => pctOf(a) >= 0.7 && seenFrac(a) !== null && seenFrac(a) <= 0.5),
+  },
+  {
+    id: 'nivel-real',
+    cat: 'examen',
+    icon: '🎯',
+    name: 'Nivel real',
+    desc: 'Aprueba (al menos la mitad de aciertos netos) un simulacro en el que todas las preguntas eran nuevas para ti.',
+    check: (c) => examAttempts(c, 'simulacro').some((a) => pctOf(a) >= 0.5 && seenFrac(a) === 0),
+  },
 
   { id: 'road-1', cat: 'road', icon: '🚩', name: 'Primer tramo', desc: 'Supera tu primer tramo del Road: 10 preguntas seguidas sin fallar.', ...counter(roadCleared, 1) },
   { id: 'road-5', cat: 'road', icon: '🥾', name: 'Caminante', desc: 'Supera 5 tramos del Road.', ...counter(roadCleared, 5) },
