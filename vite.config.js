@@ -11,11 +11,26 @@ function manualChunks(id) {
   if (id.includes('/src/data/temario/')) return 'temario'
 }
 
+// sql.js trae una rama para Node que hace require('fs'), 'path' y 'crypto'.
+// En el navegador no se ejecuta nunca, pero Vite avisa al compilar; se les
+// da un módulo vacío solo cuando los pide sql.js.
+const EMPTY = '\0sqljs-node-stub'
+const sqlJsNodeStubs = {
+  name: 'sqljs-node-stubs',
+  enforce: 'pre',
+  resolveId(source, importer) {
+    if (['fs', 'path', 'crypto'].includes(source) && importer?.includes('/node_modules/sql.js/')) return EMPTY
+  },
+  load(id) {
+    if (id === EMPTY) return 'export default {}'
+  },
+}
+
 // https://vite.dev/config/
 // BASE_PATH: en GitHub Pages la app vive en /TaiPlay/ (lo pone el workflow
 // de .github/workflows/pages.yml). En local y en Docker se sirve en la raíz.
 export default defineConfig({
   base: process.env.BASE_PATH ?? '/',
-  plugins: [react()],
+  plugins: [react(), sqlJsNodeStubs],
   build: { rollupOptions: { output: { manualChunks } } },
 })
