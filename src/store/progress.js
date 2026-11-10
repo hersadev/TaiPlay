@@ -2,10 +2,13 @@ import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { today } from '../utils/dates';
 import { review } from '../engine/repaso/srs.js';
+import { nextRepaso } from '../engine/repaso/falladas.js';
 
 // Todo el progreso vive en el navegador (localStorage), sin backend:
 //   lessons:  { [lessonId | temaId]: { done, objectives: [bool…], at } }
-//   answers:  { [questionId]: { ok, ko, last: 'ok' | 'ko', at } }
+//   answers:  { [questionId]: { ok, ko, last: 'ok' | 'ko', at, box, due } }
+//             (box y due: repaso espaciado de las falladas, ver
+//             engine/repaso/falladas.js)
 //   attempts: últimos simulacros/supuestos hechos en modo examen
 //   settings: penalización por error y duración de los simulacros
 //   badges:   { [logroId]: fecha en que se ganó }
@@ -62,10 +65,11 @@ export const useProgress = create(
         set((s) => {
           const prev = s.answers[qid] ?? { ok: 0, ko: 0 };
           const current = ok ? s.streak.current + 1 : 0;
+          const { box, due } = nextRepaso(s.answers[qid], ok, today());
           return {
             answers: {
               ...s.answers,
-              [qid]: { ok: prev.ok + (ok ? 1 : 0), ko: prev.ko + (ok ? 0 : 1), last: ok ? 'ok' : 'ko', at: Date.now() },
+              [qid]: { ok: prev.ok + (ok ? 1 : 0), ko: prev.ko + (ok ? 0 : 1), last: ok ? 'ok' : 'ko', at: Date.now(), box, due },
             },
             streak: { current, best: Math.max(s.streak.best, current) },
             days: withToday(s.days),

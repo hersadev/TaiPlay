@@ -5,6 +5,8 @@ import { BLOQUES, temaLabel, findTema } from '../data/temario';
 import { useProgress } from '../store/progress';
 import { navigate } from '../hooks/useRoute';
 import QuestionCard from '../components/quiz/QuestionCard';
+import { repasoQueue, repasoStats } from '../engine/repaso/falladas.js';
+import { today } from '../utils/dates';
 
 // Banco de preguntas reales: filtras por tema, examen y estado, y practicas
 // una a una con corrección y explicación inmediatas. Los filtros viven en la
@@ -40,6 +42,16 @@ export default function BankPage({ params }) {
   // La lista se fija al cambiar los filtros (no al responder): si no, una
   // pregunta de «falladas» que aciertas desaparecería bajo tus pies.
   const list = useMemo(() => {
+    // Repaso: solo las falladas que tocan hoy, las más atrasadas primero.
+    if (estado === 'repaso') {
+      return repasoQueue(ALL_QUESTIONS, answers, today()).filter(
+        (q) =>
+          (!tema || q.topic === tema) &&
+          (!programa || q.tema === programa) &&
+          (!examen || q.examId === examen) &&
+          (!parte || (parte === 'primera' ? q.partId === 'primera' : q.partId !== 'primera')),
+      );
+    }
     const filtered = ALL_QUESTIONS.filter(
       (q) =>
         (!tema || q.topic === tema) &&
@@ -55,6 +67,7 @@ export default function BankPage({ params }) {
   }, [tema, programa, examen, parte, estado, orden, seed]);
 
   const q = list[Math.min(idx, list.length - 1)];
+  const repaso = useMemo(() => repasoStats(ALL_QUESTIONS, answers, today()), [answers]);
 
   const stats = useMemo(
     () =>
@@ -113,7 +126,15 @@ export default function BankPage({ params }) {
             <option value="">Todas</option>
             <option value="nuevas">Sin responder nunca</option>
             <option value="falladas">Falladas la última vez</option>
+            <option value="repaso">Repaso de hoy ({repaso.pendientes})</option>
           </Filter>
+          {estado === 'repaso' && (
+            <p className="rounded-lg border border-gray-800 p-3 text-xs text-gray-400">
+              Cada pregunta que fallas vuelve el mismo día. Si la aciertas, vuelve a los 3 días y después a los 7; al acertarla esas
+              tres veces seguidas sale del repaso. Si la fallas, empieza de nuevo. Llevas {repaso.superadas} superada
+              {repaso.superadas === 1 ? '' : 's'}.
+            </p>
+          )}
           <Filter label="Orden" value={orden} onChange={(v) => set({ orden: v })}>
             <option value="aleatorio">Aleatorio</option>
             <option value="examen">Como en el examen</option>
@@ -146,6 +167,10 @@ export default function BankPage({ params }) {
             <div className="rounded-xl border border-dashed border-gray-700 p-8 text-center text-gray-400">
               No hay preguntas con estos filtros.
               {estado === 'falladas' && ' ¡No tienes ninguna fallada pendiente!'}
+              {estado === 'repaso' &&
+                (repaso.enRepaso
+                  ? ` Hoy no te toca repasar ninguna. Tienes ${repaso.enRepaso} en repaso para los próximos días.`
+                  : ' No tienes ninguna pregunta en repaso: las que falles entrarán aquí.')}
             </div>
           ) : (
             <>

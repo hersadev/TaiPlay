@@ -4,6 +4,7 @@ import { useProgress } from '../store/progress';
 import { href } from '../hooks/useRoute';
 import { TARJETAS } from '../data/legislacion/tarjetas.js';
 import { deckStats } from '../engine/repaso/srs.js';
+import { repasoStats } from '../engine/repaso/falladas.js';
 import { today } from '../utils/dates';
 import { SECTIONS } from '../data/secciones';
 
@@ -15,7 +16,7 @@ export default function HomePage() {
   const seen = Object.values(answers);
   const ok = seen.filter((a) => a.last === 'ok').length;
   const nextLesson = ALL_LESSONS.find((l) => !lessons[l.id]?.done);
-  const failed = seen.filter((a) => a.last === 'ko').length;
+  const falladas = repasoStats(ALL_QUESTIONS, answers, today());
   const isNew = doneLessons === 0 && seen.length === 0;
 
   return (
@@ -50,9 +51,9 @@ export default function HomePage() {
           <Stat value={attempts.length} label="supuestos y simulacros hechos" />
         </section>
       )}
-      {failed > 0 && (
-        <a href={href('preguntas', { estado: 'falladas' })} className="mt-3 inline-block text-sm text-red-300 hover:text-red-200">
-          Tienes {failed} preguntas falladas pendientes de repasar →
+      {falladas.pendientes > 0 && (
+        <a href={href('preguntas', { estado: 'repaso' })} className="mt-3 inline-block text-sm text-red-300 hover:text-red-200">
+          Te toca repasar {falladas.pendientes} pregunta{falladas.pendientes === 1 ? '' : 's'} fallada{falladas.pendientes === 1 ? '' : 's'} hoy →
         </a>
       )}
       {repaso.pendientes > 0 && (

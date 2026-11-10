@@ -82,3 +82,32 @@ test('el repaso cubre todas las tarjetas de sus temas', () => {
   const l = ALL_LESSONS.find((x) => x.id === 'lg-repaso');
   assert.equal(TARJETAS.filter((c) => l.temas.includes(c.tema)).length, TARJETAS.length);
 });
+
+// --- Repaso espaciado de las preguntas falladas del banco.
+test('falladas: entran al fallar y salen tras tres aciertos en días distintos', async () => {
+  const { nextRepaso, inRepaso, isDueRepaso, repasoQueue, repasoStats } = await import('../src/engine/repaso/falladas.js');
+  const answer = (a, ok, day) => ({ ...(a ?? { ok: 0, ko: 0 }), ok: (a?.ok ?? 0) + (ok ? 1 : 0), ko: (a?.ko ?? 0) + (ok ? 0 : 1), ...nextRepaso(a, ok, day) });
+
+  let a = answer(null, true, '2026-11-10');
+  assert.ok(!inRepaso(a), 'acertada a la primera: no entra');
+  a = answer(a, false, '2026-11-10');
+  assert.ok(isDueRepaso(a, '2026-11-10'), 'al fallar toca hoy');
+  a = answer(a, true, '2026-11-10');
+  assert.equal(a.due, '2026-11-13');
+  const same = answer(a, true, '2026-11-10');
+  assert.deepEqual([same.box, same.due], [a.box, a.due], 'acertar antes de tiempo no adelanta');
+  assert.ok(!isDueRepaso(a, '2026-11-12') && isDueRepaso(a, '2026-11-13'));
+  a = answer(a, true, '2026-11-13');
+  assert.equal(a.due, '2026-11-20');
+  assert.ok(inRepaso(a));
+  a = answer(a, true, '2026-11-20');
+  assert.ok(!inRepaso(a), 'tres aciertos seguidos: superada');
+  a = answer(a, false, '2026-12-01');
+  assert.ok(isDueRepaso(a, '2026-12-01'), 'si se vuelve a fallar, vuelve a entrar');
+
+  // Respuestas antiguas, sin caja: si se fallaron, están pendientes ya.
+  const answers = { a: { ok: 1, ko: 2, last: 'ok' }, b: { ok: 3, ko: 0, last: 'ok' }, c: { ok: 0, ko: 1, last: 'ko', box: 1, due: '2026-11-15' } };
+  const qs = [{ id: 'a' }, { id: 'b' }, { id: 'c' }, { id: 'd', annulled: true }];
+  assert.deepEqual(repasoQueue(qs, answers, '2026-11-10').map((q) => q.id), ['a']);
+  assert.deepEqual(repasoStats(qs, answers, '2026-11-10'), { pendientes: 1, enRepaso: 2, superadas: 0 });
+});
