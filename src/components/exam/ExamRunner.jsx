@@ -176,9 +176,9 @@ export default function ExamRunner({ title, questions, timeLimitMin, kind, onExi
                               ? 'bg-blue-700 text-white'
                               : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
                       }`}
-                      aria-label={`Pregunta ${x.n}${answers[x.id] ? ', respondida' : ''}`}
+                      aria-label={`Pregunta ${x.seq ?? x.n}${answers[x.id] ? ', respondida' : ''}`}
                     >
-                      {x.n}
+                      {x.seq ?? x.n}
                     </button>
                   ))}
                 </div>

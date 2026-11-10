@@ -3,6 +3,13 @@ import { EXAMS, ALL_QUESTIONS } from '../data/exams';
 import { useProgress } from '../store/progress';
 import { navigate } from '../hooks/useRoute';
 import ExamRunner from '../components/exam/ExamRunner';
+import { buildMixedExam } from '../engine/simulacro';
+
+const MEZCLA = 'mezcla';
+const SUPUESTOS_MEZCLA = [
+  ['supuesto1', 'Supuesto I (bloque III, desarrollo) de un año al azar'],
+  ['supuesto2', 'Supuesto II (bloque IV, sistemas) de un año al azar'],
+];
 
 const PENALTIES = [
   [1 / 3, '−1/3 por error (cada 3 fallos restan un acierto)'],
@@ -11,25 +18,38 @@ const PENALTIES = [
 ];
 
 // Simulacro del ejercicio único: la primera parte completa más UNO de los dos
-// supuestos (en el examen real se elige uno), con cronómetro.
+// supuestos (en el examen real se elige uno), con cronómetro. Puede ser un
+// examen pasado tal cual o uno mezclado (engine/simulacro.js), que se monta
+// de nuevo cada vez que se empieza.
 export default function SimulacroPage() {
   const { settings, updateSettings, attempts } = useProgress();
-  const [examId, setExamId] = useState(EXAMS[0].id);
+  const [examId, setExamId] = useState(MEZCLA);
   const [supuesto, setSupuesto] = useState('supuesto1');
-  const [running, setRunning] = useState(false);
+  const [running, setRunning] = useState(null);
   const exam = EXAMS.find((e) => e.id === examId);
 
-  if (running) {
-    const questions = ALL_QUESTIONS.filter((q) => q.examId === examId && (q.partId === 'primera' || q.partId === supuesto));
+  const start = () => {
+    if (examId === MEZCLA) {
+      const mixed = buildMixedExam(ALL_QUESTIONS, EXAMS, { supuesto });
+      setRunning({ title: `Simulacro · ${mixed.title}`, questions: mixed.questions });
+      return;
+    }
     const partTitle = exam.parts.find((p) => p.id === supuesto).title;
+    setRunning({
+      title: `Simulacro · ${exam.title} (primera parte + ${partTitle})`,
+      questions: ALL_QUESTIONS.filter((q) => q.examId === examId && (q.partId === 'primera' || q.partId === supuesto)),
+    });
+  };
+
+  if (running) {
     return (
       <ExamRunner
-        title={`Simulacro · ${exam.title} (primera parte + ${partTitle})`}
-        questions={questions}
+        title={running.title}
+        questions={running.questions}
         timeLimitMin={settings.simulacroMin}
         kind="simulacro"
         onExit={() => {
-          setRunning(false);
+          setRunning(null);
           navigate('simulacro');
         }}
       />
@@ -47,12 +67,27 @@ export default function SimulacroPage() {
       </p>
 
       <div className="mt-6 space-y-5 rounded-xl border border-gray-700 bg-gray-900 p-5">
-        <Choice label="Examen" value={examId} onChange={setExamId} options={EXAMS.map((e) => [e.id, e.title])} />
+        <Choice
+          label="Examen"
+          value={examId}
+          onChange={setExamId}
+          options={[[MEZCLA, 'Mezclado: preguntas al azar de todos los años'], ...EXAMS.map((e) => [e.id, e.title])]}
+        />
+        {examId === MEZCLA && (
+          <p className="-mt-2 text-xs text-gray-500">
+            80 preguntas reales con el reparto por bloques de los exámenes (I: 21, II: 14, III: 23, IV: 22) y 5 de reserva. Cada vez sale
+            un examen distinto.
+          </p>
+        )}
         <Choice
           label="Supuesto"
           value={supuesto}
           onChange={setSupuesto}
-          options={exam.parts.filter((p) => p.id !== 'primera').map((p) => [p.id, `${p.title}: ${p.context[0].slice(0, 90)}…`])}
+          options={
+            exam
+              ? exam.parts.filter((p) => p.id !== 'primera').map((p) => [p.id, `${p.title}: ${p.context[0].slice(0, 90)}…`])
+              : SUPUESTOS_MEZCLA
+          }
         />
         <details className="text-sm">
           <summary className="cursor-pointer text-gray-300">Ajustes</summary>
@@ -71,7 +106,7 @@ export default function SimulacroPage() {
             </p>
           </div>
         </details>
-        <button type="button" onClick={() => setRunning(true)} className="rounded-lg bg-yellow-400 px-5 py-2 font-semibold text-gray-950 hover:bg-yellow-300">
+        <button type="button" onClick={start} className="rounded-lg bg-yellow-400 px-5 py-2 font-semibold text-gray-950 hover:bg-yellow-300">
           Empezar simulacro ({settings.simulacroMin} min)
         </button>
       </div>
