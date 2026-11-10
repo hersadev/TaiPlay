@@ -40,6 +40,11 @@ export default [
       ],
     },
   },
+  // El service worker corre en su propio ámbito (self, caches, clients).
+  {
+    files: ['pwa/**/*.js'],
+    languageOptions: { globals: globals.serviceworker },
+  },
   // Los ficheros de configuración se ejecutan en Node (process, etc.).
   {
     files: ['*.config.js'],
