@@ -6,6 +6,8 @@
 // «## » para subtítulos, «- » para listas, `código` y **negrita**.
 // exam: ids de preguntas reales relacionadas (se enlazan al final).
 
+import { fBases, fAlmacenamiento } from './_calculos.js';
+
 export const fundamentos = [
   {
     id: 'f-ordenador',
@@ -111,6 +113,8 @@ En el examen de 2024 preguntaron qué palabra era además un número hexadecimal
     ],
     exam: ['tai2024A-P20'],
   },
+  fBases,
+  fAlmacenamiento,
   {
     id: 'f-so',
     type: 'concept',

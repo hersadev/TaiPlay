@@ -4,6 +4,7 @@
 // port-security, que es lo que preguntan los supuestos de sistemas.
 
 import { drillGoal, iosRan, vlanNamed, accessPort, trunkPort, sviIs, stickyOn, routingOn, savedConfig } from './_iosHelpers.js';
+import { rdPuertosIpv6 } from './_calculos.js';
 
 export const redes = [
   {
@@ -143,6 +144,7 @@ En TCP/IP se distingue entre protocolos de **usuario**, que usa la persona direc
     ],
     exam: ['tai2024A-P58', 'tai2024A-P72', 'tai2024A-P73', 'tai2025A-P71', 'tai2024A-S2-6', 'tai2024A-P63', 'tai2024A-S2-18', 'tai2025A-S2-17', 'tai2024A-S2-11', 'tai2024A-P77', 'tai2025X-P72', 'tai2025X-P75', 'tai2025X-S2-11', 'tai2022-S2-10', 'tai2022-S2-13', 'tai2019-P80', 'tai2019-S2-19', 'tai2019-S2R5'],
   },
+  rdPuertosIpv6,
   {
     id: 'rd-vlan',
     type: 'concept',

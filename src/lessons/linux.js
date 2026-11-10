@@ -21,6 +21,7 @@ import {
   any,
 } from './_helpers.js';
 import { fsUsage } from '../engine/terminal/sysadmin.js';
+import { lxCronCalc } from './_calculos.js';
 
 const H = '/home/alumno';
 
@@ -561,6 +562,7 @@ La trampa típica es leer «0 5» como 00:05. El primer campo son los **minutos*
     ],
     exam: ['tai2025A-P61'],
   },
+  lxCronCalc,
   {
     id: 'lx-paquetes',
     type: 'terminal',

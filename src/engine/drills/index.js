@@ -5,10 +5,17 @@
 
 import { SUBNET_KINDS, FIELD_TYPES } from './subnet.js';
 import { PERM_KINDS, PERM_FIELD_TYPES } from './permisos.js';
+import { BASE_KINDS, BASE_FIELD_TYPES } from './bases.js';
+import { STORAGE_KINDS } from './almacenamiento.js';
+import { IPV6_KINDS, IPV6_FIELD_TYPES } from './ipv6.js';
+import { PORT_KINDS } from './puertos.js';
+import { CRON_KINDS, CRON_FIELD_TYPES } from './crontab.js';
 
-export const DRILL_KINDS = { ...SUBNET_KINDS, ...PERM_KINDS };
+export const DRILL_KINDS = { ...SUBNET_KINDS, ...PERM_KINDS, ...BASE_KINDS, ...STORAGE_KINDS, ...IPV6_KINDS, ...PORT_KINDS, ...CRON_KINDS };
 
-const TYPES = { ...FIELD_TYPES, ...PERM_FIELD_TYPES, choice: (raw) => raw };
+export const FIELD_TYPE_NAMES = ['choice', ...Object.keys({ ...FIELD_TYPES, ...PERM_FIELD_TYPES, ...BASE_FIELD_TYPES, ...IPV6_FIELD_TYPES, ...CRON_FIELD_TYPES })];
+
+const TYPES = { ...FIELD_TYPES, ...PERM_FIELD_TYPES, ...BASE_FIELD_TYPES, ...IPV6_FIELD_TYPES, ...CRON_FIELD_TYPES, choice: (raw) => raw };
 
 export function makeExercise(kind, rng = Math.random) {
   const k = DRILL_KINDS[kind];

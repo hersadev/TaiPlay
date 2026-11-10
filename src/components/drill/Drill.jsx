@@ -2,6 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 import { DRILL_KINDS, makeExercise, checkExercise } from '../../engine/drills/index.js';
 import RichText from '../ui/RichText';
 
+// Teclado del móvil según el tipo de respuesta: solo cifras, cifras con
+// punto (IP, máscaras) o el normal (hexadecimal, IPv6, crontab…).
+const INPUT_MODE = { int: 'numeric', bin: 'numeric', oct: 'numeric', ip: 'decimal', prefix: 'decimal', mask: 'decimal' };
+
 // Ejercicios generados al azar. tabs: [{ kind, need }]; counts: aciertos
 // por tipo; onSolved(kind) se llama con cada acierto. Los fallos no
 // restan: se enseña la solución con la explicación y se pasa a otro.
@@ -122,7 +126,7 @@ export default function Drill({ tabs, counts, onSolved, nonce = 0, className = '
                     onChange={(e) => setAnswers((a) => ({ ...a, [f.key]: e.target.value }))}
                     readOnly={Boolean(result)}
                     placeholder={f.placeholder}
-                    inputMode={f.type === 'int' ? 'numeric' : f.type === 'symbolic' ? 'text' : 'decimal'}
+                    inputMode={INPUT_MODE[f.type] ?? 'text'}
                     spellCheck={false}
                     autoCapitalize="off"
                     autoComplete="off"
