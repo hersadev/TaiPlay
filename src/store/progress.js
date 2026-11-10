@@ -16,7 +16,8 @@ import { EMPTY_ROAD, passStage, failStage } from '../engine/road.js';
 //   streak:   aciertos seguidos en el banco { current, best }
 //   days:     días (AAAA-MM-DD, hora local) en los que se ha estudiado
 //   cards:    repaso espaciado de las tarjetas { [id]: { box, due, ok, ko } }
-//   road:     el camino de tramos { cleared, fails } (ver engine/road.js)
+//   road:     el camino seguro del Road { cleared, fails } (ver engine/road.js)
+//   roadLoco: el camino alocado del Road, con la misma forma
 //   welcomed: si ya se ha visto (y cerrado) el panel de bienvenida
 export const DEFAULT_SETTINGS = { penalty: 1 / 3, simulacroMin: 120, supuestoMin: 30 };
 
@@ -47,6 +48,7 @@ const EMPTY = {
   days: [],
   cards: {},
   road: EMPTY_ROAD,
+  roadLoco: EMPTY_ROAD,
   welcomed: false,
 };
 
@@ -89,9 +91,10 @@ export const useProgress = create(
 
       updateSettings: (patch) => set((s) => ({ settings: { ...s.settings, ...patch } })),
 
-      // stages: los tramos (buildRoad); solo cuenta el tramo actual.
-      roadPass: (stages, id) => set((s) => ({ road: passStage(s.road, stages, id), days: withToday(s.days) })),
-      roadFail: (stages, id) => set((s) => ({ road: failStage(s.road, stages, id), days: withToday(s.days) })),
+      // stages: los tramos (buildRoad); solo cuenta el tramo actual. key:
+      // 'road' (camino seguro) o 'roadLoco' (camino alocado).
+      roadPass: (stages, id, key = 'road') => set((s) => ({ [key]: passStage(s[key], stages, id), days: withToday(s.days) })),
+      roadFail: (stages, id, key = 'road') => set((s) => ({ [key]: failStage(s[key], stages, id), days: withToday(s.days) })),
 
       markWelcomed: () => set({ welcomed: true }),
 
@@ -102,8 +105,8 @@ export const useProgress = create(
       version: 4,
       storage: safeStorage,
       // v1 → v2: llegan los logros, la racha y los días de estudio.
-      // v2 → v3: llega el repaso espaciado (cards). El Road (road) no
-      // necesita migración: si falta, se toma el valor inicial.
+      // v2 → v3: llega el repaso espaciado (cards). El Road (road y
+      // roadLoco) no necesita migración: si falta, se toma el valor inicial.
       // v3 → v4: el simulacro pasa de 100 a 120 min (bases de la convocatoria
       // de 2025); solo se cambia a quien conservaba el valor por defecto.
       migrate: (state, version) => {

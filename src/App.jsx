@@ -60,7 +60,7 @@ function Page({ segments, params }) {
     case 'editor':
       return <EditorPage />;
     case 'road':
-      return <RoadPage />;
+      return <RoadPage params={params} />;
     case 'progreso':
       return <ProgresoPage />;
     default:

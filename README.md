@@ -80,7 +80,10 @@ Todo corre en tu navegador y el progreso se guarda solo ahí: no hay cuentas ni 
   al final de cada bloque y una recta final con preguntas de todo el programa. Cada tramo
   son 10 preguntas seguidas: si fallas una, pierdes la tirada y vuelves al principio del
   tramo (la siguiente tirada trae otras preguntas). Los tramos superados se pueden repetir.
-- **Logros**: 53 logros en siete categorías (incluidos los del Road), niveles por puntos,
+  Hay dos caminos con su propio avance: el **seguro**, en el que cada tramo pregunta por
+  sus temas, y el **alocado**, con los mismos tramos pero con las 10 preguntas de cada
+  tirada sacadas de todo el temario.
+- **Logros**: 56 logros en siete categorías (incluidos los del Road), niveles por puntos,
   racha de días de estudio y de aciertos seguidos, con aviso al desbloquear cada uno.
 - **Editor**: un editor libre de JavaScript con consola, ejemplos y una API de alumnos
   simulada, para practicar lo que quieras. El código se guarda en el navegador.

@@ -71,6 +71,19 @@ export function buildRoad(questions) {
   return stages;
 }
 
+// Camino alocado: los mismos tramos, en el mismo orden, pero cada tirada
+// saca sus 10 preguntas de todo el temario (de cualquier bloque y tema).
+export function alocadoRoad(stages) {
+  const all = [...new Set(stages.flatMap((s) => s.pool))];
+  return stages.map((s) => ({ ...s, subtitle: 'Todo el temario', pool: all }));
+}
+
+// Los dos caminos y dónde guarda cada uno su avance en el progreso.
+export const PATHS = {
+  seguro: { key: 'road', name: 'Camino seguro', icon: '🛡️' },
+  alocado: { key: 'roadLoco', name: 'Camino alocado', icon: '🎲' },
+};
+
 const shuffle = (list, rng) => {
   const a = [...list];
   for (let i = a.length - 1; i > 0; i--) {

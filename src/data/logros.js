@@ -1,5 +1,5 @@
 // Logros y niveles. Todo se calcula a partir del progreso guardado (ctx):
-//   { lessons, answers, attempts, streak, days, cards, road, questions }
+//   { lessons, answers, attempts, streak, days, cards, road, roadLoco, questions }
 // donde questions son las preguntas del banco (se pasan desde fuera para que
 // este módulo no dependa de los JSON y se pueda probar con node --test).
 //
@@ -52,6 +52,7 @@ const roadOf = (ctx) => {
   return roadCache.get(ctx.questions);
 };
 const roadCleared = (ctx) => ctx.road?.cleared ?? 0;
+const locoCleared = (ctx) => ctx.roadLoco?.cleared ?? 0;
 
 const counter = (fn, target) => ({ check: (ctx) => fn(ctx) >= target, progress: (ctx) => [Math.min(fn(ctx), target), target] });
 const fromProgress = (progress) => ({ check: (ctx) => { const [a, b] = progress(ctx); return b > 0 && a >= b; }, progress });
@@ -142,6 +143,9 @@ export const LOGROS = [
   { id: 'road-meta', cat: 'road', icon: '🏁', name: 'Fin del camino', desc: 'Completa el Road entero, meta incluida.', ...fromProgress((c) => [roadCleared(c), roadOf(c).length]) },
   { id: 'road-limpio', cat: 'road', icon: '✨', name: 'Sin tropiezos', desc: 'Supera 3 tramos seguidos del Road a la primera.', ...counter((c) => cleanStreak(c.road, roadOf(c)), 3) },
   { id: 'road-limpio-10', cat: 'road', icon: '💎', name: 'Pulso de cirujano', desc: 'Supera 10 tramos seguidos del Road a la primera.', ...counter((c) => cleanStreak(c.road, roadOf(c)), 10) },
+  { id: 'loco-1', cat: 'road', icon: '🎲', name: 'Tirada alocada', desc: 'Supera un tramo del camino alocado: 10 preguntas seguidas de cualquier tema.', ...counter(locoCleared, 1) },
+  { id: 'loco-jefe', cat: 'road', icon: '🃏', name: 'Comodín', desc: 'Vence a un jefe de bloque en el camino alocado.', check: (c) => [1, 2, 3, 4].some((n) => stageCleared(c.roadLoco, roadOf(c), `B${n}-jefe`)) },
+  { id: 'loco-meta', cat: 'road', icon: '🌀', name: 'Caos dominado', desc: 'Completa el camino alocado entero.', ...fromProgress((c) => [locoCleared(c), roadOf(c).length]) },
   { id: 'road-perseverante', cat: 'road', icon: '🧗', name: 'Perseverante', desc: 'Supera un tramo del Road que habías fallado 3 veces o más.', check: (c) => passedAfterFails(c.road, roadOf(c), 3) },
 
   { id: 'dias-3', cat: 'constancia', icon: '📅', name: 'Tres en raya', desc: 'Estudia 3 días seguidos.', ...counter((c) => dayStreak(c.days), 3) },
@@ -159,7 +163,7 @@ export function xpOf(ctx, badges = {}) {
     correct(ctx) * 3 +
     answered(ctx) +
     ctx.attempts.length * 25 +
-    (ctx.road?.cleared ?? 0) * 15 +
+    ((ctx.road?.cleared ?? 0) + (ctx.roadLoco?.cleared ?? 0)) * 15 +
     Object.keys(badges).length * 10
   );
 }

@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { ALL_QUESTIONS } from '../data/exams';
 import { useProgress } from '../store/progress';
+import { href } from '../hooks/useRoute';
 import QuestionCard from '../components/quiz/QuestionCard';
-import { buildRoad, drawRun, RUN } from '../engine/road.js';
+import { buildRoad, alocadoRoad, drawRun, PATHS, RUN, EMPTY_ROAD } from '../engine/road.js';
 
-const STAGES = buildRoad(ALL_QUESTIONS);
+const SEGURO = buildRoad(ALL_QUESTIONS);
+const STAGES_BY_PATH = { seguro: SEGURO, alocado: alocadoRoad(SEGURO) };
 const ROMAN = ['I', 'II', 'III', 'IV'];
 // Desplazamiento lateral de cada tramo para que el camino serpentee.
 const ZIG = [0, 1, 2, 1, 0, -1, -2, -1];
@@ -12,8 +14,13 @@ const ZIG = [0, 1, 2, 1, 0, -1, -2, -1];
 // Road: el camino de tramos. Cada tramo son 10 preguntas seguidas; si se
 // falla una se pierde la tirada y se vuelve al principio del tramo. Los
 // tramos ya superados se pueden repetir para repasar (no cambian nada).
-export default function RoadPage() {
-  const road = useProgress((s) => s.road);
+// Hay dos caminos con su propio avance (?camino=alocado): el seguro pregunta
+// por los temas de cada tramo y el alocado, por cualquier tema.
+export default function RoadPage({ params }) {
+  const mode = params?.get('camino') === 'alocado' ? 'alocado' : 'seguro';
+  const path = PATHS[mode];
+  const STAGES = STAGES_BY_PATH[mode];
+  const road = useProgress((s) => s[path.key]) ?? EMPTY_ROAD;
   const [run, setRun] = useState(null);
   const cleared = Math.min(road.cleared, STAGES.length);
   const current = STAGES[cleared] ?? null;
@@ -27,6 +34,8 @@ export default function RoadPage() {
       <RunView
         key={run.key}
         stage={run.stage}
+        stages={STAGES}
+        mode={mode}
         replay={run.replay}
         onRetry={() => start(run.stage)}
         onNext={(next) => (next ? start(next) : setRun(null))}
@@ -44,6 +53,27 @@ export default function RoadPage() {
         Un camino por todo el temario. Cada tramo son <strong className="text-gray-200">{RUN} preguntas seguidas</strong>: si fallas una,
         pierdes la tirada y vuelves al principio del tramo. Aciértalas todas y se abre el siguiente.
       </p>
+
+      <div role="tablist" aria-label="Camino" className="mt-5 grid gap-2 sm:grid-cols-2">
+        {Object.entries(PATHS).map(([id, p]) => (
+          <a
+            key={id}
+            role="tab"
+            aria-selected={mode === id}
+            href={href('road', id === 'alocado' ? { camino: 'alocado' } : undefined)}
+            className={`rounded-xl border p-3 ${mode === id ? (id === 'alocado' ? 'border-purple-400 bg-purple-900/30' : 'border-yellow-400 bg-yellow-900/20') : 'border-gray-700 hover:border-gray-500'}`}
+          >
+            <span className="font-semibold text-gray-100">
+              {p.icon} {p.name}
+            </span>
+            <span className="mt-0.5 block text-xs text-gray-400">
+              {id === 'alocado'
+                ? 'Los mismos tramos, pero cada tirada mezcla preguntas de todo el temario.'
+                : 'Cada tramo pregunta solo por sus temas, bloque a bloque.'}
+            </span>
+          </a>
+        ))}
+      </div>
 
       <section className="mt-6 rounded-xl border border-yellow-700/60 bg-gray-900 p-5">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
@@ -135,10 +165,11 @@ function StageNode({ stage, n, state, fails, onPlay }) {
 // Una tirada: 10 preguntas seguidas, con corrección y explicación al
 // momento. Fallar una acaba la tirada (y cuenta como intento fallido si es
 // el tramo actual).
-function RunView({ stage, replay, onRetry, onNext, onExit }) {
+function RunView({ stage, stages: STAGES, mode, replay, onRetry, onNext, onExit }) {
   const answers = useProgress.getState().answers;
   const [questions] = useState(() => drawRun(stage, ALL_QUESTIONS, answers));
   const { roadPass, roadFail } = useProgress();
+  const key = PATHS[mode].key;
   const [idx, setIdx] = useState(0);
   const [results, setResults] = useState([]);
   const [phase, setPhase] = useState('playing'); // playing | failed | passed
@@ -149,7 +180,7 @@ function RunView({ stage, replay, onRetry, onNext, onExit }) {
   const onAnswer = (ok) => {
     setResults((r) => [...r, ok]);
     if (!ok) {
-      if (!replay) roadFail(STAGES, stage.id);
+      if (!replay) roadFail(STAGES, stage.id, key);
       setPhase('failed');
     }
   };
@@ -159,7 +190,7 @@ function RunView({ stage, replay, onRetry, onNext, onExit }) {
       setIdx(idx + 1);
       window.scrollTo(0, 0);
     } else {
-      if (!replay) roadPass(STAGES, stage.id);
+      if (!replay) roadPass(STAGES, stage.id, key);
       setPhase('passed');
       window.scrollTo(0, 0);
     }
@@ -171,7 +202,7 @@ function RunView({ stage, replay, onRetry, onNext, onExit }) {
         <p className="text-5xl" aria-hidden="true">
           {next ? '🎉' : '🏁'}
         </p>
-        <h1 className="mt-3 text-2xl font-bold text-gray-100">{replay ? 'Tramo repasado' : next ? '¡Tramo superado!' : '¡Has completado el Road!'}</h1>
+        <h1 className="mt-3 text-2xl font-bold text-gray-100">{replay ? 'Tramo repasado' : next ? '¡Tramo superado!' : (mode === 'alocado' ? '¡Has completado el camino alocado!' : '¡Has completado el Road!')}</h1>
         <p className="mt-2 text-gray-400">
           {stage.title}: {RUN} de {RUN} seguidas.
           {replay ? ' Ya lo tenías superado, así que tu avance no cambia.' : next ? ` Se abre «${next.title}».` : ' Has recorrido todo el temario.'}
@@ -196,6 +227,7 @@ function RunView({ stage, replay, onRetry, onNext, onExit }) {
         <div className="min-w-0 flex-1">
           <p className="truncate font-semibold text-gray-100">
             {stage.title}
+            {mode === 'alocado' && <span className="ml-2 text-xs font-normal text-purple-300">🎲 alocado</span>}
             {replay && <span className="ml-2 text-xs font-normal text-gray-500">(repaso)</span>}
           </p>
           <p className="text-xs text-gray-500">{stage.subtitle}</p>

@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { buildRoad, drawRun, passStage, failStage, cleanStreak, passedAfterFails, stageCleared, EMPTY_ROAD, RUN, MIN_POOL } from '../src/engine/road.js';
+import { buildRoad, alocadoRoad, drawRun, passStage, failStage, cleanStreak, passedAfterFails, stageCleared, EMPTY_ROAD, RUN, MIN_POOL } from '../src/engine/road.js';
 import { LOGROS, newlyEarned } from '../src/data/logros.js';
 import { seeded } from '../src/engine/drills/random.js';
 
@@ -68,6 +68,28 @@ test('logros del Road', () => {
   assert.ok(!got.includes('road-jefe-2') && !got.includes('road-meta') && !got.includes('road-perseverante'));
   ctx.road = { cleared: STAGES.length, fails: { [STAGES[2].id]: 4 } };
   const all = newlyEarned(ctx, {});
-  for (const l of LOGROS.filter((x) => x.cat === 'road')) assert.ok(all.includes(l.id), l.id);
+  for (const l of LOGROS.filter((x) => x.cat === 'road' && !x.id.startsWith('loco-'))) assert.ok(all.includes(l.id), l.id);
+  assert.ok(!all.some((id) => id.startsWith('loco-')), 'el camino seguro no da los logros del alocado');
   assert.deepEqual(LOGROS.find((l) => l.id === 'road-meta').progress(ctx), [STAGES.length, STAGES.length]);
+});
+
+test('camino alocado: mismos tramos, preguntas de todo el temario y avance propio', () => {
+  const loco = alocadoRoad(STAGES);
+  assert.deepEqual(loco.map((s) => s.id), STAGES.map((s) => s.id));
+  const all = new Set(STAGES.flatMap((s) => s.pool));
+  assert.ok(loco.every((s) => s.pool.length === all.size));
+  // Una tirada del primer tramo trae preguntas de varios bloques.
+  const rng = seeded(8);
+  const bloques = new Set();
+  for (let i = 0; i < 20; i++) drawRun(loco[0], ALL, {}, rng).forEach((q) => bloques.add(q.tema.slice(0, 2)));
+  assert.ok(bloques.size >= 3, [...bloques].join());
+
+  const ctx = { lessons: {}, answers: {}, attempts: [], streak: { current: 0, best: 0 }, days: [], questions: ALL, road: EMPTY_ROAD, roadLoco: EMPTY_ROAD };
+  const jefe1 = STAGES.findIndex((s) => s.id === 'B1-jefe');
+  ctx.roadLoco = { cleared: jefe1 + 1, fails: {} };
+  const got = newlyEarned(ctx, {});
+  for (const id of ['loco-1', 'loco-jefe']) assert.ok(got.includes(id), id);
+  assert.ok(!got.includes('loco-meta') && !got.includes('road-1'), 'el alocado no da los logros del seguro');
+  ctx.roadLoco = { cleared: STAGES.length, fails: {} };
+  assert.ok(newlyEarned(ctx, {}).includes('loco-meta'));
 });
