@@ -59,3 +59,10 @@ test('niveles y puntos', () => {
   ctx.answers = { a: { last: 'ok' }, b: { last: 'ko' } };
   assert.equal(xpOf(ctx, { x: 1 }), 20 + 15 + 3 + 2 + 10);
 });
+
+test('las preguntas propias (no oficiales) no cuentan para los logros de preguntas', () => {
+  const ctx = empty();
+  ctx.answers = { 'tp-B1T03-01': { ok: 1, ko: 1, last: 'ok' } };
+  const got = newlyEarned(ctx, {});
+  assert.ok(!got.includes('primera-respuesta') && !got.includes('remontada'));
+});

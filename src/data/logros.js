@@ -15,8 +15,11 @@ const done = (ctx, id) => Boolean(ctx.lessons[id]?.done);
 const trackLessons = (id) => TRACKS.find((t) => t.id === id)?.lessons ?? [];
 const trackProgress = (id) => (ctx) => [trackLessons(id).filter((l) => done(ctx, l.id)).length, trackLessons(id).length];
 const temasDone = (ctx, list = TEMAS) => list.filter((t) => done(ctx, t.id)).length;
-const answered = (ctx) => Object.keys(ctx.answers).length;
-const correct = (ctx) => Object.values(ctx.answers).filter((a) => a.last === 'ok').length;
+// Solo preguntas de examen: las propias de TaiPlay (ids «tp-…», no
+// oficiales) no cuentan para los logros de preguntas.
+const examAnswers = (ctx) => Object.entries(ctx.answers).filter(([id]) => !id.startsWith('tp-')).map(([, a]) => a);
+const answered = (ctx) => examAnswers(ctx).length;
+const correct = (ctx) => examAnswers(ctx).filter((a) => a.last === 'ok').length;
 const examAttempts = (ctx, kind) => ctx.attempts.filter((a) => a.kind === kind);
 const bestPct = (ctx, kind) => Math.max(0, ...examAttempts(ctx, kind).map((a) => (a.total ? a.net / a.total : 0)));
 
@@ -114,7 +117,7 @@ export const LOGROS = [
   { id: 'aciertos-50', cat: 'preguntas', icon: '⭐', name: 'Medio centenar', desc: 'Ten 50 preguntas acertadas (en tu último intento).', ...counter(correct, 50) },
   { id: 'racha-10', cat: 'preguntas', icon: '🔥', name: 'En racha', desc: 'Acierta 10 preguntas seguidas.', ...counter((c) => c.streak.best, 10) },
   { id: 'racha-25', cat: 'preguntas', icon: '☄️', name: 'Imparable', desc: 'Acierta 25 preguntas seguidas.', ...counter((c) => c.streak.best, 25) },
-  { id: 'remontada', cat: 'preguntas', icon: '🔄', name: 'Aprender del error', desc: 'Acierta una pregunta que habías fallado antes.', check: (c) => Object.values(c.answers).some((a) => a.ko > 0 && a.last === 'ok') },
+  { id: 'remontada', cat: 'preguntas', icon: '🔄', name: 'Aprender del error', desc: 'Acierta una pregunta que habías fallado antes.', check: (c) => examAnswers(c).some((a) => a.ko > 0 && a.last === 'ok') },
   { id: 'tema-dominado', cat: 'preguntas', icon: '🏅', name: 'Tema dominado', desc: 'Acierta todas las preguntas de examen de un tema del programa.', ...counter(temasDominados, 1) },
 
   { id: 'primer-supuesto', cat: 'examen', icon: '📝', name: 'Al toro', desc: 'Termina un supuesto práctico en modo examen.', ...counter((c) => examAttempts(c, 'supuesto').length, 1) },

@@ -1,5 +1,5 @@
 import { ALL_LESSONS, TRACKS } from '../lessons';
-import { ALL_QUESTIONS } from '../data/exams';
+import { ALL_QUESTIONS, BANK } from '../data/exams';
 import { useProgress } from '../store/progress';
 import { href } from '../hooks/useRoute';
 import { TARJETAS } from '../data/legislacion/tarjetas.js';
@@ -13,10 +13,10 @@ export default function HomePage() {
   const { lessons, answers, attempts, cards } = useProgress();
   const repaso = deckStats(TARJETAS, cards, today());
   const doneLessons = ALL_LESSONS.filter((l) => lessons[l.id]?.done).length;
-  const seen = Object.values(answers);
+  const seen = ALL_QUESTIONS.filter((q) => answers[q.id]).map((q) => answers[q.id]);
   const ok = seen.filter((a) => a.last === 'ok').length;
   const nextLesson = ALL_LESSONS.find((l) => !lessons[l.id]?.done);
-  const falladas = repasoStats(ALL_QUESTIONS, answers, today());
+  const falladas = repasoStats(BANK, answers, today());
   const isNew = doneLessons === 0 && seen.length === 0;
 
   return (

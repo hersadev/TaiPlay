@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from 'react';
 import { BLOQUES, findTema, TEMAS } from '../data/temario';
-import { ALL_QUESTIONS } from '../data/exams';
+import { ALL_QUESTIONS, PROPIAS } from '../data/exams';
 import { findLesson } from '../lessons';
 import { useProgress } from '../store/progress';
 import { href } from '../hooks/useRoute';
@@ -107,6 +107,7 @@ export function TemaPage({ temaId }) {
   const next = TEMAS[i + 1];
   const lessons = tema.lessons.map(findLesson).filter(Boolean);
   const nQ = questionsOf(tema.id).length;
+  const nPropias = PROPIAS.filter((q) => q.tema === tema.id).length;
 
   return (
     <div className="mx-auto max-w-3xl space-y-6 px-4 py-6">
@@ -121,11 +122,20 @@ export function TemaPage({ temaId }) {
 
       <div className="flex flex-wrap gap-2 text-sm">
         <a
-          href={href('preguntas', { programa: tema.id, orden: 'examen' })}
+          href={href('preguntas', { programa: tema.id, orden: 'examen', origen: 'oficiales' })}
           className="rounded-lg bg-yellow-400 px-3 py-1.5 font-semibold text-gray-950 hover:bg-yellow-300"
         >
           Practicar sus {nQ} preguntas de examen →
         </a>
+        {nPropias > 0 && (
+          <a
+            href={href('preguntas', { programa: tema.id, origen: 'propias' })}
+            className="rounded-lg border border-purple-700 px-3 py-1.5 text-purple-200 hover:border-purple-500"
+            title="Redactadas por TaiPlay a partir de la norma o el estándar citado, porque de este tema han caído pocas"
+          >
+            {nPropias} preguntas extra (no oficiales) →
+          </a>
+        )}
         {stats.seen > 0 && (
           <span className="rounded-lg bg-gray-800 px-3 py-1.5 text-gray-300">
             Dominas {stats.ok} de {stats.total}

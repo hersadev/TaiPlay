@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { ALL_QUESTIONS, EXAMS } from '../data/exams';
+import { ALL_QUESTIONS, BANK, PROPIAS, EXAMS } from '../data/exams';
 import { TOPICS, topicLabel } from '../data/topics';
 import { BLOQUES, temaLabel, findTema } from '../data/temario';
 import { useProgress } from '../store/progress';
@@ -30,12 +30,13 @@ export default function BankPage({ params }) {
   const parte = params.get('parte') ?? '';
   const estado = params.get('estado') ?? '';
   const orden = params.get('orden') ?? 'aleatorio';
+  const origen = params.get('origen') ?? '';
   const [seed, setSeed] = useState(() => Math.floor(Math.random() * 233280));
   const [idx, setIdx] = useState(0);
 
   const set = (patch) => {
     setIdx(0);
-    const next = { tema, programa, examen, parte, estado, orden, ...patch };
+    const next = { tema, programa, examen, parte, estado, orden, origen, ...patch };
     navigate('preguntas', next);
   };
 
@@ -44,30 +45,32 @@ export default function BankPage({ params }) {
   const list = useMemo(() => {
     // Repaso: solo las falladas que tocan hoy, las más atrasadas primero.
     if (estado === 'repaso') {
-      return repasoQueue(ALL_QUESTIONS, answers, today()).filter(
+      return repasoQueue(BANK, answers, today()).filter(
         (q) =>
           (!tema || q.topic === tema) &&
           (!programa || q.tema === programa) &&
           (!examen || q.examId === examen) &&
-          (!parte || (parte === 'primera' ? q.partId === 'primera' : q.partId !== 'primera')),
+          (!parte || (parte === 'primera' ? q.partId === 'primera' : q.partId.startsWith('supuesto'))) &&
+          (!origen || (origen === 'propias' ? q.oficial === false : q.oficial !== false)),
       );
     }
-    const filtered = ALL_QUESTIONS.filter(
+    const filtered = BANK.filter(
       (q) =>
         (!tema || q.topic === tema) &&
         (!programa || q.tema === programa) &&
         (!examen || q.examId === examen) &&
-        (!parte || (parte === 'primera' ? q.partId === 'primera' : q.partId !== 'primera')) &&
+        (!parte || (parte === 'primera' ? q.partId === 'primera' : q.partId.startsWith('supuesto'))) &&
+        (!origen || (origen === 'propias' ? q.oficial === false : q.oficial !== false)) &&
         (!estado ||
           (estado === 'nuevas' && !answers[q.id]) ||
           (estado === 'falladas' && answers[q.id]?.last === 'ko')),
     );
     return orden === 'aleatorio' ? shuffle(filtered, seed) : filtered;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tema, programa, examen, parte, estado, orden, seed]);
+  }, [tema, programa, examen, parte, estado, orden, origen, seed]);
 
   const q = list[Math.min(idx, list.length - 1)];
-  const repaso = useMemo(() => repasoStats(ALL_QUESTIONS, answers, today()), [answers]);
+  const repaso = useMemo(() => repasoStats(BANK, answers, today()), [answers]);
 
   const stats = useMemo(
     () =>
@@ -84,7 +87,8 @@ export default function BankPage({ params }) {
     <div className="mx-auto max-w-6xl px-4 py-6">
       <h1 className="text-2xl font-bold text-gray-100">Banco de preguntas</h1>
       <p className="mt-1 text-gray-400">
-        {ALL_QUESTIONS.length} preguntas reales de los exámenes TAI con la respuesta de la plantilla oficial definitiva y una explicación.
+        {ALL_QUESTIONS.length} preguntas reales de los exámenes TAI con la respuesta de la plantilla oficial definitiva y una explicación, y{' '}
+        {PROPIAS.length} preguntas propias, marcadas como no oficiales, para los temas que menos han caído.
       </p>
 
       <div className="mt-6 grid gap-6 lg:grid-cols-[18rem_minmax(0,1fr)]">
@@ -121,6 +125,11 @@ export default function BankPage({ params }) {
             <option value="">Todas</option>
             <option value="primera">Primera parte (teoría)</option>
             <option value="supuestos">Supuestos prácticos</option>
+          </Filter>
+          <Filter label="Origen" value={origen} onChange={(v) => set({ origen: v })}>
+            <option value="">Oficiales y no oficiales</option>
+            <option value="oficiales">Solo oficiales (exámenes)</option>
+            <option value="propias">Solo no oficiales (TaiPlay)</option>
           </Filter>
           <Filter label="Estado" value={estado} onChange={(v) => set({ estado: v })}>
             <option value="">Todas</option>

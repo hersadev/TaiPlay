@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { ALL_QUESTIONS } from '../../data/exams';
+import { BANK } from '../../data/exams';
 import { TEMAS } from '../../data/temario';
 import { buildPool, drawRound } from '../../engine/repaso/pool.js';
 import { useProgress } from '../../store/progress';
@@ -15,7 +15,7 @@ const SOURCE = { examen: 'Examen real', ficha: 'Ficha del temario', tarjeta: 'Da
 export default function TemaTest({ temas, done, onPass }) {
   const recordAnswer = useProgress((s) => s.recordAnswer);
   const [round, setRound] = useState(0);
-  const questions = useMemo(() => drawRound(buildPool(temas, { questions: ALL_QUESTIONS, temas: TEMAS }), SIZE), [temas, round]); // eslint-disable-line react-hooks/exhaustive-deps
+  const questions = useMemo(() => drawRound(buildPool(temas, { questions: BANK, temas: TEMAS }), SIZE), [temas, round]); // eslint-disable-line react-hooks/exhaustive-deps
   const [i, setI] = useState(0);
   const [picks, setPicks] = useState({});
   const q = questions[i];

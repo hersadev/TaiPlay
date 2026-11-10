@@ -41,10 +41,16 @@ export default function QuestionCard({ question: q, mode = 'practice', selected,
     <article className="rounded-xl border border-gray-700 bg-gray-900 p-4 sm:p-5">
       {showSource && (
         <div className="mb-3 flex flex-wrap items-center gap-2 text-xs">
-          <span className="rounded bg-gray-800 px-2 py-0.5 text-gray-300">
-            {q.examTitle} · {q.partTitle} · {q.reserve ? 'Reserva ' : 'Pregunta '}
-            {q.n}
-          </span>
+          {q.oficial === false ? (
+            <span className="rounded bg-purple-900/60 px-2 py-0.5 text-purple-200" title="Redactada por TaiPlay a partir de la fuente citada; no procede de un examen">
+              No oficial · Fuente: {q.fuente}
+            </span>
+          ) : (
+            <span className="rounded bg-gray-800 px-2 py-0.5 text-gray-300">
+              {q.examTitle} · {q.partTitle} · {q.reserve ? 'Reserva ' : 'Pregunta '}
+              {q.n}
+            </span>
+          )}
           <span className="rounded bg-blue-900/60 px-2 py-0.5 text-blue-300">{topicLabel(q.topic)}</span>
           {q.tema && (
             <a href={href(`temario/${q.tema}`)} className="rounded bg-gray-800 px-2 py-0.5 text-yellow-300 hover:bg-gray-700" title="Ver la ficha del tema">

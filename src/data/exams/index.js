@@ -9,6 +9,7 @@ import tai2025A from './tai2025A.json';
 import tai2025X from './tai2025X.json';
 import tai2022 from './tai2022.json';
 import tai2019 from './tai2019.json';
+import { PROPIAS as PROPIAS_RAW } from '../propias/preguntas.js';
 
 export const EXAMS = [tai2025A, tai2025X, tai2024A, tai2022, tai2019];
 
@@ -19,7 +20,14 @@ export const ALL_QUESTIONS = EXAMS.flatMap((exam) =>
   ),
 );
 
-const byId = new Map(ALL_QUESTIONS.map((q) => [q.id, q]));
+// Preguntas propias de TaiPlay (no oficiales) para los temas que menos han
+// caído. Van al banco y a los tests por tema, nunca a simulacros ni al Road.
+export const PROPIAS = PROPIAS_RAW.map((q) => ({ ...q, oficial: false, examId: 'propias', examTitle: 'Pregunta no oficial', partId: 'propia', partTitle: '' }));
+
+// Todo lo que se practica en el banco.
+export const BANK = [...ALL_QUESTIONS, ...PROPIAS];
+
+const byId = new Map(BANK.map((q) => [q.id, q]));
 export const findQuestion = (id) => byId.get(id) ?? null;
 
 export const findExam = (id) => EXAMS.find((e) => e.id === id) ?? null;

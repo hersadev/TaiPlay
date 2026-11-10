@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { ALL_LESSONS } from '../lessons';
-import { ALL_QUESTIONS } from '../data/exams';
+import { ALL_QUESTIONS, BANK } from '../data/exams';
 import { BLOQUES, TEMAS } from '../data/temario';
 import { useProgress } from '../store/progress';
 import { href } from '../hooks/useRoute';
@@ -16,12 +16,14 @@ const fecha = (at) => new Date(at).toLocaleDateString('es-ES', { day: 'numeric',
 export default function ProgresoPage() {
   const { lessons, answers, attempts } = useProgress();
   const series = useMemo(() => simulacroSeries(attempts), [attempts]);
-  const weak = useMemo(() => weakTemas(ALL_QUESTIONS, answers, TEMAS), [answers]);
+  const weak = useMemo(() => weakTemas(BANK, answers, TEMAS), [answers]);
   const cover = useMemo(() => coverage(ALL_QUESTIONS, answers, BLOQUES, lessons), [answers, lessons]);
-  const repaso = useMemo(() => repasoStats(ALL_QUESTIONS, answers, today()), [answers]);
+  const repaso = useMemo(() => repasoStats(BANK, answers, today()), [answers]);
 
-  const seen = Object.keys(answers).length;
-  const ok = Object.values(answers).filter((a) => a.last === 'ok').length;
+  // Solo las oficiales: son las que dicen cuánto has visto de los exámenes.
+  const official = ALL_QUESTIONS.filter((q) => answers[q.id]);
+  const seen = official.length;
+  const ok = official.filter((q) => answers[q.id].last === 'ok').length;
   const lessonsDone = ALL_LESSONS.filter((l) => lessons[l.id]?.done).length;
   const fichasDone = TEMAS.filter((t) => lessons[t.id]?.done).length;
 

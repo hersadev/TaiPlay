@@ -62,7 +62,7 @@ export function buildPool(temaIds, { questions = [], temas = [], rng = Math.rand
       options: q.options,
       answer: LETTERS.indexOf(q.answer),
       why: q.explanation,
-      label: `${q.examTitle ?? 'Examen'} · ${q.partTitle ?? ''}`.replace(/ · $/, ''),
+      label: q.oficial === false ? `No oficial · ${q.fuente}` : `${q.examTitle ?? 'Examen'} · ${q.partTitle ?? ''}`.replace(/ · $/, ''),
     }));
   const ficha = temas
     .filter((t) => want.has(t.id))

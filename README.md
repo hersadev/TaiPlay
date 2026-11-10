@@ -69,6 +69,11 @@ Todo corre en tu navegador y el progreso se guarda solo ahí: no hay cuentas ni 
   por tema, materia, examen, parte o «falladas», y cada pregunta enlaza con la lección que la explica.
   Las que fallas entran en un **repaso espaciado**: vuelven el mismo día, a los 3 y a los
   7 días, y salen al acertarlas esas tres veces seguidas.
+  Además hay **70 preguntas propias, marcadas como no oficiales**, para los siete temas
+  que menos han caído (B1T03, B1T07, B2T01, B3T02, B3T08, B4T01 y B4T09): cada una
+  cita su fuente (artículo del BOE, estándar o RFC) y se revisó contra ella. Entran en el
+  banco y en los tests por tema, pero nunca en los simulacros, en el Road ni en los
+  logros de preguntas.
 - **Supuestos prácticos**: los diez supuestos reales, con su enunciado y su modelo de
   datos, en modo estudio (corrección al momento) o en modo examen (cronometrado).
 - **Road**: un camino de 20 tramos por todo el temario, bloque a bloque, con un «jefe»
@@ -83,7 +88,8 @@ Todo corre en tu navegador y el progreso se guarda solo ahí: no hay cuentas ni 
   penalización por error (configurable) y con la regla de las preguntas de reserva que
   sustituyen a las anuladas. Puede ser un examen pasado o uno **mezclado**: 80 preguntas
   al azar de todos los años con el reparto por bloques de los exámenes reales, más un
-  supuesto real completo.
+  supuesto real completo. Puede priorizar las preguntas que nunca has respondido, y al
+  corregir dice cuántas ya habías visto: si son muchas, la nota mide en parte memoria.
 - **Progreso**: la evolución de la nota en los simulacros, los temas con peor
   porcentaje de acierto y cuánto has visto de cada bloque del programa.
 - **Sin conexión**: es una PWA. Se puede instalar en el móvil o el ordenador y, una vez
