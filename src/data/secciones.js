@@ -22,7 +22,7 @@ export const SECTIONS = [
   {
     path: 'supuestos',
     title: 'Supuestos prácticos',
-    text: 'Los cuatro supuestos reales, con su enunciado y su modelo de datos, en modo estudio o contra el reloj.',
+    text: 'Los diez supuestos reales, con su enunciado y su modelo de datos, en modo estudio o contra el reloj.',
     icon: '▤',
   },
   {

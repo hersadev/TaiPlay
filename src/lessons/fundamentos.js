@@ -59,7 +59,7 @@ Un **RAID** combina varios discos para ganar velocidad, seguridad o ambas. Los q
         why: 'RAID 5 usa paridad distribuida y tolera el fallo de un único disco. RAID 6 tolera dos.',
       },
     ],
-    exam: ['tai2025A-P23', 'tai2025A-P24', 'tai2025A-P25', 'tai2025A-P27', 'tai2024A-P21'],
+    exam: ['tai2025A-P23', 'tai2025A-P24', 'tai2025A-P25', 'tai2025A-P27', 'tai2024A-P21', 'tai2025X-P21', 'tai2025X-P23', 'tai2022-P24', 'tai2019-P28'],
   },
   {
     id: 'f-numeracion',
@@ -168,7 +168,7 @@ En la ruta de Linux aprenderás a moverte por este árbol con la terminal.`,
         why: 'exFAT funciona en ambos y admite ficheros grandes. Salió en el examen de 2025.',
       },
     ],
-    exam: ['tai2024A-P26', 'tai2024A-P55', 'tai2025A-P31', 'tai2025A-P59'],
+    exam: ['tai2024A-P26', 'tai2024A-P55', 'tai2025A-P31', 'tai2025A-P59', 'tai2025X-P25', 'tai2025X-P32', 'tai2022-P61'],
   },
   {
     id: 'f-redes',
@@ -229,7 +229,7 @@ El modelo **TCP/IP** las agrupa en 4: acceso a red, Internet (IP, ICMP), transpo
         why: 'La capa 6, presentación, se ocupa del formato, el cifrado y la compresión.',
       },
     ],
-    exam: ['tai2025A-S2-1', 'tai2025A-S2-2', 'tai2025A-S2-3', 'tai2025A-P73', 'tai2024A-S2-1', 'tai2024A-P74', 'tai2024A-P58', 'tai2025A-P71'],
+    exam: ['tai2025A-S2-1', 'tai2025A-S2-2', 'tai2025A-S2-3', 'tai2025A-P73', 'tai2024A-S2-1', 'tai2024A-P74', 'tai2024A-P58', 'tai2025A-P71', 'tai2025X-P78', 'tai2022-P71', 'tai2022-P74'],
   },
   {
     id: 'f-programar',
@@ -280,6 +280,6 @@ La ruta de programación (Java, C#, SQL…) llegará en una próxima entrega; mi
         why: 'Por referencia la función trabaja sobre el dato original.',
       },
     ],
-    exam: ['tai2024A-P34', 'tai2024A-P35', 'tai2024A-P36', 'tai2025A-P40'],
+    exam: ['tai2024A-P34', 'tai2024A-P35', 'tai2024A-P36', 'tai2025A-P40', 'tai2022-P38'],
   },
 ];

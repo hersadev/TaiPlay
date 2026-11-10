@@ -72,6 +72,7 @@ Si la pantalla se llena, \`clear\` la limpia. Con las flechas ↑ y ↓ recupera
     type: 'terminal',
     title: 'Moverse por las carpetas',
     summary: 'cd, rutas absolutas y relativas, .. y los ficheros ocultos.',
+    exam: ['tai2025X-P29', 'tai2019-P31'],
     body: `Para cambiar de carpeta se usa \`cd\` (*change directory*):
 - \`cd documentos\` entra en la carpeta documentos (ruta **relativa**: desde donde estás).
 - \`cd ..\` sube un nivel, a la carpeta padre.
@@ -105,6 +106,7 @@ Un detalle: \`/var/log\` es la carpeta estándar donde el sistema guarda sus **r
     type: 'terminal',
     title: 'Crear y borrar',
     summary: 'mkdir, touch, rm y rmdir. Y por qué en Linux no hay papelera.',
+    exam: ['tai2025X-S2-2'],
     body: `- \`mkdir nombre\` crea una carpeta (*make directory*). Con \`-p\` crea también las intermedias que falten: \`mkdir -p a/b/c\`.
 - \`touch fichero\` crea un fichero vacío.
 - \`rm fichero\` borra un fichero (*remove*). **Cuidado: no hay papelera**, lo borrado desaparece.
@@ -154,7 +156,7 @@ En tu carpeta hay un \`app.log\` con los registros de una aplicación de becas.`
       { label: 'Sigue app.log en tiempo real', check: ranCmd('tail', (a) => a.includes('-f') && a.includes('app.log')) },
     ],
     hints: ['cat LEEME.txt', 'head -n 5 app.log', 'tail -n 3 app.log', 'tail -f app.log'],
-    exam: ['tai2025A-P60'],
+    exam: ['tai2025A-P60', 'tai2019-S2-5'],
     curiosity: 'En los servidores con systemd (como RHEL 8), muchos logs se consultan con journalctl; «journalctl -f» es el equivalente de tail -f para el diario del sistema.',
   },
   {
@@ -162,6 +164,7 @@ En tu carpeta hay un \`app.log\` con los registros de una aplicación de becas.`
     type: 'terminal',
     title: 'Copiar, mover y escribir en ficheros',
     summary: 'cp, mv y las redirecciones > y >>.',
+    exam: ['tai2025X-P30'],
     body: `- \`cp origen destino\` **copia**. Para copiar una carpeta entera: \`cp -r\`.
 - \`mv origen destino\` **mueve**, y también **renombra**: \`mv viejo.txt nuevo.txt\`.
 
@@ -296,13 +299,14 @@ Por último, hay carpetas del sistema, como \`/etc\`, donde solo puede escribir 
       'ip route get 10.30.20.30',
       'tar -czf config_backup.tar.gz /srv/app/config/',
     ],
-    exam: ['tai2024A-S2-10', 'tai2025A-S2-5', 'tai2025A-S2-6', 'tai2025A-S2-11', 'tai2025A-S2-13', 'tai2025A-S2-15'],
+    exam: ['tai2024A-S2-10', 'tai2025A-S2-5', 'tai2025A-S2-6', 'tai2025A-S2-11', 'tai2025A-S2-13', 'tai2025A-S2-15', 'tai2025X-S2-10'],
   },
   {
     id: 'lx-procesos',
     type: 'terminal',
     title: 'Procesos, journalctl y kill',
     summary: 'Por qué no arranca un servicio: el diario de systemd, quién ocupa el puerto y cómo terminar un proceso.',
+    exam: ['tai2025X-S2-14'],
     body: `La aplicación de becas de **web01** es el servicio \`becas\` y escucha en el puerto **8080**. Esta mañana no arranca, y además el servidor va lentísimo.
 
 ## Cuando un servicio no arranca
@@ -562,6 +566,7 @@ La trampa típica es leer «0 5» como 00:05. El primer campo son los **minutos*
     type: 'terminal',
     title: 'Instalar software y programar tareas',
     summary: 'dnf (y su equivalente apt) y crontab: instala rsync y programa la copia nocturna.',
+    exam: ['tai2019-P59'],
     body: `Hay que dejar programada una copia de seguridad nocturna con \`backup.sh\`, que usa **rsync**.
 
 ## Paquetes: depende de la familia

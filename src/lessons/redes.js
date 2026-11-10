@@ -49,7 +49,7 @@ En el panel de ejercicios tienes cuatro tipos. Cada ejercicio es distinto y, si 
       'Misma red: calcula la red de cada IP con la misma máscara y compáralas.',
     ],
     curiosity: 'Antes de 1993 no había prefijos: las redes eran de clase A (/8), B (/16) o C (/24). CIDR, la notación con barra, se inventó porque las direcciones IPv4 se estaban acabando a toda velocidad.',
-    exam: ['tai2025A-S2-1', 'tai2025A-S2-2', 'tai2024A-S2-1', 'tai2024A-P74'],
+    exam: ['tai2025A-S2-1', 'tai2025A-S2-2', 'tai2024A-S2-1', 'tai2024A-P74', 'tai2025X-P74', 'tai2022-S2-7', 'tai2019-S2-1', 'tai2019-S2-2', 'tai2019-S2-3'],
   },
   {
     id: 'rd-subnet-dividir',
@@ -84,7 +84,7 @@ Cada bit que pasa a la red divide los hosts entre dos. Un /16 partido en 16 subr
       'Para hosts: el menor h con 2ʰ − 2 ≥ N. Prefijo = 32 − h.',
     ],
     curiosity: 'Las subredes de tamaño distinto dentro de una misma red se llaman VLSM (máscaras de longitud variable). Permiten dar un /30 a un enlace entre dos routers y un /24 a una planta llena de equipos.',
-    exam: ['tai2025A-S2-3', 'tai2025A-P73', 'tai2024A-S2-1'],
+    exam: ['tai2025A-S2-3', 'tai2025A-P73', 'tai2024A-S2-1', 'tai2025X-S2-17', 'tai2022-S2-5', 'tai2022-S2R5', 'tai2019-S2-4'],
   },
   {
     id: 'rd-protocolos',
@@ -141,7 +141,7 @@ En TCP/IP se distingue entre protocolos de **usuario**, que usa la persona direc
       { q: 'La capa OSI que cifra, comprime y negocia la sintaxis es…', options: ['Sesión', 'Presentación', 'Aplicación', 'Transporte'], answer: 1, why: 'La 6, presentación.' },
       { q: '¿Qué protocolo obtiene la MAC a partir de la IP?', options: ['RARP', 'DNS', 'ARP', 'ICMP'], answer: 2, why: 'ARP. RARP hacía lo contrario.' },
     ],
-    exam: ['tai2024A-P58', 'tai2024A-P72', 'tai2024A-P73', 'tai2025A-P71', 'tai2024A-S2-6', 'tai2024A-P63', 'tai2024A-S2-18', 'tai2025A-S2-17', 'tai2024A-S2-11', 'tai2024A-P77'],
+    exam: ['tai2024A-P58', 'tai2024A-P72', 'tai2024A-P73', 'tai2025A-P71', 'tai2024A-S2-6', 'tai2024A-P63', 'tai2024A-S2-18', 'tai2025A-S2-17', 'tai2024A-S2-11', 'tai2024A-P77', 'tai2025X-P72', 'tai2025X-P75', 'tai2025X-S2-11', 'tai2022-S2-10', 'tai2022-S2-13', 'tai2019-P80', 'tai2019-S2-19', 'tai2019-S2R5'],
   },
   {
     id: 'rd-vlan',
@@ -182,7 +182,7 @@ Limita qué MAC pueden usar un puerto de acceso. Con \`switchport port-security 
       { q: 'Una MAC «sticky» en port-security…', options: ['Se borra al reiniciar siempre', 'Se aprende sola y pasa a la running-config, desde donde puede guardarse', 'Apaga el puerto si llega una BPDU', 'Hace que el puerto ignore STP'], answer: 1, why: 'Se aprende dinámicamente y se convierte en configuración.' },
       { q: '¿Con qué orden se configura el DHCP relay en la SVI?', options: ['ip dhcp server', 'ip helper-address', 'service dhcp forward', 'relay dhcp'], answer: 1, why: 'ip helper-address IP_del_servidor_DHCP.' },
     ],
-    exam: ['tai2024A-S2-7', 'tai2025A-P80', 'tai2024A-PR3', 'tai2025A-P67', 'tai2025A-S2-4'],
+    exam: ['tai2024A-S2-7', 'tai2025A-P80', 'tai2024A-PR3', 'tai2025A-P67', 'tai2025A-S2-4', 'tai2022-S2-17'],
   },
   {
     id: 'rd-ios-vlan',
@@ -237,7 +237,7 @@ Para comprobar, \`show vlan brief\` en modo privilegiado o, desde la configuraci
       'interface range gi1/0/11 - 12 → switchport mode access → switchport access vlan 20 → do show vlan brief',
     ],
     curiosity: 'Las VLAN no aparecen en la running-config de la mayoría de switches Cisco: se guardan solas en un fichero aparte de la flash, vlan.dat. Por eso, si borras la configuración para empezar de cero, las VLAN siguen ahí.',
-    exam: ['tai2024A-S2-7'],
+    exam: ['tai2024A-S2-7', 'tai2025X-S2-13'],
   },
   {
     id: 'rd-ios-svi',

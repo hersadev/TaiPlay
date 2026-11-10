@@ -6,8 +6,11 @@
 // que solo se incluye el modelo A.
 import tai2024A from './tai2024A.json';
 import tai2025A from './tai2025A.json';
+import tai2025X from './tai2025X.json';
+import tai2022 from './tai2022.json';
+import tai2019 from './tai2019.json';
 
-export const EXAMS = [tai2025A, tai2024A];
+export const EXAMS = [tai2025A, tai2025X, tai2024A, tai2022, tai2019];
 
 // Todas las preguntas, con el examen y la parte a la que pertenecen.
 export const ALL_QUESTIONS = EXAMS.flatMap((exam) =>

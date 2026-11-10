@@ -57,11 +57,12 @@ Todo corre en tu navegador y el progreso se guarda solo ahí: no hay cuentas ni 
 - **Temario**: los 33 temas del programa oficial (4 bloques), cada uno con una ficha de
   repaso propia (lo esencial y lo que más cae), un test corto, las lecciones relacionadas
   y sus preguntas reales. Se ve cuánto ha pesado cada tema en los exámenes.
-- **Banco de preguntas**: las 270 preguntas de los exámenes de 2024 y 2025 (modelo A),
+- **Banco de preguntas**: las 675 preguntas de los exámenes de 2019, 2022, 2024 y 2025
+  (modelo A) y del llamamiento extraordinario de 2025,
   con la respuesta de la **plantilla oficial definitiva** del INAP (incluidas las
   anuladas), clasificadas por tema del programa y por materia, con una explicación. Puedes filtrar
   por tema, materia, examen, parte o «falladas», y cada pregunta enlaza con la lección que la explica.
-- **Supuestos prácticos**: los cuatro supuestos reales, con su enunciado y su modelo de
+- **Supuestos prácticos**: los diez supuestos reales, con su enunciado y su modelo de
   datos, en modo estudio (corrección al momento) o en modo examen (cronometrado).
 - **Logros**: 39 logros en seis categorías, niveles por puntos, racha de días de estudio
   y de aciertos seguidos, con aviso al desbloquear cada uno.

@@ -1,0 +1,2408 @@
+{
+ "id": "tai2025X",
+ "title": "Examen 2025 · Llamamiento extraordinario",
+ "year": 2025,
+ "parts": [
+  {
+   "id": "primera",
+   "title": "Primera parte",
+   "questions": [
+    {
+     "id": "tai2025X-P1",
+     "key": "P1",
+     "n": 1,
+     "reserve": false,
+     "text": "¿Cuántas veces se ha reformado la Constitución Española de 1978 desde su aprobación?",
+     "options": [
+      "Una vez.",
+      "Dos veces.",
+      "Tres veces.",
+      "Cuatro veces."
+     ],
+     "answer": "d",
+     "topic": "constitucion",
+     "tema": "B1T01",
+     "explanation": "La Constitución se ha reformado **cuatro** veces, todas por el procedimiento ordinario del art. 167: art. 13.2 (1992, sufragio pasivo de los ciudadanos de la UE en las municipales), art. 135 (2011, estabilidad presupuestaria), art. 49 (2024, personas con discapacidad) y art. 69.3 (2026, Formentera elige su propio senador). Antes de mayo de 2026 la respuesta habría sido «tres»."
+    },
+    {
+     "id": "tai2025X-P2",
+     "key": "P2",
+     "n": 2,
+     "reserve": false,
+     "text": "Según el artículo 55 de la Constitución Española de 1978, cuando se acuerde declarado el estado de excepción, ¿qué derecho reconocido podrá ser suspendido?",
+     "options": [
+      "A comunicar o recibir libremente información veraz por cualquier medio de difusión.",
+      "A la libertad de cátedra.",
+      "A sindicarse libremente.",
+      "A participar en los asuntos públicos."
+     ],
+     "answer": "a",
+     "topic": "constitucion",
+     "tema": "B1T01",
+     "explanation": "Art. 55.1 CE: en el estado de excepción o de sitio pueden suspenderse los arts. 17, 18.2 y 18.3, 19, 20.1 a) y d) y 20.5, 21, 28.2 y 37.2. El 20.1 d) es el derecho a comunicar o recibir libremente información veraz. La libertad de cátedra (20.1 c), la libertad sindical (28.1) y la participación en asuntos públicos (23) no se suspenden."
+    },
+    {
+     "id": "tai2025X-P3",
+     "key": "P3",
+     "n": 3,
+     "reserve": false,
+     "text": "Según establece el artículo 66 de la Constitución Española de 1978, las Cortes Generales están formadas por:",
+     "options": [
+      "El Congreso de los Diputados y el Senado.",
+      "El Congreso de los Diputados, el Senado y el Gobierno.",
+      "El Congreso de los Senadores y Diputados.",
+      "El Congreso de los Diputados, el Senado y el Consejo de Estado."
+     ],
+     "answer": "a",
+     "topic": "constitucion",
+     "tema": "B1T02",
+     "explanation": "Art. 66.1 CE: las Cortes Generales representan al pueblo español y están formadas por el **Congreso de los Diputados y el Senado**. El Gobierno y el Consejo de Estado no forman parte de ellas."
+    },
+    {
+     "id": "tai2025X-P4",
+     "key": "P4",
+     "n": 4,
+     "reserve": false,
+     "text": "¿Qué establece la Constitución Española de 1978 sobre el mandato imperativo de los miembros de las Cortes Generales?",
+     "options": [
+      "Los miembros de las Cortes Generales están ligados por el mandato imperativo de sus grupos parlamentarios.",
+      "El mandato imperativo es obligatorio en las votaciones sobre reformas constitucionales.",
+      "El mandato imperativo solo se prohíbe para los Senadores, no para los Diputados.",
+      "Los miembros de las Cortes Generales no estarán ligados por mandato imperativo."
+     ],
+     "answer": "d",
+     "topic": "constitucion",
+     "tema": "B1T02",
+     "explanation": "Art. 67.2 CE: los miembros de las Cortes Generales **no estarán ligados por mandato imperativo**. La prohibición vale para diputados y senadores y en todas las votaciones."
+    },
+    {
+     "id": "tai2025X-P5",
+     "key": "P5",
+     "n": 5,
+     "reserve": false,
+     "text": "Según el artículo 161 de la Constitución Española de 1978, cuando el Gobierno impugna ante el Tribunal Constitucional una disposición adoptada por los órganos de una Comunidad Autónoma, ¿qué efecto produce dicha impugnación y en qué plazo debe resolverla el Tribunal?",
+     "options": [
+      "Produce la suspensión automática de la disposición impugnada; el Tribunal Constitucional deberá ratificarla o levantarla en un plazo no superior a seis meses.",
+      "No produce suspensión automática; el Tribunal Constitucional puede acordarla cautelarmente a petición fundada del Gobierno.",
+      "Produce la suspensión de la disposición o resolución recurrida; el Tribunal Constitucional deberá ratificarla o levantarla en un plazo no superior a cinco meses.",
+      "Produce la suspensión cautelar solo si el Tribunal Constitucional la ratifica expresamente en el plazo de tres meses."
+     ],
+     "answer": "c",
+     "topic": "constitucion",
+     "tema": "B1T02",
+     "explanation": "Art. 161.2 CE: la impugnación por el Gobierno de disposiciones y resoluciones de las CCAA **produce la suspensión** de lo recurrido, pero el Tribunal Constitucional debe ratificarla o levantarla en un plazo **no superior a cinco meses**."
+    },
+    {
+     "id": "tai2025X-P6",
+     "key": "P6",
+     "n": 6,
+     "reserve": false,
+     "text": "Según el artículo 101 de la Constitución Española de 1978, ¿cuál es causa de cese del Gobierno?",
+     "options": [
+      "Por dimisión de cualquier Ministro.",
+      "Por dimisión de su Presidente.",
+      "Por dimisión de un Vicepresidente.",
+      "Por dimisión de un tercio de sus miembros."
+     ],
+     "answer": "b",
+     "topic": "constitucion",
+     "tema": "B1T03",
+     "explanation": "Art. 101.1 CE: el Gobierno cesa tras la celebración de elecciones generales, por pérdida de la confianza parlamentaria y por **dimisión o fallecimiento de su Presidente**. La dimisión de un ministro o de un vicepresidente no hace cesar al Gobierno."
+    },
+    {
+     "id": "tai2025X-P7",
+     "key": "P7",
+     "n": 7,
+     "reserve": false,
+     "text": "Según establece el artículo 18 de la ley 50/1997, de 27 de noviembre, del Gobierno, que regula el funcionamiento del Consejo de Ministros, ¿quién actúa como Secretario de este órgano colegiado?",
+     "options": [
+      "El Vicepresidente Primero.",
+      "El Ministro portavoz del Gobierno.",
+      "El Ministro de la Presidencia.",
+      "El Ministro de Justicia."
+     ],
+     "answer": "c",
+     "topic": "constitucion",
+     "tema": "B1T03",
+     "explanation": "Art. 18 de la Ley 50/1997, del Gobierno: el **Ministro de la Presidencia** actúa como Secretario del Consejo de Ministros."
+    },
+    {
+     "id": "tai2025X-P8",
+     "key": "P8",
+     "n": 8,
+     "reserve": false,
+     "text": "De acuerdo con el artículo 17.2 de la Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno, la solicitud de acceso a la información podrá presentarse por cualquier medio que permita tener constancia de:",
+     "options": [
+      "Una dirección de contacto, preferentemente electrónica, a efectos de comunicaciones.",
+      "La identidad del requerido.",
+      "La huella normativa.",
+      "La motivación de la solicitud."
+     ],
+     "answer": "a",
+     "topic": "legislacion",
+     "tema": "B1T04",
+     "explanation": "Art. 17.2 de la Ley 19/2013: la solicitud puede presentarse por cualquier medio que deje constancia de la identidad del **solicitante**, la información pedida, una **dirección de contacto, preferentemente electrónica**, y la modalidad de acceso preferida. La motivación no es obligatoria (art. 17.3)."
+    },
+    {
+     "id": "tai2025X-P9",
+     "key": "P9",
+     "n": 9,
+     "reserve": false,
+     "text": "Conforme establece el artículo 18 de la Ley 53/1984, de 26 de diciembre, de Incompatibilidades del personal al servicio de las Administraciones Públicas, todas las resoluciones de compatibilidad para desempeñar un segundo puesto o actividad en el sector público o el ejercicio de actividades privadas se inscribirán:",
+     "options": [
+      "En el Registro Administrativo de Compatibilidades del organismo (RAC).",
+      "En la Oficina de Conflicto de Intereses.",
+      "En el Registro Común de Actividades del Personal de las Administraciones Públicas (RCAP).",
+      "En los Registros de Personal correspondientes."
+     ],
+     "answer": "d",
+     "topic": "legislacion",
+     "tema": "B1T04",
+     "explanation": "Art. 18 de la Ley 53/1984: todas las resoluciones de compatibilidad se inscriben en los **Registros de Personal** correspondientes."
+    },
+    {
+     "id": "tai2025X-P10",
+     "key": "P10",
+     "n": 10,
+     "reserve": false,
+     "text": "Según establece el artículo 9 de la Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres, cualquier trato adverso o efecto negativo que se produzca en una persona como consecuencia de la presentación por su parte de queja, reclamación, denuncia, demanda o recurso, de cualquier tipo, destinados a impedir su discriminación y a exigir el cumplimiento efectivo del principio de igualdad de trato entre mujeres y hombres, se considerará:",
+     "options": [
+      "Discriminación directa.",
+      "Discriminación indirecta.",
+      "Discriminación por razón de sexo.",
+      "Discriminación por actuación administrativa."
+     ],
+     "answer": "c",
+     "topic": "legislacion",
+     "tema": "B1T05",
+     "explanation": "Art. 9 de la LO 3/2007 (indemnidad frente a represalias): el trato adverso por presentar una queja, denuncia o recurso contra la discriminación se considera también **discriminación por razón de sexo**."
+    },
+    {
+     "id": "tai2025X-P11",
+     "key": "P11",
+     "n": 11,
+     "reserve": false,
+     "text": "Según establece el artículo 49 de la Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres, para impulsar la adopción voluntaria de planes de igualdad el Gobierno establecerá:",
+     "options": [
+      "Medidas de fomento, especialmente dirigidas a las medianas y las grandes empresas, que incluirán el apoyo técnico necesario.",
+      "Medidas de fomento, especialmente dirigidas a las empresas de 50 o más trabajadores, que incluirán el apoyo técnico necesario.",
+      "Medidas de fomento, especialmente dirigidas a las pequeñas y las medianas empresas, que incluirán el apoyo técnico necesario.",
+      "Medidas de acción positiva, dirigidas a cualquier empresa, sea de capital público o privado, que incluirán el apoyo técnico necesario."
+     ],
+     "answer": "c",
+     "topic": "legislacion",
+     "tema": "B1T05",
+     "explanation": "Art. 49 de la LO 3/2007: para impulsar los planes de igualdad **voluntarios**, el Gobierno establece medidas de fomento dirigidas especialmente a las **pequeñas y medianas empresas**, con el apoyo técnico necesario. Desde 50 trabajadores el plan ya es obligatorio (art. 45)."
+    },
+    {
+     "id": "tai2025X-P12",
+     "key": "P12",
+     "n": 12,
+     "reserve": false,
+     "text": "De acuerdo con el artículo 8 del Reglamento (UE) 910/2014 (eIDAS), un sistema de identificación electrónica notificado, para los medios de identificación electrónica expedidos en virtud del mismo, deberá especificar los niveles de seguridad:",
+     "options": [
+      "Inseguro, seguro y muy seguro.",
+      "Básico, medio y avanzado.",
+      "Bajo, sustancial y alto.",
+      "Nivel 1, nivel 2 y nivel 3."
+     ],
+     "answer": "c",
+     "topic": "admin-electronica",
+     "tema": "B1T06",
+     "explanation": "Art. 8 del Reglamento eIDAS: los sistemas de identificación electrónica notificados especifican los niveles de seguridad **bajo, sustancial y alto**."
+    },
+    {
+     "id": "tai2025X-P13",
+     "key": "P13",
+     "n": 13,
+     "reserve": false,
+     "text": "¿Cuál de las siguientes opciones NO se incluye entre los ejes estratégicos de la Agenda Digital \"España Digital 2026\"?",
+     "options": [
+      "Las competencias digitales.",
+      "El eLearning y la Universidad Digital.",
+      "Los derechos digitales.",
+      "La ciberseguridad."
+     ],
+     "answer": "b",
+     "topic": "admin-electronica",
+     "tema": "B1T06",
+     "explanation": "Entre los ejes de España Digital 2026 están la conectividad, el 5G, las competencias digitales, la ciberseguridad, la digitalización de las AAPP y de las empresas, la economía del dato y la IA y los **derechos digitales**. El eLearning y la Universidad Digital no es uno de sus ejes."
+    },
+    {
+     "id": "tai2025X-P14",
+     "key": "P14",
+     "n": 14,
+     "reserve": false,
+     "text": "Señale la respuesta correcta respecto a la garantía de los derechos digitales reflejada en la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales:",
+     "options": [
+      "La garantía efectiva del derecho de acceso a Internet atenderá la realidad específica de los entornos digitales.",
+      "El empleador podrá acceder a los contenidos derivados del uso de medios digitales, tanto personales como facilitados a los trabajadores, a los solos efectos de controlar el cumplimiento de las obligaciones laborales o estatutarias y de garantizar la integridad de dichos dispositivos.",
+      "Los trabajadores y los empleados públicos tendrán derecho a la desconexión digital a fin de garantizar, fuera del tiempo de trabajo legal o convencionalmente establecido, el respeto de su tiempo de descanso, permisos y vacaciones, así como de su intimidad personal y familiar.",
+      "El ejercicio del derecho al olvido en las búsquedas de internet impedirá el acceso a la información publicada en el sitio web a través de la utilización de búsqueda del nombre de quien ejerciera el derecho, así como de cualquier otro criterio de búsqueda."
+     ],
+     "answer": "c",
+     "topic": "proteccion-datos",
+     "tema": "B1T07",
+     "explanation": "Art. 88 LOPDGDD: trabajadores y empleados públicos tienen derecho a la **desconexión digital** fuera de su tiempo de trabajo. Las demás fallan: el acceso a Internet atenderá la realidad de los entornos **rurales** (art. 81); el empleador solo accede a los dispositivos **que él facilita** (art. 87); y el derecho al olvido en buscadores no impide llegar a la información por criterios distintos del nombre (art. 93)."
+    },
+    {
+     "id": "tai2025X-P15",
+     "key": "P15",
+     "n": 15,
+     "reserve": false,
+     "text": "De acuerdo con lo que establece el artículo 4 del Real Decreto 203/2021, de 30 de marzo, por el que se aprueba el Reglamento de actuación y funcionamiento del sector público por medios electrónicos, entre los canales de asistencia para el acceso a los servicios electrónicos NO se encuentra:",
+     "options": [
+      "Portales de internet y sedes electrónicas.",
+      "Redes sociales.",
+      "Cita previa.",
+      "Correo electrónico."
+     ],
+     "answer": "c",
+     "topic": "admin-electronica",
+     "tema": "B1T09",
+     "explanation": "Art. 4 del RD 203/2021: los canales de asistencia son el presencial, los portales de internet y sedes electrónicas, las **redes sociales**, el telefónico, el **correo electrónico** y cualquier otro que se establezca. La **cita previa** no es un canal."
+    },
+    {
+     "id": "tai2025X-P16",
+     "key": "P16",
+     "n": 16,
+     "reserve": false,
+     "text": "Con base en el Real Decreto 311/2022, de 3 de mayo, por el que se regula el Esquema Nacional de Seguridad, indique cuál de las siguientes medidas de seguridad pertenece al marco operacional:",
+     "options": [
+      "Protección del correo electrónico.",
+      "Protección de la integridad y de la autenticidad.",
+      "Protección frente a código dañino.",
+      "Protección de dispositivos portátiles."
+     ],
+     "answer": "c",
+     "topic": "seguridad",
+     "tema": "B1T08",
+     "explanation": "En el ENS (anexo II), la **protección frente a código dañino** es una medida del marco operacional (op.exp.6). La protección del correo, de la integridad y autenticidad y de los dispositivos portátiles son medidas de protección (mp)."
+    },
+    {
+     "id": "tai2025X-P17",
+     "key": "P17",
+     "n": 17,
+     "reserve": false,
+     "text": "Señale la respuesta correcta sobre la Carpeta Ciudadana del sector público estatal:",
+     "options": [
+      "Permite el seguimiento de la solicitud de cualquier procedimiento de los familiares del interesado.",
+      "Es accesible a través de la sede electrónica del PAGe de la Administración General del Estado.",
+      "Da a conocer los datos del interesado que obran en poder del sector público estatal, sin ninguna limitación.",
+      "Únicamente permite el acceso a las comunicaciones con el interesado."
+     ],
+     "answer": "b",
+     "topic": "admin-electronica",
+     "tema": "B1T09",
+     "explanation": "La Carpeta Ciudadana del sector público estatal es accesible desde la sede del **Punto de Acceso General electrónico (PAGe)** de la AGE. Permite consultar el estado de los propios expedientes, las comunicaciones y los datos que tiene la Administración, con los límites que marca la ley; no los de familiares."
+    },
+    {
+     "id": "tai2025X-P18",
+     "key": "P18",
+     "n": 18,
+     "reserve": false,
+     "text": "Según establece el Real Decreto 203/2021, de 30 de marzo, por el que se aprueba el Reglamento de actuación y funcionamiento del sector público por medios electrónicos, indique qué afirmación es correcta sobre el funcionamiento del Registro de Funcionarios Habilitados:",
+     "options": [
+      "Deberá ser plenamente interoperable con los registros u otros sistemas equivalentes que se creen por las comunidades autónomas y las entidades locales a los efectos de comprobar la validez de las habilitaciones de los funcionarios habilitados.",
+      "Deberá ser plenamente interoperable con los registros u otros sistemas equivalentes de las Administraciones Públicas de los países que integran la Unión Europea a los efectos de comprobar la validez de las habilitaciones de los funcionarios habilitados.",
+      "Deberá ser plenamente interoperable con el Sistema de Interconexión de Registros (SIR) a los efectos de comprobar la validez de las habilitaciones de los funcionarios habilitados.",
+      "Deberá ser plenamente interoperable con la Plataforma de Intermediación de Datos (PID) a los efectos de comprobar la validez de las habilitaciones de los funcionarios habilitados."
+     ],
+     "answer": "a",
+     "topic": "admin-electronica",
+     "tema": "B1T09",
+     "explanation": "RD 203/2021: el Registro de Funcionarios Habilitados de la AGE debe ser plenamente **interoperable con los registros equivalentes de las comunidades autónomas y las entidades locales**, para comprobar la validez de las habilitaciones."
+    },
+    {
+     "id": "tai2025X-P19",
+     "key": "P19",
+     "n": 19,
+     "reserve": false,
+     "text": "Señale cuál de los siguientes NO es un producto incluido dentro del Portfolio SCSPv3 (Sustitución de Certificados en Soporte Papel):",
+     "options": [
+      "Librerías SCSPv3.",
+      "Cliente Ligero SCSPv3.",
+      "SCSP – SOAP.",
+      "SCSP – WS."
+     ],
+     "answer": "c",
+     "topic": "admin-electronica",
+     "tema": "B1T09",
+     "explanation": "El portfolio SCSPv3 (Sustitución de Certificados en Soporte Papel) incluye las librerías SCSPv3, el cliente ligero SCSPv3 y el recubrimiento de servicios web (SCSP-WS), entre otros. «SCSP-SOAP» no es uno de sus productos."
+    },
+    {
+     "id": "tai2025X-P20",
+     "key": "P20",
+     "n": 20,
+     "reserve": false,
+     "text": "Según la Norma Técnica de Interoperabilidad de Digitalización de Documentos, el nivel de resolución mínimo en píxeles por pulgada (ppp) para imágenes electrónicas será de:",
+     "options": [
+      "200 ppp para imágenes en blanco y negro, y 200 ppp para imágenes en color o escala de grises.",
+      "200 ppp para imágenes en blanco y negro, y 150 ppp para imágenes en color o escala de grises.",
+      "150 ppp para imágenes en blanco y negro, y 200 ppp para imágenes en color o escala de grises.",
+      "150 ppp para imágenes en color, y 200 ppp para imágenes en blanco y negro o escala de grises."
+     ],
+     "answer": "a",
+     "topic": "admin-electronica",
+     "tema": "B1T08",
+     "explanation": "NTI de Digitalización de Documentos: resolución mínima de **200 ppp** tanto para imágenes en blanco y negro como en color o escala de grises."
+    },
+    {
+     "id": "tai2025X-P21",
+     "key": "P21",
+     "n": 21,
+     "reserve": false,
+     "text": "¿Cuál es la función del registro de instrucción dentro de la unidad de control?",
+     "options": [
+      "Almacenar la dirección de memoria de la siguiente instrucción a ejecutar.",
+      "Obtener la dirección de memoria de la instrucción actual.",
+      "Almacenar la instrucción que está siendo ejecutada.",
+      "Obtener la dirección de memoria de la instrucción previamente leída."
+     ],
+     "answer": "c",
+     "topic": "hardware",
+     "tema": "B2T01",
+     "explanation": "El **registro de instrucción (IR)** guarda la instrucción que se está ejecutando. La dirección de la siguiente instrucción la guarda el **contador de programa (PC)**.",
+     "learn": "f-ordenador"
+    },
+    {
+     "id": "tai2025X-P22",
+     "key": "P22",
+     "n": 22,
+     "reserve": false,
+     "text": "Para recorrer un árbol binario no vacío en preorden se deben realizar las siguientes operaciones recursivamente en cada nodo:",
+     "options": [
+      "Visitar el nodo raíz, recorrer el subárbol derecho y recorrer el subárbol izquierdo.",
+      "Recorrer el subárbol izquierdo, visitar el nodo raíz y recorrer el subárbol derecho.",
+      "Recorrer el subárbol izquierdo, recorrer el subárbol derecho y visitar el nodo raíz.",
+      "Visitar el nodo raíz, recorrer el subárbol izquierdo y recorrer el subárbol derecho."
+     ],
+     "answer": "d",
+     "topic": "datos",
+     "tema": "B2T03",
+     "explanation": "Recorridos de un árbol binario: **preorden** = raíz, izquierdo, derecho; inorden = izquierdo, raíz, derecho; postorden = izquierdo, derecho, raíz."
+    },
+    {
+     "id": "tai2025X-P23",
+     "key": "P23",
+     "n": 23,
+     "reserve": false,
+     "text": "¿Qué es la latencia rotacional en los discos duros HDD?",
+     "options": [
+      "El tiempo medio que tarda el disco en leer o escribir nueva información.",
+      "El tiempo medio que tarda la aguja en situarse en el sector físico deseado.",
+      "El tiempo medio necesario para mover la cabeza desde el cilindro actual al cilindro sobre el que se quiere operar.",
+      "El tiempo medio que tarda la aguja en situarse en la pista deseada."
+     ],
+     "answer": "b",
+     "topic": "hardware",
+     "tema": "B2T02",
+     "explanation": "La **latencia rotacional** es el tiempo medio que tarda el sector buscado en pasar bajo la cabeza (media vuelta del disco). Llevar la cabeza al cilindro correcto es el **tiempo de búsqueda** (seek).",
+     "learn": "f-ordenador"
+    },
+    {
+     "id": "tai2025X-P24",
+     "key": "P24",
+     "n": 24,
+     "reserve": false,
+     "text": "Respecto a los sistemas RAID, señale la respuesta INCORRECTA:",
+     "options": [
+      "RAID 1 está configurado como espejo, los datos son duplicados en otra unidad (mínimo dos) de forma sincronizada.",
+      "RAID 5 es una implementación del striping de discos en la que se incluye información de paridad con cada escritura en disco.",
+      "RAID 10 conocido como RAID 1+0, mantiene configuración de espejo con striping.",
+      "RAID 6 es una variante de RAID 5 que implementa un doble sistema de paridad distribuida, lo que le permite funcionar con un mínimo de tres discos y tolerar el fallo simultáneo de hasta un solo disco."
+     ],
+     "answer": "d",
+     "topic": "hardware",
+     "tema": "B2T02",
+     "explanation": "La d) es la incorrecta: RAID 6 usa doble paridad distribuida, necesita como mínimo **cuatro** discos y tolera el fallo simultáneo de **dos**."
+    },
+    {
+     "id": "tai2025X-P25",
+     "key": "P25",
+     "n": 25,
+     "reserve": false,
+     "text": "¿Cuál de los siguientes algoritmos de planificación de CPU asigna un quantum de tiempo de CPU a cada proceso?",
+     "options": [
+      "FCFS.",
+      "SJF.",
+      "Por prioridades.",
+      "Round Robin."
+     ],
+     "answer": "d",
+     "topic": "so",
+     "tema": "B2T04",
+     "explanation": "**Round Robin** reparte la CPU por turnos de un *quantum* de tiempo. FCFS atiende por orden de llegada, SJF elige el trabajo más corto y por prioridades elige el de mayor prioridad.",
+     "learn": "f-so"
+    },
+    {
+     "id": "tai2025X-P26",
+     "key": "P26",
+     "n": 26,
+     "reserve": false,
+     "text": "Considerando el nodo raíz como nivel 1, ¿cuál es el número máximo de nodos en un árbol binario que tiene 4 niveles?",
+     "options": [
+      "15",
+      "9",
+      "16",
+      "10"
+     ],
+     "answer": "a",
+     "topic": "datos",
+     "tema": "B2T03",
+     "explanation": "Un árbol binario lleno con h niveles tiene 2^h − 1 nodos: 2⁴ − 1 = **15** (1 + 2 + 4 + 8)."
+    },
+    {
+     "id": "tai2025X-P27",
+     "key": "P27",
+     "n": 27,
+     "reserve": false,
+     "text": "¿Qué es Active Directory Domain Services (AD DS) en el ecosistema Windows Server?",
+     "options": [
+      "Un mecanismo para implementar la protección y verificación de integridad del sistema de archivos.",
+      "Un servicio que almacena información sobre los objetos de la red y facilita a los administradores y usuarios la búsqueda y uso.",
+      "Un dispositivo físico de seguridad diseñado para el control de acceso de los usuarios a las distintas aplicaciones, sistemas, recursos y dispositivos.",
+      "Una herramienta integrada en el sistema operativo para la monitorización de las acciones del usuario y administradores."
+     ],
+     "answer": "b",
+     "topic": "so",
+     "tema": "B2T04",
+     "explanation": "**AD DS** es el servicio de directorio de Windows Server: almacena información sobre los objetos de la red (usuarios, equipos, grupos…) y facilita su búsqueda y uso a administradores y usuarios.",
+     "learn": "win-ad"
+    },
+    {
+     "id": "tai2025X-P28",
+     "key": "P28",
+     "n": 28,
+     "reserve": false,
+     "text": "Según el estándar JSON (RFC 8259), ¿cuál de las siguientes afirmaciones es correcta?",
+     "options": [
+      "Un objeto JSON mantiene el orden de inserción de sus elementos por definición.",
+      "JSON permite definir tipos de datos personalizados.",
+      "Un objeto JSON es una colección no ordenada de pares nombre/valor.",
+      "JSON admite comentarios dentro de su sintaxis estándar."
+     ],
+     "answer": "c",
+     "topic": "datos",
+     "tema": "B2T03",
+     "explanation": "RFC 8259: un objeto JSON es una **colección no ordenada** de pares nombre/valor. JSON no admite comentarios ni tipos propios: solo string, number, boolean, null, object y array."
+    },
+    {
+     "id": "tai2025X-P29",
+     "key": "P29",
+     "n": 29,
+     "reserve": false,
+     "text": "En un sistema Linux, el directorio /etc contiene:",
+     "options": [
+      "Los ficheros y directorios del usuario.",
+      "Los ficheros de configuración del sistema.",
+      "Los directorios de los usuarios.",
+      "Los ficheros binarios ejecutables esenciales del sistema."
+     ],
+     "answer": "b",
+     "topic": "so",
+     "tema": "B2T04",
+     "explanation": "`/etc` contiene los **ficheros de configuración** del sistema. Los directorios de usuario están en `/home` y los binarios esenciales en `/bin`.",
+     "learn": "lx-navegar"
+    },
+    {
+     "id": "tai2025X-P30",
+     "key": "P30",
+     "n": 30,
+     "reserve": false,
+     "text": "En Linux si queremos renombrar el archivo denominado «PAGOS» con el nuevo nombre «RECIBOS», ejecutaremos el comando:",
+     "options": [
+      "rm PAGOS RECIBOS",
+      "mv PAGOS RECIBOS",
+      "mv RECIBOS PAGOS",
+      "rm RECIBOS PAGOS"
+     ],
+     "answer": "b",
+     "topic": "so",
+     "tema": "B2T04",
+     "explanation": "`mv origen destino` mueve o **renombra**: `mv PAGOS RECIBOS`. `rm` borra ficheros.",
+     "codeOptions": true,
+     "learn": "lx-copiar"
+    },
+    {
+     "id": "tai2025X-P31",
+     "key": "P31",
+     "n": 31,
+     "reserve": false,
+     "text": "El framework de Wi-Fi en Android 14 y superior tiene tres HAL de Wi-Fi. Señale cuál es uno de ellos:",
+     "options": [
+      "HAL de Supervisor.",
+      "HAL de Comunicación.",
+      "HAL de Hostapd.",
+      "HAL de Wi-Fi."
+     ],
+     "answer": "c",
+     "topic": "so",
+     "tema": "B2T04",
+     "explanation": "Desde Android 14, el framework de Wi-Fi usa tres HAL: la del proveedor (Vendor HAL), la de **Supplicant** y la de **Hostapd** (punto de acceso)."
+    },
+    {
+     "id": "tai2025X-P32",
+     "key": "P32",
+     "n": 32,
+     "reserve": false,
+     "text": "Dentro de los elementos constitutivos de un sistema operativo, ¿cómo se denomina a la estructura de datos que contiene información sobre un proceso?",
+     "options": [
+      "Tabla de páginas.",
+      "Vector de interrupciones.",
+      "Descriptor de segmento.",
+      "Bloque de control de proceso."
+     ],
+     "answer": "d",
+     "topic": "so",
+     "tema": "B2T04",
+     "explanation": "El **bloque de control de proceso (PCB)** guarda el estado de cada proceso: identificador, registros, contador de programa, memoria asignada, ficheros abiertos…",
+     "learn": "f-so"
+    },
+    {
+     "id": "tai2025X-P33",
+     "key": "P33",
+     "n": 33,
+     "reserve": false,
+     "text": "De las siguientes afirmaciones sobre bases de datos relacionales, indique cuál de ellas es INCORRECTA:",
+     "options": [
+      "Se llama clave primaria o clave principal a un campo o a una combinación de campos que identifica de forma única a cada fila de una tabla.",
+      "Un dominio es el conjunto válido de valores que puede tomar un atributo.",
+      "Una superclave es cualquier conjunto de atributos que identifica unívocamente a cada tupla de una relación.",
+      "Las bases de datos relacionales utilizan un método simple de clave-valor para almacenar datos."
+     ],
+     "answer": "d",
+     "topic": "bbdd",
+     "tema": "B2T05",
+     "explanation": "La d) es la incorrecta: el almacenamiento **clave-valor** es propio de NoSQL (Redis, DynamoDB). Las bases de datos relacionales guardan los datos en tablas de filas y columnas.",
+     "learn": "bd-modelo"
+    },
+    {
+     "id": "tai2025X-P34",
+     "key": "P34",
+     "n": 34,
+     "reserve": false,
+     "text": "Señale cuál de las siguientes es una base datos orientada a grafos:",
+     "options": [
+      "DynamoDB.",
+      "CouchDB.",
+      "JanusGraph.",
+      "HBase."
+     ],
+     "answer": "c",
+     "topic": "bbdd",
+     "tema": "B2T05",
+     "explanation": "**JanusGraph** es una base de datos orientada a grafos. DynamoDB es clave-valor y documental, CouchDB es documental y HBase es de columnas."
+    },
+    {
+     "id": "tai2025X-P35",
+     "key": "P35",
+     "n": 35,
+     "reserve": false,
+     "text": "En el diseño conceptual de bases de datos, un atributo es:",
+     "options": [
+      "Un objeto, real o abstracto, distinguible de otros objetos.",
+      "Una conexión semántica entre dos, o más, conjuntos de entidades.",
+      "Una propiedad asociada a un conjunto de entidades.",
+      "Una asociación que se establece entre tipos de entidad."
+     ],
+     "answer": "c",
+     "topic": "bbdd",
+     "tema": "B3T01",
+     "explanation": "En el modelo E/R, un **atributo** es una propiedad de un conjunto de entidades. La a) define una entidad y la b) y la d), una relación."
+    },
+    {
+     "id": "tai2025X-P36",
+     "key": "P36",
+     "n": 36,
+     "reserve": false,
+     "text": "Indique cuál de las siguientes definiciones es correcta respecto al modelo Entidad/Relación extendido.",
+     "options": [
+      "La generalización permite abstraer un tipo de entidad de nivel inferior (subtipo) a partir de varios tipos de entidad (supertipos).",
+      "En la especialización, un subtipo se descompone en uno o varios supertipos, los cuales heredan todos los atributos y relaciones del subtipo, además de tener los suyos propios.",
+      "La agregación consiste en construir un nuevo tipo de entidad como composición de otros y su tipo de relación y así poder manejarlo en un nivel de abstracción mayor.",
+      "En una asociación se relacionan dos tipos de entidades independientes que pertenecen al mismo dominio y que coyunturalmente no se asocian."
+     ],
+     "answer": "c",
+     "topic": "bbdd",
+     "tema": "B3T01",
+     "explanation": "La **agregación** trata una relación con sus entidades como un nuevo tipo de entidad de nivel superior. La a) y la b) invierten supertipos y subtipos: la generalización obtiene el supertipo a partir de los subtipos, y en la especialización son los subtipos los que heredan del supertipo."
+    },
+    {
+     "id": "tai2025X-P37",
+     "key": "P37",
+     "n": 37,
+     "reserve": false,
+     "text": "En el contexto de las bases de datos relacionales, ¿cómo se denomina a una columna o grupo de columnas de una tabla que contiene valores que coinciden con la clave primaria de otra tabla?",
+     "options": [
+      "Clave primaria externa.",
+      "Clave referencia.",
+      "Clave foránea.",
+      "Clave compuesta."
+     ],
+     "answer": "c",
+     "topic": "bbdd",
+     "tema": "B3T01",
+     "explanation": "Una **clave foránea** (o ajena) es una columna o grupo de columnas cuyos valores deben coincidir con la clave primaria de otra tabla.",
+     "learn": "bd-modelo"
+    },
+    {
+     "id": "tai2025X-P38",
+     "key": "P38",
+     "n": 38,
+     "reserve": false,
+     "text": "¿Qué tipos de disparadores o triggers contempla SQL Server?",
+     "options": [
+      "DML, DMC y AFTER.",
+      "DML, DDL y LOGON.",
+      "DML, DDL y EXTENDS.",
+      "DML, DMZ y FTL."
+     ],
+     "answer": "b",
+     "topic": "bbdd",
+     "tema": "B3T03",
+     "explanation": "SQL Server tiene desencadenadores **DML** (INSERT, UPDATE, DELETE), **DDL** (CREATE, ALTER, DROP…) y de **LOGON** (al iniciar sesión).",
+     "learn": "sql-transacciones"
+    },
+    {
+     "id": "tai2025X-P39",
+     "key": "P39",
+     "n": 39,
+     "reserve": false,
+     "text": "En relación a los niveles de aislamiento de transacción que se definen mediante ANSI SQL, indique cuál de las siguientes sentencias es correcta:",
+     "options": [
+      "La lectura repetible protege contra la lectura sucia y la lectura no repetible, pero no contra la lectura fantasma.",
+      "La lectura no confirmada protege contra la lectura sucia, pero no contra la lectura no repetible, ni contra la lectura fantasma.",
+      "La lectura confirmada no protege contra la lectura sucia, ni contra la lectura no repetible, ni contra la lectura fantasma.",
+      "Serializable protege contra la lectura sucia y la lectura fantasma, pero no contra la lectura no repetible."
+     ],
+     "answer": "a",
+     "topic": "bbdd",
+     "tema": "B3T03",
+     "explanation": "Niveles ANSI: READ UNCOMMITTED no evita nada; READ COMMITTED evita la lectura sucia; **REPEATABLE READ** evita la sucia y la no repetible, pero no la fantasma; SERIALIZABLE evita las tres.",
+     "learn": "sql-transacciones"
+    },
+    {
+     "id": "tai2025X-P40",
+     "key": "P40",
+     "n": 40,
+     "reserve": false,
+     "text": "En el sistema gestor de base de datos Oracle, indique qué valor numérico devolverá la ejecución de la siguiente sentencia:\n```\nSELECT INSTR('Corporate Floor','or', 3, 2) \"Prueba\" FROM DUAL;\n```",
+     "options": [
+      "2",
+      "5",
+      "13",
+      "14"
+     ],
+     "answer": "d",
+     "topic": "bbdd",
+     "tema": "B3T03",
+     "explanation": "`INSTR(cadena, subcadena, inicio, aparición)`: busca «or» desde la posición 3 y devuelve su **2.ª** aparición. En «Corporate Floor», «or» aparece en las posiciones 2, 5 y 14; empezando en la 3, la primera es la 5 y la segunda la **14**."
+    },
+    {
+     "id": "tai2025X-P41",
+     "key": "P41",
+     "n": 41,
+     "reserve": false,
+     "text": "En diseño modular de software, ¿qué tipo de acoplamiento se produce cuando varios módulos comparten una estructura global de datos?",
+     "options": [
+      "Acoplamiento de datos.",
+      "Acoplamiento de control.",
+      "Acoplamiento común.",
+      "Acoplamiento de contenido."
+     ],
+     "answer": "c",
+     "topic": "ing-software",
+     "tema": "B3T04",
+     "explanation": "El **acoplamiento común** se da cuando varios módulos comparten datos globales. En el de datos se pasan parámetros simples, en el de control se pasa un indicador que decide qué hace el otro módulo y en el de contenido un módulo accede al interior de otro."
+    },
+    {
+     "id": "tai2025X-P42",
+     "key": "P42",
+     "n": 42,
+     "reserve": false,
+     "text": "En un diagrama de clases UML, ¿qué significado tiene el símbolo de resta ( - ) colocado antes del nombre de un atributo o método?",
+     "options": [
+      "Indica que el elemento tiene una visibilidad de tipo private.",
+      "Indica que el elemento tiene una visibilidad de tipo public.",
+      "Indica que el elemento tiene que ser revisado.",
+      "Indica que el elemento almacena únicamente valores numéricos negativos."
+     ],
+     "answer": "a",
+     "topic": "ing-software",
+     "tema": "B3T04",
+     "explanation": "Visibilidad en UML: `+` public, `-` **private**, `#` protected y `~` package."
+    },
+    {
+     "id": "tai2025X-P43",
+     "key": "P43",
+     "n": 43,
+     "reserve": false,
+     "text": "¿Qué principio de diseño establece que las clases de alto nivel no deben depender de las de bajo nivel, sino que ambas deben depender de abstracciones?",
+     "options": [
+      "Dependency Inversion Principle (DIP).",
+      "Single Responsibility Principle (SRP).",
+      "Liskov Substitution Principle (LSP).",
+      "Interface Segregation Principle (ISP)."
+     ],
+     "answer": "a",
+     "topic": "ing-software",
+     "tema": "B3T04",
+     "explanation": "Es el principio de **inversión de dependencias (DIP)**, la D de SOLID: los módulos de alto y de bajo nivel dependen de abstracciones, no unos de otros."
+    },
+    {
+     "id": "tai2025X-P44",
+     "key": "P44",
+     "n": 44,
+     "reserve": false,
+     "text": "Dentro de los patrones de diseño del \"Gang of Four\" (GoF), ¿cuál es la diferencia fundamental entre el patrón Factory Method y el patrón Abstract Factory?",
+     "options": [
+      "Factory Method es un patrón de comportamiento, mientras que Abstract Factory es creacional.",
+      "Factory Method crea objetos de diferentes tipos de datos, mientras que Abstract Factory sólo crea objetos de un único tipo.",
+      "Factory Method requiere obligatoriamente el uso de interfaces, mientras que Abstract Factory sólo funciona con clases abstractas.",
+      "Factory Method sirve para crear objetos de un mismo tipo, mientras que Abstract Factory permite crear objetos de una misma familia."
+     ],
+     "answer": "d",
+     "topic": "ing-software",
+     "tema": "B3T04",
+     "explanation": "Los dos son patrones **creacionales**. Factory Method delega en subclases la creación de un producto; Abstract Factory crea **familias** de objetos relacionados sin indicar sus clases concretas."
+    },
+    {
+     "id": "tai2025X-P45",
+     "key": "P45",
+     "n": 45,
+     "reserve": false,
+     "text": "Las aplicaciones de .NET 10 se pueden escribir en los siguientes lenguajes de programación:",
+     "options": [
+      "C#, F# y Visual Basic.",
+      "C#, Java y Visual Basic.",
+      "C#, F#, Java, R y Visual Basic.",
+      "Java, PHP y Visual Basic."
+     ],
+     "answer": "a",
+     "topic": "programacion",
+     "tema": "B3T05",
+     "explanation": "Los lenguajes oficiales de .NET son **C#, F# y Visual Basic**. Java, R y PHP no son lenguajes de .NET.",
+     "learn": "pg-csharp"
+    },
+    {
+     "id": "tai2025X-P46",
+     "key": "P46",
+     "n": 46,
+     "reserve": false,
+     "text": "¿Qué especificación de la Arquitectura Jakarta EE es la homóloga funcional a 'Entity Framework Core' en la plataforma .NET para la gestión de la persistencia?",
+     "options": [
+      "Jakarta JDBC.",
+      "Jakarta Transactions.",
+      "Jakarta Persistence.",
+      "Jakarta Validation."
+     ],
+     "answer": "c",
+     "topic": "programacion",
+     "tema": "B3T05",
+     "explanation": "**Jakarta Persistence (JPA)** es el estándar ORM de Jakarta EE, homólogo de Entity Framework Core en .NET. JDBC es el acceso de bajo nivel, Transactions gestiona transacciones y Validation valida beans."
+    },
+    {
+     "id": "tai2025X-P47",
+     "key": "P47",
+     "n": 47,
+     "reserve": false,
+     "text": "¿Cuál es la última versión de SOAP (Simple Object Access Protocol)?",
+     "options": [
+      "SOAP 1.1",
+      "SOAP 1.2",
+      "SOAP 2.0",
+      "SOAP 2.1"
+     ],
+     "answer": "b",
+     "topic": "desarrollo-web",
+     "tema": "B3T06",
+     "explanation": "La última versión de SOAP es la **1.2**, recomendación del W3C. No existen SOAP 2.0 ni 2.1."
+    },
+    {
+     "id": "tai2025X-P48",
+     "key": "P48",
+     "n": 48,
+     "reserve": false,
+     "text": "Indique cuál de las siguientes afirmaciones es INCORRECTA:",
+     "options": [
+      "XSD se refiere al lenguaje de definición de esquemas XML.",
+      "DTD proporciona medios para validar archivos XML en relación con un conjunto de normas.",
+      "En XHTML todos los elementos tienen que llevar cierre.",
+      "jQuery es un lenguaje de programación que permite la mejora de JavaScript."
+     ],
+     "answer": "d",
+     "topic": "desarrollo-web",
+     "tema": "B3T07",
+     "explanation": "La d) es la incorrecta: **jQuery es una biblioteca** de JavaScript, no un lenguaje de programación."
+    },
+    {
+     "id": "tai2025X-P49",
+     "key": "P49",
+     "n": 49,
+     "reserve": false,
+     "text": "Señale la afirmación correcta con respecto a REST:",
+     "options": [
+      "Es un protocolo estándar de la capa de aplicación diseñado para garantizar el intercambio de mensajes NTP entre plataformas heterogéneas.",
+      "Es un conjunto de principios arquitectónicos que se ajusta a las necesidades de las aplicaciones móviles y los servicios web ligeros.",
+      "Es un protocolo propietario desarrollado por el consorcio W3C para sustituir las especificaciones basadas en RPC en entornos de escritorio.",
+      "Es un patrón de diseño exclusivo para aplicaciones web tradicionales que prohíbe explícitamente la transferencia de datos en formatos JSON."
+     ],
+     "answer": "b",
+     "topic": "desarrollo-web",
+     "tema": "B3T06",
+     "explanation": "REST es un **estilo arquitectónico** (un conjunto de principios), no un protocolo. Encaja bien con aplicaciones móviles y servicios ligeros y suele intercambiar JSON."
+    },
+    {
+     "id": "tai2025X-P50",
+     "key": "P50",
+     "n": 50,
+     "reserve": false,
+     "text": "En JavaScript, cuál de las siguientes afirmaciones es INCORRECTA:",
+     "options": [
+      "Entre los tipos de datos JavaScript están String, Boolean, Undefined y Number.",
+      "Una variable declarada sin valor asignado tiene el valor undefined.",
+      "123 == '123' devolverá falso.",
+      "El alcance de una variable declarada con let es de bloque."
+     ],
+     "answer": "c",
+     "topic": "programacion",
+     "tema": "B3T07",
+     "explanation": "La c) es la incorrecta: `==` convierte los tipos antes de comparar, así que `123 == '123'` devuelve **true**. Con `===` (sin conversión) sería false.",
+     "learn": "pg-js-tipos"
+    },
+    {
+     "id": "tai2025X-P51",
+     "key": "P51",
+     "n": 51,
+     "reserve": false,
+     "text": "¿Qué significan las siglas que dan nombre a una matriz RACI?",
+     "options": [
+      "Reliable Algorithm for Confidential Information.",
+      "Reasonably Allocated and Centrally Implemented.",
+      "Responsible, Accountable, Consulted, Informed.",
+      "Random, Asignated, Controlled, Isolated."
+     ],
+     "answer": "c",
+     "topic": "ing-software",
+     "tema": "B3T09",
+     "explanation": "RACI = **Responsible** (ejecuta), **Accountable** (rinde cuentas y aprueba), **Consulted** (se le consulta) e **Informed** (se le informa)."
+    },
+    {
+     "id": "tai2025X-P52",
+     "key": "P52",
+     "n": 52,
+     "reserve": false,
+     "text": "¿Cuál de las siguientes afirmaciones es FALSA?",
+     "options": [
+      "En JavaScript, la ejecución de isNaN(\"hola\") dará como resultado true.",
+      "El lenguaje de programación JavaScript forma parte de la plataforma Java.",
+      "XML es la base de un gran número de normas tales como el Lenguaje Universal de Negocios, entre otros.",
+      "React es una biblioteca de código abierto de JavaScript para crear interfaces de usuario de front-end."
+     ],
+     "answer": "b",
+     "topic": "desarrollo-web",
+     "tema": "B3T07",
+     "explanation": "La b) es la falsa: JavaScript **no tiene relación con la plataforma Java**, solo comparten nombre. `isNaN(\"hola\")` es true porque «hola» convertido a número da NaN. XML es la base del UBL (Universal Business Language) y React es una biblioteca de interfaces.",
+     "learn": "pg-js-tipos"
+    },
+    {
+     "id": "tai2025X-P53",
+     "key": "P53",
+     "n": 53,
+     "reserve": false,
+     "text": "¿Qué práctica de seguridad en el desarrollo de software previene de forma directa las vulnerabilidades de inyección como SQLi o XSS?",
+     "options": [
+      "Uso de contraseñas complejas por parte de los usuarios.",
+      "Validación y saneamiento de las entradas de usuario al sistema.",
+      "Instalación de un antivirus en el servidor.",
+      "Minimizar el número de ventanas abiertas durante el desarrollo."
+     ],
+     "answer": "b",
+     "topic": "seguridad",
+     "tema": "B3T07",
+     "explanation": "La **validación y el saneamiento de las entradas** (junto con las consultas parametrizadas y la codificación de la salida) previenen directamente la inyección SQL y el XSS."
+    },
+    {
+     "id": "tai2025X-P54",
+     "key": "P54",
+     "n": 54,
+     "reserve": false,
+     "text": "Señale la respuesta correcta según la Directiva (UE) 2016/2102 del Parlamento Europeo y del Consejo, de 26 de octubre de 2016, sobre la accesibilidad de los sitios web y aplicaciones para dispositivos móviles de los organismos del sector público:",
+     "options": [
+      "El diseño universal debe permitir que todas las personas puedan usar productos o servicios, en la mayor medida posible, sin adaptación o diseño especializado, pero no excluye dispositivos de apoyo para ciertos grupos cuando sean necesarios.",
+      "El diseño universal implica que no deben existir ayudas técnicas (dispositivos de apoyo), porque todo debe funcionar igual para todos sin excepciones.",
+      "La Directiva incluye en su ámbito de aplicación los sitios web y aplicaciones para dispositivos móviles de prestadores del servicio público de radiodifusión y sus filiales.",
+      "La Directiva incluye en su ámbito de aplicación el contenido multimedia en directo de base temporal publicado después del 23 de septiembre de 2020."
+     ],
+     "answer": "a",
+     "topic": "accesibilidad",
+     "tema": "B3T08",
+     "explanation": "Directiva (UE) 2016/2102: el diseño universal **no excluye** los productos de apoyo para grupos concretos cuando hagan falta. La Directiva **excluye** de su ámbito los sitios y aplicaciones de las radiodifusoras públicas y el contenido multimedia en directo."
+    },
+    {
+     "id": "tai2025X-P55",
+     "key": "P55",
+     "n": 55,
+     "reserve": false,
+     "text": "En Git, ¿qué significa el estado 'Staged'?",
+     "options": [
+      "Que el archivo tiene conflictos de fusión y no se puede compilar.",
+      "Que los cambios han sido marcados para ser incluidos en el próximo 'commit'.",
+      "Que los cambios han sido subidos al servidor remoto con éxito.",
+      "Que se ha modificado el archivo pero todavía no se ha hecho 'commit' en la base de datos."
+     ],
+     "answer": "b",
+     "topic": "ing-software",
+     "tema": "B3T09",
+     "explanation": "En Git, un cambio **staged** (preparado con `git add`) está marcado para entrar en el próximo commit. Los tres estados son modificado, preparado y confirmado."
+    },
+    {
+     "id": "tai2025X-P56",
+     "key": "P56",
+     "n": 56,
+     "reserve": false,
+     "text": "En Git, ¿qué comando se utiliza para guardar en el repositorio local una instantánea de los cambios previamente preparados?",
+     "options": [
+      "git push",
+      "git clone",
+      "git commit",
+      "git status"
+     ],
+     "answer": "c",
+     "topic": "ing-software",
+     "tema": "B3T09",
+     "explanation": "`git commit` guarda en el repositorio local una instantánea de los cambios preparados. `git push` los sube al remoto, `git clone` copia un repositorio y `git status` muestra el estado."
+    },
+    {
+     "id": "tai2025X-P57",
+     "key": "P57",
+     "n": 57,
+     "reserve": false,
+     "text": "De acuerdo con la Guía de Scrum, ¿cuál de los siguientes es uno de los roles que compone el Equipo de Scrum?",
+     "options": [
+      "Sprint Owner.",
+      "Scrum Planner.",
+      "Scrum Master.",
+      "Stakeholder."
+     ],
+     "answer": "c",
+     "topic": "ing-software",
+     "tema": "B3T09",
+     "explanation": "Según la Guía de Scrum, el Equipo Scrum lo forman el **Product Owner**, el **Scrum Master** y los **Developers**. Los stakeholders son interesados externos al equipo."
+    },
+    {
+     "id": "tai2025X-P58",
+     "key": "P58",
+     "n": 58,
+     "reserve": false,
+     "text": "Señale cuál de las siguientes es una plataforma integrada para monitorización y seguridad entre cuyos servicios está la monitorización del rendimiento de aplicaciones:",
+     "options": [
+      "Datadog.",
+      "Voldemort.",
+      "Atohalan.",
+      "Cockroach."
+     ],
+     "answer": "a",
+     "topic": "redes",
+     "tema": "B4T04",
+     "explanation": "**Datadog** es una plataforma SaaS de monitorización y seguridad que incluye APM (monitorización del rendimiento de aplicaciones). Voldemort y Cockroach (CockroachDB) son bases de datos."
+    },
+    {
+     "id": "tai2025X-P59",
+     "key": "P59",
+     "n": 59,
+     "reserve": false,
+     "text": "En virtualización de sistemas, ¿qué caracteriza a un hipervisor de tipo 1?",
+     "options": [
+      "Se ejecuta directamente sobre el hardware físico y permite ejecutar sistemas operativos invitados.",
+      "Se ejecuta como una aplicación dentro de un sistema operativo anfitrión.",
+      "Se utiliza exclusivamente para virtualizar periféricos de impresión.",
+      "Es una herramienta destinada exclusivamente a realizar copias de seguridad."
+     ],
+     "answer": "a",
+     "topic": "virtualizacion",
+     "tema": "B4T02",
+     "explanation": "El hipervisor de **tipo 1** (bare-metal) se ejecuta directamente sobre el hardware y aloja los sistemas invitados. El de tipo 2 se ejecuta como aplicación sobre un sistema anfitrión.",
+     "learn": "dk-conceptos"
+    },
+    {
+     "id": "tai2025X-P60",
+     "key": "P60",
+     "n": 60,
+     "reserve": false,
+     "text": "¿En qué arquitectura de almacenamiento se permite que varios usuarios y dispositivos en la red de área local accedan a los datos desde un área de almacenamiento centralizada en la red?",
+     "options": [
+      "Arquitectura NAS.",
+      "Arquitectura SAN.",
+      "Arquitectura DAS.",
+      "Arquitectura de Disco Interno."
+     ],
+     "answer": "a",
+     "topic": "hardware",
+     "tema": "B4T02",
+     "explanation": "**NAS**: almacenamiento conectado a la red local al que acceden varios usuarios a nivel de fichero (NFS, SMB). La SAN es una red dedicada de acceso por bloques y el DAS va conectado directamente a un servidor."
+    },
+    {
+     "id": "tai2025X-P61",
+     "key": "P61",
+     "n": 61,
+     "reserve": false,
+     "text": "¿Cuál de las siguientes opciones es un ejemplo de hipervisor de tipo 1?",
+     "options": [
+      "VirtualBox.",
+      "VMware Workstation.",
+      "VMware ESXi.",
+      "Parallels Desktop."
+     ],
+     "answer": "c",
+     "topic": "virtualizacion",
+     "tema": "B4T02",
+     "explanation": "**VMware ESXi** es un hipervisor de tipo 1. VirtualBox, VMware Workstation y Parallels Desktop son de tipo 2.",
+     "learn": "dk-conceptos"
+    },
+    {
+     "id": "tai2025X-P62",
+     "key": "P62",
+     "n": 62,
+     "reserve": false,
+     "text": "Señale la respuesta correcta en el ámbito de la infraestructura de escritorio virtual (VDI):",
+     "options": [
+      "VDI es el alojamiento de entornos de escritorio en un servidor central.",
+      "En VDI persistente el cliente final puede estar conectado al mismo escritorio cada vez o a uno aleatorio del grupo.",
+      "En VDI no persistente cada vez que un usuario accede al entorno VDI, se conecta al mismo escritorio con todos sus cambios retenidos en la imagen del sistema operativo virtual, incluso después de reiniciar la conexión.",
+      "No es necesario que los clientes finales estén constantemente conectados al servidor para que puedan mantener el acceso a los escritorios virtualizados."
+     ],
+     "answer": "a",
+     "topic": "virtualizacion",
+     "tema": "B4T02",
+     "explanation": "VDI es alojar los escritorios en un **servidor central**. En el VDI persistente el usuario vuelve siempre a su escritorio con sus cambios; en el no persistente recibe uno genérico del grupo que se restablece. Los clientes necesitan estar conectados al servidor."
+    },
+    {
+     "id": "tai2025X-P63",
+     "key": "P63",
+     "n": 63,
+     "reserve": false,
+     "text": "En Oracle 11g, ¿cuál es el comando de RMAN para listar los scripts globales y locales disponibles para ejecutar?",
+     "options": [
+      "RMAN> list script;",
+      "RMAN> list script names;",
+      "RMAN> list;",
+      "RMAN> list global script names;"
+     ],
+     "answer": "b",
+     "topic": "bbdd",
+     "tema": "B4T02",
+     "explanation": "En RMAN, `LIST SCRIPT NAMES` muestra los scripts **locales y globales** disponibles. `LIST GLOBAL SCRIPT NAMES` solo muestra los globales.",
+     "codeOptions": true
+    },
+    {
+     "id": "tai2025X-P64",
+     "key": "P64",
+     "n": 64,
+     "reserve": false,
+     "text": "¿Qué es Kubernetes?",
+     "options": [
+      "Un emulador para ejecutar aplicaciones sobre arquitecturas de procesador diferentes.",
+      "Una plataforma de orquestación de contenedores de código abierto.",
+      "Un simulador de carga de bases de datos no relacionales.",
+      "Un sistema de virtualización de contenedores a nivel de sistema operativo."
+     ],
+     "answer": "b",
+     "topic": "virtualizacion",
+     "tema": "B4T03",
+     "explanation": "**Kubernetes** es una plataforma de código abierto para orquestar contenedores: despliegue, escalado y recuperación. La d) describe a un motor de contenedores como Docker.",
+     "learn": "dk-k8s"
+    },
+    {
+     "id": "tai2025X-P65",
+     "key": "P65",
+     "n": 65,
+     "reserve": false,
+     "text": "¿Cuál de las siguientes soluciones de gestión de dispositivos móviles es exclusiva para dispositivos Apple?",
+     "options": [
+      "Citrix Endpoint Management.",
+      "Miradore.",
+      "Jamf Now.",
+      "Scalefusion."
+     ],
+     "answer": "c",
+     "topic": "so",
+     "tema": "B4T04",
+     "explanation": "**Jamf Now** es un MDM exclusivo para dispositivos Apple. Citrix Endpoint Management, Miradore y Scalefusion son multiplataforma."
+    },
+    {
+     "id": "tai2025X-P66",
+     "key": "P66",
+     "n": 66,
+     "reserve": false,
+     "text": "¿Cuál de los siguientes es un sistema de gestión de servicios (ITSM)?",
+     "options": [
+      "RabbitMQ.",
+      "Remedy/Helix.",
+      "Hibernate.",
+      "Snort."
+     ],
+     "answer": "b",
+     "topic": "so",
+     "tema": "B4T04",
+     "explanation": "**BMC Remedy** (hoy BMC Helix) es una herramienta ITSM de gestión de servicios TI. RabbitMQ es un broker de mensajes, Hibernate un ORM de Java y Snort un IDS."
+    },
+    {
+     "id": "tai2025X-P67",
+     "key": "P67",
+     "n": 67,
+     "reserve": false,
+     "text": "¿Cuál de las siguientes metodologías NO se corresponde a una metodología de riesgos?",
+     "options": [
+      "OCTAVE.",
+      "MAGERIT.",
+      "NIST SP 800-30.",
+      "PRICE3."
+     ],
+     "answer": "d",
+     "topic": "seguridad",
+     "tema": "B4T05",
+     "explanation": "OCTAVE, MAGERIT y NIST SP 800-30 son metodologías de análisis y gestión de **riesgos**. «PRICE3» no lo es (recuerda a PRINCE2, que es de gestión de proyectos)."
+    },
+    {
+     "id": "tai2025X-P68",
+     "key": "P68",
+     "n": 68,
+     "reserve": false,
+     "text": "¿Qué es el plenum, de acuerdo con el estándar ANSI/TIA 942-B?",
+     "options": [
+      "Un compartimento donde uno o más conductos de aire están conectados y que forma parte del sistema de distribución del aire.",
+      "Un conductor metálico sólido o trenzado aislado individualmente.",
+      "Una unión de conductores destinada a ser permanente.",
+      "Un cable utilizado para establecer conexiones en un panel de conexión."
+     ],
+     "answer": "a",
+     "topic": "redes",
+     "tema": "B4T06",
+     "explanation": "En ANSI/TIA-942-B, el **plenum** es un compartimento conectado a uno o más conductos de aire que forma parte del sistema de distribución del aire (falsos techos y suelos técnicos). Por eso se exige cable de tipo *plenum*."
+    },
+    {
+     "id": "tai2025X-P69",
+     "key": "P69",
+     "n": 69,
+     "reserve": false,
+     "text": "¿Qué es la tecnología VPLS?",
+     "options": [
+      "Es una tecnología que permite unir redes Ethernet geográficamente dispersas haciendo que compartan un mismo dominio de difusión.",
+      "Es una tecnología de reenvío de paquetes que utiliza etiquetas para tomar decisiones relativas al reenvío de datos.",
+      "Es un conjunto de protocolos que proporcionan seguridad a las comunicaciones Internet en la capa IP.",
+      "Es un protocolo de enrutado entre sistemas autónomos."
+     ],
+     "answer": "a",
+     "topic": "redes",
+     "tema": "B4T06",
+     "explanation": "**VPLS** (Virtual Private LAN Service) une redes Ethernet dispersas como si compartieran un mismo dominio de difusión, normalmente sobre MPLS. La b) describe MPLS, la c) IPsec y la d) BGP."
+    },
+    {
+     "id": "tai2025X-P70",
+     "key": "P70",
+     "n": 70,
+     "reserve": false,
+     "text": "El estándar H.245 propuesto por ITU es descrito como:",
+     "options": [
+      "Sistemas de comunicación multimedia basados en paquetes.",
+      "Protocolos de señalización de llamada y paquetización de trenes de medios para sistemas de comunicación multimedia por paquetes.",
+      "Gestión de funciones y canales de medios adicionales para terminales de la serie H.300.",
+      "Protocolo de control para comunicación multimedia."
+     ],
+     "answer": "d",
+     "topic": "redes",
+     "tema": "B4T06",
+     "explanation": "H.245 es el **protocolo de control** para comunicación multimedia: negocia capacidades y abre canales lógicos dentro de H.323. La a) es H.323 y la b) es H.225.0."
+    },
+    {
+     "id": "tai2025X-P71",
+     "key": "P71",
+     "n": 71,
+     "reserve": false,
+     "text": "La gestión de una red de comunicaciones, según el modelo OSI, puede descomponerse en cinco áreas funcionales conocidas por el acrónimo FCAPS. Señale cuál NO es una de ellas:",
+     "options": [
+      "Gestión de Fallos (Fault).",
+      "Gestión del Almacenamiento (Storage).",
+      "Gestión de la Configuración (Configuration).",
+      "Gestión del Rendimiento (Performance)."
+     ],
+     "answer": "b",
+     "topic": "redes",
+     "tema": "B4T04",
+     "explanation": "FCAPS: **F**ault (fallos), **C**onfiguration, **A**ccounting (contabilidad), **P**erformance (rendimiento) y **S**ecurity. El almacenamiento no es una de sus áreas."
+    },
+    {
+     "id": "tai2025X-P72",
+     "key": "P72",
+     "n": 72,
+     "reserve": false,
+     "text": "El protocolo SIP (Session Initiation Protocol) utiliza por defecto el puerto:",
+     "options": [
+      "Solo 5060 UDP.",
+      "Solo 6050 UDP.",
+      "5060 tanto en TCP como en UDP.",
+      "6050 tanto en TCP como en UDP."
+     ],
+     "answer": "c",
+     "topic": "redes",
+     "tema": "B4T06",
+     "explanation": "SIP usa por defecto el puerto **5060 en TCP y en UDP** (5061 con TLS).",
+     "learn": "rd-protocolos"
+    },
+    {
+     "id": "tai2025X-P73",
+     "key": "P73",
+     "n": 73,
+     "reserve": false,
+     "text": "Señale la respuesta correcta con respecto a CG-NAT:",
+     "options": [
+      "Es una solución de los operadores que hace que muchos clientes se conecten a Internet utilizando la misma dirección IPv4.",
+      "Es una solución que hace que muchos clientes que se conectan a Internet utilicen varias direcciones IP.",
+      "Es una solución que permite la asignación de varias direcciones IP privadas a una dirección IP pública entre direcciones locales y globales.",
+      "Es una solución que permite la creación de una red de área extensa definida por software."
+     ],
+     "answer": "a",
+     "topic": "redes",
+     "tema": "B4T07",
+     "explanation": "**CG-NAT** (Carrier-Grade NAT) lo aplica el operador para que muchos clientes salgan a Internet compartiendo la misma IPv4 pública, a causa de la escasez de direcciones."
+    },
+    {
+     "id": "tai2025X-P74",
+     "key": "P74",
+     "n": 74,
+     "reserve": false,
+     "text": "De entre las siguientes direcciones IPv4, ¿cuál es la que pertenece a la Clase A?",
+     "options": [
+      "2.17.39.162",
+      "142.250.200.131",
+      "239.255.255.255",
+      "192.168.0.59"
+     ],
+     "answer": "a",
+     "topic": "redes",
+     "tema": "B4T07",
+     "explanation": "Clase A: primer octeto de **1 a 126**. 2.17.39.162 es de clase A; 142.x es B; 239.x es D (multicast); 192.168.x es C.",
+     "learn": "rd-subnet-basico"
+    },
+    {
+     "id": "tai2025X-P75",
+     "key": "P75",
+     "n": 75,
+     "reserve": false,
+     "text": "¿Qué protocolo usa por defecto el puerto TCP/23?",
+     "options": [
+      "FTP.",
+      "SMTP.",
+      "SSH.",
+      "TELNET."
+     ],
+     "answer": "d",
+     "topic": "redes",
+     "tema": "B4T07",
+     "explanation": "El puerto TCP 23 es **Telnet**. FTP usa 20/21, SSH 22 y SMTP 25.",
+     "learn": "rd-protocolos"
+    },
+    {
+     "id": "tai2025X-P76",
+     "key": "P76",
+     "n": 76,
+     "reserve": false,
+     "text": "En el desarrollo de una aplicación web segura con HTTPS, ¿cuál es el propósito técnico del atributo \"HttpOnly\" en una cabecera \"Set-Cookie\"?",
+     "options": [
+      "Obliga a que la cookie sólo se envíe si la conexión está cifrada mediante TLS.",
+      "Impide que los scripts del lado del cliente accedan a la cookie, mitigando ataques XSS.",
+      "Define que la cookie es válida para el dominio de segundo nivel y todos sus subdominios.",
+      "Establece que la cookie debe eliminarse automáticamente al cerrar el navegador."
+     ],
+     "answer": "b",
+     "topic": "seguridad",
+     "tema": "B4T08",
+     "explanation": "**HttpOnly** impide que JavaScript lea la cookie (`document.cookie`), lo que mitiga el robo de sesión por XSS. La a) es el atributo Secure, la c) es Domain y la d) es una cookie de sesión sin Expires."
+    },
+    {
+     "id": "tai2025X-P77",
+     "key": "P77",
+     "n": 77,
+     "reserve": false,
+     "text": "Según las recomendaciones del CCN-CERT sobre seguridad en redes privadas virtuales, ¿qué nombre recibe el túnel de red seguro que opera en la capa de red y que se implementa como un kernel de interfaz virtual de red para Linux?",
+     "options": [
+      "MACsec.",
+      "IKEV2.",
+      "EAPoL.",
+      "WireGuard."
+     ],
+     "answer": "d",
+     "topic": "seguridad",
+     "tema": "B4T09",
+     "explanation": "**WireGuard** es un túnel VPN de capa de red que en Linux se implementa como interfaz de red virtual en el kernel. MACsec cifra en capa 2, IKEv2 negocia IPsec y EAPoL transporta 802.1X.",
+     "learn": "sg-ccn"
+    },
+    {
+     "id": "tai2025X-P78",
+     "key": "P78",
+     "n": 78,
+     "reserve": false,
+     "text": "¿Qué especifica el estándar IEEE 802.3 dentro de la familia de normas IEEE 802?",
+     "options": [
+      "El funcionamiento de redes inalámbricas Wi‑Fi.",
+      "Los métodos de acceso y transmisión para redes Ethernet.",
+      "Los protocolos de seguridad para redes móviles.",
+      "Las características de redes Bluetooth de largo alcance."
+     ],
+     "answer": "b",
+     "topic": "redes",
+     "tema": "B4T10",
+     "explanation": "**IEEE 802.3** define Ethernet: método de acceso CSMA/CD y capa física. Wi-Fi es 802.11 y Bluetooth 802.15.1.",
+     "learn": "f-redes"
+    },
+    {
+     "id": "tai2025X-P79",
+     "key": "P79",
+     "n": 79,
+     "reserve": false,
+     "text": "¿Qué tipo de cifrado es el algoritmo RSA?",
+     "options": [
+      "Un criptosistema de clave privada.",
+      "Un criptosistema de clave pública.",
+      "Un criptosistema lineal.",
+      "Un criptosistema elipsoidal."
+     ],
+     "answer": "b",
+     "topic": "seguridad",
+     "tema": "B4T05",
+     "explanation": "**RSA** es un criptosistema de **clave pública** (asimétrico), basado en la dificultad de factorizar números grandes."
+    },
+    {
+     "id": "tai2025X-P80",
+     "key": "P80",
+     "n": 80,
+     "reserve": false,
+     "text": "En redes Ethernet, ¿qué velocidad agregada se asocia habitualmente al formato QSFP+?",
+     "options": [
+      "Admite velocidades de datos de hasta 5 Gbps.",
+      "Admite velocidades de datos de hasta 100 Gbps.",
+      "Admite velocidades de datos de hasta 16 Gbps.",
+      "Admite velocidades de datos de hasta 40 Gbps."
+     ],
+     "answer": "d",
+     "topic": "redes",
+     "tema": "B4T06",
+     "explanation": "**QSFP+** agrupa 4 canales de 10 Gbps: **40 Gbps**. SFP+ llega a 10 Gbps y QSFP28 a 100 Gbps."
+    },
+    {
+     "id": "tai2025X-PR1",
+     "key": "PR1",
+     "n": 1,
+     "reserve": true,
+     "text": "En el sistema operativo Android, ¿qué extensión tienen los archivos ejecutables Dalvik?",
+     "options": [
+      ".dex",
+      ".apk",
+      ".dvk",
+      ".dxk"
+     ],
+     "answer": "a",
+     "topic": "so",
+     "tema": "B2T04",
+     "explanation": "Los ejecutables de la máquina Dalvik/ART tienen extensión **.dex** (Dalvik Executable) y van empaquetados dentro del .apk."
+    },
+    {
+     "id": "tai2025X-PR2",
+     "key": "PR2",
+     "n": 2,
+     "reserve": true,
+     "text": "¿Cuál de los siguientes estándares NO está incluido en la Norma Técnica de Interoperabilidad de \"Catálogo de Estándares\" en la categoría de \"Formatos ficheros - Imagen y/o texto\"?",
+     "options": [
+      "CSS.",
+      "JPEG.",
+      "TIFF.",
+      "BMP."
+     ],
+     "answer": "d",
+     "topic": "admin-electronica",
+     "tema": "B1T08",
+     "explanation": "En la categoría «Imagen y/o texto» del Catálogo de Estándares de la NTI están, entre otros, JPEG, PNG, TIFF, SVG, PDF y CSS. **BMP** no aparece."
+    },
+    {
+     "id": "tai2025X-PR3",
+     "key": "PR3",
+     "n": 3,
+     "reserve": true,
+     "text": "Señale cuál es un estándar que especifica un conjunto de protocolos que proporcionan medidas de seguridad para la protección de los datos en la capa de enlace de redes de área local tipo Ethernet, conocido como MAC Security:",
+     "options": [
+      "IEEE 802.1AE",
+      "IEEE 802.1AP",
+      "IEEE 802.1AF",
+      "IEEE 802.1AZ"
+     ],
+     "answer": "a",
+     "topic": "seguridad",
+     "tema": "B4T09",
+     "explanation": "MACsec es **IEEE 802.1AE**: cifra e integra las tramas en la capa de enlace de las LAN Ethernet."
+    },
+    {
+     "id": "tai2025X-PR4",
+     "key": "PR4",
+     "n": 4,
+     "reserve": true,
+     "text": "¿Cuáles son los tipos de procedimientos almacenados que se pueden usar en SQL Server?",
+     "options": [
+      "Definidos por el usuario, temporales, de sistema y extendidos.",
+      "Definidos por el usuario, locales, de sistema, almacenados y extendidos.",
+      "Definidos por el usuario, locales, de sistema y almacenados.",
+      "Definidos por el usuario, globales, de sistema y extendidos."
+     ],
+     "answer": "a",
+     "topic": "bbdd",
+     "tema": "B3T03",
+     "explanation": "Tipos de procedimientos almacenados en SQL Server: **definidos por el usuario, temporales (locales # y globales ##), del sistema y extendidos**."
+    },
+    {
+     "id": "tai2025X-PR5",
+     "key": "PR5",
+     "n": 5,
+     "reserve": true,
+     "text": "En UML, ¿qué tipo de diagrama se utiliza para representar la interacción entre objetos o participantes mediante los mensajes que se intercambian entre ellos?",
+     "options": [
+      "Diagrama de clases.",
+      "Diagrama de secuencia.",
+      "Diagrama de despliegue.",
+      "Diagrama de componentes."
+     ],
+     "answer": "b",
+     "topic": "ing-software",
+     "tema": "B3T04",
+     "explanation": "El **diagrama de secuencia** muestra la interacción entre objetos con los mensajes que se intercambian, ordenados en el tiempo."
+    }
+   ]
+  },
+  {
+   "id": "supuesto1",
+   "title": "Supuesto I",
+   "context": [
+    "Usted forma parte de un grupo de funcionarios de nuevo ingreso que se acaban de incorporar a una Subdirección General de Tecnologías de la Información y Comunicaciones de un ministerio y una de las primeras tareas que se les encomienda es continuar el desarrollo de una aplicación que empezó un funcionario que ya no está en la subdirección.",
+    "La aplicación se compone de un frontend desarrollado con Angular 21 que se comunica con dos APIs:",
+    "- API de persistencia: desarrollada en ASP .NET 10 con C# 14, expone servicios REST para realizar operaciones de consulta, escritura y borrado en una base de datos SQL Server 2025. Además, utiliza NUnit 3.0 para pruebas.",
+    "- API de integración con servicios de la Agencia Estatal de Administración Digital (AEAD): desarrollada en Java SE Development Kit (JDK) 8, expone servicios SOAP que están integrados con los servicios de GEISER.",
+    "Se utiliza Git 2.43 como herramienta de control de versiones y las dos APIs están documentadas haciendo uso del estándar OpenAPI/Swagger 3.1.0.",
+    "Usted forma parte del equipo técnico responsable del diseño, desarrollo, implantación y soporte de este proyecto y deberá responder a las cuestiones que se le plantean a continuación.",
+    "Para responder a estas, suponga que tiene todos los permisos necesarios en las diferentes tecnologías empleadas y que, salvo que se especifique lo contrario, se utilizan las librerías nativas que ya han sido declaradas de cada lenguaje de programación utilizado."
+   ],
+   "questions": [
+    {
+     "id": "tai2025X-S1-1",
+     "key": "S1-1",
+     "n": 1,
+     "reserve": false,
+     "text": "Se necesita establecer un enlace bidireccional entre un campo de entrada y una propiedad del componente de Angular. Señale la opción correcta para ello:",
+     "options": [
+      "<input type=\"text\" [ngModel]=\"email\" />",
+      "<input type=\"text\" (ngModel)=\"email\" />",
+      "<input type=\"text\" [(ngModel)]=\"email\" />",
+      "<input type=\"text\" ngModel=\"email\" />"
+     ],
+     "answer": "c",
+     "topic": "desarrollo-web",
+     "tema": "B3T07",
+     "explanation": "En Angular, `[(ngModel)]` (la «banana en una caja») es el enlace **bidireccional**. `[ngModel]` solo enlaza del componente a la vista y `(ngModel)` sería un evento.",
+     "codeOptions": true
+    },
+    {
+     "id": "tai2025X-S1-2",
+     "key": "S1-2",
+     "n": 2,
+     "reserve": false,
+     "text": "Se quiere mostrar la fecha y hora en una parte de la aplicación. Esta información está en una propiedad del componente de Angular llamada fechaHora y un ejemplo del formato deseado es: 12/04/2026 19:32. ¿Cuál sería la opción correcta?",
+     "options": [
+      "<p>Fecha y hora: { fechaHora | date: dd/MM/YYYY hh:mm }</p>",
+      "<p>Fecha y hora: {{ fechaHora | date: 'dd/MM/yyyy HH:mm' }}</p>",
+      "<p> Fecha y hora: { fechaHora | date: 'DD/MM/yyyy hh:mm' }</p>",
+      "<p>Fecha y hora: {{ fechaHora | date: DD/MM/YYYY hh:mm }}</p>"
+     ],
+     "answer": "b",
+     "topic": "desarrollo-web",
+     "tema": "B3T07",
+     "explanation": "Se usa interpolación con dobles llaves `{{ }}` y el pipe `date` con el formato entre comillas: `dd` día, `MM` mes, `yyyy` año y `HH` hora de 0 a 23 (19:32). `hh` es la hora de 1 a 12 y `YYYY` el año de la semana ISO.",
+     "codeOptions": true
+    },
+    {
+     "id": "tai2025X-S1-3",
+     "key": "S1-3",
+     "n": 3,
+     "reserve": false,
+     "text": "Dada la siguiente clase CSS:\n```\ndiv {\n  text-align: center;\n  font-weight: bold;\n  border-radius: 20px;\n  box-shadow: 4px 4px 4px black;\n  background-color: limegreen;\n}\n```\n¿Qué pasará visualmente con el siguiente elemento HTML?: `<div>Bienvenido</div>`",
+     "options": [
+      "El texto se mostrará centrado, en negrita y con sombra negra sobre una caja rectangular de color verde lima y con borde redondo.",
+      "El texto se mostrará centrado y en negrita sobre una caja rectangular de color verde lima, con borde recto y con sombra negra aplicada a la caja.",
+      "El texto se mostrará centrado, en negrita y con sombra negra sobre una caja redonda de color verde lima.",
+      "El texto se mostrará centrado y en negrita sobre una caja rectangular de color verde lima, con borde redondo y con sombra negra aplicada a la caja."
+     ],
+     "answer": "d",
+     "topic": "desarrollo-web",
+     "tema": "B3T07",
+     "explanation": "Texto centrado (`text-align`) y en negrita (`font-weight`). `border-radius` redondea las esquinas de la caja, pero sigue siendo rectangular. `box-shadow` da sombra **a la caja**: la sombra del texto sería `text-shadow`."
+    },
+    {
+     "id": "tai2025X-S1-4",
+     "key": "S1-4",
+     "n": 4,
+     "reserve": false,
+     "text": "En una clase de TypeScript se definen los siguientes arrays:\n```\nconst menuAdministrador = [\"Usuarios\", \"Permisos\"];\nconst menuGestor = [\"Notificaciones\", \"Usuarios\", \"Asientos registrales\"];\n```\nEn esa misma clase hay una función que ejecuta la siguiente operación:\n```\nreturn [...menuAdministrador, ...menuGestor]\n```\n¿Qué hace esta operación?",
+     "options": [
+      "Sustituye el contenido de menuGestor por el de menuAdministrador.",
+      "Sustituye el contenido de menuAdministrador por el de menuGestor.",
+      "Genera un nuevo array que contiene únicamente los elementos comunes entre menuGestor y menuAdministrador.",
+      "Genera un nuevo array con el contenido de menuAdministrador y menuGestor."
+     ],
+     "answer": "d",
+     "topic": "programacion",
+     "tema": "B3T07",
+     "explanation": "El operador de propagación `...` crea un **nuevo array** con los elementos del primero y después los del segundo, sin modificar los originales: `[\"Usuarios\", \"Permisos\", \"Notificaciones\", \"Usuarios\", \"Asientos registrales\"]` (no quita duplicados).",
+     "learn": "pg-js-funciones"
+    },
+    {
+     "id": "tai2025X-S1-5",
+     "key": "S1-5",
+     "n": 5,
+     "reserve": false,
+     "text": "Necesita instalar Entity Framework en la API de .NET. ¿Con qué comando se puede hacer?",
+     "options": [
+      "dotnet package add Microsoft.EntityFrameworkCore",
+      "dotnet add package Microsoft.EntityFrameworkCore",
+      "dotnet add Microsoft.EntityFrameworkCore",
+      "dotnet package Microsoft.EntityFrameworkCore"
+     ],
+     "answer": "a",
+     "topic": "programacion",
+     "tema": "B3T05",
+     "explanation": "La plantilla definitiva da por buena la a): desde .NET 10 la CLI usa el orden «sustantivo verbo», `dotnet package add Microsoft.EntityFrameworkCore`. La forma clásica `dotnet add package` sigue funcionando, pero el enunciado se sitúa en .NET 10.",
+     "codeOptions": true,
+     "learn": "pg-csharp"
+    },
+    {
+     "id": "tai2025X-S1-6",
+     "key": "S1-6",
+     "n": 6,
+     "reserve": false,
+     "text": "Se va a desarrollar una nueva consulta en la API de .NET para obtener todos los usuarios cuyo primer apellido contenga una cadena de texto almacenada en una variable llamada «texto». ¿Cuál sería la forma correcta de hacerlo?",
+     "options": [
+      "await context.Usuarios.Where(u => u.Apellido1.Contains(texto)).ToListAsync();",
+      "await context.Usuarios.Where(u => u.Apellido1.Like(texto)).ToListAsync();",
+      "await context.Usuarios(u => u.Apellido1.Where(texto)).ToListAsync();",
+      "await context.Usuarios(u => u.Apellido1.Contains(texto)).ToListAsync();"
+     ],
+     "answer": "a",
+     "topic": "programacion",
+     "tema": "B3T05",
+     "explanation": "Con LINQ y EF Core: `Where(u => u.Apellido1.Contains(texto))` filtra (se traduce a `LIKE '%texto%'`) y `ToListAsync()` ejecuta la consulta. `string` no tiene un método `Like` y `context.Usuarios` no se invoca como una función.",
+     "codeOptions": true,
+     "learn": "pg-csharp"
+    },
+    {
+     "id": "tai2025X-S1-7",
+     "key": "S1-7",
+     "n": 7,
+     "reserve": false,
+     "text": "Se está implementando un sistema de informes en la API de Java y uno de los datos a incluir es el total de asientos registrales recibidos en el año 2026. ¿Cuál es la forma correcta de hacerlo?",
+     "options": [
+      "asientos.collection().filter(n -> n.getAñoPresentacion() == 2026).sum();",
+      "asientos.stream().filter(n -> n.getAñoPresentacion() == 2026).count();",
+      "asientos.list().filter(n -> n.getAñoPresentacion() == 2026).sum();",
+      "asientos.set().filter(n -> n.getAñoPresentacion() == 2026).count();"
+     ],
+     "answer": "b",
+     "topic": "programacion",
+     "tema": "B3T05",
+     "explanation": "En Java se filtra con la API Stream: `asientos.stream().filter(...).count()` devuelve cuántos cumplen la condición. Las colecciones no tienen `collection()`, `list()` ni `set()`, y contar no es `sum()`.",
+     "codeOptions": true,
+     "learn": "pg-java"
+    },
+    {
+     "id": "tai2025X-S1-8",
+     "key": "S1-8",
+     "n": 8,
+     "reserve": false,
+     "text": "Se desea añadir a la API de Java la integración con los servicios de Notifica. ¿Cómo podría, a partir del fichero `notifica.wsdl`, generar las clases Java para esos servicios web en un paquete llamado `notificaciones`?",
+     "options": [
+      "wsgen -d notificaciones notifica.wsdl",
+      "schemagen -p notificaciones notifica.wsdl",
+      "xjc -d notificaciones notifica.wsdl",
+      "wsimport -p notificaciones notifica.wsdl"
+     ],
+     "answer": "d",
+     "topic": "desarrollo-web",
+     "tema": "B3T06",
+     "explanation": "`wsimport -p paquete fichero.wsdl` genera las clases cliente JAX-WS a partir de un WSDL (incluido en el JDK 8). `wsgen` genera a partir de una clase Java, `xjc` a partir de un XSD (JAXB) y `schemagen` genera un XSD a partir de clases.",
+     "codeOptions": true
+    },
+    {
+     "id": "tai2025X-S1-9",
+     "key": "S1-9",
+     "n": 9,
+     "reserve": false,
+     "text": "Se necesita crear una vista en la base de datos SQL Server para saber cuántos expedientes ha tramitado cada usuario. ¿Cuál sería la forma correcta de crearla?",
+     "options": [
+      "CREATE VIEW ExpTramitados AS SELECT IdUsuarioTramitador, COUNT(IdExpediente) AS TotalExpedientes FROM Expedientes;",
+      "CREATE VIEW ExpTramitados AS SELECT IdUsuarioTramitador, IdExpediente FROM Expedientes GROUP BY IdUsuarioTramitador;",
+      "CREATE VIEW ExpTramitados AS SELECT IdUsuarioTramitador, COUNT(IdExpediente) FROM Expedientes GROUP BY IdUsuarioTramitador;",
+      "CREATE VIEW ExpTramitados AS SELECT IdUsuarioTramitador, SUM(IdExpediente) FROM Expedientes GROUP BY IdUsuarioTramitador;"
+     ],
+     "answer": "c",
+     "topic": "bbdd",
+     "tema": "B3T03",
+     "explanation": "Para contar por usuario hace falta `COUNT` con `GROUP BY IdUsuarioTramitador`. La a) no agrupa, la b) selecciona una columna no agrupada y la d) suma identificadores. (En un SQL Server real, la vista además exigiría un alias para la columna calculada, pero de las cuatro solo la c) agrupa bien).",
+     "codeOptions": true,
+     "learn": "sql-agrupar"
+    },
+    {
+     "id": "tai2025X-S1-10",
+     "key": "S1-10",
+     "n": 10,
+     "reserve": false,
+     "text": "Al acceder a la aplicación se quiere mostrar una serie de información para los administradores. ¿Qué sentencia de SQL Server es la correcta para obtener los últimos 10 usuarios dados de alta en una tabla de 100 usuarios?",
+     "options": [
+      "SELECT TOP(10) Nombre, Apellido1, Apellido2 FROM Usuarios ORDER BY FechaCreacion DESC;",
+      "SELECT TOP(10) Nombre, Apellido1, Apellido2 FROM Usuarios WHERE FechaCreacion > '2026-01-22T00:00:00';",
+      "SELECT TOP(10) Nombre, Apellido1, Apellido2 FROM Usuarios ORDER BY FechaCreacion ASC;",
+      "SELECT Nombre, Apellido1, Apellido2, TOP(10) FechaCreacion FROM Usuarios ORDER BY FechaCreacion;"
+     ],
+     "answer": "a",
+     "topic": "bbdd",
+     "tema": "B3T03",
+     "explanation": "Los últimos dados de alta son los de fecha más reciente: `TOP(10)` con `ORDER BY FechaCreacion DESC`. Con `ASC` saldrían los diez primeros.",
+     "codeOptions": true,
+     "learn": "sql-filtros"
+    },
+    {
+     "id": "tai2025X-S1-11",
+     "key": "S1-11",
+     "n": 11,
+     "reserve": false,
+     "text": "Debido a unas pruebas realizadas en el entorno de preproducción, la secuencia de la identidad de una tabla de SQL Server se ha desajustado y necesita reiniciarla. ¿Cómo lo haría?",
+     "options": [
+      "DBCC RESETIDENT(‘TablaPruebas’);",
+      "DBCC CHECKIDENT(‘TablaPruebas’);",
+      "DBCC RESETIDENT(‘TablaPruebas, NORESEED);",
+      "DBCC CHECKIDENT(‘TablaPruebas’, NORESEED);"
+     ],
+     "answer": "b",
+     "topic": "bbdd",
+     "tema": "B3T03",
+     "explanation": "`DBCC CHECKIDENT('tabla')` comprueba el valor de identidad actual y, si hace falta, lo corrige según el máximo de la columna. Con `NORESEED` solo informa, sin cambiar nada. `RESETIDENT` no existe.",
+     "codeOptions": true
+    },
+    {
+     "id": "tai2025X-S1-12",
+     "key": "S1-12",
+     "n": 12,
+     "reserve": false,
+     "text": "Para evitar ataques XSS mediante rastreo MIME se va a añadir una cabecera a las respuestas de las dos APIs al frontend. ¿De qué cabecera se trata?",
+     "options": [
+      "X-Frame-Options: DENY",
+      "X-Content-Type-Options: nosniff",
+      "X-XSS-Protection: 0",
+      "Content-Security-Policy: default-src https:"
+     ],
+     "answer": "b",
+     "topic": "seguridad",
+     "tema": "B3T07",
+     "explanation": "`X-Content-Type-Options: nosniff` impide que el navegador «adivine» el tipo MIME (MIME sniffing) y ejecute como script lo que no lo es. X-Frame-Options frena el clickjacking y `X-XSS-Protection: 0` desactiva el antiguo filtro XSS.",
+     "codeOptions": true
+    },
+    {
+     "id": "tai2025X-S1-13",
+     "key": "S1-13",
+     "n": 13,
+     "reserve": false,
+     "text": "En las peticiones a la API de persistencia observa que se incluye la cabecera:\n```\nAuthorization: Bearer eyJhbG.eyJzdW.KMUFsI\n```\n¿De qué tipo de autenticación se trata?",
+     "options": [
+      "Básica.",
+      "A través de una API Key.",
+      "A través de una cookie.",
+      "A través de un JWT (JSON Web Token)."
+     ],
+     "answer": "d",
+     "topic": "seguridad",
+     "tema": "B3T06",
+     "explanation": "Un token `Bearer` con tres partes en base64url separadas por puntos (cabecera.carga.firma) es un **JWT**. Además, «eyJ» es `{\"` codificado en base64."
+    },
+    {
+     "id": "tai2025X-S1-14",
+     "key": "S1-14",
+     "n": 14,
+     "reserve": false,
+     "text": "Revisando el código HTML del apartado de gestión de usuarios de la aplicación ha detectado un problema de accesibilidad web:\n```\n<h1>Gestión de usuarios</h1>\n<span><strong>Seleccione un usuario para ver acciones</strong></span>\n<h3>Administradores</h3>\n```\nIndique cuál es:",
+     "options": [
+      "Se está usando <strong>, en lugar de <b>, para dar mayor importancia semántica al texto.",
+      "Se está usando <span>, en lugar de <p>, para mostrar un texto.",
+      "Hay un salto en la jerarquía de encabezados, de <h1> a <h3>, sin pasar por <h2>.",
+      "Falta un elemento <div> para contener a todos los demás elementos."
+     ],
+     "answer": "c",
+     "topic": "accesibilidad",
+     "tema": "B3T08",
+     "explanation": "Los encabezados deben seguir una jerarquía sin saltos (WCAG 1.3.1): de `<h1>` se pasa a `<h2>`, no directamente a `<h3>`. Usar `<strong>` es correcto, porque aporta énfasis semántico."
+    },
+    {
+     "id": "tai2025X-S1-15",
+     "key": "S1-15",
+     "n": 15,
+     "reserve": false,
+     "text": "En la API de persistencia encuentra una clase con el siguiente método:\n```\npublic void crearExpediente() {\n    this.expediente.crearCarpetas();\n    this.expediente.crearDocumentos();\n    this.expediente.crearIndice();\n}\n```\n¿Qué patrón de diseño se está utilizando?",
+     "options": [
+      "Abstract factory.",
+      "Composite.",
+      "Factory method.",
+      "Builder."
+     ],
+     "answer": "d",
+     "topic": "ing-software",
+     "tema": "B3T04",
+     "explanation": "Según la plantilla, es **Builder**: el objeto complejo (el expediente) se construye paso a paso (carpetas, documentos e índice) con un método que dirige el proceso."
+    },
+    {
+     "id": "tai2025X-S1-16",
+     "key": "S1-16",
+     "n": 16,
+     "reserve": false,
+     "text": "Se va a proceder a realizar pruebas unitarias en la API de persistencia con la herramienta NUnit 3.0. ¿Cuál de las siguientes opciones es una definición correcta de una clase de pruebas?",
+     "options": [
+      "[TestFixture] public sealed class Tests {\n    [Test] public void Test() {}\n}",
+      "[TestFixture] public sealed class Tests {\n    [TestSample] public void Test() {}\n}",
+      "[TestGroup] public sealed class Tests {\n    [TestCase] public void Test() {}\n}",
+      "[TestCaseSource] public sealed class Tests {\n    [TestCase] public void Test() {}\n}"
+     ],
+     "answer": "a",
+     "topic": "ing-software",
+     "tema": "B3T09",
+     "explanation": "En NUnit, la clase de pruebas se marca con `[TestFixture]` y cada método con `[Test]`. `[TestCase]` sirve para pruebas parametrizadas y `[TestCaseSource]` para tomar los casos de otra fuente; `[TestSample]` y `[TestGroup]` no existen.",
+     "codeOptions": true
+    },
+    {
+     "id": "tai2025X-S1-17",
+     "key": "S1-17",
+     "n": 17,
+     "reserve": false,
+     "text": "Uno de sus compañeros ha desarrollado un servicio REST que recibe un JSON y le ha pedido ayuda para probar su funcionamiento, para lo cual va a utilizar la herramienta Postman versión 12. ¿Con qué tipo de dato debería enviar el cuerpo de la petición?",
+     "options": [
+      "none",
+      "GraphQL",
+      "raw",
+      "x-www-form-urlencoded"
+     ],
+     "answer": "c",
+     "topic": "desarrollo-web",
+     "tema": "B3T06",
+     "explanation": "En Postman, un cuerpo JSON se envía como **raw** y se elige «JSON» en el desplegable, lo que añade la cabecera `Content-Type: application/json`."
+    },
+    {
+     "id": "tai2025X-S1-18",
+     "key": "S1-18",
+     "n": 18,
+     "reserve": false,
+     "text": "Se ha detectado un error en una de las últimas subidas de código a la rama develop del repositorio. Tras una fase de investigación, sospecha que el error está en un commit concreto. ¿Con qué operación de Git puede incorporar ese commit a una rama aparte para continuar su investigación?",
+     "options": [
+      "git banana-pick",
+      "git cherry-pick",
+      "git berry-pick",
+      "git grape-pick"
+     ],
+     "answer": "b",
+     "topic": "ing-software",
+     "tema": "B3T09",
+     "explanation": "`git cherry-pick <commit>` aplica un commit concreto sobre la rama actual. Las demás opciones no existen.",
+     "codeOptions": true
+    },
+    {
+     "id": "tai2025X-S1-19",
+     "key": "S1-19",
+     "n": 19,
+     "reserve": false,
+     "text": "Un compañero le consulta por los formatos en los que puede generar la documentación de OpenAPI/Swagger. ¿Cuáles son?",
+     "options": [
+      "YAML y HTML.",
+      "JSON y XML.",
+      "YAML y JSON.",
+      "HTML y XML."
+     ],
+     "answer": "c",
+     "topic": "desarrollo-web",
+     "tema": "B3T06",
+     "explanation": "Una especificación OpenAPI se escribe en **YAML o JSON**."
+    },
+    {
+     "id": "tai2025X-S1-20",
+     "key": "S1-20",
+     "n": 20,
+     "reserve": false,
+     "text": "Para evitar ataques de denegación de servicio se ha decidido implementar un control de peticiones máximas en un periodo de tiempo concreto (rate limiting). ¿Qué código HTTP deberá devolverse cuando un usuario alcance el límite establecido?",
+     "options": [
+      "425",
+      "429",
+      "502",
+      "503"
+     ],
+     "answer": "b",
+     "topic": "desarrollo-web",
+     "tema": "B4T08",
+     "explanation": "**429 Too Many Requests** indica que se ha superado el límite de peticiones. 425 es Too Early, 502 Bad Gateway y 503 Service Unavailable."
+    },
+    {
+     "id": "tai2025X-S1R1",
+     "key": "S1R1",
+     "n": 1,
+     "reserve": true,
+     "text": "¿Con qué tipo de fichero debe trabajar si desea implementar pruebas unitarias en un componente del frontend?",
+     "options": [
+      "component.ts",
+      "test.ts",
+      "module.ts",
+      "spec.ts"
+     ],
+     "answer": "d",
+     "topic": "ing-software",
+     "tema": "B3T09",
+     "explanation": "En Angular, las pruebas unitarias de un componente van en su fichero `*.spec.ts`."
+    },
+    {
+     "id": "tai2025X-S1R2",
+     "key": "S1R2",
+     "n": 2,
+     "reserve": true,
+     "text": "En uno de los componentes del frontend detecta la siguiente expresión regular para controlar el campo de entrada del teléfono:\n```\n[\\+34|34]*[ -]*(3)[0-9]{8}\n```\n¿Cuál de las siguientes opciones cumple la expresión regular?",
+     "options": [
+      "641992011",
+      "641 992 011",
+      "+34 641992011",
+      "+34641992011"
+     ],
+     "answer": "d",
+     "topic": "programacion",
+     "tema": "B3T07",
+     "explanation": "`[\\+34|34]*` es una **clase de caracteres** (cualquiera de `+`, `3`, `4` o `|`, repetida), no una alternativa. Después la expresión exige un `3` seguido de 8 dígitos y, como no está anclada, basta con que eso aparezca en algún punto. En `+34641992011`, el 3 va seguido de `46419920`. En a) y b) no hay ningún 3, y en c) al 3 le sigue `4` y un espacio."
+    },
+    {
+     "id": "tai2025X-S1R3",
+     "key": "S1R3",
+     "n": 3,
+     "reserve": true,
+     "text": "Le consultan si conoce alguna herramienta para formatear el código de la aplicación. ¿Cuál de las siguientes es una opción válida para ello?",
+     "options": [
+      "SonarQube.",
+      "Prettier.",
+      "Quokka.",
+      "PMD."
+     ],
+     "answer": "b",
+     "topic": "ing-software",
+     "tema": "B3T09",
+     "explanation": "**Prettier** es un formateador de código. SonarQube y PMD hacen análisis estático de calidad y Quokka es un entorno para probar JavaScript en vivo."
+    },
+    {
+     "id": "tai2025X-S1R4",
+     "key": "S1R4",
+     "n": 4,
+     "reserve": true,
+     "text": "En la Subdirección se han sustituido los ordenadores utilizados para desarrollar aplicaciones, y por tanto, debe clonarse el repositorio de código de la aplicación para continuar su trabajo. ¿Con qué comando de Git puede hacerlo?",
+     "options": [
+      "git clone",
+      "git init",
+      "git add",
+      "git create"
+     ],
+     "answer": "a",
+     "topic": "ing-software",
+     "tema": "B3T09",
+     "explanation": "`git clone <url>` copia un repositorio remoto entero en el equipo. `git init` crea uno vacío y `git create` no existe.",
+     "codeOptions": true
+    },
+    {
+     "id": "tai2025X-S1R5",
+     "key": "S1R5",
+     "n": 5,
+     "reserve": true,
+     "text": "Tras realizar una modificación en la API de Java se necesita aumentar el número de versión de la API. ¿Qué fichero deberá modificar para ello, suponiendo que se usa Maven 3.9?",
+     "options": [
+      "package.json",
+      "pom.xml",
+      ".csproj",
+      "package-lock.json"
+     ],
+     "answer": "b",
+     "topic": "programacion",
+     "tema": "B3T05",
+     "explanation": "En Maven, la versión del proyecto está en la etiqueta `<version>` del **pom.xml**. package.json es de npm y .csproj de .NET."
+    }
+   ]
+  },
+  {
+   "id": "supuesto2",
+   "title": "Supuesto II",
+   "context": [
+    "La Subdirección General de Tecnologías de la Información y Comunicaciones del Ministerio donde usted trabaja (en adelante SGTIC) se encuentra actualmente en un proceso continuo de modernización y mejora de su infraestructura tecnológica, incorporando progresivamente nuevas soluciones y sustituyendo aquellas que han quedado más obsoletas, por lo que coexisten soluciones tradicionales con otras más actuales. No obstante, algunas de estas herramientas continúan siendo funcionales y válidas en los entornos descritos, por lo que es necesario seguir gestionándolas y manteniéndolas.",
+    "Se le ha encargado la administración de ciertos servidores que alojan diversas bases de datos y aplicaciones web. Entre los servidores de bases de datos se encuentran 2 servidores SQL Server 2019 en clúster que funcionan bajo Windows Server 2019.",
+    "Como servidores web que publican las aplicaciones web, tenemos:",
+    "- 2 servidores IIS 10.0",
+    "- 2 servidores Tomcat 9",
+    "Los servidores con IIS funcionan bajo Windows Server 2019 y los servidores con Tomcat funcionan bajo Linux Red Hat Enterprise Linux 8 (en adelante RHEL), donde el servicio Tomcat 9 está registrado como tomcat9.service.",
+    "Como servicio de correo se utiliza Exchange Online de Microsoft 365, en cuyo tenant usted tiene permisos de administración global.",
+    "En el organismo, además, usted tiene que gestionar switches Cisco IOS 15.x para poder hacer verificaciones post configuración, y la DMZ aloja, entre otros servicios, el servidor web01 (Nginx).",
+    "Entre sus tareas como integrante del Servicio de Sistemas, Comunicaciones y Seguridad Informática de la SGTIC también se encuentra el mantenimiento y operación de los distintos elementos que conforman la infraestructura tecnológica de la SGTIC, así como el diagnóstico y resolución de las incidencias que afecten a dichos elementos.",
+    "Salvo indicación expresa, usted dispone de los permisos necesarios para realizar todas las operaciones requeridas y se encuentra en los directorios o lugares adecuados para realizar las consultas que se le indican."
+   ],
+   "questions": [
+    {
+     "id": "tai2025X-S2-1",
+     "key": "S2-1",
+     "n": 1,
+     "reserve": false,
+     "text": "En el servidor RHEL se tiene un fichero `script.sh` con permisos `-rw-r--r--`, ¿qué comando permite hacerlo ejecutable solo por el propietario, sin modificar los permisos de grupo ni otros usuarios?",
+     "options": [
+      "chmod +x script.sh",
+      "chmod 755 script.sh",
+      "chmod u+x script.sh",
+      "chmod a+x script.sh"
+     ],
+     "answer": "c",
+     "topic": "so",
+     "tema": "B4T01",
+     "explanation": "`chmod u+x` añade la ejecución solo al propietario y deja `-rwxr--r--`. `+x` y `a+x` la añaden a todos, y `755` cambia también los permisos de grupo y otros (r-x).",
+     "codeOptions": true,
+     "learn": "sg-permisos-calc"
+    },
+    {
+     "id": "tai2025X-S2-2",
+     "key": "S2-2",
+     "n": 2,
+     "reserve": false,
+     "text": "También necesita saber en RHEL cuál de los siguientes comandos se utiliza para crear un nuevo directorio en la ubicación actual:",
+     "options": [
+      "mkdir nuevo_directorio",
+      "md nuevo_directorio",
+      "touch nuevo_directorio",
+      "create nuevo_directorio"
+     ],
+     "answer": "a",
+     "topic": "so",
+     "tema": "B4T01",
+     "explanation": "`mkdir` crea directorios. `md` es del cmd de Windows y `touch` crea ficheros vacíos.",
+     "codeOptions": true,
+     "learn": "lx-crear"
+    },
+    {
+     "id": "tai2025X-S2-3",
+     "key": "S2-3",
+     "n": 3,
+     "reserve": false,
+     "text": "Le han asignado una incidencia referida a un sistema Linux y le preguntan qué muestra el comando `hostname -f`",
+     "options": [
+      "Muestra la forma abreviada del nombre del equipo.",
+      "Muestra el formato del nombre del sistema.",
+      "Muestra la función de resolución del nombre del equipo.",
+      "Muestra el nombre completo cualificado (FQDN) del equipo."
+     ],
+     "answer": "d",
+     "topic": "so",
+     "tema": "B4T01",
+     "explanation": "`hostname -f` muestra el **FQDN** (nombre completo cualificado, p. ej. web01.ministerio.es). `hostname -s` muestra el nombre corto."
+    },
+    {
+     "id": "tai2025X-S2-4",
+     "key": "S2-4",
+     "n": 4,
+     "reserve": false,
+     "text": "En los servidores Windows 2019 Standard del organismo se le solicita comprobar con netsh advfirewall el estado del perfil activo del Firewall de Windows. Indique cómo debería realizarlo desde la línea de comandos:",
+     "options": [
+      "netsh advfirewall get currentprofile",
+      "netsh advfirewall show currentprofile",
+      "netsh advfirewall show profile",
+      "netsh advfirewall show currentprofile status"
+     ],
+     "answer": "b",
+     "topic": "seguridad",
+     "tema": "B4T09",
+     "explanation": "`netsh advfirewall show currentprofile` muestra la configuración y el estado del perfil activo del Firewall de Windows.",
+     "codeOptions": true,
+     "learn": "win-firewall"
+    },
+    {
+     "id": "tai2025X-S2-5",
+     "key": "S2-5",
+     "n": 5,
+     "reserve": false,
+     "text": "También se necesita activar el Firewall de Windows para el perfil actual con netsh advfirewall. ¿Qué comando utilizaría?",
+     "options": [
+      "netsh advfirewall enable currentprofile",
+      "netsh advfirewall set state on currentprofile",
+      "netsh advfirewall set currentprofile on",
+      "netsh advfirewall set currentprofile state on"
+     ],
+     "answer": "d",
+     "topic": "seguridad",
+     "tema": "B4T09",
+     "explanation": "`netsh advfirewall set currentprofile state on` activa el firewall en el perfil actual. Con `allprofiles` se activaría en todos.",
+     "codeOptions": true,
+     "learn": "win-firewall"
+    },
+    {
+     "id": "tai2025X-S2-6",
+     "key": "S2-6",
+     "n": 6,
+     "reserve": false,
+     "text": "En un servidor con IIS 10 sobre Windows Server 2019, se necesita crear una copia de seguridad manual de la configuración actual del servidor utilizando AppCmd, a la que debe llamar \"BackupManual\". ¿Qué comando utilizaría?",
+     "options": [
+      "appcmd create backup \"BackupManual\"",
+      "appcmd backup add \"BackupManual\"",
+      "appcmd add backup \"BackupManual\"",
+      "appcmd new backup \"BackupManual\""
+     ],
+     "answer": "c",
+     "topic": "so",
+     "tema": "B4T01",
+     "explanation": "`appcmd add backup \"BackupManual\"` crea una copia de la configuración de IIS. Se restaura con `appcmd restore backup \"BackupManual\"`.",
+     "codeOptions": true
+    },
+    {
+     "id": "tai2025X-S2-7",
+     "key": "S2-7",
+     "n": 7,
+     "reserve": false,
+     "text": "Y, ¿qué comando utilizaría para conocer todas las copias de seguridad de configuración del IIS?",
+     "options": [
+      "appcmd show backup",
+      "appcmd list backup",
+      "appcmd get backup",
+      "appcmd enumerate backup"
+     ],
+     "answer": "b",
+     "topic": "so",
+     "tema": "B4T01",
+     "explanation": "`appcmd list backup` muestra todas las copias de configuración de IIS. AppCmd usa siempre el verbo `list` para listar objetos.",
+     "codeOptions": true
+    },
+    {
+     "id": "tai2025X-S2-8",
+     "key": "S2-8",
+     "n": 8,
+     "reserve": false,
+     "text": "En el organismo se están planteando cambiar el sistema de copias de seguridad. ¿Con qué sistema se podrían eliminar las cintas?",
+     "options": [
+      "VTL",
+      "VDL",
+      "VDI",
+      "CDI"
+     ],
+     "answer": "a",
+     "topic": "hardware",
+     "tema": "B4T02",
+     "explanation": "Una **VTL** (Virtual Tape Library) emula una librería de cintas sobre discos, así que el software de backup sigue funcionando sin cintas físicas."
+    },
+    {
+     "id": "tai2025X-S2-9",
+     "key": "S2-9",
+     "n": 9,
+     "reserve": false,
+     "text": "Está en una reunión de comunicaciones sobre TLS 1.3, cuando un servidor negocia la comunicación, recibe el mensaje \"ClientHello\" y acepta los parámetros propuestos, ¿qué ocurre en un flujo válido?",
+     "options": [
+      "Se termina la conexión y se recibe el mensaje o alerta \"reset\".",
+      "El servidor manda el mensaje ServerHello.",
+      "Se termina la conexión y se recibe el mensaje o alerta \"end\".",
+      "Se continúa la comunicación con un mensaje \"ack\"."
+     ],
+     "answer": "b",
+     "topic": "seguridad",
+     "tema": "B4T08",
+     "explanation": "En TLS 1.3, si el servidor acepta el ClientHello, responde con **ServerHello** (seguido de EncryptedExtensions, Certificate, CertificateVerify y Finished)."
+    },
+    {
+     "id": "tai2025X-S2-10",
+     "key": "S2-10",
+     "n": 10,
+     "reserve": false,
+     "text": "En los servidores que funcionan con Tomcat 9 se le solicita reiniciar el servicio de Tomcat, ¿cómo lo haría?",
+     "options": [
+      "systemctl restart tomcat9",
+      "systemctl restart tomcat",
+      "systemctl start -r tomcat",
+      "sudo -i systemctl tomcat -r"
+     ],
+     "answer": "a",
+     "topic": "so",
+     "tema": "B4T01",
+     "explanation": "El servicio está registrado como `tomcat9.service`, así que se reinicia con `systemctl restart tomcat9` (el sufijo .service es opcional).",
+     "codeOptions": true,
+     "learn": "lx-sistema"
+    },
+    {
+     "id": "tai2025X-S2-11",
+     "key": "S2-11",
+     "n": 11,
+     "reserve": false,
+     "text": "En el organismo se usa como servicio de correo Microsoft 365, y se quiere configurar una aplicación para que envíe correos de manera segura. ¿Cuál es el puerto que se debería usar para poder utilizar el SMTP autenticado con STARTTLS?",
+     "options": [
+      "995",
+      "993",
+      "587",
+      "143"
+     ],
+     "answer": "c",
+     "topic": "redes",
+     "tema": "B4T03",
+     "explanation": "El envío SMTP autenticado con STARTTLS usa el puerto **587** (submission); en Microsoft 365, smtp.office365.com:587. 995 es POP3S, 993 IMAPS y 143 IMAP.",
+     "learn": "rd-protocolos"
+    },
+    {
+     "id": "tai2025X-S2-12",
+     "key": "S2-12",
+     "n": 12,
+     "reserve": false,
+     "text": "También, para el servidor Windows 2019 Standard que contiene el DA (Directorio Activo), le preguntan cuál sería el comando cmdlet de PowerShell para crear un nuevo sitio llamado PLANI:",
+     "options": [
+      "New-ADSite PLANI",
+      "New-ADReplicationSite PLANI",
+      "New-ADReplication PLANI",
+      "Set-ADReplication PLANI"
+     ],
+     "answer": "b",
+     "topic": "so",
+     "tema": "B4T04",
+     "explanation": "Los sitios de AD se crean con `New-ADReplicationSite -Name PLANI` (el nombre es el primer parámetro posicional). `New-ADSite` no existe.",
+     "codeOptions": true,
+     "learn": "win-ad"
+    },
+    {
+     "id": "tai2025X-S2-13",
+     "key": "S2-13",
+     "n": 13,
+     "reserve": false,
+     "text": "En un puerto de un switch Cisco se quiere conectar un PC de la VLAN de usuarios, denominada VLAN 10, ¿con qué sentencia/s se configura correctamente?",
+     "options": [
+      "\"switchport mode trunk\" y \"switchport trunk access vlan 10\"",
+      "\"switchport mode access\" y \"switchport access vlan 10\"",
+      "\"switchport mode dynamic desirable\"",
+      "\"switchport mode trunk\" y \"switchport trunk allowed vlan 10\""
+     ],
+     "answer": "b",
+     "topic": "redes",
+     "tema": "B4T04",
+     "explanation": "Un PC va en un puerto de acceso: `switchport mode access` y `switchport access vlan 10`. Los modos trunk son para enlaces entre switches.",
+     "learn": "rd-ios-vlan"
+    },
+    {
+     "id": "tai2025X-S2-14",
+     "key": "S2-14",
+     "n": 14,
+     "reserve": false,
+     "text": "Le solicitan revisar rápidamente las 50 últimas líneas del registro del servicio nginx usando el journal, ¿qué orden es correcta?",
+     "options": [
+      "journalctl -u nginx --last=50",
+      "journalctl nginx -t 50",
+      "tail -n 50 /var/log/messages",
+      "journalctl -u nginx -n 50"
+     ],
+     "answer": "d",
+     "topic": "so",
+     "tema": "B4T01",
+     "explanation": "`journalctl -u nginx -n 50` muestra las 50 últimas líneas del journal de la unidad nginx. `-u` elige la unidad y `-n` el número de líneas.",
+     "codeOptions": true,
+     "learn": "lx-procesos"
+    },
+    {
+     "id": "tai2025X-S2-15",
+     "key": "S2-15",
+     "n": 15,
+     "reserve": false,
+     "text": "Se ha observado que el servicio nginx del servidor web01 no arranca y el log indica un error «permission denied» al acceder a `/var/www/html`. El sistema tiene configurado SELinux en modo enforcing. ¿Qué herramienta permite analizar la causa concreta del bloqueo?",
+     "options": [
+      "semange",
+      "getsebool",
+      "restorecon",
+      "sealert"
+     ],
+     "answer": "d",
+     "topic": "seguridad",
+     "tema": "B4T09",
+     "explanation": "**sealert** (paquete setroubleshoot) analiza las denegaciones AVC de SELinux y explica la causa y la solución. `restorecon` restaura contextos (es una solución, no un análisis), `getsebool` consulta booleanos y la a) es una errata de `semanage`."
+    },
+    {
+     "id": "tai2025X-S2-16",
+     "key": "S2-16",
+     "n": 16,
+     "reserve": false,
+     "text": "En el organismo se quiere disponer de un sistema de vigilancia de la red y se ha optado por la sonda SAT INET del CCN- CERT. Según su arquitectura, ¿cómo se realizan las comunicaciones de la sonda con el sistema central?",
+     "options": [
+      "Por medio de un túnel cifrado se inicia desde la sonda hacia el sistema central.",
+      "Por medio de un túnel cifrado se inicia desde el sistema central hacia la sonda.",
+      "Por medio de un túnel cifrado siempre que la comunicación se efectúe por Internet.",
+      "Por medio de un túnel cifrado que discurre siempre a través del AC del organismo."
+     ],
+     "answer": "a",
+     "topic": "seguridad",
+     "tema": "B4T09",
+     "explanation": "En SAT-INET, la sonda instalada en el organismo **inicia** un túnel cifrado hacia el sistema central del CCN-CERT, al que envía los eventos.",
+     "learn": "sg-ccn"
+    },
+    {
+     "id": "tai2025X-S2-17",
+     "key": "S2-17",
+     "n": 17,
+     "reserve": false,
+     "text": "El organismo dispone de una red con dirección 192.168.1.0/24 y necesita dividirla en subredes de modo que cada subred disponga de al menos 100 hosts utilizables. ¿Cuál de las siguientes máscaras sería la más adecuada?",
+     "options": [
+      "/25",
+      "/26",
+      "/27",
+      "/28"
+     ],
+     "answer": "a",
+     "topic": "redes",
+     "tema": "B4T07",
+     "explanation": "Para 100 hosts hacen falta 7 bits de host (2⁷ − 2 = 126): **/25**. Con /26 solo hay 62.",
+     "learn": "rd-subnet-dividir"
+    },
+    {
+     "id": "tai2025X-S2-18",
+     "key": "S2-18",
+     "n": 18,
+     "reserve": false,
+     "text": "Le preguntan cuál de los siguientes prefijos de dirección IPv6 define direcciones de tipo Multicast:",
+     "options": [
+      "FF00::/8",
+      "FEC0::/10",
+      "FE80::/10",
+      "FC00::/7"
+     ],
+     "answer": "a",
+     "topic": "redes",
+     "tema": "B4T07",
+     "explanation": "**FF00::/8** es multicast en IPv6. FE80::/10 es de enlace local, FC00::/7 es local única (ULA) y FEC0::/10 es el antiguo site-local, ya obsoleto."
+    },
+    {
+     "id": "tai2025X-S2-19",
+     "key": "S2-19",
+     "n": 19,
+     "reserve": false,
+     "text": "Su organismo dispone de un sistema Docker en uno de los servidores RHEL. ¿Qué comando permite listar todos los contenedores, incluidos los detenidos independientemente de su estado?",
+     "options": [
+      "docker ls -a",
+      "docker ps -a",
+      "docker container ls",
+      "docker list -a"
+     ],
+     "answer": "b",
+     "topic": "virtualizacion",
+     "tema": "B4T03",
+     "explanation": "`docker ps -a` (o `docker container ls -a`) lista todos los contenedores, también los parados. Sin `-a` solo salen los que están en marcha.",
+     "codeOptions": true,
+     "learn": "dk-parar"
+    },
+    {
+     "id": "tai2025X-S2-20",
+     "key": "S2-20",
+     "n": 20,
+     "reserve": false,
+     "text": "Se necesita obtener los nombres de los servicios que están en ejecución en un sistema Windows mediante PowerShell. ¿Cuál de los siguientes comandos devuelve ese resultado?",
+     "options": [
+      "Get-Service | Where-Object {$_.Status -eq \"Enabled\"} | Select-Object Name",
+      "Get-Service | Where-Object {$_.Status -eq \"Running\"} | Select-Object Name",
+      "Get-Service | Where-Object {$_.Status -eq \"Started\"} | Select-Object Name",
+      "Get-Service | Where-Object {$_.Status -eq \"Active\"} | Select-Object Name"
+     ],
+     "answer": "b",
+     "topic": "so",
+     "tema": "B4T01",
+     "explanation": "En `Get-Service`, el estado de un servicio en marcha es **Running** (otros valores: Stopped, Paused…). Enabled, Started y Active no son valores válidos.",
+     "codeOptions": true,
+     "learn": "win-basico"
+    },
+    {
+     "id": "tai2025X-S2R1",
+     "key": "S2R1",
+     "n": 1,
+     "reserve": true,
+     "text": "Señale la respuesta correcta acerca de la técnica de multiplexación CDMA:",
+     "options": [
+      "Separa ortogonalmente las subportadoras en el espectro del tiempo.",
+      "Define pequeños intervalos de guarda de frecuencia para acomodar las diferentes variaciones en los slots de transmisión.",
+      "Verifica la ausencia de señal antes de transmitir en un medio compartido.",
+      "Utiliza una secuencia de bits (chips) de modo que permite que diferentes señales compartan una misma banda de frecuencia."
+     ],
+     "answer": "d",
+     "topic": "redes",
+     "tema": "B4T06",
+     "explanation": "**CDMA** asigna a cada usuario un código (una secuencia de *chips*) y así varias señales comparten la misma banda. La a) describe OFDM y la c), CSMA."
+    },
+    {
+     "id": "tai2025X-S2R2",
+     "key": "S2R2",
+     "n": 2,
+     "reserve": true,
+     "text": "Si en el organismo se desea desplegar una red inalámbrica de nueva generación basada en WiFi 6, ¿qué estándar IEEE corresponde a esta tecnología?",
+     "options": [
+      "802.11an",
+      "802.11ax",
+      "802.11ac",
+      "802.11be"
+     ],
+     "answer": "b",
+     "topic": "redes",
+     "tema": "B4T10",
+     "explanation": "Wi-Fi 6 es **IEEE 802.11ax**. Wi-Fi 5 es 802.11ac y Wi-Fi 7 802.11be."
+    },
+    {
+     "id": "tai2025X-S2R3",
+     "key": "S2R3",
+     "n": 3,
+     "reserve": true,
+     "text": "En SNMP, el conjunto de OID (Object IDentifier) que tiene disponible un dispositivo se conoce como:",
+     "options": [
+      "MIB (Management Information Base).",
+      "MIR (Management Information Repository).",
+      "OID Database.",
+      "OID Group."
+     ],
+     "answer": "a",
+     "topic": "redes",
+     "tema": "B4T04",
+     "explanation": "La **MIB** (Management Information Base) es el conjunto de objetos (OID) que gestiona un agente SNMP."
+    },
+    {
+     "id": "tai2025X-S2R4",
+     "key": "S2R4",
+     "n": 4,
+     "reserve": true,
+     "text": "En el servidor de Base de Datos SQL Server del organismo, ¿qué puerto por defecto usa el Motor de base de datos (instancia predeterminada)?",
+     "options": [
+      "UDP 5430",
+      "TCP 5431",
+      "TCP 1433",
+      "UDP 2000"
+     ],
+     "answer": "c",
+     "topic": "bbdd",
+     "tema": "B4T02",
+     "explanation": "La instancia predeterminada del motor de SQL Server escucha en el puerto **TCP 1433**. El SQL Server Browser usa UDP 1434."
+    },
+    {
+     "id": "tai2025X-S2R5",
+     "key": "S2R5",
+     "n": 5,
+     "reserve": true,
+     "text": "¿Qué registro DNS dirige el correo entrante al servidor del dominio?",
+     "options": [
+      "A",
+      "CNAME",
+      "MX",
+      "TXT"
+     ],
+     "answer": "c",
+     "topic": "redes",
+     "tema": "B4T08",
+     "explanation": "El registro **MX** (Mail eXchanger) indica qué servidor recibe el correo del dominio. A da una IPv4, CNAME es un alias y TXT guarda texto (SPF, DKIM…)."
+    }
+   ]
+  }
+ ]
+}

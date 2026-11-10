@@ -27,7 +27,7 @@ test('las referencias entre temario, lecciones, rutas y preguntas existen', () =
   const lessonIds = new Set(ALL_LESSONS.map((l) => l.id));
   for (const t of TEMAS) for (const l of t.lessons) assert.ok(lessonIds.has(l), `${t.id} → ${l}`);
   for (const tr of TRACKS) for (const id of tr.temas ?? []) assert.ok(temaIds.has(id), `${tr.id} → ${id}`);
-  for (const id of ['tai2024A', 'tai2025A']) {
+  for (const id of ['tai2019', 'tai2022', 'tai2024A', 'tai2025A', 'tai2025X']) {
     const exam = JSON.parse(readFileSync(join(ROOT, `src/data/exams/${id}.json`), 'utf8'));
     for (const p of exam.parts) for (const q of p.questions) assert.ok(temaIds.has(q.tema), `${q.id} → ${q.tema}`);
   }

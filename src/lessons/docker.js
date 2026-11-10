@@ -92,7 +92,7 @@ Ya que estamos en virtualización: un **snapshot** es una «foto» del estado de
         why: 'La imagen es la plantilla; el contenedor es su ejecución.',
       },
     ],
-    exam: ['tai2024A-P64', 'tai2025A-P62', 'tai2025A-P63'],
+    exam: ['tai2024A-P64', 'tai2025A-P62', 'tai2025A-P63', 'tai2025X-P59', 'tai2025X-P61', 'tai2022-P63'],
   },
   {
     id: 'dk-imagenes',
@@ -144,7 +144,7 @@ Para **entrar** en un contenedor y usar su terminal: \`docker run -it ubuntu bas
       { label: 'Sal del contenedor con exit', check: all(wasInsideContainer, backOnHost) },
     ],
     hints: ['docker run hello-world', 'docker ps y después docker ps -a', 'docker run -it ubuntu bash, y dentro: ls', 'exit'],
-    exam: ['tai2025A-P64'],
+    exam: ['tai2025A-P64', 'tai2019-S2-13'],
   },
   {
     id: 'dk-servicios',
@@ -216,7 +216,7 @@ Pista extra: \`ss -ltn\` (de la ruta de Linux) también mostrará el puerto 8080
       'docker rm web y docker rm <id> (o ambos en una línea: docker rm web <id>)',
       'docker rmi nginx (si te da error, ¿queda algún contenedor que la use? Mira docker ps -a)',
     ],
-    exam: ['tai2025A-S2-7', 'tai2025A-S2-8'],
+    exam: ['tai2025A-S2-7', 'tai2025A-S2-8', 'tai2025X-S2-19', 'tai2019-S2-14'],
   },
   {
     id: 'dk-exec',
@@ -413,6 +413,6 @@ En cada nodo trabajador corren el **kubelet** (que arranca los Pods), **kube-pro
         why: 'TCP es el protocolo por defecto; también se admiten UDP y SCTP. Salió en el examen de 2024.',
       },
     ],
-    exam: ['tai2025A-P65', 'tai2024A-S2-13'],
+    exam: ['tai2025A-P65', 'tai2024A-S2-13', 'tai2025X-P64', 'tai2022-P23', 'tai2022-P65'],
   },
 ];

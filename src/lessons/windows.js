@@ -37,6 +37,7 @@ export const windows = [
     type: 'powershell',
     title: 'PowerShell desde cero',
     summary: 'Cmdlets Verbo-Sustantivo, Get-Help, Get-Command, alias y tus primeras carpetas.',
+    exam: ['tai2025X-S2-20', 'tai2022-S2-2'],
     body: `**PowerShell** es la consola de administración de Windows. A diferencia de la vieja \`cmd\`, sus órdenes, los **cmdlets**, tienen nombres largos y **predecibles**: **Verbo-Sustantivo**.
 
 | Verbo | Para… | Ejemplos |
@@ -174,7 +175,7 @@ Es lo mismo con nombres más claros: **-Direction** Inbound/Outbound y **-Action
       'Test-NetConnection db01 -Port 3306',
     ],
     curiosity: 'El Firewall de Windows Defender tiene tres perfiles: Dominio (cuando el equipo ve a su controlador de dominio), Privado y Público. Una regla puede aplicarse a uno, a varios o a todos (profile=any).',
-    exam: ['tai2025A-S2R3'],
+    exam: ['tai2025A-S2R3', 'tai2025X-S2-4', 'tai2025X-S2-5', 'tai2019-S2-17', 'tai2019-S2R1'],
   },
   {
     id: 'win-ad',
@@ -232,7 +233,7 @@ Cinco tareas que solo puede hacer **un** DC a la vez: maestro de **esquema**, de
         why: 'Kerberos (con NTLM como reserva heredada).',
       },
     ],
-    exam: ['tai2025A-P66', 'tai2025A-S2-18', 'tai2024A-S2-20'],
+    exam: ['tai2025A-P66', 'tai2025A-S2-18', 'tai2024A-S2-20', 'tai2025X-P27', 'tai2025X-S2-12', 'tai2022-S2R1', 'tai2019-S2-10'],
   },
   {
     id: 'win-dc',

@@ -291,7 +291,7 @@ test('lecciones de lectura: el test tiene respuestas válidas', () => {
 });
 
 test('enlaces entre lecciones y preguntas existen', () => {
-  const exams = ['tai2024A', 'tai2025A'].map((id) => JSON.parse(readFileSync(new URL(`../src/data/exams/${id}.json`, import.meta.url))));
+  const exams = ['tai2019', 'tai2022', 'tai2024A', 'tai2025A', 'tai2025X'].map((id) => JSON.parse(readFileSync(new URL(`../src/data/exams/${id}.json`, import.meta.url))));
   const qids = new Set(exams.flatMap((e) => e.parts.flatMap((p) => p.questions.map((q) => q.id))));
   const lessonIds = new Set(ALL_LESSONS.map((l) => l.id));
   for (const l of ALL_LESSONS) for (const id of l.exam ?? []) assert.ok(qids.has(id), `${l.id} → ${id}`);

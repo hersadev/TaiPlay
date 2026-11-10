@@ -99,6 +99,7 @@ Así se razona un caso del examen: si la base de datos se **corrompe** (integrid
     type: 'drill',
     title: 'Permisos de Linux: octal, rwx y umask',
     summary: 'Ejercicios al azar para traducir permisos de memoria.',
+    exam: ['tai2025X-S2-1', 'tai2019-P32'],
     body: `Los permisos de Linux salen en el examen y en cada servidor que toques. Cada fichero tiene **tres tríos** de permisos: **propietario**, **grupo** y **otros**. Cada trío tiene **r** (leer), **w** (escribir) y **x** (ejecutar o, en una carpeta, entrar en ella).
 
 ## De rwx a número
@@ -133,6 +134,7 @@ La **umask** dice qué permisos se **quitan** a lo que se crea. Los ficheros par
     type: 'terminal',
     title: 'Bastionar ficheros: find -perm, chmod y chown',
     summary: 'Encuentra lo que cualquiera puede modificar, protege secretos y ajusta propietarios.',
+    exam: ['tai2019-S2-7'],
     body: `Una auditoría ha encontrado problemas en la aplicación web de **web01**. Vamos a corregirlos.
 
 ## 1. Buscar lo peligroso
@@ -324,6 +326,6 @@ Además, el CCN-CERT tiene los **SAT** (sistemas de alerta temprana): **SAT-INET
       { left: 'ATENEA', right: 'Plataforma de retos de ciberseguridad para formarse' },
       { left: 'OLVIDO', right: 'Borrado seguro de ficheros y de sus metadatos' },
     ],
-    exam: ['tai2024A-P67', 'tai2024A-P80', 'tai2024A-S2-12'],
+    exam: ['tai2024A-P67', 'tai2024A-P80', 'tai2024A-S2-12', 'tai2025X-P77', 'tai2025X-S2-16', 'tai2022-P17', 'tai2022-S2-18', 'tai2019-P77'],
   },
 ];

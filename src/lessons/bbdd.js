@@ -66,7 +66,7 @@ En las siguientes lecciones escribirás SQL de verdad sobre las tablas de los su
         why: 'Manipulación de datos (algunos autores la llaman DQL).',
       },
     ],
-    exam: ['tai2025A-P38', 'tai2024A-P28', 'tai2024A-S1-4', 'tai2024A-P37'],
+    exam: ['tai2025A-P38', 'tai2024A-P28', 'tai2024A-S1-4', 'tai2024A-P37', 'tai2025X-P33', 'tai2025X-P37'],
   },
   {
     id: 'sql-select',
@@ -131,7 +131,7 @@ Un truco con fechas: guardadas como 'AAAA-MM-DD', ordenarlas de mayor a menor po
       "SELECT * FROM CENTRO_EDUCATIVO WHERE provincia IN ('Madrid', 'Valencia');",
       'SELECT nombre, fecha_nacimiento FROM ALUMNO ORDER BY fecha_nacimiento DESC;',
     ],
-    exam: ['tai2024A-S1R3'],
+    exam: ['tai2024A-S1R3', 'tai2025X-S1-10', 'tai2019-S1-16', 'tai2019-S1-19'],
   },
   {
     id: 'sql-modificar',
@@ -167,7 +167,7 @@ Las **claves foráneas** protegen la integridad: no puedes borrar un interesado 
       "DELETE FROM FicheroAdjunto WHERE Denominacion = 'foto.png';",
       "DELETE FROM Interesado WHERE DocumentoIdentidad = '00000000T';",
     ],
-    exam: ['tai2024A-S1-3'],
+    exam: ['tai2024A-S1-3', 'tai2022-P22', 'tai2022-P43', 'tai2019-S1-18'],
   },
   {
     id: 'sql-crear',
@@ -218,7 +218,7 @@ Un \`CREATE INDEX\` normal acelera las búsquedas, pero **no** impide duplicados
       "INSERT INTO Subsanacion VALUES (1, 3, 'Falta el certificado de empadronamiento');",
       'CREATE UNIQUE INDEX idx_email ON Interesado (Email);',
     ],
-    exam: ['tai2024A-S1-13', 'tai2025A-S1-1', 'tai2025A-S1R5'],
+    exam: ['tai2024A-S1-13', 'tai2025A-S1-1', 'tai2025A-S1R5', 'tai2022-S1-4'],
   },
   {
     id: 'sql-join',
@@ -295,7 +295,7 @@ Las trampas de las otras opciones: \`GROUP id_programa\` (falta el BY), \`SUM(*)
       "SELECT id_programa, COUNT(*) FROM MATRICULA WHERE estado = 'ACTIVA' GROUP BY id_programa HAVING COUNT(*) > 1;",
       'SELECT AVG(valor) FROM INDICADOR;',
     ],
-    exam: ['tai2025A-S1-3'],
+    exam: ['tai2025A-S1-3', 'tai2025X-S1-9', 'tai2019-S1-17'],
   },
   {
     id: 'sql-subconsultas',
@@ -378,6 +378,6 @@ La cabecera \`CREATE TRIGGER nombre BEFORE UPDATE ON tabla\` es la sintaxis ANSI
       "CREATE TRIGGER validar_cambio BEFORE UPDATE ON SolicitudBeca FOR EACH ROW WHEN NEW.AñoConvocatoria < 2020 BEGIN SELECT RAISE(ABORT, 'Año de convocatoria no válido'); END;",
       'UPDATE SolicitudBeca SET AñoConvocatoria = 2010 WHERE IdSolicitudBeca = 1;',
     ],
-    exam: ['tai2025A-P43', 'tai2025A-P44', 'tai2024A-P39'],
+    exam: ['tai2025A-P43', 'tai2025A-P44', 'tai2024A-P39', 'tai2025X-P38', 'tai2025X-P39', 'tai2022-P33', 'tai2022-P42', 'tai2019-P42', 'tai2019-P43'],
   },
 ];

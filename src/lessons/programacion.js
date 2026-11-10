@@ -106,7 +106,7 @@ console.log(0.1 + 0.2 === 0.3);`,
         why: 'En JavaScript la división no es entera. Y 0.1 + 0.2 da 0.30000000000000004: los decimales en coma flotante no son exactos.',
       },
     ],
-    exam: ['tai2025A-P40'],
+    exam: ['tai2025A-P40', 'tai2025X-P50', 'tai2025X-P52', 'tai2022-S1R1'],
   },
   {
     id: 'pg-js-control',
@@ -219,13 +219,14 @@ for (const n of notas) console.log(n);`,
         why: 'for…in da los índices (como texto) y for…of, los valores.',
       },
     ],
-    exam: ['tai2024A-P36', 'tai2024A-P34'],
+    exam: ['tai2024A-P36', 'tai2024A-P34', 'tai2019-P38', 'tai2019-S1-8'],
   },
   {
     id: 'pg-js-funciones',
     type: 'code',
     title: 'JavaScript III: funciones, arrays y objetos',
     summary: 'Ámbito, closures, map/filter/reduce, referencias y desestructuración.',
+    exam: ['tai2025X-S1-4', 'tai2022-S1R5', 'tai2019-PR5', 'tai2019-S1R1'],
     body: `## Funciones
 - \`function nombre(a, b = 1) { return … }\` o, abreviada, \`(a, b) => a + b\`.
 - Las declaradas con \`function\` se pueden llamar **antes** de su línea (*hoisting*).
@@ -593,7 +594,7 @@ public class Main {
         why: 'Es sobrescritura: se ejecuta el método del objeto real (un Perro), no el del tipo de la variable. Es el polimorfismo.',
       },
     ],
-    exam: ['tai2025A-S1-6', 'tai2025A-S1-5', 'tai2025A-P46', 'tai2024A-S1-11'],
+    exam: ['tai2025A-S1-6', 'tai2025A-S1-5', 'tai2025A-P46', 'tai2024A-S1-11', 'tai2025X-S1-7', 'tai2022-S1-2', 'tai2022-S1-3', 'tai2022-S1-11', 'tai2019-P40', 'tai2019-P41', 'tai2019-P46', 'tai2019-S1-11', 'tai2019-S1-12'],
   },
   {
     id: 'pg-csharp',
@@ -726,7 +727,7 @@ Console.WriteLine(lista[2]);`,
         why: 'La lista tiene 2 elementos (índices 0 y 1): lista[2] lanza ArgumentOutOfRangeException.',
       },
     ],
-    exam: ['tai2024A-S1-20', 'tai2025A-S1-9', 'tai2025A-P48'],
+    exam: ['tai2024A-S1-20', 'tai2025A-S1-9', 'tai2025A-P48', 'tai2025X-P45', 'tai2025X-S1-5', 'tai2025X-S1-6', 'tai2022-P48', 'tai2022-P49', 'tai2019-P47', 'tai2019-S1-13', 'tai2019-S1-14'],
   },
 ];
 
