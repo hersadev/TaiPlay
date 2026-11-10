@@ -66,7 +66,8 @@ export default function SimulacroPage() {
             <NumberField label="Duración del simulacro (min)" value={settings.simulacroMin} onChange={(v) => updateSettings({ simulacroMin: v })} />
             <NumberField label="Duración de un supuesto suelto (min)" value={settings.supuestoMin} onChange={(v) => updateSettings({ supuestoMin: v })} />
             <p className="text-xs text-gray-500">
-              Ajusta la penalización y el tiempo a lo que digan las bases de tu convocatoria: cambian entre procesos.
+              Por defecto, lo que fijan las bases de la convocatoria de 2025 para el ingreso libre: −1/3 por error y 120 minutos para
+              el ejercicio completo. En promoción interna son −1/4 y 90 minutos. Ajústalo si tu convocatoria dice otra cosa.
             </p>
           </div>
         </details>

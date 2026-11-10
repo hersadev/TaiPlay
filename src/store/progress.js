@@ -13,7 +13,7 @@ import { review } from '../engine/repaso/srs.js';
 //   days:     días (AAAA-MM-DD, hora local) en los que se ha estudiado
 //   cards:    repaso espaciado de las tarjetas { [id]: { box, due, ok, ko } }
 //   welcomed: si ya se ha visto (y cerrado) el panel de bienvenida
-export const DEFAULT_SETTINGS = { penalty: 1 / 3, simulacroMin: 100, supuestoMin: 30 };
+export const DEFAULT_SETTINGS = { penalty: 1 / 3, simulacroMin: 120, supuestoMin: 30 };
 
 // localStorage puede no existir o lanzar (modo privado, almacenamiento
 // bloqueado): en ese caso la app funciona igual, solo que sin guardar.
@@ -88,11 +88,17 @@ export const useProgress = create(
     }),
     {
       name: 'taiplay:progress',
-      version: 3,
+      version: 4,
       storage: safeStorage,
       // v1 → v2: llegan los logros, la racha y los días de estudio.
       // v2 → v3: llega el repaso espaciado (cards).
-      migrate: (state) => ({ ...EMPTY, ...state }),
+      // v3 → v4: el simulacro pasa de 100 a 120 min (bases de la convocatoria
+      // de 2025); solo se cambia a quien conservaba el valor por defecto.
+      migrate: (state, version) => {
+        const next = { ...EMPTY, ...state };
+        if (version < 4 && next.settings?.simulacroMin === 100) next.settings = { ...next.settings, simulacroMin: 120 };
+        return next;
+      },
     },
   ),
 );
