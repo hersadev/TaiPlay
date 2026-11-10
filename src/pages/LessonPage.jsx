@@ -163,44 +163,86 @@ function ObjectivesBox({ lesson, done, allDone, onRestart, restartLabel }) {
   );
 }
 
-// Columna de texto común a las prácticas. En el móvil es «display:
-// contents»: sus bloques pasan a ser filas de la rejilla y el panel de
-// práctica (último hijo de PRACTICE_GRID, order-1) se coloca justo después
-// de los objetivos, antes de la curiosidad y las preguntas de examen
-// (order-2). En pantalla ancha vuelve a ser una columna con su scroll.
+// Columna de texto común a las prácticas. En pantalla ancha es la columna
+// izquierda, con su propio scroll, y el panel de práctica va a la derecha.
+// En el móvil no caben las dos: PracticeLayout muestra unas pestañas y cada
+// bloque lleva only-theory u only-practice (ver globals.css) para saber en
+// cuál sale. El título y los objetivos salen en las dos.
 function PracticeText({ lesson, track, next, prev, objectives, onRestart, restartLabel, children }) {
   return (
-    <div className="contents lg:block lg:min-h-0 lg:space-y-5 lg:overflow-y-auto lg:pr-1">
+    <div className="space-y-5 lg:min-h-0 lg:overflow-y-auto lg:pr-1">
       <div>
         <Breadcrumb track={track} lesson={lesson} />
         <h1 className="mt-1 text-2xl font-bold text-gray-100">{lesson.title}</h1>
       </div>
-      <RichText text={lesson.body} />
-      <ObjectivesBox lesson={lesson} {...objectives} onRestart={onRestart} restartLabel={restartLabel} />
-      {children}
-      <div className="order-2 space-y-5">
+      <div className="only-theory">
+        <RichText text={lesson.body} />
+      </div>
+      <div className="only-practice">
+        <ObjectivesBox lesson={lesson} {...objectives} onRestart={onRestart} restartLabel={restartLabel} />
+      </div>
+      {children && <div className="only-practice">{children}</div>}
+      <div className="only-theory space-y-5">
         {lesson.curiosity && <p className="rounded-lg border-l-2 border-purple-400 bg-gray-900 p-3 text-sm text-gray-300">💬 {lesson.curiosity}</p>}
         <ExamLinks ids={lesson.exam} />
+      </div>
+      {/* Al acabar, la siguiente lección también se ofrece en la pestaña de práctica. */}
+      <div className={objectives.allDone ? '' : 'only-theory'}>
         <NextNav track={track} next={next} prev={prev} done={objectives.allDone} />
       </div>
     </div>
   );
 }
 
-const PRACTICE_GRID = 'mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)] gap-4 [&>*:last-child]:order-1 px-4 py-4 lg:h-[calc(100vh-3.5rem)] lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]';
+// Rejilla de las prácticas: PracticeText y el panel (terminal, consola…).
+// En el móvil, pestañas «Explicación» y «Práctica»; el panel nunca se
+// desmonta, solo se oculta, para no perder lo que se lleva hecho.
+function PracticeLayout({ children: [text, panel] }) {
+  const [tab, setTab] = useState('teoria');
+  const show = (t) => {
+    setTab(t);
+    window.scrollTo({ top: 0 });
+  };
+  const tabClass = (t) =>
+    `flex-1 rounded-md px-3 py-2 text-sm font-medium ${tab === t ? 'bg-gray-800 text-yellow-300' : 'text-gray-400 hover:text-gray-200'}`;
+  return (
+    <div
+      data-tab={tab}
+      className="practice mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)] gap-4 px-4 py-4 lg:h-[calc(100vh-3.5rem)] lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]"
+    >
+      <div role="tablist" className="sticky top-14 z-10 -mx-4 flex gap-1 border-b border-gray-800 bg-gray-950/95 px-4 py-2 backdrop-blur lg:hidden">
+        <button type="button" role="tab" aria-selected={tab === 'teoria'} onClick={() => show('teoria')} className={tabClass('teoria')}>
+          Explicación
+        </button>
+        <button type="button" role="tab" aria-selected={tab === 'practica'} onClick={() => show('practica')} className={tabClass('practica')}>
+          Práctica
+        </button>
+      </div>
+      {text}
+      <div className="only-practice lg:grid lg:min-h-0 lg:grid-rows-[minmax(0,1fr)]">{panel}</div>
+      <button
+        type="button"
+        onClick={() => show('practica')}
+        className="only-theory rounded-lg bg-yellow-400 px-4 py-2.5 font-semibold text-gray-950 hover:bg-yellow-300 lg:hidden"
+      >
+        Ir a la práctica →
+      </button>
+    </div>
+  );
+}
 
 function TerminalLesson({ lesson, track, next, prev }) {
   const objectives = useObjectives(lesson);
   const [shell, setShell] = useState(() => createShell(lesson.setup));
   return (
-    <div className={PRACTICE_GRID}>
+    <PracticeLayout>
       <PracticeText
         {...{ lesson, track, next, prev, objectives }}
         onRestart={() => setShell(createShell(lesson.setup))}
         restartLabel="Reiniciar la máquina"
       />
       <Terminal shell={shell} onCommand={objectives.evaluate} className="h-[60vh] lg:h-auto" />
-    </div>
+    </PracticeLayout>
   );
 }
 
@@ -208,14 +250,14 @@ function IosLesson({ lesson, track, next, prev }) {
   const objectives = useObjectives(lesson);
   const [sw, setSw] = useState(() => createSwitch(lesson.setup));
   return (
-    <div className={PRACTICE_GRID}>
+    <PracticeLayout>
       <PracticeText
         {...{ lesson, track, next, prev, objectives }}
         onRestart={() => setSw(createSwitch(lesson.setup))}
         restartLabel="Reiniciar el switch"
       />
       <Terminal shell={sw} onCommand={objectives.evaluate} className="h-[60vh] lg:h-auto" />
-    </div>
+    </PracticeLayout>
   );
 }
 
@@ -223,14 +265,14 @@ function PowerShellLesson({ lesson, track, next, prev }) {
   const objectives = useObjectives(lesson);
   const [ps, setPs] = useState(() => createPowerShell(lesson.setup));
   return (
-    <div className={PRACTICE_GRID}>
+    <PracticeLayout>
       <PracticeText
         {...{ lesson, track, next, prev, objectives }}
         onRestart={() => setPs(createPowerShell(lesson.setup))}
         restartLabel="Reiniciar el equipo"
       />
       <Terminal shell={ps} onCommand={objectives.evaluate} className="h-[60vh] lg:h-auto" />
-    </div>
+    </PracticeLayout>
   );
 }
 
@@ -247,10 +289,10 @@ function DrillLesson({ lesson, track, next, prev }) {
     objectives.evaluate(nextCounts);
   };
   return (
-    <div className={PRACTICE_GRID}>
+    <PracticeLayout>
       <PracticeText {...{ lesson, track, next, prev, objectives }} onRestart={() => setNonce((n) => n + 1)} restartLabel="Otro ejercicio" />
       <Drill tabs={tabs} counts={counts} onSolved={onSolved} nonce={nonce} className="lg:h-auto" />
-    </div>
+    </PracticeLayout>
   );
 }
 
@@ -375,7 +417,7 @@ function SqlLesson({ lesson, track, next, prev }) {
   };
 
   return (
-    <div className={PRACTICE_GRID}>
+    <PracticeLayout>
       <PracticeText {...{ lesson, track, next, prev, objectives }} onRestart={reset} restartLabel="Reiniciar la base de datos">
         {tables.length > 0 && (
           <section>
@@ -391,7 +433,7 @@ function SqlLesson({ lesson, track, next, prev }) {
           {loadError ? `No se pudo cargar el motor SQL: ${loadError}` : 'Cargando el motor SQL…'}
         </div>
       )}
-    </div>
+    </PracticeLayout>
   );
 }
 

@@ -105,3 +105,11 @@
     animation: none !important;
   }
 }
+
+/* Prácticas en el móvil: pestañas «Explicación» y «Práctica» (LessonPage). */
+@media (max-width: 1023.98px) {
+  .practice[data-tab='teoria'] .only-practice,
+  .practice[data-tab='practica'] .only-theory {
+    display: none;
+  }
+}

@@ -68,6 +68,7 @@ export default function App() {
   const welcomed = useProgress((s) => s.welcomed);
   const markWelcomed = useProgress((s) => s.markWelcomed);
   const [welcomeOpen, setWelcomeOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const closeWelcome = useCallback(() => {
     setWelcomeOpen(false);
     markWelcomed();
@@ -76,18 +77,18 @@ export default function App() {
     <div className="flex min-h-full flex-col">
       <header className="sticky top-0 z-20 border-b border-gray-800 bg-gray-950/95 backdrop-blur">
         <div className="mx-auto flex h-14 max-w-7xl items-center gap-4 px-4">
-          <a href={href('')} className="flex items-center gap-2 font-semibold text-gray-100">
+          <a href={href('')} onClick={() => setMenuOpen(false)} className="flex items-center gap-2 font-semibold text-gray-100">
             <span className="font-mono text-green-400">›_</span>
             <span className="hidden sm:inline">
               Tai<span className="text-yellow-400">Play</span>
             </span>
           </a>
-          <nav className="ml-auto flex gap-1 overflow-x-auto text-sm">
+          <nav className="ml-auto hidden gap-1 text-sm md:flex">
             {NAV.map(([path, label]) => (
               <a
                 key={path}
                 href={href(path)}
-                className={`whitespace-nowrap rounded-lg px-2.5 py-1.5 sm:px-3 ${
+                className={`whitespace-nowrap rounded-lg px-2.5 py-1.5 lg:px-3 ${
                   section === path ? 'bg-gray-800 text-yellow-300' : 'text-gray-300 hover:bg-gray-900 hover:text-gray-100'
                 }`}
               >
@@ -95,6 +96,17 @@ export default function App() {
               </a>
             ))}
           </nav>
+          <button
+            type="button"
+            onClick={() => setMenuOpen((o) => !o)}
+            aria-expanded={menuOpen}
+            aria-controls="menu-movil"
+            aria-label={menuOpen ? 'Cerrar el menú' : 'Abrir el menú'}
+            className="ml-auto flex h-8 shrink-0 items-center gap-1.5 rounded-lg border border-gray-700 px-2.5 text-sm text-gray-300 hover:border-gray-500 hover:text-gray-100 md:hidden"
+          >
+            <span aria-hidden="true">{menuOpen ? '✕' : '☰'}</span>
+            {NAV.find(([path]) => path === section)?.[1] ?? 'Menú'}
+          </button>
           <button
             type="button"
             onClick={() => setWelcomeOpen(true)}
@@ -112,6 +124,20 @@ export default function App() {
             🏆 <span className="font-mono">Nv {level.n}</span>
           </a>
         </div>
+        {menuOpen && (
+          <nav id="menu-movil" className="grid grid-cols-2 gap-1 border-t border-gray-800 px-4 py-3 text-sm md:hidden">
+            {NAV.map(([path, label]) => (
+              <a
+                key={path}
+                href={href(path)}
+                onClick={() => setMenuOpen(false)}
+                className={`rounded-lg px-3 py-2.5 ${section === path ? 'bg-gray-800 text-yellow-300' : 'text-gray-300 hover:bg-gray-900 hover:text-gray-100'}`}
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
+        )}
       </header>
       <LogroToast logro={logro} onClose={dismiss} />
       {(welcomeOpen || !welcomed) && <WelcomePanel onClose={closeWelcome} />}
