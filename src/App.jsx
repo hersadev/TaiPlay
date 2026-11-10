@@ -1,18 +1,29 @@
-import { useCallback, useState } from 'react';
+import { lazy, Suspense, useCallback, useState } from 'react';
 import { useRoute, href } from './hooks/useRoute';
 import { useProgress } from './store/progress';
 import HomePage from './pages/HomePage';
-import { TracksPage, TrackPage, NotFound } from './pages/LearnPage';
-import LessonPage from './pages/LessonPage';
-import BankPage from './pages/BankPage';
-import { SupuestosList, SupuestoPage } from './pages/SupuestosPage';
-import SimulacroPage from './pages/SimulacroPage';
-import { TemarioPage, TemaPage } from './pages/TemarioPage';
-import LogrosPage from './pages/LogrosPage';
-import EditorPage from './pages/EditorPage';
 import LogroToast from './components/logros/LogroToast';
 import WelcomePanel from './components/ui/WelcomePanel';
 import { useAchievements, useLevel } from './hooks/useAchievements';
+
+// Cada apartado se descarga al entrar en él: los simuladores (terminal, IOS,
+// SQL…) y sus lecciones no tienen por qué viajar en la carga inicial.
+const named = (load, name) => lazy(() => load().then((m) => ({ default: m[name] })));
+const learn = () => import('./pages/LearnPage');
+const TracksPage = named(learn, 'TracksPage');
+const TrackPage = named(learn, 'TrackPage');
+const NotFound = named(learn, 'NotFound');
+const LessonPage = lazy(() => import('./pages/LessonPage'));
+const BankPage = lazy(() => import('./pages/BankPage'));
+const supuestos = () => import('./pages/SupuestosPage');
+const SupuestosList = named(supuestos, 'SupuestosList');
+const SupuestoPage = named(supuestos, 'SupuestoPage');
+const SimulacroPage = lazy(() => import('./pages/SimulacroPage'));
+const temario = () => import('./pages/TemarioPage');
+const TemarioPage = named(temario, 'TemarioPage');
+const TemaPage = named(temario, 'TemaPage');
+const LogrosPage = lazy(() => import('./pages/LogrosPage'));
+const EditorPage = lazy(() => import('./pages/EditorPage'));
 
 const NAV = [
   ['aprende', 'Aprende'],
@@ -105,7 +116,9 @@ export default function App() {
       <LogroToast logro={logro} onClose={dismiss} />
       {(welcomeOpen || !welcomed) && <WelcomePanel onClose={closeWelcome} />}
       <main className="flex-1">
-        <Page segments={segments} params={params} />
+        <Suspense fallback={<p className="px-4 py-8 text-center text-sm text-gray-500">Cargando…</p>}>
+          <Page segments={segments} params={params} />
+        </Suspense>
       </main>
       {section !== 'aprende' && <Footer />}
     </div>
