@@ -125,7 +125,7 @@ export const TARJETAS = [
 
   // ── B1T09 · Sedes, identificación y servicios comunes ─────────────────
   { id: 'hora-oficial', tema: 'B1T09', kind: 'organo', q: '¿Quién marca la hora oficial que usan las sedes electrónicas?', a: 'El Real Instituto y Observatorio de la Armada', src: 'RD 1308/1992' },
-  { id: 'clave-pin', tema: 'B1T09', kind: 'dato', q: 'En Cl@ve, ¿qué clave concertada es de un solo uso?', a: 'Cl@ve PIN', wrong: ['Cl@ve Permanente', 'Cl@ve Firma', 'El DNIe'], src: 'Cl@ve' },
+  { id: 'clave-pin', tema: 'B1T09', kind: 'dato', q: 'En Cl@ve, ¿qué clave concertada daba un código de un solo uso (desde 2025 integrada en Cl@ve Móvil)?', a: 'Cl@ve PIN', wrong: ['Cl@ve Permanente', 'Cl@ve Firma', 'El DNIe'], src: 'clave.gob.es' },
   { id: 'eidas-saml', tema: 'B1T09', kind: 'dato', q: '¿Con qué protocolo intercambia mensajes el nodo eIDAS español?', a: 'SAML 2.0', wrong: ['OAuth 2.0', 'OpenID Connect', 'Kerberos'], src: 'Nodo eIDAS' },
   { id: 'face', tema: 'B1T09', kind: 'dato', q: 'Punto general de entrada de facturas electrónicas de la AGE', a: 'FACe', wrong: ['DEHú', 'GEISER', 'Notific@'], src: 'Ley 25/2013' },
   { id: 'pid', tema: 'B1T09', kind: 'dato', q: '¿Qué servicio común evita pedir certificados en papel al ciudadano?', a: 'La Plataforma de Intermediación de Datos (PID)', wrong: ['La Red SARA', 'Port@firmas', 'Inside'], src: 'Catálogo de servicios de Administración Digital' },

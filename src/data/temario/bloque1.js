@@ -163,7 +163,7 @@ export const bloque1 = [
 
 ## Ley 19/2013 de transparencia
 - Tres ejes: **publicidad activa** (lo que se publica de oficio en el Portal de Transparencia), **derecho de acceso** a la información pública y **buen gobierno**.
-- **Solicitud de acceso**: se dirige al titular del órgano que tiene la información, por cualquier medio que deje constancia de la identidad del solicitante, la información pedida, una **dirección de contacto (preferentemente electrónica)** y, en su caso, la modalidad de acceso preferida (art. 17.2). **No hace falta motivarla** y puede presentarse en cualquier lengua cooficial.
+- **Solicitud de acceso**: se dirige al titular del órgano que tiene la información, por cualquier medio que deje constancia de la identidad del solicitante, la información pedida, una **dirección de contacto (preferentemente electrónica)** y, en su caso, la modalidad de acceso preferida (art. 17.2). **No hace falta motivarla** (art. 17.3) y puede presentarse en cualquiera de las lenguas cooficiales del territorio donde esté la Administración (art. 17.4).
 - **Plazo para resolver**: 1 mes, ampliable 1 mes más. El **silencio es desestimatorio**.
 - Contra la resolución cabe **reclamación** potestativa ante el **Consejo de Transparencia y Buen Gobierno** (CTBG), en **1 mes**. El CTBG tiene **3 meses** para resolverla; si no lo hace, se entiende **desestimada** (art. 24). En su **Comisión** se sientan, además del Presidente, un diputado, un senador y representantes del Tribunal de Cuentas, el **Defensor del Pueblo**, la AEPD, la **Secretaría de Estado de Administraciones Públicas** y la AIReF (art. 36.2).
 
@@ -261,7 +261,7 @@ export const bloque1 = [
 - Desde el **2 de abril de 2025** el DNI lo regula el **RD 255/2025**, que deroga el RD 1553/2005 y regula también el **DNI digital** (la app MiDNI), con la misma eficacia para identificarse; solo se genera si el DNI físico está vigente.
 - **Validez del DNI** (art. 7): 2 años antes de los 5 de edad; 5 años de los 5 a los 30; 10 años de los 30 a los 70; y desde los 70, **más de diez años, con una fecha** concreta (con el RD 1553/2005 era «permanente»).
 - El chip lleva **certificados cualificados** para identificarse (autenticación) y para firmar. Su validez es de **2 años** (art. 11.3); con la norma anterior, hasta 5. Ojo con los exámenes antiguos, que preguntan por el régimen derogado.
-- En la **zona de seguridad** del chip, que el ciudadano puede leer en los Puntos de Actualización, están los datos de filiación, la **imagen de la fotografía** y la de la firma manuscrita.
+- **El chip (art. 11.2)** guarda, por separado, los certificados cualificados y la fotografía, los datos personales y las dos huellas dactilares. En su **zona de seguridad**, que el ciudadano puede leer en los Puntos de Actualización, están los datos de filiación, la **imagen de la fotografía** y la de la firma manuscrita (examen de 2025).
 - El DNIe 3.0 y 4.0 incorporan **NFC** para usarlo con el móvil.
 
 ## Agenda digital
@@ -403,7 +403,7 @@ Acceso, rectificación, **supresión** («derecho al olvido»), limitación del 
 - La **Carpeta Ciudadana** se accede desde la sede del PAGe. El **Registro de Funcionarios Habilitados** de la AGE debe ser interoperable con los de las comunidades autónomas y las entidades locales.
 
 ## Identificación y firma
-- **Cl@ve**: sistema común para identificarse con claves concertadas, **Cl@ve PIN** (de un solo uso) y **Cl@ve Permanente**, y con certificado o DNIe. Tiene dos niveles de registro (básico y avanzado) e incluye **Cl@ve Firma**, que firma con certificados centralizados en la nube.
+- **Cl@ve**: sistema común para identificarse con claves concertadas y con certificado o DNIe. Las claves concertadas eran **Cl@ve PIN** (un código de un solo uso, de validez muy corta) y **Cl@ve Permanente** (usuario y contraseña). Desde 2025, Cl@ve PIN se ha integrado en **Cl@ve Móvil** (la app Cl@ve: se confirma el acceso en el móvil o leyendo un QR). Tiene dos niveles de registro (básico y avanzado) e incluye **Cl@ve Firma**, que firma con certificados centralizados en la nube. Los exámenes anteriores a 2025 preguntan por Cl@ve PIN.
 - **Nodo eIDAS español**: reconoce las identidades electrónicas de otros países de la UE. Intercambia los mensajes con **SAML 2.0**, y las AAPP se integran con él a través de Cl@ve.
 - **@firma**: la plataforma de validación de certificados y firmas.
 
