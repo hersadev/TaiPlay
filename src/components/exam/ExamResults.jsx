@@ -6,7 +6,7 @@ import { useProgress } from '../../store/progress';
 const pct = (x) => `${Math.round(x * 100)} %`;
 const PENALTY_LABEL = { 0: 'sin penalización', [1 / 4]: '−1/4 por error', [1 / 3]: '−1/3 por error' };
 
-export default function ExamResults({ title, questions, answers, result, onExit }) {
+export default function ExamResults({ title, questions, answers, result, seen, onExit }) {
   const penalty = useProgress((s) => s.settings.penalty);
   const [filter, setFilter] = useState('wrong');
   const counted = new Set(result.countedIds);
@@ -34,6 +34,7 @@ export default function ExamResults({ title, questions, answers, result, onExit 
           <Stat label="En blanco" value={result.blank} tone="text-gray-300" />
           <Stat label="Rendimiento" value={pct(result.pct)} tone="text-blue-300" />
         </div>
+        {seen?.total > 0 && <SeenNote seen={seen} />}
         <p className="mt-3 text-xs text-gray-500">
           La nota oficial se obtiene transformando las puntuaciones directas según la fórmula que publica el tribunal; esto es una
           estimación para compararte contigo mismo. Las preguntas anuladas no cuentan y en su lugar entran las de reserva.
@@ -102,5 +103,21 @@ function Stat({ label, value, tone }) {
       <p className={`text-2xl font-semibold ${tone}`}>{value}</p>
       <p className="text-xs text-gray-400">{label}</p>
     </div>
+  );
+}
+
+// Aviso de cuánto de la nota puede ser memoria: preguntas que ya se habían
+// respondido antes de empezar.
+function SeenNote({ seen }) {
+  const frac = seen.seen / seen.total;
+  if (frac === 0)
+    return <p className="mt-3 rounded-lg bg-green-900/30 p-2 text-sm text-green-100">Todas las preguntas eran nuevas para ti: esta nota mide tu nivel real.</p>;
+  return (
+    <p className={`mt-3 rounded-lg p-2 text-sm ${frac >= 0.5 ? 'bg-yellow-900/40 text-yellow-100' : 'bg-gray-800 text-gray-200'}`}>
+      Ya habías respondido antes {seen.seen} de las {seen.total} preguntas ({Math.round(frac * 100)} %).
+      {frac >= 0.5
+        ? ' Buena parte de la nota puede ser memoria y no conocimiento: para medir tu nivel real, usa el simulacro mezclado con «priorizar preguntas nuevas».'
+        : ' Tenlo en cuenta al compararte con otros simulacros.'}
+    </p>
   );
 }

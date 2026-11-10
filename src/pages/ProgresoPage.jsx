@@ -45,7 +45,10 @@ export default function ProgresoPage() {
 
       <section className="mt-8 rounded-xl border border-gray-700 bg-gray-900 p-5">
         <h2 className="font-semibold text-gray-100">Rendimiento en los simulacros</h2>
-        <p className="mt-1 text-xs text-gray-500">Aciertos netos (ya restada la penalización) sobre el total de preguntas que puntúan.</p>
+        <p className="mt-1 text-xs text-gray-500">
+          Aciertos netos (ya restada la penalización) sobre el total de preguntas que puntúan. Los puntos huecos son simulacros en los
+          que ya habías respondido antes la mitad de las preguntas o más: esa nota mide en parte memoria.
+        </p>
         {series.length ? (
           <>
             <LineChart points={series} />
@@ -58,6 +61,7 @@ export default function ProgresoPage() {
                       <th className="py-1 pr-3 font-normal">Fecha</th>
                       <th className="py-1 pr-3 font-normal">Simulacro</th>
                       <th className="py-1 pr-3 text-right font-normal">Netos</th>
+                      <th className="py-1 pr-3 text-right font-normal">Ya vistas</th>
                       <th className="py-1 text-right font-normal">Rendimiento</th>
                     </tr>
                   </thead>
@@ -69,6 +73,7 @@ export default function ProgresoPage() {
                         <td className="whitespace-nowrap py-1 pr-3 text-right font-mono">
                           {p.net.toFixed(2)}/{p.total}
                         </td>
+                        <td className="py-1 pr-3 text-right font-mono">{p.seen === null ? '—' : pct(p.seen)}</td>
                         <td className="py-1 text-right font-mono">{pct(p.pct)}</td>
                       </tr>
                     ))}
@@ -243,8 +248,8 @@ function LineChart({ points }) {
             cx={x(i)}
             cy={y(p.pct)}
             r={hover === i ? 5 : 4}
-            fill="rgb(var(--c-yellow-400))"
-            stroke="rgb(var(--c-gray-900))"
+            fill={p.seen >= 0.5 ? 'rgb(var(--c-gray-900))' : 'rgb(var(--c-yellow-400))'}
+            stroke={p.seen >= 0.5 ? 'rgb(var(--c-yellow-400))' : 'rgb(var(--c-gray-900))'}
             strokeWidth="2"
           />
         ))}
@@ -262,6 +267,7 @@ function LineChart({ points }) {
           <p className="mt-1 font-mono text-gray-100">
             {pct(h.pct)} · {h.net.toFixed(2)}/{h.total} netos
           </p>
+          {h.seen !== null && <p className="text-gray-400">Ya vistas antes: {pct(h.seen)}</p>}
         </div>
       )}
     </div>

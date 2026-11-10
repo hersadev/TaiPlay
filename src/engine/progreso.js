@@ -6,7 +6,16 @@ export function simulacroSeries(attempts) {
   return attempts
     .filter((a) => a.kind === 'simulacro' && a.total > 0)
     .sort((a, b) => a.at - b.at)
-    .map((a) => ({ at: a.at, title: a.title.replace(/^Simulacro · /, ''), net: a.net, total: a.total, pct: Math.max(0, a.net) / a.total }));
+    .map((a) => ({
+      at: a.at,
+      title: a.title.replace(/^Simulacro · /, ''),
+      net: a.net,
+      total: a.total,
+      pct: Math.max(0, a.net) / a.total,
+      // Parte de las preguntas que ya se habían respondido antes (null en
+      // los simulacros de antes de guardarse este dato).
+      seen: a.seenTotal ? a.seen / a.seenTotal : null,
+    }));
 }
 
 // Temas del programa con peor porcentaje de acierto (según el último

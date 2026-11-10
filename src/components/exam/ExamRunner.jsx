@@ -5,6 +5,7 @@ import ExamResults from './ExamResults';
 import { scoreExam } from '../../utils/scoring';
 import { useProgress } from '../../store/progress';
 import { findExam } from '../../data/exams';
+import { seenBefore } from '../../engine/simulacro';
 
 const fmt = (s) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
 
@@ -20,6 +21,8 @@ export default function ExamRunner({ title, questions, timeLimitMin, kind, onExi
   const [confirming, setConfirming] = useState(false);
   const [left, setLeft] = useState(timeLimitMin * 60);
   const startedAt = useRef(Date.now());
+  // Se cuenta al empezar: al corregir, todas pasan a estar respondidas.
+  const [seen] = useState(() => seenBefore(questions, useProgress.getState().answers));
 
   const q = questions[idx];
   const part = useMemo(
@@ -43,6 +46,8 @@ export default function ExamRunner({ title, questions, timeLimitMin, kind, onExi
       total: r.total,
       net: r.net,
       penalty: settings.penalty,
+      seen: seen.seen,
+      seenTotal: seen.total,
     });
     setResult(r);
     window.scrollTo(0, 0);
@@ -60,7 +65,7 @@ export default function ExamRunner({ title, questions, timeLimitMin, kind, onExi
     if (left === 0 && !result) finishRef.current();
   }, [left, result]);
 
-  if (result) return <ExamResults title={title} questions={questions} answers={answers} result={result} onExit={onExit} />;
+  if (result) return <ExamResults title={title} questions={questions} answers={answers} result={result} seen={seen} onExit={onExit} />;
 
   const answered = questions.filter((x) => answers[x.id]).length;
   const sections = [];

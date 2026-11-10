@@ -42,3 +42,22 @@ for (const supuesto of ['supuesto1', 'supuesto2']) {
     assert.equal(seen.size, 50, 'cada simulacro es distinto');
   });
 }
+
+test('priorizar preguntas nuevas: primero las no respondidas y el supuesto menos visto', async () => {
+  const { seenBefore } = await import('../src/engine/simulacro.js');
+  const rng = seeded(21);
+  const first = ALL.filter((q) => q.partId === 'primera' && q.answer && !q.annulled);
+  // Respondidas todas menos 10 por bloque.
+  const answers = {};
+  for (const b of [1, 2, 3, 4]) first.filter((q) => q.tema.startsWith(`B${b}`)).slice(10).forEach((q) => (answers[q.id] = { last: 'ok' }));
+  // Y todos los Supuesto II menos el de 2022.
+  ALL.filter((q) => q.partId === 'supuesto2' && q.examId !== 'tai2022').forEach((q) => (answers[q.id] = { last: 'ok' }));
+  const { questions } = buildMixedExam(ALL, EXAMS, { supuesto: 'supuesto2', rng, answers, soloNuevas: true });
+  const main = questions.filter((q) => q.partId === 'primera' && !q.reserve);
+  assert.equal(main.filter((q) => !answers[q.id]).length, 40, 'entran las 10 nuevas de cada bloque');
+  assert.equal(main.length, 80, 'y se completa con las ya vistas');
+  assert.ok(questions.filter((q) => q.partId === 'supuesto2').every((q) => q.examId === 'tai2022'));
+  const s = seenBefore(questions, answers);
+  assert.equal(s.seen, 40);
+  assert.equal(s.total, questions.filter((q) => !q.reserve && !q.annulled).length);
+});

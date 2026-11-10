@@ -26,11 +26,14 @@ export default function SimulacroPage() {
   const [examId, setExamId] = useState(MEZCLA);
   const [supuesto, setSupuesto] = useState('supuesto1');
   const [running, setRunning] = useState(null);
+  const [soloNuevas, setSoloNuevas] = useState(true);
+  const answers = useProgress((s) => s.answers);
+  const nuevasTeoria = ALL_QUESTIONS.filter((q) => q.partId === 'primera' && q.answer && !q.annulled && !answers[q.id]).length;
   const exam = EXAMS.find((e) => e.id === examId);
 
   const start = () => {
     if (examId === MEZCLA) {
-      const mixed = buildMixedExam(ALL_QUESTIONS, EXAMS, { supuesto });
+      const mixed = buildMixedExam(ALL_QUESTIONS, EXAMS, { supuesto, answers, soloNuevas });
       setRunning({ title: `Simulacro · ${mixed.title}`, questions: mixed.questions });
       return;
     }
@@ -74,10 +77,22 @@ export default function SimulacroPage() {
           options={[[MEZCLA, 'Mezclado: preguntas al azar de todos los años'], ...EXAMS.map((e) => [e.id, e.title])]}
         />
         {examId === MEZCLA && (
-          <p className="-mt-2 text-xs text-gray-500">
-            80 preguntas reales con el reparto por bloques de los exámenes (I: 21, II: 14, III: 23, IV: 22) y 5 de reserva. Cada vez sale
-            un examen distinto.
-          </p>
+          <>
+            <p className="-mt-2 text-xs text-gray-500">
+              80 preguntas reales con el reparto por bloques de los exámenes (I: 21, II: 14, III: 23, IV: 22) y 5 de reserva. Cada vez
+              sale un examen distinto.
+            </p>
+            <label className="flex items-start gap-2 text-sm text-gray-300">
+              <input type="checkbox" checked={soloNuevas} onChange={(e) => setSoloNuevas(e.target.checked)} className="mt-1 accent-yellow-400" />
+              <span>
+                Priorizar preguntas que nunca has respondido
+                <span className="block text-xs text-gray-500">
+                  Para medir tu nivel real y no lo que recuerdas. Te quedan {nuevasTeoria} de teoría sin responder; cuando se acaben, se
+                  completa con las demás.
+                </span>
+              </span>
+            </label>
+          </>
         )}
         <Choice
           label="Supuesto"

@@ -9,6 +9,11 @@
 //
 // Las preguntas conservan su id (el progreso se guarda igual) y llevan
 // `seq`, su número dentro del simulacro.
+//
+// Con soloNuevas, dentro de cada bloque van primero las preguntas que nunca
+// se han respondido (answers), y el supuesto se elige entre los que menos se
+// han visto: así el simulacro mide lo que sabes y no lo que recuerdas.
+// Cuando ya no quedan nuevas, se completa con las demás.
 
 // Preguntas por bloque en la primera parte, media de 2019 a 2025.
 export const REPARTO = { 1: 21, 2: 14, 3: 23, 4: 22 };
@@ -26,11 +31,13 @@ const shuffle = (list, rng) => {
 const bloqueOf = (q) => Number(q.tema?.[1]);
 
 // supuesto: 'supuesto1' (bloque III) o 'supuesto2' (bloque IV).
-export function buildMixedExam(questions, exams, { supuesto = 'supuesto2', rng = Math.random } = {}) {
-  const pool = shuffle(
+export function buildMixedExam(questions, exams, { supuesto = 'supuesto2', rng = Math.random, answers = {}, soloNuevas = false } = {}) {
+  const isNew = (q) => !answers[q.id];
+  const shuffled = shuffle(
     questions.filter((q) => q.partId === 'primera' && q.answer && !q.annulled && REPARTO[bloqueOf(q)]),
     rng,
   );
+  const pool = soloNuevas ? [...shuffled.filter(isNew), ...shuffled.filter((q) => !isNew(q))] : shuffled;
   const main = [];
   for (const [b, n] of Object.entries(REPARTO)) main.push(...pool.filter((q) => bloqueOf(q) === Number(b)).slice(0, n));
   // En el examen real las preguntas van más o menos en el orden del temario.
@@ -38,8 +45,13 @@ export function buildMixedExam(questions, exams, { supuesto = 'supuesto2', rng =
   const used = new Set(main.map((q) => q.id));
   const reserves = pool.filter((q) => !used.has(q.id)).slice(0, RESERVAS);
 
-  const withSupuesto = exams.filter((e) => e.parts.some((p) => p.id === supuesto));
-  const exam = withSupuesto[Math.floor(rng() * withSupuesto.length)];
+  let withSupuesto = shuffle(exams.filter((e) => e.parts.some((p) => p.id === supuesto)), rng);
+  if (soloNuevas) {
+    const seenIn = (e) => questions.filter((q) => q.examId === e.id && q.partId === supuesto && !isNew(q)).length;
+    const least = Math.min(...withSupuesto.map(seenIn));
+    withSupuesto = withSupuesto.filter((e) => seenIn(e) === least);
+  }
+  const exam = withSupuesto[0];
   const part = exam.parts.find((p) => p.id === supuesto);
   const second = questions.filter((q) => q.examId === exam.id && q.partId === supuesto);
 
@@ -51,4 +63,11 @@ export function buildMixedExam(questions, exams, { supuesto = 'supuesto2', rng =
       ...second.map((q) => ({ ...q, seq: q.n })),
     ],
   };
+}
+
+// Cuántas de las preguntas que puntúan (sin las de reserva) se habían
+// respondido antes de empezar: si son muchas, la nota mide en parte memoria.
+export function seenBefore(questions, answers) {
+  const scored = questions.filter((q) => !q.reserve && !q.annulled);
+  return { seen: scored.filter((q) => answers[q.id]).length, total: scored.length };
 }
